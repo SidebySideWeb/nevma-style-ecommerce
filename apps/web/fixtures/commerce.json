@@ -1,0 +1,358 @@
+{
+ "_about": "Fixture data for COMMERCE_MOCK=1. Reproduces the design exactly (stock, bag, customer, orders, wishlist). The nv_fixture cookie (comma list) picks states; it is ignored unless COMMERCE_MOCK=1 and never read in production.",
+ "now": "2026-10-23T13:00:00Z",
+ "products": [
+  {
+   "handle": "definition-tee-white",
+   "title": "Definition Tee · White",
+   "published": true,
+   "price": {
+    "amount": "85.00",
+    "currencyCode": "GBP"
+   },
+   "editionSize": 5,
+   "drop": "STYLE 001",
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/definition-tee-white-S",
+     "size": "S",
+     "quantityAvailable": 0,
+     "availableForSale": false
+    },
+    {
+     "id": "gid://shopify/ProductVariant/definition-tee-white-M",
+     "size": "M",
+     "quantityAvailable": 1,
+     "availableForSale": true
+    },
+    {
+     "id": "gid://shopify/ProductVariant/definition-tee-white-L",
+     "size": "L",
+     "quantityAvailable": 2,
+     "availableForSale": true
+    },
+    {
+     "id": "gid://shopify/ProductVariant/definition-tee-white-XL",
+     "size": "XL",
+     "quantityAvailable": 0,
+     "availableForSale": false
+    }
+   ]
+  },
+  {
+   "handle": "wordmark-tee-bone",
+   "title": "Wordmark Tee · Bone",
+   "published": true,
+   "price": {
+    "amount": "75.00",
+    "currencyCode": "GBP"
+   },
+   "editionSize": 5,
+   "drop": "STYLE 001",
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/wordmark-tee-bone-S",
+     "size": "S",
+     "quantityAvailable": 0,
+     "availableForSale": false
+    },
+    {
+     "id": "gid://shopify/ProductVariant/wordmark-tee-bone-M",
+     "size": "M",
+     "quantityAvailable": 0,
+     "availableForSale": false
+    },
+    {
+     "id": "gid://shopify/ProductVariant/wordmark-tee-bone-L",
+     "size": "L",
+     "quantityAvailable": 1,
+     "availableForSale": true
+    },
+    {
+     "id": "gid://shopify/ProductVariant/wordmark-tee-bone-XL",
+     "size": "XL",
+     "quantityAvailable": 0,
+     "availableForSale": false
+    }
+   ]
+  },
+  {
+   "handle": "definition-tee-bone",
+   "title": "Definition Tee · Bone",
+   "published": true,
+   "price": {
+    "amount": "85.00",
+    "currencyCode": "GBP"
+   },
+   "editionSize": 5,
+   "drop": "STYLE 001",
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/definition-tee-bone-S",
+     "size": "S",
+     "quantityAvailable": 0,
+     "availableForSale": false
+    },
+    {
+     "id": "gid://shopify/ProductVariant/definition-tee-bone-M",
+     "size": "M",
+     "quantityAvailable": 0,
+     "availableForSale": false
+    },
+    {
+     "id": "gid://shopify/ProductVariant/definition-tee-bone-L",
+     "size": "L",
+     "quantityAvailable": 0,
+     "availableForSale": false
+    },
+    {
+     "id": "gid://shopify/ProductVariant/definition-tee-bone-XL",
+     "size": "XL",
+     "quantityAvailable": 0,
+     "availableForSale": false
+    }
+   ]
+  },
+  {
+   "handle": "signal-overshirt",
+   "title": "Signal Overshirt",
+   "published": false,
+   "price": null,
+   "editionSize": 5,
+   "drop": "STYLE 002",
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/signal-overshirt-S",
+     "size": "S",
+     "quantityAvailable": 1,
+     "availableForSale": true
+    },
+    {
+     "id": "gid://shopify/ProductVariant/signal-overshirt-M",
+     "size": "M",
+     "quantityAvailable": 2,
+     "availableForSale": true
+    },
+    {
+     "id": "gid://shopify/ProductVariant/signal-overshirt-L",
+     "size": "L",
+     "quantityAvailable": 1,
+     "availableForSale": true
+    },
+    {
+     "id": "gid://shopify/ProductVariant/signal-overshirt-XL",
+     "size": "XL",
+     "quantityAvailable": 1,
+     "availableForSale": true
+    }
+   ]
+  },
+  {
+   "handle": "suede-cap-sand",
+   "title": "Suede Cap · Sand",
+   "published": false,
+   "price": null,
+   "editionSize": 5,
+   "drop": "STYLE 002",
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/suede-cap-sand-One size",
+     "size": "One size",
+     "quantityAvailable": 5,
+     "availableForSale": true
+    }
+   ]
+  },
+  {
+   "handle": "silk-square-70",
+   "title": "Silk Square 70",
+   "published": false,
+   "price": null,
+   "editionSize": 5,
+   "drop": "STYLE 002",
+   "variants": [
+    {
+     "id": "gid://shopify/ProductVariant/silk-square-70-70 cm",
+     "size": "70 cm",
+     "quantityAvailable": 5,
+     "availableForSale": true
+    }
+   ]
+  }
+ ],
+ "stateOverrides": {
+  "last-piece": {
+   "definition-tee-white": {
+    "S": 0,
+    "M": 0,
+    "L": 1,
+    "XL": 0
+   }
+  },
+  "sold-out": {
+   "definition-tee-white": {
+    "S": 0,
+    "M": 0,
+    "L": 0,
+    "XL": 0
+   }
+  }
+ },
+ "carts": {
+  "bag-normal": {
+   "lines": [
+    {
+     "handle": "definition-tee-white",
+     "size": "L",
+     "quantity": 1
+    },
+    {
+     "handle": "wordmark-tee-bone",
+     "size": "L",
+     "quantity": 1
+    }
+   ]
+  },
+  "bag-sold-while-in-bag": {
+   "lines": [
+    {
+     "handle": "definition-tee-white",
+     "size": "L",
+     "quantity": 1
+    },
+    {
+     "handle": "wordmark-tee-bone",
+     "size": "L",
+     "quantity": 1,
+     "soldWhileInBag": true
+    }
+   ]
+  },
+  "bag-empty": {
+   "lines": []
+  },
+  "default": {
+   "lines": [
+    {
+     "handle": "definition-tee-white",
+     "size": "L",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ "customer": {
+  "signed-in": {
+   "firstName": "Alex",
+   "lastName": "Morgan",
+   "email": "alex.morgan@example.com",
+   "addresses": [
+    {
+     "id": "a1",
+     "label": "Default",
+     "default": true,
+     "lines": [
+      "Alex Morgan",
+      "14 Calvert Avenue, Flat 3",
+      "London E2 7JP",
+      "United Kingdom"
+     ]
+    },
+    {
+     "id": "a2",
+     "label": "Work",
+     "default": false,
+     "lines": [
+      "Alex Morgan",
+      "[Company], 2 Leonard Circus",
+      "London EC2A 4DQ",
+      "United Kingdom"
+     ]
+    }
+   ],
+   "orders": [
+    {
+     "name": "#NS1042",
+     "processedAt": "2026-10-23",
+     "payment": "Viva · Visa ending 4417",
+     "status": "Being packed",
+     "total": "166.00",
+     "tax": "27.67",
+     "timeline": [
+      [
+       "Paid",
+       "23 Oct"
+      ],
+      [
+       "Numbered",
+       "24 Oct"
+      ],
+      [
+       "Shipped",
+       "Tracking by email"
+      ],
+      [
+       "Delivered",
+       "—"
+      ]
+     ],
+     "overviewTimeline": [
+      [
+       "Paid",
+       "23 Oct"
+      ],
+      [
+       "Numbered",
+       "N° 3 and N° 5"
+      ],
+      [
+       "Shipped",
+       "Expected 26 Oct"
+      ],
+      [
+       "Delivered",
+       "27 to 29 Oct"
+      ]
+     ],
+     "lines": [
+      {
+       "handle": "definition-tee-white",
+       "title": "Definition Tee · White",
+       "size": "L",
+       "number": 3,
+       "price": "85"
+      },
+      {
+       "handle": "wordmark-tee-bone",
+       "title": "Wordmark Tee · Bone",
+       "size": "L",
+       "number": 5,
+       "price": "75"
+      }
+     ],
+     "delivery": "UK Tracked · 14 Calvert Avenue, Flat 3, London E2 7JP"
+    },
+    {
+     "name": "#NS1017",
+     "processedAt": "2026-10-02",
+     "summary": "Definition Tee · Bone, M · N° 2 of 5 · £91.00",
+     "status": "Delivered 6 Oct"
+    }
+   ],
+   "pieces": {
+    "count": 3,
+    "note": "From STYLE 001 · N° 2, N° 3, N° 5"
+   },
+   "prefs": {
+    "dropAlerts": true,
+    "letter": false,
+    "moments": true
+   }
+  }
+ },
+ "wishlist": [
+  "definition-tee-white",
+  "suede-cap-sand",
+  "definition-tee-bone"
+ ]
+}

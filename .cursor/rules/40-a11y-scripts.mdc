@@ -1,0 +1,9 @@
+---
+description: Accessibility and client-side behaviour
+globs: apps/web/src/**/*.ts, apps/web/src/**/*.astro
+---
+- Keep every aria attribute, role, label and live region from the design snippets. Interactive states (aria-pressed, aria-expanded, aria-current, aria-selected) must be updated by script exactly like the design's behaviour described in docs/PAGES.md.
+- Progressive enhancement: links and forms work without JS (filters and tabs are real URLs; forms POST to API routes and redirect back with a result). JS adds instant switching, the bag drawer, the countdown tick and the size picker.
+- Focus: visible focus styles from style.css; the bag drawer and phone menu trap focus, close on Escape and return focus to the trigger.
+- prefers-reduced-motion: no transitions beyond opacity, as in style.css.
+- Scripts are small modules in src/scripts/, loaded per page with type="module". No global libraries.

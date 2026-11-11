@@ -1,0 +1,66 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEVMA Style · design reference</title><link rel="stylesheet" href="build/fonts/fonts.css">
+<style>body{margin:0;background:#ECE7DE;color:#0B0B0C;font-family:'Nunito Sans',Arial,sans-serif}main{max-width:1280px;margin:0 auto;padding:48px 24px}
+h1{font-family:Montserrat,sans-serif;font-weight:300;letter-spacing:.16em;text-transform:uppercase;font-size:32px;margin:0 0 8px}
+p{color:#3E3B35;max-width:760px}h2{font-family:Montserrat,sans-serif;font-weight:500;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:#615D55;margin:48px 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}.card{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:inherit}
+.card img{width:100%;aspect-ratio:10/7;object-fit:cover;object-position:top;border:1px solid #CFC7B8;border-radius:4px;background:#F5F2EC}
+.t{font-family:Montserrat,sans-serif;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase}.r,.l{font-size:13px;color:#615D55}code{font-size:13px}</style></head>
+<body><main><h1>NEVMA Style</h1><p>The approved design, frozen into exact static pages (<code>build/</code>). These files are the spec for the Astro build and the reference for the fidelity tests. Open a card to see the page; resize the window to see the phone layout. Full-page captures: <code>screenshots/desktop</code> and <code>screenshots/phone</code>. Original canvas sources: <code>source/</code>.</p>
+<h2>Storefront</h2><div class="grid">
+<a class="card" href="build/home.html"><img src="thumbs/home.jpg" alt="" loading="lazy"><span class="t">Home</span><span class="r">/</span></a>
+<a class="card" href="build/home~notified.html"><img src="thumbs/home~notified.jpg" alt="" loading="lazy"><span class="t">Home · notify form sent</span><span class="r">/</span></a>
+<a class="card" href="build/home~menu.html"><img src="thumbs/home~menu.jpg" alt="" loading="lazy"><span class="t">Home · phone menu open</span><span class="r">/</span></a>
+<a class="card" href="build/drop.html"><img src="thumbs/drop.jpg" alt="" loading="lazy"><span class="t">Drop · STYLE 001</span><span class="r">/drops/style-001</span></a>
+<a class="card" href="build/product.html"><img src="thumbs/product.jpg" alt="" loading="lazy"><span class="t">Product · available</span><span class="r">/pieces/definition-tee-white</span></a>
+<a class="card" href="build/product~size.html"><img src="thumbs/product~size.jpg" alt="" loading="lazy"><span class="t">Product · size L chosen</span><span class="r">/pieces/definition-tee-white</span></a>
+<a class="card" href="build/product~added.html"><img src="thumbs/product~added.jpg" alt="" loading="lazy"><span class="t">Product · added, bag drawer open</span><span class="r">/pieces/definition-tee-white</span></a>
+<a class="card" href="build/product~saved.html"><img src="thumbs/product~saved.jpg" alt="" loading="lazy"><span class="t">Product · saved to wishlist</span><span class="r">/pieces/definition-tee-white</span></a>
+<a class="card" href="build/product-last.html"><img src="thumbs/product-last.jpg" alt="" loading="lazy"><span class="t">Product · last piece</span><span class="r">/pieces/definition-tee-white</span></a>
+<a class="card" href="build/product-sold.html"><img src="thumbs/product-sold.jpg" alt="" loading="lazy"><span class="t">Product · sold out</span><span class="r">/pieces/definition-tee-white</span></a>
+<a class="card" href="build/product-sold~notified.html"><img src="thumbs/product-sold~notified.jpg" alt="" loading="lazy"><span class="t">Product · sold out, notify sent</span><span class="r">/pieces/definition-tee-white</span></a>
+<a class="card" href="build/product-upcoming.html"><img src="thumbs/product-upcoming.jpg" alt="" loading="lazy"><span class="t">Product · upcoming</span><span class="r">/pieces/suede-cap-sand</span></a>
+<a class="card" href="build/pieces.html"><img src="thumbs/pieces.jpg" alt="" loading="lazy"><span class="t">All pieces · index</span><span class="r">/pieces</span></a>
+<a class="card" href="build/pieces~gallery.html"><img src="thumbs/pieces~gallery.jpg" alt="" loading="lazy"><span class="t">All pieces · gallery view</span><span class="r">/pieces?view=gallery</span></a>
+<a class="card" href="build/pieces~available.html"><img src="thumbs/pieces~available.jpg" alt="" loading="lazy"><span class="t">All pieces · filter available</span><span class="r">/pieces?filter=available</span></a>
+<a class="card" href="build/pieces~coming.html"><img src="thumbs/pieces~coming.jpg" alt="" loading="lazy"><span class="t">All pieces · filter coming</span><span class="r">/pieces?filter=coming</span></a>
+<a class="card" href="build/pieces~sold.html"><img src="thumbs/pieces~sold.jpg" alt="" loading="lazy"><span class="t">All pieces · filter sold out</span><span class="r">/pieces?filter=sold-out</span></a>
+<a class="card" href="build/category.html"><img src="thumbs/category.jpg" alt="" loading="lazy"><span class="t">Category · Tees</span><span class="r">/categories/tees</span></a>
+<a class="card" href="build/category-outerwear.html"><img src="thumbs/category-outerwear.jpg" alt="" loading="lazy"><span class="t">Category · Outerwear</span><span class="r">/categories/outerwear</span></a>
+<a class="card" href="build/category-headwear.html"><img src="thumbs/category-headwear.jpg" alt="" loading="lazy"><span class="t">Category · Headwear</span><span class="r">/categories/headwear</span></a>
+<a class="card" href="build/category-silk.html"><img src="thumbs/category-silk.jpg" alt="" loading="lazy"><span class="t">Category · Silk</span><span class="r">/categories/silk</span></a>
+</div>
+<h2>Shopping flow</h2><div class="grid">
+<a class="card" href="build/bag.html"><img src="thumbs/bag.jpg" alt="" loading="lazy"><span class="t">Bag</span><span class="r">/bag</span></a>
+<a class="card" href="build/bag-sold.html"><img src="thumbs/bag-sold.jpg" alt="" loading="lazy"><span class="t">Bag · sold while in bag</span><span class="r">/bag</span></a>
+<a class="card" href="build/bag-empty.html"><img src="thumbs/bag-empty.jpg" alt="" loading="lazy"><span class="t">Bag · empty</span><span class="r">/bag</span></a>
+</div>
+<h2>Account</h2><div class="grid">
+<a class="card" href="build/sign-in.html"><img src="thumbs/sign-in.jpg" alt="" loading="lazy"><span class="t">Sign in</span><span class="r">/account/sign-in</span></a>
+<a class="card" href="build/sign-in~create.html"><img src="thumbs/sign-in~create.jpg" alt="" loading="lazy"><span class="t">Create account</span><span class="r">/account/sign-in?mode=create</span></a>
+<a class="card" href="build/account.html"><img src="thumbs/account.jpg" alt="" loading="lazy"><span class="t">Account · overview</span><span class="r">/account</span></a>
+<a class="card" href="build/account-orders.html"><img src="thumbs/account-orders.jpg" alt="" loading="lazy"><span class="t">Account · orders</span><span class="r">/account/orders</span></a>
+<a class="card" href="build/account-addresses.html"><img src="thumbs/account-addresses.jpg" alt="" loading="lazy"><span class="t">Account · addresses</span><span class="r">/account/addresses</span></a>
+<a class="card" href="build/account-profile.html"><img src="thumbs/account-profile.jpg" alt="" loading="lazy"><span class="t">Account · profile and emails</span><span class="r">/account/profile</span></a>
+<a class="card" href="build/wishlist.html"><img src="thumbs/wishlist.jpg" alt="" loading="lazy"><span class="t">Wishlist · signed in</span><span class="r">/wishlist</span></a>
+<a class="card" href="build/wishlist-guest.html"><img src="thumbs/wishlist-guest.jpg" alt="" loading="lazy"><span class="t">Wishlist · guest</span><span class="r">/wishlist</span></a>
+</div>
+<h2>Content &amp; legal</h2><div class="grid">
+<a class="card" href="build/story.html"><img src="thumbs/story.jpg" alt="" loading="lazy"><span class="t">Story</span><span class="r">/story</span></a>
+<a class="card" href="build/care-shipping.html"><img src="thumbs/care-shipping.jpg" alt="" loading="lazy"><span class="t">Shipping and delivery</span><span class="r">/client-care/shipping</span></a>
+<a class="card" href="build/care-returns.html"><img src="thumbs/care-returns.jpg" alt="" loading="lazy"><span class="t">Returns and exchanges</span><span class="r">/client-care/returns</span></a>
+<a class="card" href="build/care-faq.html"><img src="thumbs/care-faq.jpg" alt="" loading="lazy"><span class="t">Questions</span><span class="r">/client-care/faq</span></a>
+<a class="card" href="build/care-contact.html"><img src="thumbs/care-contact.jpg" alt="" loading="lazy"><span class="t">Contact</span><span class="r">/client-care/contact</span></a>
+<a class="card" href="build/care-terms.html"><img src="thumbs/care-terms.jpg" alt="" loading="lazy"><span class="t">Terms of sale</span><span class="r">/legal/terms</span></a>
+<a class="card" href="build/care-privacy.html"><img src="thumbs/care-privacy.jpg" alt="" loading="lazy"><span class="t">Privacy notice</span><span class="r">/legal/privacy</span></a>
+<a class="card" href="build/care-cookies.html"><img src="thumbs/care-cookies.jpg" alt="" loading="lazy"><span class="t">Cookies</span><span class="r">/legal/cookies</span></a>
+<a class="card" href="build/care-contact~sent.html"><img src="thumbs/care-contact~sent.jpg" alt="" loading="lazy"><span class="t">Contact · message sent</span><span class="r">/client-care/contact</span></a>
+</div>
+<h2>Reference only (Shopify, Viva, docs)</h2><div class="grid">
+<a class="card" href="build/checkout.html"><img src="thumbs/checkout.jpg" alt="" loading="lazy"><span class="t">Shopify checkout (branding reference)</span><span class="r">reference only</span></a>
+<a class="card" href="build/thank-you.html"><img src="thumbs/thank-you.jpg" alt="" loading="lazy"><span class="t">Thank you (Shopify, branding reference)</span><span class="r">reference only</span></a>
+<a class="card" href="build/payment-incomplete.html"><img src="thumbs/payment-incomplete.jpg" alt="" loading="lazy"><span class="t">Payment not completed (reference)</span><span class="r">reference only</span></a>
+<a class="card" href="build/viva-handoff.html"><img src="thumbs/viva-handoff.jpg" alt="" loading="lazy"><span class="t">Viva handoff (reference)</span><span class="r">reference only</span></a>
+<a class="card" href="build/sign-in~code.html"><img src="thumbs/sign-in~code.jpg" alt="" loading="lazy"><span class="t">Sign in · code step (Shopify-hosted, reference)</span><span class="r">reference only</span></a>
+<a class="card" href="build/user-flows.html"><img src="thumbs/user-flows.jpg" alt="" loading="lazy"><span class="t">User flows &amp; data (documentation board)</span><span class="r">reference only</span></a>
+</div></main></body></html>

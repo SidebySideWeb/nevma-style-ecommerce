@@ -1,0 +1,30 @@
+{
+  "name": "studio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "validate": "sanity schema validate",
+    "typecheck": "tsc --noEmit",
+    "seed": "sanity dataset import ../../seed/nevma-style-seed.tar.gz production --replace",
+    "check-seed": "tsx scripts/check-seed.ts",
+    "link-shopify": "tsx scripts/link-shopify.ts"
+  },
+  "dependencies": {
+    "@sanity/vision": "6.23.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sanity": "6.23.0",
+    "styled-components": "^6.1.18"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "@types/node": "^22.18.0",
+    "@sanity/client": "8.15.1"
+  }
+}

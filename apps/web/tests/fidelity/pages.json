@@ -1,0 +1,779 @@
+[
+ {
+  "slug": "home",
+  "design": "home.html",
+  "route": "/",
+  "title": "Home",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "hero",
+   "the-pieces",
+   "signal",
+   "five-then-never-again",
+   "story-teaser",
+   "the-world-of-nevma",
+   "footer"
+  ]
+ },
+ {
+  "slug": "home~notified",
+  "design": "home~notified.html",
+  "route": "/",
+  "title": "Home · notify form sent",
+  "fixture": "",
+  "actions": [
+   {
+    "fill": {
+     "label": "Email address",
+     "scope": "signal",
+     "value": "alex.morgan@example.com"
+    }
+   },
+   {
+    "click": {
+     "role": "button",
+     "name": "Notify me",
+     "scope": "signal"
+    }
+   }
+  ],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "hero",
+   "the-pieces",
+   "signal",
+   "five-then-never-again",
+   "story-teaser",
+   "the-world-of-nevma",
+   "footer"
+  ]
+ },
+ {
+  "slug": "home~menu",
+  "design": "home~menu.html",
+  "route": "/",
+  "title": "Home · phone menu open",
+  "fixture": "",
+  "actions": [
+   {
+    "click": {
+     "role": "button",
+     "name": "Menu"
+    }
+   }
+  ],
+  "only": "phone",
+  "blocks": [
+   "announcement",
+   "header",
+   "hero",
+   "the-pieces",
+   "signal",
+   "five-then-never-again",
+   "story-teaser",
+   "the-world-of-nevma",
+   "footer"
+  ]
+ },
+ {
+  "slug": "drop",
+  "design": "drop.html",
+  "route": "/drops/style-001",
+  "title": "Drop · STYLE 001",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "breadcrumb",
+   "drop-intro",
+   "drop-pieces",
+   "the-definition",
+   "drop-notes",
+   "other-drops",
+   "footer"
+  ]
+ },
+ {
+  "slug": "product",
+  "design": "product.html",
+  "route": "/pieces/definition-tee-white",
+  "title": "Product · available",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "piece",
+   "about-this-piece",
+   "one-number-written-by-hand",
+   "wear-it-with",
+   "keep-exploring",
+   "our-services",
+   "footer"
+  ]
+ },
+ {
+  "slug": "product~size",
+  "design": "product~size.html",
+  "route": "/pieces/definition-tee-white",
+  "title": "Product · size L chosen",
+  "fixture": "",
+  "actions": [
+   {
+    "click": {
+     "role": "button",
+     "name": "^L,"
+    }
+   }
+  ],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "piece",
+   "about-this-piece",
+   "one-number-written-by-hand",
+   "wear-it-with",
+   "keep-exploring",
+   "our-services",
+   "footer"
+  ]
+ },
+ {
+  "slug": "product~added",
+  "design": "product~added.html",
+  "route": "/pieces/definition-tee-white",
+  "title": "Product · added, bag drawer open",
+  "fixture": "",
+  "actions": [
+   {
+    "click": {
+     "role": "button",
+     "name": "^L,"
+    }
+   },
+   {
+    "click": {
+     "role": "button",
+     "name": "^Add to bag"
+    }
+   }
+  ],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "piece",
+   "about-this-piece",
+   "one-number-written-by-hand",
+   "wear-it-with",
+   "keep-exploring",
+   "our-services",
+   "footer",
+   "bag-scrim",
+   "bag-drawer"
+  ]
+ },
+ {
+  "slug": "product~saved",
+  "design": "product~saved.html",
+  "route": "/pieces/definition-tee-white",
+  "title": "Product · saved to wishlist",
+  "fixture": "",
+  "actions": [
+   {
+    "click": {
+     "role": "button",
+     "name": "Save to wishlist"
+    }
+   }
+  ],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "piece",
+   "about-this-piece",
+   "one-number-written-by-hand",
+   "wear-it-with",
+   "keep-exploring",
+   "our-services",
+   "footer"
+  ]
+ },
+ {
+  "slug": "product-last",
+  "design": "product-last.html",
+  "route": "/pieces/definition-tee-white",
+  "title": "Product · last piece",
+  "fixture": "last-piece",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "piece",
+   "about-this-piece",
+   "one-number-written-by-hand",
+   "wear-it-with",
+   "keep-exploring",
+   "our-services",
+   "footer"
+  ]
+ },
+ {
+  "slug": "product-sold",
+  "design": "product-sold.html",
+  "route": "/pieces/definition-tee-white",
+  "title": "Product · sold out",
+  "fixture": "sold-out",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "piece",
+   "about-this-piece",
+   "one-number-written-by-hand",
+   "wear-it-with",
+   "keep-exploring",
+   "our-services",
+   "footer"
+  ]
+ },
+ {
+  "slug": "product-sold~notified",
+  "design": "product-sold~notified.html",
+  "route": "/pieces/definition-tee-white",
+  "title": "Product · sold out, notify sent",
+  "fixture": "sold-out",
+  "actions": [
+   {
+    "fill": {
+     "label": "Email address",
+     "scope": "piece",
+     "value": "alex.morgan@example.com"
+    }
+   },
+   {
+    "click": {
+     "role": "button",
+     "name": "^Notify me",
+     "scope": "piece"
+    }
+   }
+  ],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "piece",
+   "about-this-piece",
+   "one-number-written-by-hand",
+   "wear-it-with",
+   "keep-exploring",
+   "our-services",
+   "footer"
+  ]
+ },
+ {
+  "slug": "product-upcoming",
+  "design": "product-upcoming.html",
+  "route": "/pieces/suede-cap-sand",
+  "title": "Product · upcoming",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "piece",
+   "about-this-piece",
+   "one-number-written-by-hand",
+   "wear-it-with",
+   "keep-exploring",
+   "our-services",
+   "footer"
+  ]
+ },
+ {
+  "slug": "pieces",
+  "design": "pieces.html",
+  "route": "/pieces",
+  "title": "All pieces · index",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "all-pieces",
+   "pieces",
+   "footer"
+  ]
+ },
+ {
+  "slug": "pieces~gallery",
+  "design": "pieces~gallery.html",
+  "route": "/pieces?view=gallery",
+  "title": "All pieces · gallery view",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "all-pieces",
+   "pieces",
+   "footer"
+  ]
+ },
+ {
+  "slug": "pieces~available",
+  "design": "pieces~available.html",
+  "route": "/pieces?filter=available",
+  "title": "All pieces · filter available",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "all-pieces",
+   "pieces",
+   "footer"
+  ]
+ },
+ {
+  "slug": "pieces~coming",
+  "design": "pieces~coming.html",
+  "route": "/pieces?filter=coming",
+  "title": "All pieces · filter coming",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "all-pieces",
+   "pieces",
+   "footer"
+  ]
+ },
+ {
+  "slug": "pieces~sold",
+  "design": "pieces~sold.html",
+  "route": "/pieces?filter=sold-out",
+  "title": "All pieces · filter sold out",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "all-pieces",
+   "pieces",
+   "footer"
+  ]
+ },
+ {
+  "slug": "category",
+  "design": "category.html",
+  "route": "/categories/tees",
+  "title": "Category · Tees",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "breadcrumb",
+   "category-intro",
+   "featured-piece",
+   "more-in-category",
+   "from-the-archive",
+   "footer"
+  ]
+ },
+ {
+  "slug": "category-outerwear",
+  "design": "category-outerwear.html",
+  "route": "/categories/outerwear",
+  "title": "Category · Outerwear",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "breadcrumb",
+   "category-intro",
+   "coming-piece",
+   "footer"
+  ]
+ },
+ {
+  "slug": "category-headwear",
+  "design": "category-headwear.html",
+  "route": "/categories/headwear",
+  "title": "Category · Headwear",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "breadcrumb",
+   "category-intro",
+   "coming-piece",
+   "footer"
+  ]
+ },
+ {
+  "slug": "category-silk",
+  "design": "category-silk.html",
+  "route": "/categories/silk",
+  "title": "Category · Silk",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "breadcrumb",
+   "category-intro",
+   "coming-piece",
+   "footer"
+  ]
+ },
+ {
+  "slug": "bag",
+  "design": "bag.html",
+  "route": "/bag",
+  "title": "Bag",
+  "fixture": "bag-normal",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "your-bag",
+   "footer"
+  ]
+ },
+ {
+  "slug": "bag-sold",
+  "design": "bag-sold.html",
+  "route": "/bag",
+  "title": "Bag · sold while in bag",
+  "fixture": "bag-sold-while-in-bag",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "your-bag",
+   "footer"
+  ]
+ },
+ {
+  "slug": "bag-empty",
+  "design": "bag-empty.html",
+  "route": "/bag",
+  "title": "Bag · empty",
+  "fixture": "bag-empty",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "your-bag",
+   "footer"
+  ]
+ },
+ {
+  "slug": "sign-in",
+  "design": "sign-in.html",
+  "route": "/account/sign-in",
+  "title": "Sign in",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "auth",
+   "why-have-an-account",
+   "footer"
+  ]
+ },
+ {
+  "slug": "sign-in~create",
+  "design": "sign-in~create.html",
+  "route": "/account/sign-in?mode=create",
+  "title": "Create account",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "auth",
+   "why-have-an-account",
+   "footer"
+  ]
+ },
+ {
+  "slug": "account",
+  "design": "account.html",
+  "route": "/account",
+  "title": "Account · overview",
+  "fixture": "signed-in",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "account",
+   "footer"
+  ]
+ },
+ {
+  "slug": "account-orders",
+  "design": "account-orders.html",
+  "route": "/account/orders",
+  "title": "Account · orders",
+  "fixture": "signed-in",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "account",
+   "footer"
+  ]
+ },
+ {
+  "slug": "account-addresses",
+  "design": "account-addresses.html",
+  "route": "/account/addresses",
+  "title": "Account · addresses",
+  "fixture": "signed-in",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "account",
+   "footer"
+  ]
+ },
+ {
+  "slug": "account-profile",
+  "design": "account-profile.html",
+  "route": "/account/profile",
+  "title": "Account · profile and emails",
+  "fixture": "signed-in",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "account",
+   "footer"
+  ]
+ },
+ {
+  "slug": "wishlist",
+  "design": "wishlist.html",
+  "route": "/wishlist",
+  "title": "Wishlist · signed in",
+  "fixture": "signed-in",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "wishlist",
+   "footer"
+  ]
+ },
+ {
+  "slug": "wishlist-guest",
+  "design": "wishlist-guest.html",
+  "route": "/wishlist",
+  "title": "Wishlist · guest",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "wishlist",
+   "footer"
+  ]
+ },
+ {
+  "slug": "story",
+  "design": "story.html",
+  "route": "/story",
+  "title": "Story",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "limited-by-design",
+   "what-we-believe",
+   "a-word-you-can-wear",
+   "how-a-piece-is-made",
+   "materials-and-makers",
+   "three-pillars-one-identity",
+   "closing",
+   "footer"
+  ]
+ },
+ {
+  "slug": "care-shipping",
+  "design": "care-shipping.html",
+  "route": "/client-care/shipping",
+  "title": "Shipping and delivery",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "care",
+   "footer"
+  ]
+ },
+ {
+  "slug": "care-returns",
+  "design": "care-returns.html",
+  "route": "/client-care/returns",
+  "title": "Returns and exchanges",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "care",
+   "footer"
+  ]
+ },
+ {
+  "slug": "care-faq",
+  "design": "care-faq.html",
+  "route": "/client-care/faq",
+  "title": "Questions",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "care",
+   "footer"
+  ]
+ },
+ {
+  "slug": "care-contact",
+  "design": "care-contact.html",
+  "route": "/client-care/contact",
+  "title": "Contact",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "care",
+   "footer"
+  ]
+ },
+ {
+  "slug": "care-terms",
+  "design": "care-terms.html",
+  "route": "/legal/terms",
+  "title": "Terms of sale",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "care",
+   "footer"
+  ]
+ },
+ {
+  "slug": "care-privacy",
+  "design": "care-privacy.html",
+  "route": "/legal/privacy",
+  "title": "Privacy notice",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "care",
+   "footer"
+  ]
+ },
+ {
+  "slug": "care-cookies",
+  "design": "care-cookies.html",
+  "route": "/legal/cookies",
+  "title": "Cookies",
+  "fixture": "",
+  "actions": [],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "care",
+   "footer"
+  ]
+ },
+ {
+  "slug": "care-contact~sent",
+  "design": "care-contact~sent.html",
+  "route": "/client-care/contact",
+  "title": "Contact · message sent",
+  "fixture": "",
+  "actions": [
+   {
+    "fillForm": {
+     "scope": "care"
+    }
+   },
+   {
+    "click": {
+     "role": "button",
+     "name": "^Send",
+     "scope": "care"
+    }
+   }
+  ],
+  "only": null,
+  "blocks": [
+   "announcement",
+   "header",
+   "care",
+   "footer"
+  ]
+ }
+]

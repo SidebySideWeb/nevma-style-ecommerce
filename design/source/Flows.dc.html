@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>NEVMA Style — User flows</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&amp;family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#ECE7DE}
+.f-f{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif}
+.f-row{display:flex;flex-wrap:wrap;align-items:stretch;gap:12px 0}
+.f-step{flex:1 1 150px;min-width:150px;max-width:230px;box-sizing:border-box;padding:14px 16px;border-radius:6px;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.4}
+.f-arr{flex:0 0 34px;display:flex;align-items:center;justify-content:center;color:#615D55}
+.k-site{background:#F5F2EC;border:1px solid #0B0B0C}
+.k-shop{background:#FFFFFF;border:1px solid #8A8274}
+.k-viva{background:#ECE7DE;border:1px dashed #0B0B0C}
+.k-data{background:#000000;color:#F5F5F7;border:1px solid #000000}
+.k-mail{background:#E3DDD2;border:1px solid #CFC7B8}
+.f-tag{font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;opacity:0.8}
+.f-br{margin-top:12px;padding:14px 18px;border-left:0;border-top:1px dashed #8A8274;display:flex;flex-direction:column;gap:6px;font-size:14px;color:#3E3B35}
+.f-sec{display:flex;flex-direction:column;gap:18px;padding:36px 0;border-top:1px solid #CFC7B8}
+.f-h{margin:0;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:400;letter-spacing:0.34em;text-transform:uppercase}
+</style>
+</helmet>
+<div style="background: #ECE7DE; color: #0B0B0C; font-family: 'Nunito Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; line-height: 1.55; min-height: 100vh">
+<div style="max-width: 1360px; margin: 0 auto; padding: 64px 40px 96px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; padding-bottom: 20px">
+<div style="display: flex; flex-direction: column; gap: 10px"><p class="f-f" style="margin: 0; font-size: 12px; font-weight: 500; letter-spacing: 0.34em; text-transform: uppercase; color: #615D55">NEVMA Style · Phase 2 shop</p><h1 class="f-f" style="margin: 0; font-size: 40px; font-weight: 300; letter-spacing: 0.2em; text-transform: uppercase">User flows</h1></div>
+<ul aria-label="Legend" style="list-style: none; margin: 0; padding: 0; display: flex; gap: 10px; flex-wrap: wrap; font-size: 13px">
+<li class="k-site" style="padding: 6px 12px; border-radius: 100px">Style site · Astro</li>
+<li class="k-shop" style="padding: 6px 12px; border-radius: 100px">Shopify (hosted)</li>
+<li class="k-viva" style="padding: 6px 12px; border-radius: 100px">Viva (hosted)</li>
+<li class="k-data" style="padding: 6px 12px; border-radius: 100px">Data · Sanity</li>
+<li class="k-mail" style="padding: 6px 12px; border-radius: 100px">Email · Resend / Shopify</li>
+</ul>
+</div>
+
+<section class="f-sec" aria-labelledby="f1">
+<h2 id="f1" class="f-h">1 · Buy a piece</h2>
+<div class="f-row">
+<div class="f-step k-site"><span class="f-tag">Site</span><strong>Home or drop</strong><span>Edition meter on every piece</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-site"><span class="f-tag">Site</span><strong>Product page</strong><span>Pick size; live stock per size</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-site"><span class="f-tag">Site · Cart API</span><strong>Add to bag</strong><span>Drawer opens; nothing held</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-site"><span class="f-tag">Site</span><strong>Bag</strong><span>Stock re-checked on load</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-shop"><span class="f-tag">Shopify</span><strong>One-page checkout</strong><span>Contact, delivery, shipping, Viva</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-viva"><span class="f-tag">Viva</span><strong>Pay</strong><span>Card, Apple Pay, Google Pay</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-shop"><span class="f-tag">Shopify</span><strong>Thank you</strong><span>Order paid, stock taken</span></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 16px">
+<div class="f-br"><strong style="color: #0B0B0C">Payment not completed</strong><span>Viva returns “failed” or “cancelled” → back to checkout with a message; nothing charged; bag kept.</span></div>
+<div class="f-br"><strong style="color: #0B0B0C">Sold while in the bag</strong><span>Bag shows the piece as found a home and removes it from the total. Shopify also blocks it at checkout.</span></div>
+<div class="f-br"><strong style="color: #0B0B0C">Sold during payment</strong><span>Order not completed, payment voided or refunded, email sent. To test with Viva before launch.</span></div>
+</div>
+<div class="f-row" style="margin-top: 6px">
+<div class="f-step k-mail"><span class="f-tag">Shopify email</span><strong>Order confirmed</strong><span>Receipt, branded</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-shop"><span class="f-tag">Shopify admin</span><strong>Numbered &amp; packed</strong><span>N° saved on the order line</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-mail"><span class="f-tag">Shopify email</span><strong>Shipped</strong><span>Tracking and numbers</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-site"><span class="f-tag">Site · Customer Account API</span><strong>Account · Orders</strong><span>Status and N° of each piece</span></div>
+</div>
+</section>
+
+<section class="f-sec" aria-labelledby="f2">
+<h2 id="f2" class="f-h">2 · Upcoming drop (also the Phase 1 site)</h2>
+<div class="f-row">
+<div class="f-step k-site"><span class="f-tag">Site</span><strong>Upcoming piece</strong><span>Veiled photos, countdown, no price</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-site"><span class="f-tag">Site · Turnstile</span><strong>Notify me</strong><span>Email, optional letter consent</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-data"><span class="f-tag">Sanity</span><strong>form submission</strong><span>form: notify, drop: STYLE 002</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-mail"><span class="f-tag">Resend</span><strong>Confirmation</strong><span>“You’re on the list”</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-mail"><span class="f-tag">Resend · scheduled</span><strong>Drop is open</strong><span>Sent at 18:00 GMT, then the request is deleted</span></div>
+</div>
+</section>
+
+<section class="f-sec" aria-labelledby="f3">
+<h2 id="f3" class="f-h">3 · Sign in or create account</h2>
+<div class="f-row">
+<div class="f-step k-site"><span class="f-tag">Site</span><strong>Sign in / Create</strong><span>Email (and name for new)</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-shop"><span class="f-tag">Shopify customer accounts</span><strong>6-digit code</strong><span>Passwordless; Shopify-hosted step, our branding</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-site"><span class="f-tag">Site · OAuth callback</span><strong>Signed in</strong><span>Session cookie on the Style domain</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-site"><span class="f-tag">Site</span><strong>Account</strong><span>Orders, addresses, profile, emails</span></div>
+</div>
+<div class="f-br"><strong style="color: #0B0B0C">First sign-in = registration</strong><span>The same code creates the customer in Shopify. Name and email preferences are saved as customer fields and tags (drop alerts, letter).</span></div>
+</section>
+
+<section class="f-sec" aria-labelledby="f4">
+<h2 id="f4" class="f-h">4 · Wishlist</h2>
+<div class="f-row">
+<div class="f-step k-site"><span class="f-tag">Site</span><strong>Heart on a piece</strong><span>Works signed out</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-site"><span class="f-tag">Browser</span><strong>Saved on device</strong><span>Prompt to sign in</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-data"><span class="f-tag">Sanity</span><strong>Synced on sign-in</strong><span>Keyed by Shopify customer ID</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-mail"><span class="f-tag">Resend</span><strong>Last-piece alert</strong><span>When a saved piece drops to 1</span></div>
+</div>
+<div class="f-br"><strong style="color: #0B0B0C">Why not a Shopify app</strong><span>Wishlist apps inject into Shopify themes; a headless site doesn’t use one. A small table we own is simpler. Option: a customer metafield list instead, with no alerts.</span></div>
+</section>
+
+<section class="f-sec" aria-labelledby="f5">
+<h2 id="f5" class="f-h">5 · Where “3 of 5 left” comes from</h2>
+<div class="f-row">
+<div class="f-step k-shop"><span class="f-tag">Shopify</span><strong>Inventory</strong><span>Real count per size, 5 per colourway</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-site"><span class="f-tag">Storefront API</span><strong>quantityAvailable</strong><span>Needs the inventory read scope</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-site"><span class="f-tag">Astro server island</span><strong>Edition meter</strong><span>Never cached long; page shell is cached</span></div><div class="f-arr" aria-hidden="true">→</div>
+<div class="f-step k-shop"><span class="f-tag">Webhook</span><strong>inventory change</strong><span>Refreshes drop, home and Music block</span></div>
+</div>
+<div class="f-br"><strong style="color: #0B0B0C">Edition size</strong><span>“of 5” is a product field (Shopify metafield), not computed, so a sale never changes it. Editorial text, drops and lookbooks come from Sanity, linked by product handle.</span></div>
+</section>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3600}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

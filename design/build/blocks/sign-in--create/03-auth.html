@@ -1,0 +1,35 @@
+<!-- Create account · block "auth" · exact markup from the design (classes + inline styles). Port to a component without changing values. -->
+<div class="s-form" data-block="auth">
+<div style="width: 100%; max-width: 440px; display: flex; flex-direction: column; gap: 28px">
+
+
+<div style="display: flex; flex-direction: column; gap: 28px">
+<h1 class="s-disp" style="margin: 0; font-size: clamp(26px, 2.6vw, 36px); letter-spacing: 0.22em">Create account</h1>
+<div role="tablist" aria-label="Account" style="display: flex">
+<button type="button" role="tab" class="s-tab" aria-selected="false">Sign in</button>
+<button type="button" role="tab" class="s-tab" aria-selected="true">Create account</button>
+</div>
+<form style="display: flex; flex-direction: column; gap: 18px">
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px"><div><label for="r-fn" class="s-lbl">First name</label><input id="r-fn" class="s-in" autocomplete="given-name"></div><div><label for="r-ln" class="s-lbl">Last name</label><input id="r-ln" class="s-in" autocomplete="family-name"></div></div>
+
+<div><label for="a-email" class="s-lbl">Email</label><input id="a-email" class="s-in" type="email" autocomplete="email" value="alex.morgan@example.com"></div>
+
+<fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px">
+<legend class="s-vh">Emails</legend>
+<label style="display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px"><input type="checkbox" checked="" style="width: 18px; height: 18px; margin: 3px 0 0; accent-color: #0B0B0C"> Email me when a drop opens</label>
+<label style="display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px"><input type="checkbox" style="width: 18px; height: 18px; margin: 3px 0 0; accent-color: #0B0B0C"> Send me the NEVMA Style letter, about once a month</label>
+</fieldset>
+
+<button type="submit" class="s-btn s-btn-p" style="width: 100%">Create account</button>
+<p style="margin: 0; font-size: 14px; color: #3E3B35">No password. We email you a 6-digit code each time you sign in. By creating an account you accept the Terms of sale and Privacy notice.</p>
+</form>
+</div>
+
+
+
+
+
+
+</div>
+</div>

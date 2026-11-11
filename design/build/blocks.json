@@ -1,0 +1,3744 @@
+[
+ {
+  "slug": "home",
+  "file": "home.html",
+  "title": "Home",
+  "route": "/",
+  "board": "Main",
+  "source": "01-home",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/home/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/home/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "hero",
+    "snippet": "blocks/home/03-hero.html",
+    "y_h_desktop": [
+     117,
+     821
+    ],
+    "y_h_phone": [
+     161,
+     1180
+    ]
+   },
+   {
+    "id": "the-pieces",
+    "snippet": "blocks/home/04-the-pieces.html",
+    "y_h_desktop": [
+     938,
+     903
+    ],
+    "y_h_phone": [
+     1341,
+     1941
+    ]
+   },
+   {
+    "id": "signal",
+    "snippet": "blocks/home/05-signal.html",
+    "y_h_desktop": [
+     1841,
+     666
+    ],
+    "y_h_phone": [
+     3282,
+     910
+    ]
+   },
+   {
+    "id": "five-then-never-again",
+    "snippet": "blocks/home/06-five-then-never-again.html",
+    "y_h_desktop": [
+     2507,
+     489
+    ],
+    "y_h_phone": [
+     4192,
+     1094
+    ]
+   },
+   {
+    "id": "story-teaser",
+    "snippet": "blocks/home/07-story-teaser.html",
+    "y_h_desktop": [
+     2996,
+     663
+    ],
+    "y_h_phone": [
+     5286,
+     765
+    ]
+   },
+   {
+    "id": "the-world-of-nevma",
+    "snippet": "blocks/home/08-the-world-of-nevma.html",
+    "y_h_desktop": [
+     3659,
+     706
+    ],
+    "y_h_phone": [
+     6051,
+     817
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/home/09-footer.html",
+    "y_h_desktop": [
+     4365,
+     483
+    ],
+    "y_h_phone": [
+     6868,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "home~notified",
+  "file": "home~notified.html",
+  "title": "Home · notify form sent",
+  "route": "/",
+  "board": "Main",
+  "source": "01-home",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/home--notified/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/home--notified/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "hero",
+    "snippet": "blocks/home--notified/03-hero.html",
+    "y_h_desktop": [
+     117,
+     821
+    ],
+    "y_h_phone": [
+     161,
+     1180
+    ]
+   },
+   {
+    "id": "the-pieces",
+    "snippet": "blocks/home--notified/04-the-pieces.html",
+    "y_h_desktop": [
+     938,
+     903
+    ],
+    "y_h_phone": [
+     1341,
+     1941
+    ]
+   },
+   {
+    "id": "signal",
+    "snippet": "blocks/home--notified/05-signal.html",
+    "y_h_desktop": [
+     1841,
+     666
+    ],
+    "y_h_phone": [
+     3282,
+     910
+    ]
+   },
+   {
+    "id": "five-then-never-again",
+    "snippet": "blocks/home--notified/06-five-then-never-again.html",
+    "y_h_desktop": [
+     2507,
+     489
+    ],
+    "y_h_phone": [
+     4192,
+     1094
+    ]
+   },
+   {
+    "id": "story-teaser",
+    "snippet": "blocks/home--notified/07-story-teaser.html",
+    "y_h_desktop": [
+     2996,
+     663
+    ],
+    "y_h_phone": [
+     5286,
+     765
+    ]
+   },
+   {
+    "id": "the-world-of-nevma",
+    "snippet": "blocks/home--notified/08-the-world-of-nevma.html",
+    "y_h_desktop": [
+     3659,
+     706
+    ],
+    "y_h_phone": [
+     6051,
+     817
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/home--notified/09-footer.html",
+    "y_h_desktop": [
+     4365,
+     483
+    ],
+    "y_h_phone": [
+     6868,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "home~menu",
+  "file": "home~menu.html",
+  "title": "Home · phone menu open",
+  "route": "/",
+  "board": "Main",
+  "source": "01-home",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/home--menu/01-announcement.html",
+    "y_h_desktop": null,
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/home--menu/02-header.html",
+    "y_h_desktop": null,
+    "y_h_phone": [
+     84,
+     364
+    ]
+   },
+   {
+    "id": "hero",
+    "snippet": "blocks/home--menu/03-hero.html",
+    "y_h_desktop": null,
+    "y_h_phone": [
+     448,
+     1180
+    ]
+   },
+   {
+    "id": "the-pieces",
+    "snippet": "blocks/home--menu/04-the-pieces.html",
+    "y_h_desktop": null,
+    "y_h_phone": [
+     1628,
+     1941
+    ]
+   },
+   {
+    "id": "signal",
+    "snippet": "blocks/home--menu/05-signal.html",
+    "y_h_desktop": null,
+    "y_h_phone": [
+     3569,
+     910
+    ]
+   },
+   {
+    "id": "five-then-never-again",
+    "snippet": "blocks/home--menu/06-five-then-never-again.html",
+    "y_h_desktop": null,
+    "y_h_phone": [
+     4479,
+     1094
+    ]
+   },
+   {
+    "id": "story-teaser",
+    "snippet": "blocks/home--menu/07-story-teaser.html",
+    "y_h_desktop": null,
+    "y_h_phone": [
+     5573,
+     765
+    ]
+   },
+   {
+    "id": "the-world-of-nevma",
+    "snippet": "blocks/home--menu/08-the-world-of-nevma.html",
+    "y_h_desktop": null,
+    "y_h_phone": [
+     6338,
+     817
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/home--menu/09-footer.html",
+    "y_h_desktop": null,
+    "y_h_phone": [
+     7155,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "drop",
+  "file": "drop.html",
+  "title": "Drop · STYLE 001",
+  "route": "/drops/style-001",
+  "board": "Drop",
+  "source": "02-drop",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/drop/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/drop/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "breadcrumb",
+    "snippet": "blocks/drop/03-breadcrumb.html",
+    "y_h_desktop": [
+     117,
+     46
+    ],
+    "y_h_phone": [
+     161,
+     46
+    ]
+   },
+   {
+    "id": "drop-intro",
+    "snippet": "blocks/drop/04-drop-intro.html",
+    "y_h_desktop": [
+     163,
+     576
+    ],
+    "y_h_phone": [
+     206,
+     839
+    ]
+   },
+   {
+    "id": "drop-pieces",
+    "snippet": "blocks/drop/05-drop-pieces.html",
+    "y_h_desktop": [
+     738,
+     2605
+    ],
+    "y_h_phone": [
+     1045,
+     2975
+    ]
+   },
+   {
+    "id": "the-definition",
+    "snippet": "blocks/drop/06-the-definition.html",
+    "y_h_desktop": [
+     3344,
+     460
+    ],
+    "y_h_phone": [
+     4020,
+     460
+    ]
+   },
+   {
+    "id": "drop-notes",
+    "snippet": "blocks/drop/07-drop-notes.html",
+    "y_h_desktop": [
+     3804,
+     542
+    ],
+    "y_h_phone": [
+     4480,
+     627
+    ]
+   },
+   {
+    "id": "other-drops",
+    "snippet": "blocks/drop/08-other-drops.html",
+    "y_h_desktop": [
+     4345,
+     219
+    ],
+    "y_h_phone": [
+     5107,
+     349
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/drop/09-footer.html",
+    "y_h_desktop": [
+     4564,
+     483
+    ],
+    "y_h_phone": [
+     5456,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "product",
+  "file": "product.html",
+  "title": "Product · available",
+  "route": "/pieces/definition-tee-white",
+  "board": "Product",
+  "source": "03-product",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/product/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/product/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "piece",
+    "snippet": "blocks/product/03-piece.html",
+    "y_h_desktop": [
+     117,
+     840
+    ],
+    "y_h_phone": [
+     161,
+     1226
+    ]
+   },
+   {
+    "id": "about-this-piece",
+    "snippet": "blocks/product/04-about-this-piece.html",
+    "y_h_desktop": [
+     957,
+     629
+    ],
+    "y_h_phone": [
+     1387,
+     946
+    ]
+   },
+   {
+    "id": "one-number-written-by-hand",
+    "snippet": "blocks/product/05-one-number-written-by-hand.html",
+    "y_h_desktop": [
+     1586,
+     1052
+    ],
+    "y_h_phone": [
+     2333,
+     591
+    ]
+   },
+   {
+    "id": "wear-it-with",
+    "snippet": "blocks/product/06-wear-it-with.html",
+    "y_h_desktop": [
+     2637,
+     1021
+    ],
+    "y_h_phone": [
+     2924,
+     962
+    ]
+   },
+   {
+    "id": "keep-exploring",
+    "snippet": "blocks/product/07-keep-exploring.html",
+    "y_h_desktop": [
+     3658,
+     619
+    ],
+    "y_h_phone": [
+     3887,
+     1160
+    ]
+   },
+   {
+    "id": "our-services",
+    "snippet": "blocks/product/08-our-services.html",
+    "y_h_desktop": [
+     4277,
+     202
+    ],
+    "y_h_phone": [
+     5047,
+     591
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/product/09-footer.html",
+    "y_h_desktop": [
+     4479,
+     483
+    ],
+    "y_h_phone": [
+     5638,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "product~size",
+  "file": "product~size.html",
+  "title": "Product · size L chosen",
+  "route": "/pieces/definition-tee-white",
+  "board": "Product",
+  "source": "03-product",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/product--size/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/product--size/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "piece",
+    "snippet": "blocks/product--size/03-piece.html",
+    "y_h_desktop": [
+     117,
+     840
+    ],
+    "y_h_phone": [
+     161,
+     1226
+    ]
+   },
+   {
+    "id": "about-this-piece",
+    "snippet": "blocks/product--size/04-about-this-piece.html",
+    "y_h_desktop": [
+     957,
+     629
+    ],
+    "y_h_phone": [
+     1387,
+     946
+    ]
+   },
+   {
+    "id": "one-number-written-by-hand",
+    "snippet": "blocks/product--size/05-one-number-written-by-hand.html",
+    "y_h_desktop": [
+     1586,
+     1052
+    ],
+    "y_h_phone": [
+     2333,
+     591
+    ]
+   },
+   {
+    "id": "wear-it-with",
+    "snippet": "blocks/product--size/06-wear-it-with.html",
+    "y_h_desktop": [
+     2637,
+     1021
+    ],
+    "y_h_phone": [
+     2924,
+     962
+    ]
+   },
+   {
+    "id": "keep-exploring",
+    "snippet": "blocks/product--size/07-keep-exploring.html",
+    "y_h_desktop": [
+     3658,
+     619
+    ],
+    "y_h_phone": [
+     3887,
+     1160
+    ]
+   },
+   {
+    "id": "our-services",
+    "snippet": "blocks/product--size/08-our-services.html",
+    "y_h_desktop": [
+     4277,
+     202
+    ],
+    "y_h_phone": [
+     5047,
+     591
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/product--size/09-footer.html",
+    "y_h_desktop": [
+     4479,
+     483
+    ],
+    "y_h_phone": [
+     5638,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "product~added",
+  "file": "product~added.html",
+  "title": "Product · added, bag drawer open",
+  "route": "/pieces/definition-tee-white",
+  "board": "Product",
+  "source": "03-product",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/product--added/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/product--added/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "piece",
+    "snippet": "blocks/product--added/03-piece.html",
+    "y_h_desktop": [
+     117,
+     840
+    ],
+    "y_h_phone": [
+     161,
+     1226
+    ]
+   },
+   {
+    "id": "about-this-piece",
+    "snippet": "blocks/product--added/04-about-this-piece.html",
+    "y_h_desktop": [
+     957,
+     629
+    ],
+    "y_h_phone": [
+     1387,
+     946
+    ]
+   },
+   {
+    "id": "one-number-written-by-hand",
+    "snippet": "blocks/product--added/05-one-number-written-by-hand.html",
+    "y_h_desktop": [
+     1586,
+     1052
+    ],
+    "y_h_phone": [
+     2333,
+     591
+    ]
+   },
+   {
+    "id": "wear-it-with",
+    "snippet": "blocks/product--added/06-wear-it-with.html",
+    "y_h_desktop": [
+     2637,
+     1021
+    ],
+    "y_h_phone": [
+     2924,
+     962
+    ]
+   },
+   {
+    "id": "keep-exploring",
+    "snippet": "blocks/product--added/07-keep-exploring.html",
+    "y_h_desktop": [
+     3658,
+     619
+    ],
+    "y_h_phone": [
+     3887,
+     1160
+    ]
+   },
+   {
+    "id": "our-services",
+    "snippet": "blocks/product--added/08-our-services.html",
+    "y_h_desktop": [
+     4277,
+     202
+    ],
+    "y_h_phone": [
+     5047,
+     591
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/product--added/09-footer.html",
+    "y_h_desktop": [
+     4479,
+     483
+    ],
+    "y_h_phone": [
+     5638,
+     854
+    ]
+   },
+   {
+    "id": "bag-scrim",
+    "snippet": "blocks/product--added/10-bag-scrim.html",
+    "y_h_desktop": [
+     0,
+     900
+    ],
+    "y_h_phone": [
+     0,
+     844
+    ]
+   },
+   {
+    "id": "bag-drawer",
+    "snippet": "blocks/product--added/11-bag-drawer.html",
+    "y_h_desktop": [
+     0,
+     900
+    ],
+    "y_h_phone": [
+     0,
+     844
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "product~saved",
+  "file": "product~saved.html",
+  "title": "Product · saved to wishlist",
+  "route": "/pieces/definition-tee-white",
+  "board": "Product",
+  "source": "03-product",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/product--saved/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/product--saved/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "piece",
+    "snippet": "blocks/product--saved/03-piece.html",
+    "y_h_desktop": [
+     117,
+     840
+    ],
+    "y_h_phone": [
+     161,
+     1226
+    ]
+   },
+   {
+    "id": "about-this-piece",
+    "snippet": "blocks/product--saved/04-about-this-piece.html",
+    "y_h_desktop": [
+     957,
+     629
+    ],
+    "y_h_phone": [
+     1387,
+     946
+    ]
+   },
+   {
+    "id": "one-number-written-by-hand",
+    "snippet": "blocks/product--saved/05-one-number-written-by-hand.html",
+    "y_h_desktop": [
+     1586,
+     1052
+    ],
+    "y_h_phone": [
+     2333,
+     591
+    ]
+   },
+   {
+    "id": "wear-it-with",
+    "snippet": "blocks/product--saved/06-wear-it-with.html",
+    "y_h_desktop": [
+     2637,
+     1021
+    ],
+    "y_h_phone": [
+     2924,
+     962
+    ]
+   },
+   {
+    "id": "keep-exploring",
+    "snippet": "blocks/product--saved/07-keep-exploring.html",
+    "y_h_desktop": [
+     3658,
+     619
+    ],
+    "y_h_phone": [
+     3887,
+     1160
+    ]
+   },
+   {
+    "id": "our-services",
+    "snippet": "blocks/product--saved/08-our-services.html",
+    "y_h_desktop": [
+     4277,
+     202
+    ],
+    "y_h_phone": [
+     5047,
+     591
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/product--saved/09-footer.html",
+    "y_h_desktop": [
+     4479,
+     483
+    ],
+    "y_h_phone": [
+     5638,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "product-last",
+  "file": "product-last.html",
+  "title": "Product · last piece",
+  "route": "/pieces/definition-tee-white",
+  "board": "Product",
+  "source": "03-product",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/product-last/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/product-last/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "piece",
+    "snippet": "blocks/product-last/03-piece.html",
+    "y_h_desktop": [
+     117,
+     840
+    ],
+    "y_h_phone": [
+     161,
+     1226
+    ]
+   },
+   {
+    "id": "about-this-piece",
+    "snippet": "blocks/product-last/04-about-this-piece.html",
+    "y_h_desktop": [
+     957,
+     629
+    ],
+    "y_h_phone": [
+     1387,
+     946
+    ]
+   },
+   {
+    "id": "one-number-written-by-hand",
+    "snippet": "blocks/product-last/05-one-number-written-by-hand.html",
+    "y_h_desktop": [
+     1586,
+     1052
+    ],
+    "y_h_phone": [
+     2333,
+     591
+    ]
+   },
+   {
+    "id": "wear-it-with",
+    "snippet": "blocks/product-last/06-wear-it-with.html",
+    "y_h_desktop": [
+     2637,
+     1021
+    ],
+    "y_h_phone": [
+     2924,
+     962
+    ]
+   },
+   {
+    "id": "keep-exploring",
+    "snippet": "blocks/product-last/07-keep-exploring.html",
+    "y_h_desktop": [
+     3658,
+     619
+    ],
+    "y_h_phone": [
+     3887,
+     1160
+    ]
+   },
+   {
+    "id": "our-services",
+    "snippet": "blocks/product-last/08-our-services.html",
+    "y_h_desktop": [
+     4277,
+     202
+    ],
+    "y_h_phone": [
+     5047,
+     591
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/product-last/09-footer.html",
+    "y_h_desktop": [
+     4479,
+     483
+    ],
+    "y_h_phone": [
+     5638,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "product-sold",
+  "file": "product-sold.html",
+  "title": "Product · sold out",
+  "route": "/pieces/definition-tee-white",
+  "board": "Product",
+  "source": "03-product",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/product-sold/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/product-sold/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "piece",
+    "snippet": "blocks/product-sold/03-piece.html",
+    "y_h_desktop": [
+     117,
+     840
+    ],
+    "y_h_phone": [
+     161,
+     1079
+    ]
+   },
+   {
+    "id": "about-this-piece",
+    "snippet": "blocks/product-sold/04-about-this-piece.html",
+    "y_h_desktop": [
+     957,
+     629
+    ],
+    "y_h_phone": [
+     1240,
+     946
+    ]
+   },
+   {
+    "id": "one-number-written-by-hand",
+    "snippet": "blocks/product-sold/05-one-number-written-by-hand.html",
+    "y_h_desktop": [
+     1586,
+     1052
+    ],
+    "y_h_phone": [
+     2186,
+     591
+    ]
+   },
+   {
+    "id": "wear-it-with",
+    "snippet": "blocks/product-sold/06-wear-it-with.html",
+    "y_h_desktop": [
+     2637,
+     1021
+    ],
+    "y_h_phone": [
+     2777,
+     962
+    ]
+   },
+   {
+    "id": "keep-exploring",
+    "snippet": "blocks/product-sold/07-keep-exploring.html",
+    "y_h_desktop": [
+     3658,
+     619
+    ],
+    "y_h_phone": [
+     3740,
+     1160
+    ]
+   },
+   {
+    "id": "our-services",
+    "snippet": "blocks/product-sold/08-our-services.html",
+    "y_h_desktop": [
+     4277,
+     202
+    ],
+    "y_h_phone": [
+     4900,
+     591
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/product-sold/09-footer.html",
+    "y_h_desktop": [
+     4479,
+     483
+    ],
+    "y_h_phone": [
+     5491,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "product-sold~notified",
+  "file": "product-sold~notified.html",
+  "title": "Product · sold out, notify sent",
+  "route": "/pieces/definition-tee-white",
+  "board": "Product",
+  "source": "03-product",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/product-sold--notified/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/product-sold--notified/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "piece",
+    "snippet": "blocks/product-sold--notified/03-piece.html",
+    "y_h_desktop": [
+     117,
+     840
+    ],
+    "y_h_phone": [
+     161,
+     908
+    ]
+   },
+   {
+    "id": "about-this-piece",
+    "snippet": "blocks/product-sold--notified/04-about-this-piece.html",
+    "y_h_desktop": [
+     957,
+     629
+    ],
+    "y_h_phone": [
+     1069,
+     946
+    ]
+   },
+   {
+    "id": "one-number-written-by-hand",
+    "snippet": "blocks/product-sold--notified/05-one-number-written-by-hand.html",
+    "y_h_desktop": [
+     1586,
+     1052
+    ],
+    "y_h_phone": [
+     2014,
+     591
+    ]
+   },
+   {
+    "id": "wear-it-with",
+    "snippet": "blocks/product-sold--notified/06-wear-it-with.html",
+    "y_h_desktop": [
+     2637,
+     1021
+    ],
+    "y_h_phone": [
+     2606,
+     962
+    ]
+   },
+   {
+    "id": "keep-exploring",
+    "snippet": "blocks/product-sold--notified/07-keep-exploring.html",
+    "y_h_desktop": [
+     3658,
+     619
+    ],
+    "y_h_phone": [
+     3568,
+     1160
+    ]
+   },
+   {
+    "id": "our-services",
+    "snippet": "blocks/product-sold--notified/08-our-services.html",
+    "y_h_desktop": [
+     4277,
+     202
+    ],
+    "y_h_phone": [
+     4728,
+     591
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/product-sold--notified/09-footer.html",
+    "y_h_desktop": [
+     4479,
+     483
+    ],
+    "y_h_phone": [
+     5320,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "product-upcoming",
+  "file": "product-upcoming.html",
+  "title": "Product · upcoming",
+  "route": "/pieces/suede-cap-sand",
+  "board": "Product",
+  "source": "03-product",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/product-upcoming/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/product-upcoming/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "piece",
+    "snippet": "blocks/product-upcoming/03-piece.html",
+    "y_h_desktop": [
+     117,
+     840
+    ],
+    "y_h_phone": [
+     161,
+     1204
+    ]
+   },
+   {
+    "id": "about-this-piece",
+    "snippet": "blocks/product-upcoming/04-about-this-piece.html",
+    "y_h_desktop": [
+     957,
+     629
+    ],
+    "y_h_phone": [
+     1365,
+     922
+    ]
+   },
+   {
+    "id": "one-number-written-by-hand",
+    "snippet": "blocks/product-upcoming/05-one-number-written-by-hand.html",
+    "y_h_desktop": [
+     1586,
+     1052
+    ],
+    "y_h_phone": [
+     2287,
+     591
+    ]
+   },
+   {
+    "id": "wear-it-with",
+    "snippet": "blocks/product-upcoming/06-wear-it-with.html",
+    "y_h_desktop": [
+     2637,
+     1021
+    ],
+    "y_h_phone": [
+     2878,
+     962
+    ]
+   },
+   {
+    "id": "keep-exploring",
+    "snippet": "blocks/product-upcoming/07-keep-exploring.html",
+    "y_h_desktop": [
+     3658,
+     619
+    ],
+    "y_h_phone": [
+     3841,
+     1160
+    ]
+   },
+   {
+    "id": "our-services",
+    "snippet": "blocks/product-upcoming/08-our-services.html",
+    "y_h_desktop": [
+     4277,
+     202
+    ],
+    "y_h_phone": [
+     5001,
+     591
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/product-upcoming/09-footer.html",
+    "y_h_desktop": [
+     4479,
+     483
+    ],
+    "y_h_phone": [
+     5592,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pieces",
+  "file": "pieces.html",
+  "title": "All pieces · index",
+  "route": "/pieces",
+  "board": "Archive",
+  "source": "04-all-pieces",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/pieces/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/pieces/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "all-pieces",
+    "snippet": "blocks/pieces/03-all-pieces.html",
+    "y_h_desktop": [
+     117,
+     378
+    ],
+    "y_h_phone": [
+     161,
+     513
+    ]
+   },
+   {
+    "id": "pieces",
+    "snippet": "blocks/pieces/04-pieces.html",
+    "y_h_desktop": [
+     495,
+     812
+    ],
+    "y_h_phone": [
+     674,
+     783
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/pieces/05-footer.html",
+    "y_h_desktop": [
+     1307,
+     483
+    ],
+    "y_h_phone": [
+     1457,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pieces~gallery",
+  "file": "pieces~gallery.html",
+  "title": "All pieces · gallery view",
+  "route": "/pieces?view=gallery",
+  "board": "Archive",
+  "source": "04-all-pieces",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/pieces--gallery/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/pieces--gallery/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "all-pieces",
+    "snippet": "blocks/pieces--gallery/03-all-pieces.html",
+    "y_h_desktop": [
+     117,
+     378
+    ],
+    "y_h_phone": [
+     161,
+     513
+    ]
+   },
+   {
+    "id": "pieces",
+    "snippet": "blocks/pieces--gallery/04-pieces.html",
+    "y_h_desktop": [
+     495,
+     1258
+    ],
+    "y_h_phone": [
+     674,
+     3370
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/pieces--gallery/05-footer.html",
+    "y_h_desktop": [
+     1753,
+     483
+    ],
+    "y_h_phone": [
+     4044,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pieces~available",
+  "file": "pieces~available.html",
+  "title": "All pieces · filter available",
+  "route": "/pieces?filter=available",
+  "board": "Archive",
+  "source": "04-all-pieces",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/pieces--available/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/pieces--available/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "all-pieces",
+    "snippet": "blocks/pieces--available/03-all-pieces.html",
+    "y_h_desktop": [
+     117,
+     378
+    ],
+    "y_h_phone": [
+     161,
+     513
+    ]
+   },
+   {
+    "id": "pieces",
+    "snippet": "blocks/pieces--available/04-pieces.html",
+    "y_h_desktop": [
+     495,
+     360
+    ],
+    "y_h_phone": [
+     674,
+     331
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/pieces--available/05-footer.html",
+    "y_h_desktop": [
+     855,
+     483
+    ],
+    "y_h_phone": [
+     1005,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pieces~coming",
+  "file": "pieces~coming.html",
+  "title": "All pieces · filter coming",
+  "route": "/pieces?filter=coming",
+  "board": "Archive",
+  "source": "04-all-pieces",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/pieces--coming/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/pieces--coming/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "all-pieces",
+    "snippet": "blocks/pieces--coming/03-all-pieces.html",
+    "y_h_desktop": [
+     117,
+     378
+    ],
+    "y_h_phone": [
+     161,
+     513
+    ]
+   },
+   {
+    "id": "pieces",
+    "snippet": "blocks/pieces--coming/04-pieces.html",
+    "y_h_desktop": [
+     495,
+     473
+    ],
+    "y_h_phone": [
+     674,
+     444
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/pieces--coming/05-footer.html",
+    "y_h_desktop": [
+     968,
+     483
+    ],
+    "y_h_phone": [
+     1118,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pieces~sold",
+  "file": "pieces~sold.html",
+  "title": "All pieces · filter sold out",
+  "route": "/pieces?filter=sold-out",
+  "board": "Archive",
+  "source": "04-all-pieces",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/pieces--sold/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/pieces--sold/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "all-pieces",
+    "snippet": "blocks/pieces--sold/03-all-pieces.html",
+    "y_h_desktop": [
+     117,
+     378
+    ],
+    "y_h_phone": [
+     161,
+     513
+    ]
+   },
+   {
+    "id": "pieces",
+    "snippet": "blocks/pieces--sold/04-pieces.html",
+    "y_h_desktop": [
+     495,
+     247
+    ],
+    "y_h_phone": [
+     674,
+     218
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/pieces--sold/05-footer.html",
+    "y_h_desktop": [
+     742,
+     483
+    ],
+    "y_h_phone": [
+     892,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "category",
+  "file": "category.html",
+  "title": "Category · Tees",
+  "route": "/categories/tees",
+  "board": "Category",
+  "source": "05-category",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/category/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/category/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "breadcrumb",
+    "snippet": "blocks/category/03-breadcrumb.html",
+    "y_h_desktop": [
+     117,
+     46
+    ],
+    "y_h_phone": [
+     161,
+     46
+    ]
+   },
+   {
+    "id": "category-intro",
+    "snippet": "blocks/category/04-category-intro.html",
+    "y_h_desktop": [
+     163,
+     373
+    ],
+    "y_h_phone": [
+     206,
+     477
+    ]
+   },
+   {
+    "id": "featured-piece",
+    "snippet": "blocks/category/05-featured-piece.html",
+    "y_h_desktop": [
+     535,
+     713
+    ],
+    "y_h_phone": [
+     684,
+     831
+    ]
+   },
+   {
+    "id": "more-in-category",
+    "snippet": "blocks/category/06-more-in-category.html",
+    "y_h_desktop": [
+     1248,
+     1003
+    ],
+    "y_h_phone": [
+     1515,
+     649
+    ]
+   },
+   {
+    "id": "from-the-archive",
+    "snippet": "blocks/category/07-from-the-archive.html",
+    "y_h_desktop": [
+     2251,
+     398
+    ],
+    "y_h_phone": [
+     2163,
+     344
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/category/08-footer.html",
+    "y_h_desktop": [
+     2649,
+     483
+    ],
+    "y_h_phone": [
+     2507,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "category-outerwear",
+  "file": "category-outerwear.html",
+  "title": "Category · Outerwear",
+  "route": "/categories/outerwear",
+  "board": "Category",
+  "source": "05-category",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/category-outerwear/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/category-outerwear/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "breadcrumb",
+    "snippet": "blocks/category-outerwear/03-breadcrumb.html",
+    "y_h_desktop": [
+     117,
+     46
+    ],
+    "y_h_phone": [
+     161,
+     46
+    ]
+   },
+   {
+    "id": "category-intro",
+    "snippet": "blocks/category-outerwear/04-category-intro.html",
+    "y_h_desktop": [
+     163,
+     373
+    ],
+    "y_h_phone": [
+     206,
+     448
+    ]
+   },
+   {
+    "id": "coming-piece",
+    "snippet": "blocks/category-outerwear/05-coming-piece.html",
+    "y_h_desktop": [
+     535,
+     733
+    ],
+    "y_h_phone": [
+     655,
+     867
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/category-outerwear/06-footer.html",
+    "y_h_desktop": [
+     1268,
+     483
+    ],
+    "y_h_phone": [
+     1522,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "category-headwear",
+  "file": "category-headwear.html",
+  "title": "Category · Headwear",
+  "route": "/categories/headwear",
+  "board": "Category",
+  "source": "05-category",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/category-headwear/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/category-headwear/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "breadcrumb",
+    "snippet": "blocks/category-headwear/03-breadcrumb.html",
+    "y_h_desktop": [
+     117,
+     46
+    ],
+    "y_h_phone": [
+     161,
+     46
+    ]
+   },
+   {
+    "id": "category-intro",
+    "snippet": "blocks/category-headwear/04-category-intro.html",
+    "y_h_desktop": [
+     163,
+     373
+    ],
+    "y_h_phone": [
+     206,
+     448
+    ]
+   },
+   {
+    "id": "coming-piece",
+    "snippet": "blocks/category-headwear/05-coming-piece.html",
+    "y_h_desktop": [
+     535,
+     733
+    ],
+    "y_h_phone": [
+     655,
+     867
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/category-headwear/06-footer.html",
+    "y_h_desktop": [
+     1268,
+     483
+    ],
+    "y_h_phone": [
+     1522,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "category-silk",
+  "file": "category-silk.html",
+  "title": "Category · Silk",
+  "route": "/categories/silk",
+  "board": "Category",
+  "source": "05-category",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/category-silk/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/category-silk/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "breadcrumb",
+    "snippet": "blocks/category-silk/03-breadcrumb.html",
+    "y_h_desktop": [
+     117,
+     46
+    ],
+    "y_h_phone": [
+     161,
+     46
+    ]
+   },
+   {
+    "id": "category-intro",
+    "snippet": "blocks/category-silk/04-category-intro.html",
+    "y_h_desktop": [
+     163,
+     373
+    ],
+    "y_h_phone": [
+     206,
+     448
+    ]
+   },
+   {
+    "id": "coming-piece",
+    "snippet": "blocks/category-silk/05-coming-piece.html",
+    "y_h_desktop": [
+     535,
+     733
+    ],
+    "y_h_phone": [
+     655,
+     867
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/category-silk/06-footer.html",
+    "y_h_desktop": [
+     1268,
+     483
+    ],
+    "y_h_phone": [
+     1522,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "bag",
+  "file": "bag.html",
+  "title": "Bag",
+  "route": "/bag",
+  "board": "Bag",
+  "source": "06-bag",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/bag/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/bag/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "your-bag",
+    "snippet": "blocks/bag/03-your-bag.html",
+    "y_h_desktop": [
+     117,
+     781
+    ],
+    "y_h_phone": [
+     161,
+     1391
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/bag/04-footer.html",
+    "y_h_desktop": [
+     898,
+     483
+    ],
+    "y_h_phone": [
+     1552,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "bag-sold",
+  "file": "bag-sold.html",
+  "title": "Bag · sold while in bag",
+  "route": "/bag",
+  "board": "Bag",
+  "source": "06-bag",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/bag-sold/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/bag-sold/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "your-bag",
+    "snippet": "blocks/bag-sold/03-your-bag.html",
+    "y_h_desktop": [
+     117,
+     914
+    ],
+    "y_h_phone": [
+     161,
+     1646
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/bag-sold/04-footer.html",
+    "y_h_desktop": [
+     1031,
+     483
+    ],
+    "y_h_phone": [
+     1807,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "bag-empty",
+  "file": "bag-empty.html",
+  "title": "Bag · empty",
+  "route": "/bag",
+  "board": "Bag",
+  "source": "06-bag",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/bag-empty/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/bag-empty/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "your-bag",
+    "snippet": "blocks/bag-empty/03-your-bag.html",
+    "y_h_desktop": [
+     117,
+     549
+    ],
+    "y_h_phone": [
+     161,
+     664
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/bag-empty/04-footer.html",
+    "y_h_desktop": [
+     666,
+     483
+    ],
+    "y_h_phone": [
+     824,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "checkout",
+  "file": "checkout.html",
+  "title": "Shopify checkout (branding reference)",
+  "route": "",
+  "board": "Checkout",
+  "source": "07-checkout",
+  "reference_only": true,
+  "blocks": [
+   {
+    "id": "header",
+    "snippet": "blocks/checkout/01-header.html",
+    "y_h_desktop": [
+     0,
+     77
+    ],
+    "y_h_phone": [
+     0,
+     77
+    ]
+   },
+   {
+    "id": "checkout",
+    "snippet": "blocks/checkout/02-checkout.html",
+    "y_h_desktop": [
+     77,
+     1671
+    ],
+    "y_h_phone": [
+     77,
+     2623
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "thank-you",
+  "file": "thank-you.html",
+  "title": "Thank you (Shopify, branding reference)",
+  "route": "",
+  "board": "Payment",
+  "source": "08-after-payment",
+  "reference_only": true,
+  "blocks": [
+   {
+    "id": "header",
+    "snippet": "blocks/thank-you/01-header.html",
+    "y_h_desktop": [
+     0,
+     77
+    ],
+    "y_h_phone": [
+     0,
+     77
+    ]
+   },
+   {
+    "id": "thank-you-alex",
+    "snippet": "blocks/thank-you/02-thank-you-alex.html",
+    "y_h_desktop": [
+     77,
+     986
+    ],
+    "y_h_phone": [
+     77,
+     1775
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "payment-incomplete",
+  "file": "payment-incomplete.html",
+  "title": "Payment not completed (reference)",
+  "route": "",
+  "board": "Payment",
+  "source": "08-after-payment",
+  "reference_only": true,
+  "blocks": [
+   {
+    "id": "header",
+    "snippet": "blocks/payment-incomplete/01-header.html",
+    "y_h_desktop": [
+     0,
+     77
+    ],
+    "y_h_phone": [
+     0,
+     77
+    ]
+   },
+   {
+    "id": "h1",
+    "snippet": "blocks/payment-incomplete/02-h1.html",
+    "y_h_desktop": [
+     141,
+     1
+    ],
+    "y_h_phone": [
+     141,
+     1
+    ]
+   },
+   {
+    "id": "div",
+    "snippet": "blocks/payment-incomplete/03-div.html",
+    "y_h_desktop": [
+     121,
+     149
+    ],
+    "y_h_phone": [
+     121,
+     218
+    ]
+   },
+   {
+    "id": "payment",
+    "snippet": "blocks/payment-incomplete/04-payment.html",
+    "y_h_desktop": [
+     296,
+     90
+    ],
+    "y_h_phone": [
+     365,
+     90
+    ]
+   },
+   {
+    "id": "div-2",
+    "snippet": "blocks/payment-incomplete/05-div-2.html",
+    "y_h_desktop": [
+     412,
+     126
+    ],
+    "y_h_phone": [
+     481,
+     126
+    ]
+   },
+   {
+    "id": "a",
+    "snippet": "blocks/payment-incomplete/06-a.html",
+    "y_h_desktop": [
+     564,
+     56
+    ],
+    "y_h_phone": [
+     634,
+     56
+    ]
+   },
+   {
+    "id": "a-2",
+    "snippet": "blocks/payment-incomplete/07-a-2.html",
+    "y_h_desktop": [
+     646,
+     56
+    ],
+    "y_h_phone": [
+     716,
+     56
+    ]
+   },
+   {
+    "id": "p",
+    "snippet": "blocks/payment-incomplete/08-p.html",
+    "y_h_desktop": [
+     728,
+     21
+    ],
+    "y_h_phone": [
+     798,
+     42
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "viva-handoff",
+  "file": "viva-handoff.html",
+  "title": "Viva handoff (reference)",
+  "route": "",
+  "board": "Payment",
+  "source": "08-after-payment",
+  "reference_only": true,
+  "blocks": [
+   {
+    "id": "header",
+    "snippet": "blocks/viva-handoff/01-header.html",
+    "y_h_desktop": [
+     0,
+     77
+    ],
+    "y_h_phone": [
+     0,
+     77
+    ]
+   },
+   {
+    "id": "the-viva-handoff",
+    "snippet": "blocks/viva-handoff/02-the-viva-handoff.html",
+    "y_h_desktop": [
+     133,
+     80
+    ],
+    "y_h_phone": [
+     133,
+     103
+    ]
+   },
+   {
+    "id": "div",
+    "snippet": "blocks/viva-handoff/03-div.html",
+    "y_h_desktop": [
+     253,
+     245
+    ],
+    "y_h_phone": [
+     276,
+     825
+    ]
+   },
+   {
+    "id": "div-2",
+    "snippet": "blocks/viva-handoff/04-div-2.html",
+    "y_h_desktop": [
+     537,
+     122
+    ],
+    "y_h_phone": [
+     1141,
+     235
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "sign-in",
+  "file": "sign-in.html",
+  "title": "Sign in",
+  "route": "/account/sign-in",
+  "board": "SignIn",
+  "source": "09-sign-in",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/sign-in/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/sign-in/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "auth",
+    "snippet": "blocks/sign-in/03-auth.html",
+    "y_h_desktop": [
+     117,
+     760
+    ],
+    "y_h_phone": [
+     161,
+     503
+    ]
+   },
+   {
+    "id": "why-have-an-account",
+    "snippet": "blocks/sign-in/04-why-have-an-account.html",
+    "y_h_desktop": [
+     117,
+     760
+    ],
+    "y_h_phone": [
+     664,
+     481
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/sign-in/05-footer.html",
+    "y_h_desktop": [
+     877,
+     483
+    ],
+    "y_h_phone": [
+     1145,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "sign-in~create",
+  "file": "sign-in~create.html",
+  "title": "Create account",
+  "route": "/account/sign-in?mode=create",
+  "board": "SignIn",
+  "source": "09-sign-in",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/sign-in--create/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/sign-in--create/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "auth",
+    "snippet": "blocks/sign-in--create/03-auth.html",
+    "y_h_desktop": [
+     117,
+     760
+    ],
+    "y_h_phone": [
+     161,
+     701
+    ]
+   },
+   {
+    "id": "why-have-an-account",
+    "snippet": "blocks/sign-in--create/04-why-have-an-account.html",
+    "y_h_desktop": [
+     117,
+     760
+    ],
+    "y_h_phone": [
+     862,
+     481
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/sign-in--create/05-footer.html",
+    "y_h_desktop": [
+     877,
+     483
+    ],
+    "y_h_phone": [
+     1343,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "sign-in~code",
+  "file": "sign-in~code.html",
+  "title": "Sign in · code step (Shopify-hosted, reference)",
+  "route": "",
+  "board": "SignIn",
+  "source": "09-sign-in",
+  "reference_only": true,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/sign-in--code/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/sign-in--code/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "auth",
+    "snippet": "blocks/sign-in--code/03-auth.html",
+    "y_h_desktop": [
+     117,
+     760
+    ],
+    "y_h_phone": [
+     161,
+     577
+    ]
+   },
+   {
+    "id": "why-have-an-account",
+    "snippet": "blocks/sign-in--code/04-why-have-an-account.html",
+    "y_h_desktop": [
+     117,
+     760
+    ],
+    "y_h_phone": [
+     738,
+     481
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/sign-in--code/05-footer.html",
+    "y_h_desktop": [
+     877,
+     483
+    ],
+    "y_h_phone": [
+     1219,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "account",
+  "file": "account.html",
+  "title": "Account · overview",
+  "route": "/account",
+  "board": "Account",
+  "source": "10-account",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/account/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/account/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "account",
+    "snippet": "blocks/account/03-account.html",
+    "y_h_desktop": [
+     117,
+     712
+    ],
+    "y_h_phone": [
+     161,
+     1219
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/account/04-footer.html",
+    "y_h_desktop": [
+     829,
+     483
+    ],
+    "y_h_phone": [
+     1380,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "account-orders",
+  "file": "account-orders.html",
+  "title": "Account · orders",
+  "route": "/account/orders",
+  "board": "Account",
+  "source": "10-account",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/account-orders/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/account-orders/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "account",
+    "snippet": "blocks/account-orders/03-account.html",
+    "y_h_desktop": [
+     117,
+     1083
+    ],
+    "y_h_phone": [
+     161,
+     1651
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/account-orders/04-footer.html",
+    "y_h_desktop": [
+     1200,
+     483
+    ],
+    "y_h_phone": [
+     1812,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "account-addresses",
+  "file": "account-addresses.html",
+  "title": "Account · addresses",
+  "route": "/account/addresses",
+  "board": "Account",
+  "source": "10-account",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/account-addresses/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/account-addresses/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "account",
+    "snippet": "blocks/account-addresses/03-account.html",
+    "y_h_desktop": [
+     117,
+     613
+    ],
+    "y_h_phone": [
+     161,
+     1061
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/account-addresses/04-footer.html",
+    "y_h_desktop": [
+     730,
+     483
+    ],
+    "y_h_phone": [
+     1221,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "account-profile",
+  "file": "account-profile.html",
+  "title": "Account · profile and emails",
+  "route": "/account/profile",
+  "board": "Account",
+  "source": "10-account",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/account-profile/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/account-profile/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "account",
+    "snippet": "blocks/account-profile/03-account.html",
+    "y_h_desktop": [
+     117,
+     1069
+    ],
+    "y_h_phone": [
+     161,
+     1463
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/account-profile/04-footer.html",
+    "y_h_desktop": [
+     1186,
+     483
+    ],
+    "y_h_phone": [
+     1624,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "wishlist",
+  "file": "wishlist.html",
+  "title": "Wishlist · signed in",
+  "route": "/wishlist",
+  "board": "Wishlist",
+  "source": "11-wishlist",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/wishlist/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/wishlist/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "wishlist",
+    "snippet": "blocks/wishlist/03-wishlist.html",
+    "y_h_desktop": [
+     117,
+     911
+    ],
+    "y_h_phone": [
+     161,
+     2167
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/wishlist/04-footer.html",
+    "y_h_desktop": [
+     1028,
+     483
+    ],
+    "y_h_phone": [
+     2328,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "wishlist-guest",
+  "file": "wishlist-guest.html",
+  "title": "Wishlist · guest",
+  "route": "/wishlist",
+  "board": "Wishlist",
+  "source": "11-wishlist",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/wishlist-guest/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/wishlist-guest/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "wishlist",
+    "snippet": "blocks/wishlist-guest/03-wishlist.html",
+    "y_h_desktop": [
+     117,
+     1044
+    ],
+    "y_h_phone": [
+     161,
+     2394
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/wishlist-guest/04-footer.html",
+    "y_h_desktop": [
+     1161,
+     483
+    ],
+    "y_h_phone": [
+     2555,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "story",
+  "file": "story.html",
+  "title": "Story",
+  "route": "/story",
+  "board": "About",
+  "source": "12-story",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/story/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/story/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "limited-by-design",
+    "snippet": "blocks/story/03-limited-by-design.html",
+    "y_h_desktop": [
+     117,
+     760
+    ],
+    "y_h_phone": [
+     161,
+     760
+    ]
+   },
+   {
+    "id": "what-we-believe",
+    "snippet": "blocks/story/04-what-we-believe.html",
+    "y_h_desktop": [
+     877,
+     534
+    ],
+    "y_h_phone": [
+     921,
+     435
+    ]
+   },
+   {
+    "id": "a-word-you-can-wear",
+    "snippet": "blocks/story/05-a-word-you-can-wear.html",
+    "y_h_desktop": [
+     1411,
+     1733
+    ],
+    "y_h_phone": [
+     1355,
+     1589
+    ]
+   },
+   {
+    "id": "how-a-piece-is-made",
+    "snippet": "blocks/story/06-how-a-piece-is-made.html",
+    "y_h_desktop": [
+     3144,
+     478
+    ],
+    "y_h_phone": [
+     2945,
+     954
+    ]
+   },
+   {
+    "id": "materials-and-makers",
+    "snippet": "blocks/story/07-materials-and-makers.html",
+    "y_h_desktop": [
+     3622,
+     663
+    ],
+    "y_h_phone": [
+     3898,
+     810
+    ]
+   },
+   {
+    "id": "three-pillars-one-identity",
+    "snippet": "blocks/story/08-three-pillars-one-identity.html",
+    "y_h_desktop": [
+     4286,
+     432
+    ],
+    "y_h_phone": [
+     4709,
+     724
+    ]
+   },
+   {
+    "id": "closing",
+    "snippet": "blocks/story/09-closing.html",
+    "y_h_desktop": [
+     4718,
+     373
+    ],
+    "y_h_phone": [
+     5433,
+     381
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/story/10-footer.html",
+    "y_h_desktop": [
+     5090,
+     483
+    ],
+    "y_h_phone": [
+     5813,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "care-shipping",
+  "file": "care-shipping.html",
+  "title": "Shipping and delivery",
+  "route": "/client-care/shipping",
+  "board": "Legal",
+  "source": "13-client-care-legal",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/care-shipping/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/care-shipping/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "care",
+    "snippet": "blocks/care-shipping/03-care.html",
+    "y_h_desktop": [
+     117,
+     999
+    ],
+    "y_h_phone": [
+     161,
+     1471
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/care-shipping/04-footer.html",
+    "y_h_desktop": [
+     1116,
+     483
+    ],
+    "y_h_phone": [
+     1632,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "care-returns",
+  "file": "care-returns.html",
+  "title": "Returns and exchanges",
+  "route": "/client-care/returns",
+  "board": "Legal",
+  "source": "13-client-care-legal",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/care-returns/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/care-returns/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "care",
+    "snippet": "blocks/care-returns/03-care.html",
+    "y_h_desktop": [
+     117,
+     979
+    ],
+    "y_h_phone": [
+     161,
+     1530
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/care-returns/04-footer.html",
+    "y_h_desktop": [
+     1096,
+     483
+    ],
+    "y_h_phone": [
+     1690,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "care-faq",
+  "file": "care-faq.html",
+  "title": "Questions",
+  "route": "/client-care/faq",
+  "board": "Legal",
+  "source": "13-client-care-legal",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/care-faq/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/care-faq/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "care",
+    "snippet": "blocks/care-faq/03-care.html",
+    "y_h_desktop": [
+     117,
+     737
+    ],
+    "y_h_phone": [
+     161,
+     1037
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/care-faq/04-footer.html",
+    "y_h_desktop": [
+     854,
+     483
+    ],
+    "y_h_phone": [
+     1198,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "care-contact",
+  "file": "care-contact.html",
+  "title": "Contact",
+  "route": "/client-care/contact",
+  "board": "Legal",
+  "source": "13-client-care-legal",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/care-contact/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/care-contact/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "care",
+    "snippet": "blocks/care-contact/03-care.html",
+    "y_h_desktop": [
+     117,
+     1162
+    ],
+    "y_h_phone": [
+     161,
+     1712
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/care-contact/04-footer.html",
+    "y_h_desktop": [
+     1279,
+     483
+    ],
+    "y_h_phone": [
+     1873,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "care-terms",
+  "file": "care-terms.html",
+  "title": "Terms of sale",
+  "route": "/legal/terms",
+  "board": "Legal",
+  "source": "13-client-care-legal",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/care-terms/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/care-terms/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "care",
+    "snippet": "blocks/care-terms/03-care.html",
+    "y_h_desktop": [
+     117,
+     1347
+    ],
+    "y_h_phone": [
+     161,
+     2053
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/care-terms/04-footer.html",
+    "y_h_desktop": [
+     1464,
+     483
+    ],
+    "y_h_phone": [
+     2214,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "care-privacy",
+  "file": "care-privacy.html",
+  "title": "Privacy notice",
+  "route": "/legal/privacy",
+  "board": "Legal",
+  "source": "13-client-care-legal",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/care-privacy/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/care-privacy/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "care",
+    "snippet": "blocks/care-privacy/03-care.html",
+    "y_h_desktop": [
+     117,
+     1097
+    ],
+    "y_h_phone": [
+     161,
+     1753
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/care-privacy/04-footer.html",
+    "y_h_desktop": [
+     1214,
+     483
+    ],
+    "y_h_phone": [
+     1913,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "care-cookies",
+  "file": "care-cookies.html",
+  "title": "Cookies",
+  "route": "/legal/cookies",
+  "board": "Legal",
+  "source": "13-client-care-legal",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/care-cookies/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/care-cookies/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "care",
+    "snippet": "blocks/care-cookies/03-care.html",
+    "y_h_desktop": [
+     117,
+     793
+    ],
+    "y_h_phone": [
+     161,
+     1197
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/care-cookies/04-footer.html",
+    "y_h_desktop": [
+     910,
+     483
+    ],
+    "y_h_phone": [
+     1357,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "care-contact~sent",
+  "file": "care-contact~sent.html",
+  "title": "Contact · message sent",
+  "route": "/client-care/contact",
+  "board": "Legal",
+  "source": "13-client-care-legal",
+  "reference_only": false,
+  "blocks": [
+   {
+    "id": "announcement",
+    "snippet": "blocks/care-contact--sent/01-announcement.html",
+    "y_h_desktop": [
+     0,
+     40
+    ],
+    "y_h_phone": [
+     0,
+     84
+    ]
+   },
+   {
+    "id": "header",
+    "snippet": "blocks/care-contact--sent/02-header.html",
+    "y_h_desktop": [
+     40,
+     77
+    ],
+    "y_h_phone": [
+     84,
+     77
+    ]
+   },
+   {
+    "id": "care",
+    "snippet": "blocks/care-contact--sent/03-care.html",
+    "y_h_desktop": [
+     117,
+     716
+    ],
+    "y_h_phone": [
+     161,
+     1015
+    ]
+   },
+   {
+    "id": "footer",
+    "snippet": "blocks/care-contact--sent/04-footer.html",
+    "y_h_desktop": [
+     833,
+     483
+    ],
+    "y_h_phone": [
+     1176,
+     854
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "user-flows",
+  "file": "user-flows.html",
+  "title": "User flows & data (documentation board)",
+  "route": "",
+  "board": "Flows",
+  "source": "14-user-flows",
+  "reference_only": true,
+  "blocks": [
+   {
+    "id": "user-flows",
+    "snippet": "blocks/user-flows/01-user-flows.html",
+    "y_h_desktop": [
+     0,
+     2085
+    ],
+    "y_h_phone": [
+     0,
+     5337
+    ]
+   }
+  ]
+ }
+]

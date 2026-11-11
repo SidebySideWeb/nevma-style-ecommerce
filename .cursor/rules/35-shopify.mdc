@@ -1,0 +1,11 @@
+---
+description: Shopify Storefront API, Customer Account API, cart and webhooks
+globs: apps/web/src/lib/commerce/**, apps/web/src/pages/api/**, apps/web/src/pages/account/**
+---
+- API version pinned in one place (SHOPIFY_API_VERSION, default 2026-10). Read docs/COMMERCE.md before changing anything here.
+- Server-side Storefront calls use the private token (Shopify-Storefront-Private-Token) and forward the buyer IP. Never ship the private token to the browser.
+- Stock = sum of variant quantityAvailable; edition size from product metafield nevma.edition_size (default 5). State rules and every stock sentence are in docs/COMMERCE.md "Edition states and wording" — implement them in one module with unit tests.
+- Cart: Storefront Cart API; cart id in the HttpOnly cookie ns_cart (14 days). One of each piece per customer: quantity is always 1 and adding a second size of the same piece replaces the first (ask the user before changing this).
+- Customer accounts: Customer Account API OAuth 2.0 with PKCE; discovery via /.well-known endpoints; tokens kept server-side in an encrypted HttpOnly cookie; refresh before expiry; logout via the end-session endpoint.
+- Webhooks: verify X-Shopify-Hmac-Sha256 with the raw body; idempotent handlers; respond 200 fast.
+- COMMERCE_MOCK=1 switches to apps/web/fixtures/commerce.json (and the nv_fixture cookie). It must be impossible to enable in production (check VERCEL_ENV).

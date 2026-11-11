@@ -1,0 +1,262 @@
+{
+  "v": 3,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-10-23T13:20:00Z"
+  },
+  "title": "NEVMA Style — Shop Design",
+  "launch": {
+    "view": "canvas"
+  },
+  "pages": [],
+  "designSystems": [],
+  "boards": {
+    "Main.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 6000,
+      "title": "1 · Home",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Drop.dc.html": {
+      "x": 1520,
+      "y": 0,
+      "w": 1440,
+      "h": 5600,
+      "title": "2 · Drop: STYLE 001",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Product.dc.html": {
+      "x": 3040,
+      "y": 0,
+      "w": 1440,
+      "h": 5400,
+      "title": "3 · Product page (Tweaks: available · last piece · sold out · upcoming)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Archive.dc.html": {
+      "x": 4560,
+      "y": 0,
+      "w": 1440,
+      "h": 3000,
+      "title": "4 · All pieces & archive",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Bag.dc.html": {
+      "x": 0,
+      "y": 6600,
+      "w": 1440,
+      "h": 2600,
+      "title": "5 · Bag (Tweaks: normal · sold while in bag · empty)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Checkout.dc.html": {
+      "x": 1520,
+      "y": 6600,
+      "w": 1440,
+      "h": 2700,
+      "title": "6 · Shopify checkout, branded (one page, Viva redirect)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Payment.dc.html": {
+      "x": 3040,
+      "y": 6600,
+      "w": 1440,
+      "h": 2400,
+      "title": "7 · After payment (Tweaks: thank you · payment not completed · Viva handoff)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "SignIn.dc.html": {
+      "x": 0,
+      "y": 9900,
+      "w": 1440,
+      "h": 1800,
+      "title": "8 · Sign in / Create account (email code)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Account.dc.html": {
+      "x": 1520,
+      "y": 9900,
+      "w": 1440,
+      "h": 2800,
+      "title": "9 · Account: overview · orders · addresses · profile",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Wishlist.dc.html": {
+      "x": 3040,
+      "y": 9900,
+      "w": 1440,
+      "h": 2400,
+      "title": "10 · Wishlist (Tweak: signed in / guest)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "About.dc.html": {
+      "x": 0,
+      "y": 13400,
+      "w": 1440,
+      "h": 4800,
+      "title": "11 · Story (About)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Legal.dc.html": {
+      "x": 1520,
+      "y": 13400,
+      "w": 1440,
+      "h": 3200,
+      "title": "12 · Client care & legal",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Flows.dc.html": {
+      "x": 3040,
+      "y": 13400,
+      "w": 1440,
+      "h": 3600,
+      "title": "13 · User flows & data",
+      "expand": "fill"
+    },
+    "PhoneHome.dc.html": {
+      "x": 0,
+      "y": 18900,
+      "w": 390,
+      "h": 9800,
+      "title": "Phone · Home",
+      "is_interactive": true
+    },
+    "PhoneProduct.dc.html": {
+      "x": 470,
+      "y": 18900,
+      "w": 390,
+      "h": 8200,
+      "title": "Phone · Product",
+      "is_interactive": true
+    },
+    "PhoneBag.dc.html": {
+      "x": 940,
+      "y": 18900,
+      "w": 390,
+      "h": 3400,
+      "title": "Phone · Bag",
+      "is_interactive": true
+    },
+    "PhoneSignIn.dc.html": {
+      "x": 1410,
+      "y": 18900,
+      "w": 390,
+      "h": 2400,
+      "title": "Phone · Sign in",
+      "is_interactive": true
+    },
+    "PhoneAccount.dc.html": {
+      "x": 1880,
+      "y": 18900,
+      "w": 390,
+      "h": 4400,
+      "title": "Phone · Account",
+      "is_interactive": true
+    },
+    "Category.dc.html": {
+      "x": 6080,
+      "y": 0,
+      "w": 1440,
+      "h": 4400,
+      "title": "4b · Category page (click the category chips)",
+      "expand": "fill",
+      "is_interactive": true
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Drop.dc.html",
+    "Product.dc.html",
+    "Archive.dc.html",
+    "Category.dc.html",
+    "Bag.dc.html",
+    "Checkout.dc.html",
+    "Payment.dc.html",
+    "SignIn.dc.html",
+    "Account.dc.html",
+    "Wishlist.dc.html",
+    "About.dc.html",
+    "Legal.dc.html",
+    "Flows.dc.html",
+    "PhoneHome.dc.html",
+    "PhoneProduct.dc.html",
+    "PhoneBag.dc.html",
+    "PhoneSignIn.dc.html",
+    "PhoneAccount.dc.html"
+  ],
+  "notes": {
+    "rowA": {
+      "kind": "title1",
+      "x": 0,
+      "y": -300,
+      "maxW": 7520,
+      "text": "NEVMA Style · Storefront · Bone edition of the v3 system"
+    },
+    "rowB": {
+      "kind": "title1",
+      "x": 0,
+      "y": 6300,
+      "maxW": 4480,
+      "text": "Shopping flow · Bag → Shopify checkout → Viva"
+    },
+    "rowC": {
+      "kind": "title1",
+      "x": 0,
+      "y": 9600,
+      "maxW": 4480,
+      "text": "Account · Sign in, register, orders, wishlist"
+    },
+    "rowD": {
+      "kind": "title1",
+      "x": 0,
+      "y": 13100,
+      "maxW": 4480,
+      "text": "Story, client care, legal and flows"
+    },
+    "rowE": {
+      "kind": "title1",
+      "x": 0,
+      "y": 18600,
+      "maxW": 2270,
+      "text": "Phone · 390"
+    },
+    "system": {
+      "x": 7600,
+      "y": 0,
+      "w": 500,
+      "fill": "teal",
+      "size": "m",
+      "text": "Style · what changed from Nevma Music v3\n\n• Same type, rules and motion: Montserrat Light tracked caps, Nunito Sans for reading, the cyan–magenta–yellow hairline, pill buttons, scroll reveals, press scale.\n• Ground flips to Bone #ECE7DE with Paper #F5F2EC panels and Ink #0B0B0C text, so product photos read like an atelier, not a club. True black stays for drop moments (next-drop band, footer, announcement bar), where Style yellow #F0E81C is the only accent.\n• Edition meter: five pips per piece, filled = still available. Words always sit next to the pips (\"3 of 5 left\", \"Last piece\", \"Sold out\").\n• Small catalogue: 3 to 4 large pieces per drop, editorial rows instead of grids. Sold-out pieces stay visible and move to the archive.\n• Header wordmark is set in type until NEVMA sends a one-colour dark logo; the real logo shows on black (footer)."
+    },
+    "rules": {
+      "x": 7600,
+      "y": 760,
+      "w": 500,
+      "fill": "orange",
+      "size": "m",
+      "text": "Commerce rules shown in the designs (PROPOSED, to agree with NEVMA)\n\n• Edition of five per colourway, across all sizes. Stock comes live from Shopify.\n• One of each piece per customer.\n• A bag does not hold a piece: whoever pays first gets it. Said plainly on product, bag and checkout.\n• Every piece is numbered at packing (No. x of 5) and shown in the order.\n• Members hear about drops by email first; the notify-me form works for guests too.\n• Returns within 14 days; a returned piece goes back on sale.\n• Prices in £ (London brand); Shopify Markets can add € later."
+    },
+    "dummy": {
+      "x": 7600,
+      "y": 1640,
+      "w": 500,
+      "fill": "gray",
+      "size": "m",
+      "text": "Images and copy\n\n• Real NEVMA images: STYLE 001 t-shirts, carved wall, ribbon, stage and crowd (Instagram exports, low resolution: ask for originals).\n• STYLE 002 pieces are shown veiled with labelled placeholders: no product photos exist yet.\n• Names of pieces, prices, stock, dates, order numbers, policies and addresses are dummy copy. Legal texts are drafts for NEVMA's lawyer."
+    }
+  }
+}

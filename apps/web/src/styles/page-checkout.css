@@ -1,0 +1,26 @@
+/* NEVMA Style — generated from the design canvas. Do not edit by hand: change the tokens in docs/DESIGN-SYSTEM.md and regenerate, or edit together with the fidelity tests. */
+body{margin:0;background:#ECE7DE}
+:where(.c-root) a{color:#0B0B0C}
+.c-f{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif}
+.c-grid{display:flex;flex-wrap:wrap;min-height:100vh}
+.c-main{flex:999 1 560px;min-width:0;display:flex;justify-content:flex-start;background:#F5F2EC}
+.c-side{flex:1 1 420px;min-width:0;background:#E3DDD2;border-left:1px solid #CFC7B8}
+.c-in{display:flex;flex-direction:column}
+.c-field{width:100%;height:50px;box-sizing:border-box;padding:0 14px;border:1px solid #8A8274;border-radius:6px;background:#FFFFFF;color:#0B0B0C;font:inherit;font-size:15px}
+.c-lab{font-size:13px;font-weight:600;margin-bottom:6px;display:block}
+.c-h{margin:0;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.26em;text-transform:uppercase}
+.c-opt{display:flex;align-items:center;gap:14px;min-height:56px;padding:0 16px;box-sizing:border-box;border:1px solid #CFC7B8;background:#FFFFFF;cursor:pointer;font-size:15px}
+.c-opt[data-on="true"]{border-color:#0B0B0C;background:#FBFAF7;position:relative;z-index:1}
+.c-opts>*+*{margin-top:-1px}
+.c-opts>:first-child{border-radius:6px 6px 0 0}
+.c-opts>:last-child{border-radius:0 0 6px 6px}
+.c-btn{display:inline-flex;align-items:center;justify-content:center;height:56px;border-radius:6px;border:0;background:#0B0B0C;color:#F5F2EC;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;cursor:pointer;text-decoration:none;width:100%}
+.c-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.c-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:599px){.c-2,.c-3{grid-template-columns:minmax(0,1fr)}}
+.c-root a:focus-visible,.c-root button:focus-visible,.c-root input:focus-visible,.c-root select:focus-visible,.c-opt:focus-within{outline:2px solid #0B0B0C;outline-offset:2px}
+.c-radio{width:18px;height:18px;border-radius:50%;border:1px solid #8A8274;box-sizing:border-box;flex:0 0 auto;background:#FFFFFF}
+.c-opt[data-on="true"] .c-radio{border:6px solid #0B0B0C}
+.c-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:767px){.c-main>*{padding-right:24px!important}}
+@media (max-width:1019px){.c-side{border-left:0;border-bottom:1px solid #CFC7B8;order:-1}}

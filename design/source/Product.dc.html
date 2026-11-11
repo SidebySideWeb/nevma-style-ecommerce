@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>NEVMA Style — Product page</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&amp;family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#ECE7DE}
+:root{--s-ease:cubic-bezier(0.23,1,0.32,1);--s-drawer:cubic-bezier(0.32,0.72,0,1)}
+:where(.s-root) a{color:#0B0B0C}
+:where(.s-dark) a{color:#F5F5F7}
+.s-wrap{max-width:1440px;margin:0 auto;padding-inline:20px;box-sizing:border-box;width:100%}
+.s-sec{padding-block:56px}
+@media (min-width:768px){.s-wrap{padding-inline:40px}.s-sec{padding-block:80px}}
+@media (min-width:1280px){.s-wrap{padding-inline:112px}.s-sec{padding-block:104px}}
+.s-f{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif}
+.s-disp{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-weight:300;text-transform:uppercase;letter-spacing:0.16em;line-height:1.15}
+.s-h2{margin:0;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:clamp(15px,1.3vw,19px);font-weight:400;letter-spacing:0.38em;line-height:1.5;text-transform:uppercase}
+.s-h2::after{content:'';display:block;width:56px;height:1px;margin-top:18px;background:linear-gradient(90deg,#00E5F0,#E600F0 55%,#F0E81C)}
+.s-eb{margin:0;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:500;letter-spacing:0.34em;text-transform:uppercase;color:#615D55}
+.s-dark .s-eb{color:#A8A8B4}
+.s-price{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-weight:400;letter-spacing:0.08em;font-variant-numeric:tabular-nums}
+.s-name{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:0.2em;line-height:1.5}
+.s-rule{display:block;height:1px;border:0;background:linear-gradient(90deg,#00E5F0,#E600F0 55%,#F0E81C)}
+.s-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 28px;border-radius:100px;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:12.5px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;cursor:pointer;box-sizing:border-box;border:1px solid transparent;white-space:nowrap;transition:background-color 150ms ease,border-color 150ms ease,color 150ms ease,box-shadow 300ms ease,transform 160ms var(--s-ease)}
+.s-btn-sm{height:44px;padding:0 20px;font-size:11.5px}
+.s-btn-p{background:#0B0B0C;color:#F5F2EC}
+.s-btn-o{border-color:#0B0B0C;color:#0B0B0C;background:linear-gradient(#0B0B0C,#0B0B0C) no-repeat left center/0% 100%;transition:background-size 300ms var(--s-ease),color 200ms ease,transform 160ms var(--s-ease)}
+.s-btn-l{background:#F5F5F7;color:#000000}
+.s-btn-lo{border-color:#7A7A86;color:#F5F5F7;background:linear-gradient(#F5F5F7,#F5F5F7) no-repeat left center/0% 100%;transition:background-size 300ms var(--s-ease),color 200ms ease,border-color 150ms ease,transform 160ms var(--s-ease)}
+.s-btn[disabled],.s-btn[aria-disabled="true"]{background:#D9D3C8;color:#57534B;border-color:transparent;cursor:not-allowed;box-shadow:none}
+.s-btn:active:not([disabled]),.s-chip:active{transform:scale(0.97)}
+.s-chip{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:56px;height:46px;padding:0 16px;border-radius:100px;border:1px solid #8A8274;background:transparent;color:#0B0B0C;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:12.5px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;box-sizing:border-box;white-space:nowrap;text-decoration:none;transition:background-color 150ms ease,border-color 150ms ease,color 150ms ease,transform 160ms var(--s-ease)}
+.s-chip[aria-pressed="true"],.s-chip[aria-selected="true"]{background:#0B0B0C;color:#F5F2EC;border-color:#0B0B0C}
+.s-chip.out{border-style:dashed;color:#615D55;text-decoration:line-through;text-decoration-thickness:1px}
+.s-dark .s-chip{border-color:#7A7A86;color:#F5F5F7}
+.s-tag{display:inline-flex;align-items:center;gap:8px;height:28px;padding:0 12px;border-radius:100px;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;white-space:nowrap;box-sizing:border-box}
+.s-ib{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:100px;border:0;background:transparent;color:inherit;cursor:pointer;padding:0;position:relative;text-decoration:none;transition:background-color 150ms ease}
+.s-ib svg{transition:transform 220ms var(--s-ease)}
+.s-count{position:absolute;top:5px;right:3px;min-width:17px;height:17px;padding:0 4px;box-sizing:border-box;border-radius:100px;background:#0B0B0C;color:#F5F2EC;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:500;display:inline-flex;align-items:center;justify-content:center}
+.s-ed{display:inline-flex;align-items:center;gap:5px}
+.s-pip{width:9px;height:9px;border-radius:50%;border:1px solid #0B0B0C;box-sizing:border-box;display:block}
+.s-pip.on{background:#0B0B0C}
+.s-dark .s-pip,.s-onimg .s-pip{border-color:#F5F5F7}.s-dark .s-pip.on,.s-onimg .s-pip.on{background:#F5F5F7}
+.s-y .s-pip{border-color:#F0E81C}.s-y .s-pip.on{background:#F0E81C}
+.s-card img{transition:transform 800ms var(--s-ease)}
+.s-lnk{text-decoration:none;background:linear-gradient(90deg,#00E5F0,#E600F0 55%,#F0E81C) no-repeat left bottom/0% 1px;padding-bottom:5px;transition:background-size 320ms var(--s-ease),color 150ms ease}
+.s-ul{text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:5px}
+.s-in{width:100%;height:52px;padding:0 18px;box-sizing:border-box;border:1px solid #8A8274;border-radius:6px;background:#F5F2EC;color:#0B0B0C;font:inherit;font-size:16px}
+.s-dark .s-in{background:#000000;color:#F5F5F7;border-color:#7A7A86;border-radius:100px;padding:0 22px}
+.s-lbl{display:block;margin-bottom:8px;font-size:14px;font-weight:600}
+.s-nav{display:flex}.s-menu{display:none}
+@media (max-width:1023px){.s-nav{display:none}.s-menu{display:inline-flex}}
+.s-pop{transition:opacity 220ms var(--s-ease),transform 220ms var(--s-ease)}
+@starting-style{.s-pop{opacity:0;transform:translateY(-8px)}}
+.s-drawer{transition:transform 420ms var(--s-drawer),opacity 220ms ease}
+@starting-style{.s-drawer{transform:translateX(32px);opacity:0}}
+.s-root a:focus-visible,.s-root button:focus-visible,.s-root input:focus-visible,.s-root summary:focus-visible,.s-root select:focus-visible{outline:2px solid #0B0B0C;outline-offset:2px}
+.s-dark a:focus-visible,.s-dark button:focus-visible,.s-dark input:focus-visible{outline-color:#00E5F0}
+.s-skip{position:absolute;left:-9999px;top:16px}.s-skip:focus{left:16px;z-index:40;background:#0B0B0C;color:#F5F2EC;padding:12px 16px;border-radius:100px}
+.s-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:where(.s-root) [style*="aspect-ratio"]{min-height:0;min-width:0}
+details.s-acc>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;min-height:56px;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase}
+details.s-acc>summary::-webkit-details-marker{display:none}
+details.s-acc>summary svg{transition:transform 220ms var(--s-ease)}
+details.s-acc[open]>summary svg{transform:rotate(180deg)}
+@media (hover:hover) and (pointer:fine){
+.s-btn-p:hover{box-shadow:-8px 0 26px -8px rgba(0,229,240,0.6),8px 0 26px -8px rgba(230,0,240,0.5)}
+.s-btn-o:hover{background-size:100% 100%;color:#F5F2EC}
+.s-btn-l:hover{box-shadow:-8px 0 26px -6px rgba(0,229,240,0.75),8px 0 26px -6px rgba(230,0,240,0.65)}
+.s-btn-lo:hover{background-size:100% 100%;color:#000000;border-color:#F5F5F7}
+.s-btn:hover svg:last-child:not(:first-child){transform:translateX(3px)}
+.s-btn svg{transition:transform 220ms var(--s-ease)}
+.s-chip:not([aria-pressed="true"]):not([aria-selected="true"]):hover{background-color:rgba(11,11,12,0.06)}
+.s-ib:hover{background-color:rgba(11,11,12,0.07)}.s-dark .s-ib:hover{background-color:rgba(245,245,247,0.1)}
+.s-ib:hover svg{transform:scale(1.08)}
+.s-lnk:hover{background-size:100% 1px}
+.s-card:hover img{transform:scale(1.035)}
+}
+@keyframes s-rv{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes s-rvc{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes s-draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@supports (animation-timeline: view()){@media (prefers-reduced-motion: no-preference){
+.s-rv{animation:s-rv var(--s-ease) both;animation-timeline:view();animation-range:entry 0% entry 35%}
+.s-h2::after,.s-rule{transform-origin:left;animation:s-draw var(--s-ease) both;animation-timeline:view();animation-range:entry 10% entry 45%}
+.s-stg>*{animation:s-rvc var(--s-ease) both;animation-timeline:view();animation-range:entry 0% entry 30%}
+.s-stg>*:nth-child(2){animation-range:entry 3% entry 33%}.s-stg>*:nth-child(3){animation-range:entry 6% entry 36%}.s-stg>*:nth-child(4){animation-range:entry 9% entry 39%}
+}}
+@media (prefers-reduced-motion: reduce){.s-btn:active,.s-chip:active{transform:none}.s-card img,.s-drawer,.s-pop{transition:none}.s-drift{animation:none!important}}
+.s-drift{animation:s-drift 24s ease-in-out infinite alternate}
+@keyframes s-drift{from{transform:translate3d(0,0,0) rotate(0deg)}to{transform:translate3d(-2.5%,1.5%,0) rotate(-3deg)}}
+@media (max-width:767px){.s-btn{white-space:normal;height:auto;min-height:52px;padding-block:14px;text-align:center;line-height:1.35}.s-hide-sm{display:none!important}}
+.s-hero{display:grid;grid-template-columns:minmax(0,1fr);min-height:0}
+@media (min-width:1024px){.s-hero{grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);min-height:820px}}
+.s-trio{display:grid;gap:40px 28px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:700px){.s-trio{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1100px){.s-trio{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.s-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr))}
+.s-4>*{padding:28px 28px 28px 0;border-top:1px solid #CFC7B8}
+@media (min-width:1024px){.s-4>*{padding:8px 32px;border-top:0;border-left:1px solid #CFC7B8}.s-4>*:first-child{padding-left:0;border-left:0}}
+.s-cd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:520px}
+
+.s-gal{position:relative;display:grid;grid-auto-flow:column;grid-auto-columns:86%;gap:2px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;background:#D9D3C8}
+.s-gal::-webkit-scrollbar{display:none}
+.s-gal>*{scroll-snap-align:start}
+@media (min-width:1024px){.s-gal{grid-auto-columns:calc((100% - 4px) / 3);overflow:clip;height:840px}.s-gal>li{aspect-ratio:auto!important;height:100%}}
+.s-buywrap{position:relative}
+.s-buy{background:#F5F2EC;border:1px solid #CFC7B8;box-sizing:border-box;padding:28px;display:flex;flex-direction:column;gap:22px}
+@media (min-width:1024px){.s-buywrap{position:absolute;right:max(40px,calc((100% - 1440px) / 2 + 112px));bottom:32px;width:420px;z-index:3}.s-buy{box-shadow:0 30px 60px -30px rgba(11,11,12,0.35)}}
+@media (max-width:1023px){.s-buywrap{padding:20px}}
+.s-thumbs{position:absolute;left:max(20px,calc((100% - 1440px) / 2 + 112px));bottom:32px;display:flex;gap:8px;z-index:2}
+@media (max-width:1023px){.s-thumbs{display:none}}
+.s-sw{width:44px;height:44px;border-radius:50%;border:1px solid #8A8274;padding:4px;box-sizing:border-box;background:transparent;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;position:relative;text-decoration:none}
+.s-sw[aria-current="true"]{border:1.5px solid #0B0B0C}
+.s-sw span{display:block;width:100%;height:100%;border-radius:50%}
+.s-sw.out::after{content:'';position:absolute;left:50%;top:6px;bottom:6px;width:1px;background:#0B0B0C;transform:rotate(45deg)}
+.s-shade{position:fixed;inset:0;z-index:50;background:rgba(11,11,12,0.42);border:0;padding:0;cursor:pointer}
+.s-drw{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);z-index:51;background:#F5F2EC;display:flex;flex-direction:column;box-shadow:-30px 0 60px -30px rgba(11,11,12,0.5)}
+</style>
+</helmet>
+<div class="s-root" style="background: #ECE7DE; color: #0B0B0C; font-family: 'Nunito Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.6; min-height: 100vh; overflow-x: clip">
+<a class="s-skip" href="#main">Skip to content</a>
+
+<div class="s-dark" style="background: #000000; color: #F5F5F7">
+<div class="s-wrap" style="min-height: 40px; display: flex; align-items: center; justify-content: center; gap: 10px 18px; flex-wrap: wrap; padding-block: 8px; text-align: center">
+<span class="s-f" style="font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase"><span style="color: #F0E81C">STYLE 002 · Signal</span> · drops Fri 4 Dec, 18:00 GMT</span>
+<a href="Product.dc.html" class="s-f s-lnk" style="font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase">Get notified</a>
+</div>
+</div>
+
+<header style="position: sticky; top: 0; z-index: 20; background: rgba(236,231,222,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid #CFC7B8">
+<div class="s-wrap" style="height: 76px; display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center; gap: 16px">
+<div style="display: flex; align-items: center">
+<button type="button" class="s-ib s-menu" aria-label="Menu" aria-expanded="{{menuStr}}" aria-controls="menu" onClick="{{toggleMenu}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"></path></svg></button>
+<nav aria-label="Main" class="s-nav"><ul class="s-f" style="list-style: none; margin: 0; padding: 0; display: flex; gap: 26px; font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; white-space: nowrap"><li><a href="Drop.dc.html" class="s-lnk">Current drop</a></li><li><a href="Category.dc.html" class="s-lnk">Categories</a></li><li><a href="Archive.dc.html" class="s-lnk">All pieces</a></li><li><a href="About.dc.html" class="s-lnk">Story</a></li></ul></nav>
+</div>
+<a href="Main.dc.html" aria-label="NEVMA Style home" style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C"><span class="s-f" style="font-size: 15px; font-weight: 500; letter-spacing: 0.42em">NEVMA</span><span aria-hidden="true" style="width: 1px; height: 18px; background: #0B0B0C"></span><span class="s-f" style="font-size: 15px; font-weight: 300; letter-spacing: 0.42em">STYLE</span></a>
+<div style="display: flex; justify-content: flex-end; align-items: center; gap: 2px">
+<a href="Account.dc.html" class="s-ib" aria-label="Account"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.5 20c1.4-3.6 4.2-5.4 7.5-5.4s6.1 1.8 7.5 5.4"></path></svg></a>
+<a href="Wishlist.dc.html" class="s-ib" aria-label="Wishlist, 2 pieces"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"></path></svg></a>
+<a href="Bag.dc.html" class="s-ib" aria-label="Bag, 1 piece"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8" stroke-linecap="round"></path></svg><span class="s-count" aria-hidden="true">1</span></a>
+</div>
+</div>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+<nav id="menu" class="s-pop" aria-label="Menu" style="border-top: 1px solid #CFC7B8; background: #ECE7DE">
+<ul class="s-wrap s-f" style="list-style: none; margin: 0; padding-block: 8px 18px; display: flex; flex-direction: column; font-size: 14px; letter-spacing: 0.26em; text-transform: uppercase"><li><a href="Drop.dc.html" style="display: flex; align-items: center; min-height: 52px; text-decoration: none">Current drop</a></li><li><a href="Category.dc.html" style="display: flex; align-items: center; min-height: 52px; text-decoration: none">Categories</a></li><li><a href="Archive.dc.html" style="display: flex; align-items: center; min-height: 52px; text-decoration: none">All pieces</a></li><li><a href="About.dc.html" style="display: flex; align-items: center; min-height: 52px; text-decoration: none">Story</a></li><li><a href="Legal.dc.html" style="display: flex; align-items: center; min-height: 52px; text-decoration: none">Client care</a></li></ul>
+</nav>
+</sc-if>
+</header>
+
+
+<main id="main">
+<section aria-label="{{v.name}}" style="position: relative">
+<ul class="s-gal" aria-label="Photos of {{v.name}}" style="list-style: none; margin: 0; padding: 0">
+<sc-for list="{{gallery}}" as="g" hint-placeholder-count="3">
+<li id="{{g.id}}" style="position: relative; aspect-ratio: 4 / 5; overflow: clip; background: {{g.bg}}">
+<sc-if value="{{g.isImg}}" hint-placeholder-val="{{ true }}"><img src="{{g.img}}" alt="{{g.alt}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: {{g.pos}}; transform: scale({{g.zoom}}); transform-origin: {{g.origin}}; display: block; filter: {{g.filter}}"></sc-if>
+<sc-if value="{{g.isPh}}" hint-placeholder-val="{{ false }}"><span style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; padding: 24px; color: {{g.phFg}}"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="1.5"></rect><circle cx="9" cy="10" r="1.6"></circle><path d="M4 17l5-4.5 3.5 3 3-2.5 4.5 4"></path></svg><span class="s-f" style="font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase">[Photo · {{g.ph}}]</span></span></sc-if>
+</li>
+</sc-for>
+</ul>
+<div class="s-thumbs" role="group" aria-label="Jump to photo">
+<sc-for list="{{gallery}}" as="g" hint-placeholder-count="3"><a href="#{{g.id}}" aria-label="Photo {{g.n}}" style="display: block; width: 46px; height: 58px; border: 1px solid #F5F2EC; border-radius: 2px; overflow: clip; background: {{g.bg}}"><sc-if value="{{g.isImg}}" hint-placeholder-val="{{ true }}"><img src="{{g.img}}" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: {{g.pos}}; display: block; filter: {{g.filter}}"></sc-if></a></sc-for>
+</div>
+
+<div class="s-buywrap">
+<div class="s-buy">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<p class="s-eb" style="font-size: 11px">{{v.drop}}</p>
+<h1 class="s-name" style="margin: 0; font-size: 19px; letter-spacing: 0.2em; line-height: 1.45">{{v.name}}</h1>
+<p class="s-price" style="margin: 0; font-size: 17px">{{v.price}}</p>
+</div>
+<button type="button" class="s-ib" aria-pressed="{{wishStr}}" aria-label="{{wishLabel}}" onClick="{{toggleWish}}" style="border: 1px solid #8A8274; flex: 0 0 auto"><svg width="19" height="19" viewBox="0 0 24 24" fill="{{wishFill}}" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"></path></svg></button>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 16px 0; border-block: 1px solid #CFC7B8" aria-live="polite">
+<div style="display: flex; align-items: center; gap: 12px"><span class="s-ed" aria-hidden="true"><sc-for list="{{v.pips}}" as="x" hint-placeholder-count="5"><span class="{{x.cls}}" style="width: 11px; height: 11px; border-style: {{x.bs}}"></span></sc-for></span><strong style="font-size: 15.5px">{{v.stock}}</strong></div>
+<p style="margin: 0; font-size: 13.5px; color: #615D55">{{v.stockNote}}</p>
+</div>
+
+<sc-if value="{{v.canBuy}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<p class="s-eb" style="font-size: 11px; color: #0B0B0C">Colour · <span style="color: #615D55">White</span></p>
+<div style="display: flex; gap: 10px"><a href="Product.dc.html" class="s-sw" aria-current="true" aria-label="White, selected"><span style="background: #F7F6F2; border: 1px solid #CFC7B8"></span></a><a href="Archive.dc.html" class="s-sw out" aria-label="Bone, sold out"><span style="background: #D6CBB5"></span></a></div>
+</div>
+<fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px">
+<legend class="s-eb" style="font-size: 11px; color: #0B0B0C; padding: 0; margin-bottom: 12px; width: 100%; display: flex; justify-content: space-between">Size <a href="Legal.dc.html" class="s-ul" style="font-family: 'Nunito Sans', sans-serif; letter-spacing: 0; text-transform: none; font-size: 13.5px; font-weight: 400; padding-bottom: 2px">Size guide</a></legend>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{sizes}}" as="z" hint-placeholder-count="4"><button type="button" class="s-chip {{z.cls}}" aria-pressed="{{z.pressed}}" aria-disabled="{{z.dis}}" aria-label="{{z.aria}}" onClick="{{z.pick}}">{{z.label}}</button></sc-for>
+</div>
+<p style="margin: 0; font-size: 13.5px; color: #3E3B35; min-height: 22px">{{sizeNote}}</p>
+</fieldset>
+<button type="button" class="s-btn s-btn-p" aria-disabled="{{addDis}}" onClick="{{add}}" style="width: 100%">{{addLabel}}</button>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; color: #3E3B35">
+<li>One per customer. A bag does not hold a piece: it is yours once paid.</li>
+<li>UK delivery 2 to 4 working days · Returns within 14 days</li>
+</ul>
+</sc-if>
+
+<sc-if value="{{v.isUpcoming}}" hint-placeholder-val="{{ false }}">
+<div class="s-cd" role="timer" aria-label="Opens Friday 4 December at 18:00 GMT" style="gap: 8px">
+<sc-for list="{{cd}}" as="c" hint-placeholder-count="4"><span style="display: flex; flex-direction: column; gap: 2px; padding-top: 10px; border-top: 1px solid #CFC7B8"><span class="s-disp" style="font-size: 26px; letter-spacing: 0.04em; font-variant-numeric: tabular-nums">{{c.v}}</span><span class="s-eb" style="font-size: 9.5px">{{c.l}}</span></span></sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{v.showNotify}}" hint-placeholder-val="{{ false }}">
+<sc-if value="{{notSent}}" hint-placeholder-val="{{ true }}">
+<form onSubmit="{{notify}}" style="display: flex; flex-direction: column; gap: 12px">
+<div><label for="nt-email" class="s-lbl">{{v.notifyLabel}}</label><input id="nt-email" class="s-in" type="email" autocomplete="email" placeholder="you@example.com"></div>
+<label style="display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; color: #3E3B35"><input type="checkbox" style="width: 18px; height: 18px; margin: 2px 0 0; accent-color: #0B0B0C"> Also send me the NEVMA Style letter (about once a month)</label>
+<button type="submit" class="s-btn s-btn-p" style="width: 100%">{{v.notifyCta}}</button>
+<p style="margin: 0; font-size: 12.5px; color: #615D55">Protected by Cloudflare Turnstile. We email you once, then delete the request.</p>
+</form>
+</sc-if>
+<sc-if value="{{notified}}" hint-placeholder-val="{{ false }}">
+<p role="status" style="margin: 0; padding: 16px; border: 1px solid #0B0B0C; border-radius: 6px; font-size: 15px">You’re on the list. We’ll email you the moment STYLE 002 opens.</p>
+</sc-if>
+</sc-if>
+
+<p class="s-f" style="margin: 0; display: flex; align-items: center; gap: 8px; font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #615D55"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="10.5" width="14" height="9.5" rx="1.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>Secure payment by Viva</p>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="info-title" style="border-bottom: 1px solid #CFC7B8">
+<div class="s-wrap s-sec" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 40px 96px">
+<div style="display: flex; flex-direction: column; gap: 18px; max-width: 54ch">
+<h2 id="info-title" class="s-vh">About this piece</h2>
+<p style="margin: 0; font-size: 15px; color: #3E3B35">{{v.lead}}</p>
+<p style="margin: 0; font-size: 15px; color: #3E3B35">{{v.body}}</p>
+<ul style="margin: 0; padding-left: 18px; font-size: 15px; color: #3E3B35; display: flex; flex-direction: column; gap: 4px">
+<li>[Fabric, weight and fibre]</li><li>Boxy fit, dropped shoulder · model 186 cm wears L</li><li>Numbered 1 to 5 at packing, with a signed card</li><li>Made in [country] · shipped from London</li>
+</ul>
+<p style="margin: 0; font-size: 13.5px; color: #615D55">Reference: {{v.ref}} · Questions? <a href="Legal.dc.html">Contact client care</a></p>
+</div>
+<div>
+<details class="s-acc" open style="border-top: 1px solid #CFC7B8"><summary>Size and fit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary>
+<div style="overflow-x: auto; margin-bottom: 22px"><table style="width: 100%; border-collapse: collapse; font-size: 14px; min-width: 380px"><thead><tr class="s-f" style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #615D55"><th scope="col" style="text-align: left; padding: 8px 0; font-weight: 500">cm</th><th scope="col" style="text-align: left; font-weight: 500">S</th><th scope="col" style="text-align: left; font-weight: 500">M</th><th scope="col" style="text-align: left; font-weight: 500">L</th><th scope="col" style="text-align: left; font-weight: 500">XL</th></tr></thead><tbody><tr style="border-top: 1px solid #CFC7B8"><th scope="row" style="text-align: left; padding: 8px 0; font-weight: 600">Chest</th><td>[54]</td><td>[57]</td><td>[60]</td><td>[63]</td></tr><tr style="border-top: 1px solid #CFC7B8"><th scope="row" style="text-align: left; padding: 8px 0; font-weight: 600">Length</th><td>[70]</td><td>[72]</td><td>[74]</td><td>[76]</td></tr></tbody></table></div>
+</details>
+<details class="s-acc" style="border-top: 1px solid #CFC7B8"><summary>Care <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary><p style="margin: 0 0 22px; font-size: 15px; color: #3E3B35">Wash inside out at 30°, cold iron away from the print, dry flat. The print is made to age with the piece.</p></details>
+<details class="s-acc" style="border-top: 1px solid #CFC7B8"><summary>Delivery and returns <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary><p style="margin: 0 0 22px; font-size: 15px; color: #3E3B35">UK tracked 2 to 4 working days, worldwide with DHL Express. Return within 14 days of delivery; a returned piece goes back on sale with its number. <a href="Legal.dc.html">Full policy</a></p></details>
+<details class="s-acc" style="border-top: 1px solid #CFC7B8"><summary>The edition <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary><p style="margin: 0 0 22px; font-size: 15px; color: #3E3B35">Five pieces exist in this colour, across all sizes. The counter above is live from our stock. It never goes up again, unless a piece is returned.</p></details>
+<details class="s-acc" style="border-block: 1px solid #CFC7B8"><summary>Payment <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></summary><p style="margin: 0 0 22px; font-size: 15px; color: #3E3B35">You check out with us, then pay on Viva’s secure page by card, Apple Pay or Google Pay [confirm the methods enabled on the Viva account]. Prices include UK VAT.</p></details>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="art-title" style="border-bottom: 1px solid #CFC7B8">
+<div class="s-wrap s-sec" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px">
+<p class="s-eb">The art of the edition</p>
+<h2 id="art-title" class="s-disp" style="margin: 0; max-width: 24ch; font-size: clamp(24px, 2.4vw, 36px); letter-spacing: 0.18em; line-height: 1.45">One number, written by hand</h2>
+<p style="margin: 0; max-width: 56ch; color: #3E3B35">Every piece leaves the studio with its number on the label and on a signed card. Watch how STYLE 001 was finished, from the last stitch to N° 5.</p>
+<div style="position: relative; width: 100%; max-width: 1040px; aspect-ratio: 16 / 9; margin-top: 18px; background: #000000; border-radius: 4px; overflow: clip">
+<img src="/_blob/7e95d22ab0972fb70a41d9a2da83c89b" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.45; display: block">
+<button type="button" aria-label="Play the film, 0:24" style="position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%; border: 1px solid #F5F5F7; background: rgba(0,0,0,0.4); color: #F5F5F7; cursor: pointer; display: inline-flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"></path></svg></button>
+<span style="position: absolute; left: 20px; bottom: 16px; font-size: 13px; color: #D2D2DA">[Film · 0:24, muted, captions on]</span>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="pair-title" style="border-bottom: 1px solid #CFC7B8">
+<div class="s-wrap s-sec" style="display: flex; flex-direction: column; gap: 40px">
+<h2 id="pair-title" class="s-h2 s-rv" style="align-self: center; text-align: center">Wear it with</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 28px 56px; align-items: center">
+<div style="aspect-ratio: 4 / 5; border-radius: 4px; overflow: clip; background: #D9D3C8"><img src="/_blob/48973edd68fb210efce173c75d7b5599" alt="Definition tees styled together" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<ul class="s-stg" style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px">
+<li><a href="Product.dc.html" class="s-card" style="display: flex; flex-direction: column; gap: 12px; text-decoration: none"><span style="display: block; aspect-ratio: 3 / 4; overflow: clip; border-radius: 4px; background: #D9D3C8"><img src="/_blob/c6bb175d8bb5fe0cb3c0ea6480d24393" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"></span><span class="s-name" style="font-size: 12px">Wordmark Tee · Bone</span><span style="display: flex; justify-content: space-between; gap: 10px; font-size: 14px"><span class="s-price">£75</span><span>Last piece</span></span></a></li>
+<li><a href="Product.dc.html" class="s-card" style="display: flex; flex-direction: column; gap: 12px; text-decoration: none"><span style="display: flex; align-items: center; justify-content: center; aspect-ratio: 3 / 4; border-radius: 4px; background: #000000; color: #A8A8B4; font-size: 12px">[Photo · Suede Cap]</span><span class="s-name" style="font-size: 12px">Suede Cap · STYLE 002</span><span style="display: flex; justify-content: space-between; gap: 10px; font-size: 14px"><span>Fri 4 Dec</span><span>Notify me</span></span></a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="more-title" style="border-bottom: 1px solid #CFC7B8">
+<div class="s-wrap s-sec" style="display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap"><h2 id="more-title" class="s-h2 s-rv">Keep exploring</h2><a href="Archive.dc.html" class="s-eb s-ul" style="color: #0B0B0C">All pieces</a></div>
+<ul class="s-trio s-stg" style="list-style: none; margin: 0; padding: 0">
+<li><a href="Drop.dc.html" class="s-card" style="display: flex; flex-direction: column; gap: 14px; text-decoration: none"><span style="display: block; aspect-ratio: 4 / 3; overflow: clip; border-radius: 4px; background: #D9D3C8"><img src="/_blob/c6bb175d8bb5fe0cb3c0ea6480d24393" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block"></span><span class="s-name" style="font-size: 12.5px">STYLE 001 · the drop</span></a></li>
+<li><a href="Archive.dc.html" class="s-card" style="display: flex; flex-direction: column; gap: 14px; text-decoration: none"><span style="display: block; aspect-ratio: 4 / 3; overflow: clip; border-radius: 4px; background: #D9D3C8"><img src="/_blob/48973edd68fb210efce173c75d7b5599" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); display: block"></span><span class="s-name" style="font-size: 12.5px">The archive · sold-out pieces</span></a></li>
+<li><a href="About.dc.html" class="s-card" style="display: flex; flex-direction: column; gap: 14px; text-decoration: none"><span style="display: block; aspect-ratio: 4 / 3; overflow: clip; border-radius: 4px; background: #000000"><img src="/_blob/7cb024b181b03540faa8b26ed6fb24a9" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"></span><span class="s-name" style="font-size: 12.5px">The story of Style</span></a></li>
+</ul>
+</div>
+</section>
+
+<section aria-label="Our services">
+<ul class="s-wrap s-4" style="list-style: none; margin-block: 0; padding-block: 56px; text-align: center">
+<li style="display: flex; flex-direction: column; align-items: center; gap: 10px"><span class="s-eb" style="color: #0B0B0C">Delivery</span><span style="font-size: 14px; color: #3E3B35">Tracked UK and worldwide, packed by hand in London.</span></li>
+<li style="display: flex; flex-direction: column; align-items: center; gap: 10px"><span class="s-eb" style="color: #0B0B0C">Returns</span><span style="font-size: 14px; color: #3E3B35">14 days from delivery. <a href="Legal.dc.html">How it works</a></span></li>
+<li style="display: flex; flex-direction: column; align-items: center; gap: 10px"><span class="s-eb" style="color: #0B0B0C">Client care</span><span style="font-size: 14px; color: #3E3B35">[style@nevma…] · replies within one working day</span></li>
+<li style="display: flex; flex-direction: column; align-items: center; gap: 10px"><span class="s-eb" style="color: #0B0B0C">Secure payment</span><span style="font-size: 14px; color: #3E3B35">Card, Apple Pay and Google Pay on Viva’s secure page.</span></li>
+</ul>
+</section>
+</main>
+<footer class="s-dark" style="background: #000000; color: #F5F5F7">
+<div class="s-wrap s-sec" style="display: flex; flex-direction: column; gap: 56px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 48px 64px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<img src="/_blob/05a502b9f90960a3c29214056fa73f94" alt="NEVMA" style="height: 26px; width: auto; align-self: flex-start">
+<p class="s-eb" style="color: #F0E81C">Style · Limited by design</p>
+<form style="display: flex; gap: 10px; flex-wrap: wrap; max-width: 460px">
+<label for="ft-email" class="s-vh">Email address</label>
+<input id="ft-email" class="s-in" type="email" autocomplete="email" placeholder="Hear about drops first" style="flex: 1 1 220px; width: auto; height: 48px">
+<button type="submit" class="s-btn s-btn-l s-btn-sm" style="height: 48px">Join</button>
+</form>
+</div>
+<nav aria-label="Footer"><ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 32px; font-size: 15px"><li><a href="Drop.dc.html">Current drop</a></li><li><a href="Legal.dc.html">Shipping &amp; delivery</a></li><li><a href="Archive.dc.html">All pieces</a></li><li><a href="Legal.dc.html">Returns</a></li><li><a href="About.dc.html">Story</a></li><li><a href="Legal.dc.html">Client care &amp; FAQ</a></li><li><a href="Account.dc.html">Account</a></li><li><a href="Legal.dc.html">Contact</a></li><li><a href="#">NEVMA Music ↗</a></li><li><a href="#">Instagram ↗</a></li></ul></nav>
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 44ch">
+<p style="margin: 0; display: flex; align-items: baseline; gap: 12px"><span style="font-size: 28px; font-weight: 700">nevma</span><span style="color: #A8A8B4; font-style: italic">noun · Greek</span></p>
+<span class="s-rule" aria-hidden="true" style="width: 100%; opacity: 0.6"></span>
+<p style="margin: 0; font-size: 15px; color: #D2D2DA"><strong style="color: #F5F5F7">a gesture, nod or sign:</strong> a subtle signal given with the hand, head or eyes.</p>
+</div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px 32px; flex-wrap: wrap; padding-top: 28px; border-top: 1px solid #26262C; font-size: 14px; color: #A8A8B4">
+<span class="s-eb" style="letter-spacing: 0.4em; color: #F5F5F7">We don’t follow. We define.</span>
+<span style="display: flex; gap: 20px; flex-wrap: wrap"><a href="Legal.dc.html">Terms of sale</a><a href="Legal.dc.html">Privacy</a><a href="Legal.dc.html">Cookies</a><span>Payments secured by Viva</span><span>© 2026 NEVMA Style · London</span></span>
+</div>
+</div>
+</footer>
+
+<sc-if value="{{bagOpen}}" hint-placeholder-val="{{ false }}">
+<button type="button" class="s-shade" aria-label="Close bag" onClick="{{closeBag}}"></button>
+<aside class="s-drw s-drawer" role="dialog" aria-modal="true" aria-labelledby="drw-title">
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; border-bottom: 1px solid #CFC7B8"><h2 id="drw-title" class="s-eb" style="color: #0B0B0C">Added to your bag</h2><button type="button" class="s-ib" aria-label="Close" onClick="{{closeBag}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div>
+<div style="flex: 1 1 auto; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 22px">
+<div style="display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 18px">
+<img src="/_blob/ec745d9afe5c690abaeda598c37428bf" alt="" style="width: 96px; height: 120px; object-fit: cover; border-radius: 2px; display: block; background: #000000">
+<div style="display: flex; flex-direction: column; gap: 4px"><span class="s-name" style="font-size: 12.5px">Definition Tee · White</span><span style="font-size: 14px; color: #3E3B35">Size {{chosen}} · STYLE 001</span><span class="s-price" style="font-size: 15px">£85</span></div>
+</div>
+<p style="margin: 0; padding: 14px 16px; background: #ECE7DE; border-radius: 6px; font-size: 14px; color: #3E3B35">Pieces are not held in a bag. {{leftWords}} Check out now to make it yours.</p>
+<div style="display: flex; justify-content: space-between; padding-top: 14px; border-top: 1px solid #CFC7B8"><span>Subtotal</span><span class="s-price">£85</span></div>
+<p style="margin: 0; font-size: 13.5px; color: #615D55">Delivery and taxes are worked out at checkout.</p>
+</div>
+<div style="padding: 20px 24px 28px; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #CFC7B8">
+<a href="Checkout.dc.html" class="s-btn s-btn-p" style="width: 100%">Checkout</a>
+<a href="Bag.dc.html" class="s-btn s-btn-o" style="width: 100%">View bag</a>
+</div>
+</aside>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"state":{"editor":"enum","options":["Available","Last piece","Sold out","Upcoming"],"default":"Available"},"$preview":{"width":1440,"height":5400}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { menu: false, size: null, bag: false, wish: false, notified: false, now: Date.parse('2026-10-23T13:00:00Z') }; }
+  componentDidMount() { var self = this; this.t = setInterval(function () { self.setState({ now: Date.now() }); }, 30000); this.setState({ now: Date.now() }); }
+  componentWillUnmount() { clearInterval(this.t); }
+  renderVals() {
+    var self = this, s = this.state, mode = this.props.state ?? 'Available';
+    var pips = function (n, dashed) { var a = []; for (var i = 0; i < 5; i++) a.push({ cls: i < n ? 's-pip on' : 's-pip', bs: dashed ? 'dashed' : 'solid' }); return a; };
+    var W = '/_blob/ec745d9afe5c690abaeda598c37428bf';
+    var stockBy = { 'Available': { S: 0, M: 1, L: 2, XL: 0 }, 'Last piece': { S: 0, M: 0, L: 1, XL: 0 }, 'Sold out': { S: 0, M: 0, L: 0, XL: 0 }, 'Upcoming': { S: 0, M: 0, L: 0, XL: 0 } }[mode];
+    var left = stockBy.S + stockBy.M + stockBy.L + stockBy.XL;
+    var up = mode === 'Upcoming', sold = mode === 'Sold out';
+    var v = up ? {
+      drop: 'STYLE 002 · Signal · Coming Fri 4 Dec', name: 'Suede Cap · Sand', price: 'Price revealed at the drop', pips: pips(5, true),
+      stock: 'Edition of 5', stockNote: 'Opens Friday 4 December, 18:00 GMT. One per customer.',
+      canBuy: false, isUpcoming: true, showNotify: true, notifyLabel: 'Email me when it opens', notifyCta: 'Notify me', ref: 'NS-002-CAP-SND',
+      lead: 'Six-panel cap in brushed suede, with the NEVMA sign embroidered tone on tone at the back.',
+      body: 'Part of STYLE 002, Signal: three pieces built around the gesture in the name. Full details, photos and price appear when the drop opens.'
+    } : {
+      drop: 'STYLE 001 · Definition', name: 'Definition Tee · White', price: '£85', pips: pips(left, false),
+      stock: sold ? 'Sold out' : (left === 1 ? 'Last piece of five' : left + ' of 5 left'),
+      stockNote: sold ? 'All five have found a home. This piece will not be made again.' : 'Live from our stock · numbered N° 1 to 5 at packing',
+      canBuy: !sold, isUpcoming: false, showNotify: sold, notifyLabel: 'Hear first about the next drop', notifyCta: 'Notify me of STYLE 002', ref: 'NS-001-TEE-WHT',
+      lead: 'The full dictionary entry for nevma printed across the back, wordmark at the neck. Heavyweight cotton with a dry hand.',
+      body: 'The first piece of NEVMA Style. Five were made in white, across four sizes, and each one is numbered by hand when it is packed.'
+    };
+    var gallery = up ? [
+      { id: 'ph1', n: 1, isImg: false, isPh: true, ph: 'Suede Cap · front', bg: '#0B0B0C', phFg: '#A8A8B4' },
+      { id: 'ph2', n: 2, isImg: false, isPh: true, ph: 'Suede Cap · back embroidery', bg: '#141418', phFg: '#A8A8B4' },
+      { id: 'ph3', n: 3, isImg: false, isPh: true, ph: 'worn, on model', bg: '#D9D3C8', phFg: '#615D55' }
+    ] : [
+      { id: 'ph1', n: 1, isImg: true, isPh: false, img: W, alt: 'Definition Tee in white, back view with the printed definition', pos: 'center 42%', zoom: 1, origin: 'center', bg: '#000000', filter: sold ? 'grayscale(1)' : 'none' },
+      { id: 'ph2', n: 2, isImg: true, isPh: false, img: W, alt: 'Close-up of the printed definition', pos: 'center 40%', zoom: 1.9, origin: '50% 45%', bg: '#000000', filter: sold ? 'grayscale(1)' : 'none' },
+      { id: 'ph3', n: 3, isImg: false, isPh: true, ph: 'worn, on model', bg: '#D9D3C8', phFg: '#615D55' }
+    ];
+    var sizes = ['S', 'M', 'L', 'XL'].map(function (z) {
+      var n = stockBy[z], out = n === 0, on = s.size === z;
+      return { label: z, cls: out ? 'out' : '', pressed: on ? 'true' : 'false', dis: out ? 'true' : 'false',
+        aria: z + (out ? ', sold out' : (n === 1 ? ', last one' : ', ' + n + ' left')),
+        pick: function () { if (!out) self.setState({ size: z }); } };
+    });
+    var chosen = s.size && stockBy[s.size] > 0 ? s.size : null;
+    var sizeNote = chosen ? (stockBy[chosen] === 1 ? chosen + ' · the last one in this size' : chosen + ' · ' + stockBy[chosen] + ' left in this size') : 'Crossed-out sizes are sold out.';
+    var target = Date.parse('2026-12-04T18:00:00Z'), diff = Math.max(0, target - s.now), pad = function (x) { return (x < 10 ? '0' : '') + x; };
+    return {
+      menuOpen: s.menu, menuStr: s.menu ? 'true' : 'false', toggleMenu: function () { self.setState({ menu: !self.state.menu }); },
+      v: v, gallery: gallery, sizes: sizes, sizeNote: sizeNote, chosen: chosen || 'L',
+      addDis: chosen ? 'false' : 'true', addLabel: chosen ? 'Add to bag · £85' : 'Select a size',
+      add: function () { if (chosen) self.setState({ bag: true }); },
+      bagOpen: s.bag, closeBag: function () { self.setState({ bag: false }); },
+      leftWords: chosen && stockBy[chosen] === 1 ? 'This is the last one in your size.' : 'Others can still buy this size.',
+      wishStr: s.wish ? 'true' : 'false', wishFill: s.wish ? 'currentColor' : 'none', wishLabel: s.wish ? 'Remove from wishlist' : 'Save to wishlist',
+      toggleWish: function () { self.setState({ wish: !self.state.wish }); },
+      notify: function (e) { if (e && e.preventDefault) e.preventDefault(); self.setState({ notified: true }); },
+      notified: s.notified, notSent: !s.notified,
+      cd: [ { v: pad(Math.floor(diff / 86400000)), l: 'Days' }, { v: pad(Math.floor(diff / 3600000) % 24), l: 'Hours' }, { v: pad(Math.floor(diff / 60000) % 60), l: 'Min' }, { v: '18:00', l: 'GMT' } ]
+    };
+  }
+}
+</script>
+</body>
+</html>

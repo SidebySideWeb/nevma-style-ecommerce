@@ -1,0 +1,17 @@
+/* NEVMA Style — generated from the design canvas. Do not edit by hand: change the tokens in docs/DESIGN-SYSTEM.md and regenerate, or edit together with the fidelity tests. */
+.s-gal{position:relative;display:grid;grid-auto-flow:column;grid-auto-columns:86%;gap:2px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;background:#D9D3C8}
+.s-gal::-webkit-scrollbar{display:none}
+.s-gal>*{scroll-snap-align:start}
+@media (min-width:1024px){.s-gal{grid-auto-columns:calc((100% - 4px) / 3);overflow:clip;height:840px}.s-gal>li{aspect-ratio:auto!important;height:100%}}
+.s-buywrap{position:relative}
+.s-buy{background:#F5F2EC;border:1px solid #CFC7B8;box-sizing:border-box;padding:28px;display:flex;flex-direction:column;gap:22px}
+@media (min-width:1024px){.s-buywrap{position:absolute;right:max(40px,calc((100% - 1440px) / 2 + 112px));bottom:32px;width:420px;z-index:3}.s-buy{box-shadow:0 30px 60px -30px rgba(11,11,12,0.35)}}
+@media (max-width:1023px){.s-buywrap{padding:20px}}
+.s-thumbs{position:absolute;left:max(20px,calc((100% - 1440px) / 2 + 112px));bottom:32px;display:flex;gap:8px;z-index:2}
+@media (max-width:1023px){.s-thumbs{display:none}}
+.s-sw{width:44px;height:44px;border-radius:50%;border:1px solid #8A8274;padding:4px;box-sizing:border-box;background:transparent;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;position:relative;text-decoration:none}
+.s-sw[aria-current="true"]{border:1.5px solid #0B0B0C}
+.s-sw span{display:block;width:100%;height:100%;border-radius:50%}
+.s-sw.out::after{content:'';position:absolute;left:50%;top:6px;bottom:6px;width:1px;background:#0B0B0C;transform:rotate(45deg)}
+.s-shade{position:fixed;inset:0;z-index:50;background:rgba(11,11,12,0.42);border:0;padding:0;cursor:pointer}
+.s-drw{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);z-index:51;background:#F5F2EC;display:flex;flex-direction:column;box-shadow:-30px 0 60px -30px rgba(11,11,12,0.5)}

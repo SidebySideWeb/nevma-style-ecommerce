@@ -1,0 +1,7 @@
+{
+  "crons": [
+    { "path": "/api/cron/drops", "schedule": "*/5 * * * *" },
+    { "path": "/api/cron/retention", "schedule": "10 3 * * *" },
+    { "path": "/api/cron/wishlist-alerts", "schedule": "0 * * * *" }
+  ]
+}

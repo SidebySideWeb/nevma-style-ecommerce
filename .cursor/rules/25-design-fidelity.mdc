@@ -1,0 +1,10 @@
+---
+description: How to build a page so the fidelity tests pass
+alwaysApply: false
+---
+Workflow for every page or state:
+1. Open design/build/<slug>.html in a browser at 1440 and 390, and docs/PAGES.md for the route.
+2. Build blocks top to bottom from design/build/blocks/<slug>/NN-*.html: same tags, classes, attributes (aria, roles, ids used by labels), inline styles. Replace text and images with data, keeping wrappers.
+3. Run `FIDELITY_ONLY='^<slug>$' pnpm test:fidelity`. Read the first difference it reports (text, text style, background, height, pixels). The HTML report in apps/web/fidelity-report shows site, design and diff images for each failing block.
+4. Fix and repeat until it passes at both widths. Then run the full suite.
+Never edit design/build, pages.json, thresholds or the spec to make a test pass. If the design itself must change, stop and ask the user.

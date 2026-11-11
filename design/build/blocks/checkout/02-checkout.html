@@ -1,0 +1,79 @@
+<!-- Shopify checkout (branding reference) · block "checkout" · exact markup from the design (classes + inline styles). Port to a component without changing values. -->
+<div class="c-grid" data-block="checkout">
+<main class="c-main">
+<form style="width: 100%; max-width: calc(max(24px, calc((100vw - 1180px) / 2 + 24px)) + 720px); box-sizing: border-box; padding: 40px 56px 64px max(24px, calc((100vw - 1180px) / 2 + 24px)); display: flex; flex-direction: column; gap: 36px">
+<h1 class="c-vh">Checkout</h1>
+
+<section aria-labelledby="c-contact" style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><h2 id="c-contact" class="c-h">Contact</h2><a href="09-sign-in.html" style="font-size: 14px">Sign in</a></div>
+<div><label for="c-email" class="c-vh">Email</label><input id="c-email" class="c-field" type="email" autocomplete="email" placeholder="Email" value="alex.morgan@example.com"></div>
+<label style="display: flex; gap: 10px; align-items: center; font-size: 14px"><input type="checkbox" checked="" style="width: 18px; height: 18px; margin: 0; accent-color: #0B0B0C"> Email me when the next drop opens</label>
+</section>
+
+<section aria-labelledby="c-del" style="display: flex; flex-direction: column; gap: 12px">
+<h2 id="c-del" class="c-h">Delivery</h2>
+<div><label for="c-country" class="c-lab">Country / Region</label><select id="c-country" class="c-field" autocomplete="country"><option>United Kingdom</option><option>Greece</option><option>France</option><option>United States</option></select></div>
+<div class="c-2"><div><label for="c-fn" class="c-lab">First name</label><input id="c-fn" class="c-field" autocomplete="given-name" value="Alex"></div><div><label for="c-ln" class="c-lab">Last name</label><input id="c-ln" class="c-field" autocomplete="family-name" value="Morgan"></div></div>
+<div><label for="c-ad" class="c-lab">Address</label><input id="c-ad" class="c-field" autocomplete="address-line1" value="14 Calvert Avenue"></div>
+<div><label for="c-ad2" class="c-lab">Apartment, suite, etc. (optional)</label><input id="c-ad2" class="c-field" autocomplete="address-line2" value="Flat 3"></div>
+<div class="c-3"><div><label for="c-city" class="c-lab">City</label><input id="c-city" class="c-field" autocomplete="address-level2" value="London"></div><div><label for="c-pc" class="c-lab">Postcode</label><input id="c-pc" class="c-field" autocomplete="postal-code" value="E2 7JP"></div><div><label for="c-ph" class="c-lab">Phone (for the courier)</label><input id="c-ph" class="c-field" type="tel" autocomplete="tel" placeholder="Phone"></div></div>
+</section>
+
+<section aria-labelledby="c-ship" style="display: flex; flex-direction: column; gap: 12px">
+<h2 id="c-ship" class="c-h">Shipping method</h2>
+<div class="c-opts" role="radiogroup" aria-labelledby="c-ship">
+
+<label class="c-opt" data-on="true"><input class="c-vh" type="radio" name="ship" checked=""><span class="c-radio" aria-hidden="true"></span><span style="flex: 1 1 auto; display: flex; flex-direction: column; line-height: 1.35"><span style="font-weight: 600">UK Tracked</span><span style="font-size: 13.5px; color: #615D55">2 to 4 working days</span></span><span class="c-f" style="font-size: 14px; letter-spacing: 0.06em">£6.00</span></label>
+
+<label class="c-opt" data-on="false"><input class="c-vh" type="radio" name="ship"><span class="c-radio" aria-hidden="true"></span><span style="flex: 1 1 auto; display: flex; flex-direction: column; line-height: 1.35"><span style="font-weight: 600">UK Next day</span><span style="font-size: 13.5px; color: #615D55">Order by 1 pm, Monday to Thursday</span></span><span class="c-f" style="font-size: 14px; letter-spacing: 0.06em">£12.00</span></label>
+
+<label class="c-opt" data-on="false"><input class="c-vh" type="radio" name="ship"><span class="c-radio" aria-hidden="true"></span><span style="flex: 1 1 auto; display: flex; flex-direction: column; line-height: 1.35"><span style="font-weight: 600">Collect in London</span><span style="font-size: 13.5px; color: #615D55">[Studio address] · by appointment</span></span><span class="c-f" style="font-size: 14px; letter-spacing: 0.06em">Free</span></label>
+
+</div>
+</section>
+
+<section aria-labelledby="c-pay" style="display: flex; flex-direction: column; gap: 12px">
+<div><h2 id="c-pay" class="c-h">Payment</h2><p style="margin: 8px 0 0; font-size: 14px; color: #615D55">All transactions are secure and encrypted.</p></div>
+<div style="border: 1px solid #0B0B0C; border-radius: 6px; overflow: clip; background: #FFFFFF">
+<div style="display: flex; align-items: center; gap: 14px; min-height: 56px; padding: 0 16px; background: #FBFAF7; border-bottom: 1px solid #CFC7B8"><span class="c-radio" aria-hidden="true" style="border: 6px solid #0B0B0C"></span><span style="flex: 1 1 auto; font-weight: 600">Viva · Card, Apple Pay, Google Pay</span><span style="display: flex; gap: 6px" aria-hidden="true"><span class="c-f" style="height: 22px; padding: 0 6px; display: inline-flex; align-items: center; border: 1px solid #CFC7B8; border-radius: 3px; font-size: 9.5px; letter-spacing: 0.1em">VISA</span><span class="c-f" style="height: 22px; padding: 0 6px; display: inline-flex; align-items: center; border: 1px solid #CFC7B8; border-radius: 3px; font-size: 9.5px; letter-spacing: 0.1em">MC</span><span class="c-f" style="height: 22px; padding: 0 6px; display: inline-flex; align-items: center; border: 1px solid #CFC7B8; border-radius: 3px; font-size: 9.5px; letter-spacing: 0.1em">AMEX</span></span></div>
+<div style="padding: 28px 24px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; background: #F5F2EC">
+<svg width="64" height="40" viewBox="0 0 64 40" fill="none" stroke="#615D55" stroke-width="1.2" aria-hidden="true"><rect x="1" y="1" width="40" height="28" rx="3"></rect><path d="M1 9h40"></path><path d="M46 20h16M56 14l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<p style="margin: 0; max-width: 40ch; font-size: 14px; color: #3E3B35">After you click “Pay now”, you’ll go to Viva’s secure page to pay. You come back here when it’s done.</p>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="c-bill" style="display: flex; flex-direction: column; gap: 12px">
+<h2 id="c-bill" class="c-h">Billing address</h2>
+<div class="c-opts" role="radiogroup" aria-labelledby="c-bill">
+<label class="c-opt" data-on="true"><input class="c-vh" type="radio" name="bill" checked=""><span class="c-radio" aria-hidden="true"></span><span>Same as delivery address</span></label><label class="c-opt" data-on="false"><input class="c-vh" type="radio" name="bill"><span class="c-radio" aria-hidden="true"></span><span>Use a different billing address</span></label>
+</div>
+</section>
+
+<div style="display: flex; flex-direction: column; gap: 14px">
+<a href="08-after-payment.html" class="c-btn">Pay now · £166.00</a>
+<p style="margin: 0; font-size: 13px; color: #615D55">Your pieces are yours once Viva confirms payment. If someone else pays first for the same last piece, we’ll tell you before you are charged.</p>
+</div>
+
+<nav aria-label="Policies" style="display: flex; gap: 18px; flex-wrap: wrap; padding-top: 22px; border-top: 1px solid #CFC7B8; font-size: 13px"><a href="13-client-care-legal.html">Refund policy</a><a href="13-client-care-legal.html">Shipping</a><a href="13-client-care-legal.html">Privacy policy</a><a href="13-client-care-legal.html">Terms of sale</a><a href="13-client-care-legal.html">Contact</a></nav>
+</form>
+</main>
+
+<aside class="c-side" aria-labelledby="c-sum">
+<div style="max-width: 460px; box-sizing: border-box; padding: 40px 24px; display: flex; flex-direction: column; gap: 22px">
+<h2 id="c-sum" class="c-vh">Order summary</h2>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px">
+<li style="display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; gap: 16px; align-items: center"><span style="position: relative; display: block; width: 64px; height: 80px; border-radius: 4px; border: 1px solid #CFC7B8; overflow: visible; background: #000000"><img src="images/definition-tee-white.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px; display: block"><span aria-hidden="true" style="position: absolute; top: -8px; right: -8px; width: 20px; height: 20px; border-radius: 50%; background: #615D55; color: #FFFFFF; font-size: 11px; display: inline-flex; align-items: center; justify-content: center">1</span></span><span style="display: flex; flex-direction: column; line-height: 1.35"><span style="font-weight: 600">Definition Tee · White</span><span style="font-size: 13px; color: #615D55">L · STYLE 001 · 3 of 5 left</span></span><span class="c-f" style="font-size: 14px">£85.00</span></li>
+<li style="display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; gap: 16px; align-items: center"><span style="position: relative; display: block; width: 64px; height: 80px; border-radius: 4px; border: 1px solid #CFC7B8; background: #D9D3C8"><img src="images/wordmark-tee-bone.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px; display: block"><span aria-hidden="true" style="position: absolute; top: -8px; right: -8px; width: 20px; height: 20px; border-radius: 50%; background: #615D55; color: #FFFFFF; font-size: 11px; display: inline-flex; align-items: center; justify-content: center">1</span></span><span style="display: flex; flex-direction: column; line-height: 1.35"><span style="font-weight: 600">Wordmark Tee · Bone</span><span style="font-size: 13px; color: #615D55">L · STYLE 001 · Last piece</span></span><span class="c-f" style="font-size: 14px">£75.00</span></li>
+</ul>
+<div style="display: flex; gap: 10px"><label for="c-code" class="c-vh">Discount code</label><input id="c-code" class="c-field" placeholder="Discount code" style="flex: 1 1 auto"><button type="button" style="height: 50px; padding: 0 18px; border-radius: 6px; border: 1px solid #8A8274; background: #ECE7DE; color: #0B0B0C; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Apply</button></div>
+<dl style="margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 14.5px">
+<div style="display: flex; justify-content: space-between"><dt>Subtotal · 2 items</dt><dd style="margin: 0">£160.00</dd></div>
+<div style="display: flex; justify-content: space-between"><dt>Shipping</dt><dd style="margin: 0">£6.00</dd></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding-top: 12px; font-size: 18px; font-weight: 700"><dt>Total</dt><dd style="margin: 0"><span style="font-size: 12px; font-weight: 400; color: #615D55; margin-right: 6px">GBP</span>£166.00</dd></div>
+<div style="display: flex; justify-content: space-between; font-size: 13px; color: #615D55"><dt>Including VAT</dt><dd style="margin: 0">£27.67</dd></div>
+</dl>
+<p style="margin: 0; padding: 14px 16px; border: 1px solid #CFC7B8; border-radius: 6px; font-size: 13.5px; color: #3E3B35">Each piece is numbered by hand at packing. You’ll see your numbers in the shipping email and in your account.</p>
+</div>
+</aside>
+</div>

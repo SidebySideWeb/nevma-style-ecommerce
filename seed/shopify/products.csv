@@ -1,0 +1,19 @@
+Handle,Title,Body (HTML),Vendor,Type,Tags,Published,Option1 Name,Option1 Value,Variant SKU,Variant Grams,Variant Inventory Tracker,Variant Inventory Qty,Variant Inventory Policy,Variant Fulfillment Service,Variant Price,Variant Requires Shipping,Variant Taxable,Status
+definition-tee-white,Definition Tee · White,,NEVMA Style,Tees,"style-001, edition-5",TRUE,Size,S,NS-001-TEE-WHT-S,300,shopify,0,deny,manual,85.00,TRUE,TRUE,active
+definition-tee-white,,,,,,,,M,NS-001-TEE-WHT-M,300,shopify,1,deny,manual,85.00,TRUE,TRUE,
+definition-tee-white,,,,,,,,L,NS-001-TEE-WHT-L,300,shopify,2,deny,manual,85.00,TRUE,TRUE,
+definition-tee-white,,,,,,,,XL,NS-001-TEE-WHT-XL,300,shopify,0,deny,manual,85.00,TRUE,TRUE,
+wordmark-tee-bone,Wordmark Tee · Bone,,NEVMA Style,Tees,"style-001, edition-5",TRUE,Size,S,NS-001-TEE-WMB-S,300,shopify,0,deny,manual,75.00,TRUE,TRUE,active
+wordmark-tee-bone,,,,,,,,M,NS-001-TEE-WMB-M,300,shopify,0,deny,manual,75.00,TRUE,TRUE,
+wordmark-tee-bone,,,,,,,,L,NS-001-TEE-WMB-L,300,shopify,1,deny,manual,75.00,TRUE,TRUE,
+wordmark-tee-bone,,,,,,,,XL,NS-001-TEE-WMB-XL,300,shopify,0,deny,manual,75.00,TRUE,TRUE,
+definition-tee-bone,Definition Tee · Bone,,NEVMA Style,Tees,"style-001, edition-5",TRUE,Size,S,NS-001-TEE-BNE-S,300,shopify,0,deny,manual,85.00,TRUE,TRUE,active
+definition-tee-bone,,,,,,,,M,NS-001-TEE-BNE-M,300,shopify,0,deny,manual,85.00,TRUE,TRUE,
+definition-tee-bone,,,,,,,,L,NS-001-TEE-BNE-L,300,shopify,0,deny,manual,85.00,TRUE,TRUE,
+definition-tee-bone,,,,,,,,XL,NS-001-TEE-BNE-XL,300,shopify,0,deny,manual,85.00,TRUE,TRUE,
+signal-overshirt,Signal Overshirt,,NEVMA Style,Outerwear,"style-002, edition-5",FALSE,Size,S,NS-002-OVS-S,300,shopify,1,deny,manual,[price],TRUE,TRUE,draft
+signal-overshirt,,,,,,,,M,NS-002-OVS-M,300,shopify,2,deny,manual,[price],TRUE,TRUE,
+signal-overshirt,,,,,,,,L,NS-002-OVS-L,300,shopify,1,deny,manual,[price],TRUE,TRUE,
+signal-overshirt,,,,,,,,XL,NS-002-OVS-XL,300,shopify,1,deny,manual,[price],TRUE,TRUE,
+suede-cap-sand,Suede Cap · Sand,,NEVMA Style,Headwear,"style-002, edition-5",FALSE,Size,One size,NS-002-CAP-SND-ONESIZE,300,shopify,5,deny,manual,[price],TRUE,TRUE,draft
+silk-square-70,Silk Square 70,,NEVMA Style,Silk,"style-002, edition-5",FALSE,Size,70 cm,NS-002-SLK-070-70CM,300,shopify,5,deny,manual,[price],TRUE,TRUE,draft

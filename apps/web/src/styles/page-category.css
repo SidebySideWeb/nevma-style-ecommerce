@@ -1,0 +1,6 @@
+/* NEVMA Style — generated from the design canvas. Do not edit by hand: change the tokens in docs/DESIGN-SYSTEM.md and regenerate, or edit together with the fidelity tests. */
+.s-feat{display:grid;grid-template-columns:minmax(0,1fr);gap:32px 80px;align-items:center}
+@media (min-width:1024px){.s-feat{grid-template-columns:minmax(0,1.25fr) minmax(0,0.75fr)}}
+.s-pair{display:grid;grid-template-columns:minmax(0,1fr);gap:56px 64px}
+@media (min-width:900px){.s-pair{grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr)}.s-pair>:nth-child(2){margin-top:160px}}
+.s-arch{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:20px;align-items:center;padding:16px 0;border-top:1px solid #CFC7B8;text-decoration:none}

@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>NEVMA Style — All pieces</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&amp;family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#ECE7DE}
+:root{--s-ease:cubic-bezier(0.23,1,0.32,1);--s-drawer:cubic-bezier(0.32,0.72,0,1)}
+:where(.s-root) a{color:#0B0B0C}
+:where(.s-dark) a{color:#F5F5F7}
+.s-wrap{max-width:1440px;margin:0 auto;padding-inline:20px;box-sizing:border-box;width:100%}
+.s-sec{padding-block:56px}
+@media (min-width:768px){.s-wrap{padding-inline:40px}.s-sec{padding-block:80px}}
+@media (min-width:1280px){.s-wrap{padding-inline:112px}.s-sec{padding-block:104px}}
+.s-f{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif}
+.s-disp{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-weight:300;text-transform:uppercase;letter-spacing:0.16em;line-height:1.15}
+.s-h2{margin:0;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:clamp(15px,1.3vw,19px);font-weight:400;letter-spacing:0.38em;line-height:1.5;text-transform:uppercase}
+.s-h2::after{content:'';display:block;width:56px;height:1px;margin-top:18px;background:linear-gradient(90deg,#00E5F0,#E600F0 55%,#F0E81C)}
+.s-eb{margin:0;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:500;letter-spacing:0.34em;text-transform:uppercase;color:#615D55}
+.s-dark .s-eb{color:#A8A8B4}
+.s-price{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-weight:400;letter-spacing:0.08em;font-variant-numeric:tabular-nums}
+.s-name{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:0.2em;line-height:1.5}
+.s-rule{display:block;height:1px;border:0;background:linear-gradient(90deg,#00E5F0,#E600F0 55%,#F0E81C)}
+.s-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 28px;border-radius:100px;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:12.5px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;cursor:pointer;box-sizing:border-box;border:1px solid transparent;white-space:nowrap;transition:background-color 150ms ease,border-color 150ms ease,color 150ms ease,box-shadow 300ms ease,transform 160ms var(--s-ease)}
+.s-btn-sm{height:44px;padding:0 20px;font-size:11.5px}
+.s-btn-p{background:#0B0B0C;color:#F5F2EC}
+.s-btn-o{border-color:#0B0B0C;color:#0B0B0C;background:linear-gradient(#0B0B0C,#0B0B0C) no-repeat left center/0% 100%;transition:background-size 300ms var(--s-ease),color 200ms ease,transform 160ms var(--s-ease)}
+.s-btn-l{background:#F5F5F7;color:#000000}
+.s-btn-lo{border-color:#7A7A86;color:#F5F5F7;background:linear-gradient(#F5F5F7,#F5F5F7) no-repeat left center/0% 100%;transition:background-size 300ms var(--s-ease),color 200ms ease,border-color 150ms ease,transform 160ms var(--s-ease)}
+.s-btn[disabled],.s-btn[aria-disabled="true"]{background:#D9D3C8;color:#57534B;border-color:transparent;cursor:not-allowed;box-shadow:none}
+.s-btn:active:not([disabled]),.s-chip:active{transform:scale(0.97)}
+.s-chip{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:56px;height:46px;padding:0 16px;border-radius:100px;border:1px solid #8A8274;background:transparent;color:#0B0B0C;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:12.5px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;box-sizing:border-box;white-space:nowrap;text-decoration:none;transition:background-color 150ms ease,border-color 150ms ease,color 150ms ease,transform 160ms var(--s-ease)}
+.s-chip[aria-pressed="true"],.s-chip[aria-selected="true"]{background:#0B0B0C;color:#F5F2EC;border-color:#0B0B0C}
+.s-chip.out{border-style:dashed;color:#615D55;text-decoration:line-through;text-decoration-thickness:1px}
+.s-dark .s-chip{border-color:#7A7A86;color:#F5F5F7}
+.s-tag{display:inline-flex;align-items:center;gap:8px;height:28px;padding:0 12px;border-radius:100px;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;white-space:nowrap;box-sizing:border-box}
+.s-ib{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:100px;border:0;background:transparent;color:inherit;cursor:pointer;padding:0;position:relative;text-decoration:none;transition:background-color 150ms ease}
+.s-ib svg{transition:transform 220ms var(--s-ease)}
+.s-count{position:absolute;top:5px;right:3px;min-width:17px;height:17px;padding:0 4px;box-sizing:border-box;border-radius:100px;background:#0B0B0C;color:#F5F2EC;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:500;display:inline-flex;align-items:center;justify-content:center}
+.s-ed{display:inline-flex;align-items:center;gap:5px}
+.s-pip{width:9px;height:9px;border-radius:50%;border:1px solid #0B0B0C;box-sizing:border-box;display:block}
+.s-pip.on{background:#0B0B0C}
+.s-dark .s-pip,.s-onimg .s-pip{border-color:#F5F5F7}.s-dark .s-pip.on,.s-onimg .s-pip.on{background:#F5F5F7}
+.s-y .s-pip{border-color:#F0E81C}.s-y .s-pip.on{background:#F0E81C}
+.s-card img{transition:transform 800ms var(--s-ease)}
+.s-lnk{text-decoration:none;background:linear-gradient(90deg,#00E5F0,#E600F0 55%,#F0E81C) no-repeat left bottom/0% 1px;padding-bottom:5px;transition:background-size 320ms var(--s-ease),color 150ms ease}
+.s-ul{text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:5px}
+.s-in{width:100%;height:52px;padding:0 18px;box-sizing:border-box;border:1px solid #8A8274;border-radius:6px;background:#F5F2EC;color:#0B0B0C;font:inherit;font-size:16px}
+.s-dark .s-in{background:#000000;color:#F5F5F7;border-color:#7A7A86;border-radius:100px;padding:0 22px}
+.s-lbl{display:block;margin-bottom:8px;font-size:14px;font-weight:600}
+.s-nav{display:flex}.s-menu{display:none}
+@media (max-width:1023px){.s-nav{display:none}.s-menu{display:inline-flex}}
+.s-pop{transition:opacity 220ms var(--s-ease),transform 220ms var(--s-ease)}
+@starting-style{.s-pop{opacity:0;transform:translateY(-8px)}}
+.s-drawer{transition:transform 420ms var(--s-drawer),opacity 220ms ease}
+@starting-style{.s-drawer{transform:translateX(32px);opacity:0}}
+.s-root a:focus-visible,.s-root button:focus-visible,.s-root input:focus-visible,.s-root summary:focus-visible,.s-root select:focus-visible{outline:2px solid #0B0B0C;outline-offset:2px}
+.s-dark a:focus-visible,.s-dark button:focus-visible,.s-dark input:focus-visible{outline-color:#00E5F0}
+.s-skip{position:absolute;left:-9999px;top:16px}.s-skip:focus{left:16px;z-index:40;background:#0B0B0C;color:#F5F2EC;padding:12px 16px;border-radius:100px}
+.s-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:where(.s-root) [style*="aspect-ratio"]{min-height:0;min-width:0}
+details.s-acc>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;min-height:56px;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase}
+details.s-acc>summary::-webkit-details-marker{display:none}
+details.s-acc>summary svg{transition:transform 220ms var(--s-ease)}
+details.s-acc[open]>summary svg{transform:rotate(180deg)}
+@media (hover:hover) and (pointer:fine){
+.s-btn-p:hover{box-shadow:-8px 0 26px -8px rgba(0,229,240,0.6),8px 0 26px -8px rgba(230,0,240,0.5)}
+.s-btn-o:hover{background-size:100% 100%;color:#F5F2EC}
+.s-btn-l:hover{box-shadow:-8px 0 26px -6px rgba(0,229,240,0.75),8px 0 26px -6px rgba(230,0,240,0.65)}
+.s-btn-lo:hover{background-size:100% 100%;color:#000000;border-color:#F5F5F7}
+.s-btn:hover svg:last-child:not(:first-child){transform:translateX(3px)}
+.s-btn svg{transition:transform 220ms var(--s-ease)}
+.s-chip:not([aria-pressed="true"]):not([aria-selected="true"]):hover{background-color:rgba(11,11,12,0.06)}
+.s-ib:hover{background-color:rgba(11,11,12,0.07)}.s-dark .s-ib:hover{background-color:rgba(245,245,247,0.1)}
+.s-ib:hover svg{transform:scale(1.08)}
+.s-lnk:hover{background-size:100% 1px}
+.s-card:hover img{transform:scale(1.035)}
+}
+@keyframes s-rv{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes s-rvc{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes s-draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@supports (animation-timeline: view()){@media (prefers-reduced-motion: no-preference){
+.s-rv{animation:s-rv var(--s-ease) both;animation-timeline:view();animation-range:entry 0% entry 35%}
+.s-h2::after,.s-rule{transform-origin:left;animation:s-draw var(--s-ease) both;animation-timeline:view();animation-range:entry 10% entry 45%}
+.s-stg>*{animation:s-rvc var(--s-ease) both;animation-timeline:view();animation-range:entry 0% entry 30%}
+.s-stg>*:nth-child(2){animation-range:entry 3% entry 33%}.s-stg>*:nth-child(3){animation-range:entry 6% entry 36%}.s-stg>*:nth-child(4){animation-range:entry 9% entry 39%}
+}}
+@media (prefers-reduced-motion: reduce){.s-btn:active,.s-chip:active{transform:none}.s-card img,.s-drawer,.s-pop{transition:none}.s-drift{animation:none!important}}
+.s-drift{animation:s-drift 24s ease-in-out infinite alternate}
+@keyframes s-drift{from{transform:translate3d(0,0,0) rotate(0deg)}to{transform:translate3d(-2.5%,1.5%,0) rotate(-3deg)}}
+@media (max-width:767px){.s-btn{white-space:normal;height:auto;min-height:52px;padding-block:14px;text-align:center;line-height:1.35}.s-hide-sm{display:none!important}}
+.s-hero{display:grid;grid-template-columns:minmax(0,1fr);min-height:0}
+@media (min-width:1024px){.s-hero{grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);min-height:820px}}
+.s-trio{display:grid;gap:40px 28px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:700px){.s-trio{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1100px){.s-trio{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.s-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr))}
+.s-4>*{padding:28px 28px 28px 0;border-top:1px solid #CFC7B8}
+@media (min-width:1024px){.s-4>*{padding:8px 32px;border-top:0;border-left:1px solid #CFC7B8}.s-4>*:first-child{padding-left:0;border-left:0}}
+.s-cd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:520px}
+
+.s-ix{display:grid;grid-template-columns:56px 72px minmax(0,1.4fr) minmax(0,0.8fr) minmax(0,1fr) 90px 32px;gap:20px;align-items:center;padding:16px 0;border-top:1px solid #CFC7B8;text-decoration:none}
+.s-ixh{display:grid;grid-template-columns:56px 72px minmax(0,1.4fr) minmax(0,0.8fr) minmax(0,1fr) 90px 32px;gap:20px;padding:0 0 12px}
+@media (max-width:899px){.s-ix{grid-template-columns:64px minmax(0,1fr) auto;row-gap:6px}.s-ix .s-c-no,.s-ix .s-c-drop,.s-ix .s-c-arr{display:none}.s-ix .s-c-ed{grid-column:2}.s-ix .s-c-price{grid-row:1;grid-column:3}.s-ixh{display:none}.s-ix .s-c-img{grid-row:span 2}}
+@media (hover:hover) and (pointer:fine){.s-ix:hover{background:rgba(11,11,12,0.03)}.s-ix:hover .s-c-arr svg{transform:translateX(3px)}}
+.s-c-arr svg{transition:transform 220ms var(--s-ease)}
+</style>
+</helmet>
+<div class="s-root" style="background: #ECE7DE; color: #0B0B0C; font-family: 'Nunito Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.6; min-height: 100vh; overflow-x: clip">
+<a class="s-skip" href="#main">Skip to content</a>
+
+<div class="s-dark" style="background: #000000; color: #F5F5F7">
+<div class="s-wrap" style="min-height: 40px; display: flex; align-items: center; justify-content: center; gap: 10px 18px; flex-wrap: wrap; padding-block: 8px; text-align: center">
+<span class="s-f" style="font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase"><span style="color: #F0E81C">STYLE 002 · Signal</span> · drops Fri 4 Dec, 18:00 GMT</span>
+<a href="Product.dc.html" class="s-f s-lnk" style="font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase">Get notified</a>
+</div>
+</div>
+
+<header style="position: sticky; top: 0; z-index: 20; background: rgba(236,231,222,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid #CFC7B8">
+<div class="s-wrap" style="height: 76px; display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center; gap: 16px">
+<div style="display: flex; align-items: center">
+<button type="button" class="s-ib s-menu" aria-label="Menu" aria-expanded="{{menuStr}}" aria-controls="menu" onClick="{{toggleMenu}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"></path></svg></button>
+<nav aria-label="Main" class="s-nav"><ul class="s-f" style="list-style: none; margin: 0; padding: 0; display: flex; gap: 26px; font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; white-space: nowrap"><li><a href="Drop.dc.html" class="s-lnk">Current drop</a></li><li><a href="Category.dc.html" class="s-lnk">Categories</a></li><li><a href="Archive.dc.html" class="s-lnk">All pieces</a></li><li><a href="About.dc.html" class="s-lnk">Story</a></li></ul></nav>
+</div>
+<a href="Main.dc.html" aria-label="NEVMA Style home" style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C"><span class="s-f" style="font-size: 15px; font-weight: 500; letter-spacing: 0.42em">NEVMA</span><span aria-hidden="true" style="width: 1px; height: 18px; background: #0B0B0C"></span><span class="s-f" style="font-size: 15px; font-weight: 300; letter-spacing: 0.42em">STYLE</span></a>
+<div style="display: flex; justify-content: flex-end; align-items: center; gap: 2px">
+<a href="Account.dc.html" class="s-ib" aria-label="Account"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.5 20c1.4-3.6 4.2-5.4 7.5-5.4s6.1 1.8 7.5 5.4"></path></svg></a>
+<a href="Wishlist.dc.html" class="s-ib" aria-label="Wishlist, 2 pieces"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"></path></svg></a>
+<a href="Bag.dc.html" class="s-ib" aria-label="Bag, 1 piece"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8" stroke-linecap="round"></path></svg><span class="s-count" aria-hidden="true">1</span></a>
+</div>
+</div>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+<nav id="menu" class="s-pop" aria-label="Menu" style="border-top: 1px solid #CFC7B8; background: #ECE7DE">
+<ul class="s-wrap s-f" style="list-style: none; margin: 0; padding-block: 8px 18px; display: flex; flex-direction: column; font-size: 14px; letter-spacing: 0.26em; text-transform: uppercase"><li><a href="Drop.dc.html" style="display: flex; align-items: center; min-height: 52px; text-decoration: none">Current drop</a></li><li><a href="Category.dc.html" style="display: flex; align-items: center; min-height: 52px; text-decoration: none">Categories</a></li><li><a href="Archive.dc.html" style="display: flex; align-items: center; min-height: 52px; text-decoration: none">All pieces</a></li><li><a href="About.dc.html" style="display: flex; align-items: center; min-height: 52px; text-decoration: none">Story</a></li><li><a href="Legal.dc.html" style="display: flex; align-items: center; min-height: 52px; text-decoration: none">Client care</a></li></ul>
+</nav>
+</sc-if>
+</header>
+
+
+<main id="main">
+<section aria-labelledby="ap-title">
+<div class="s-wrap" style="padding-block: 72px 40px; display: flex; flex-direction: column; gap: 26px">
+<p class="s-eb">2 drops · 6 pieces · 30 numbered</p>
+<h1 id="ap-title" class="s-disp" style="margin: 0; font-size: clamp(34px, 4vw, 58px); letter-spacing: 0.22em">All pieces</h1>
+<p style="margin: 0; max-width: 56ch; color: #3E3B35">Everything NEVMA Style has made, newest first. Sold-out pieces stay here with their story, so the archive grows with every drop.</p>
+</div>
+<div class="s-wrap" style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding-bottom: 28px">
+<div role="group" aria-label="Show" style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{filters}}" as="f" hint-placeholder-count="4"><button type="button" class="s-chip" aria-pressed="{{f.on}}" onClick="{{f.pick}}">{{f.label}} <span style="color: inherit; opacity: 0.7">{{f.n}}</span></button></sc-for>
+</div>
+<div role="group" aria-label="View" style="display: flex; gap: 8px">
+<button type="button" class="s-chip" aria-pressed="{{idxOn}}" onClick="{{showIdx}}">Index</button>
+<button type="button" class="s-chip" aria-pressed="{{galOn}}" onClick="{{showGal}}">Gallery</button>
+</div>
+</div>
+</section>
+
+<section aria-label="Pieces" style="padding-bottom: 104px">
+<p class="s-vh" aria-live="polite">{{live}}</p>
+<sc-if value="{{isIdx}}" hint-placeholder-val="{{ true }}">
+<div class="s-wrap">
+<div class="s-ixh s-eb" aria-hidden="true" style="font-size: 10.5px"><span>N°</span><span></span><span>Piece</span><span>Drop</span><span>Edition</span><span style="text-align: right">Price</span><span></span></div>
+<ul style="list-style: none; margin: 0; padding: 0; border-bottom: 1px solid #CFC7B8">
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="6">
+<li><a href="{{r.href}}" class="s-ix" aria-label="{{r.aria}}">
+<span class="s-c-no s-f" style="font-size: 12px; letter-spacing: 0.2em; color: #615D55">{{r.no}}</span>
+<span class="s-c-img" style="display: flex; align-items: center; justify-content: center; width: 64px; height: 80px; border-radius: 2px; overflow: clip; background: {{r.bg}}; color: #A8A8B4; font-size: 9.5px; text-align: center"><sc-if value="{{r.hasImg}}" hint-placeholder-val="{{ true }}"><img src="{{r.img}}" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: {{r.pos}}; display: block; filter: {{r.filter}}"></sc-if><sc-if value="{{r.noImg}}" hint-placeholder-val="{{ false }}">[Photo]</sc-if></span>
+<span class="s-name" style="font-size: 13px">{{r.name}}</span>
+<span class="s-c-drop" style="font-size: 14.5px; color: #3E3B35">{{r.drop}}</span>
+<span class="s-c-ed" style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap"><span class="s-ed" aria-hidden="true"><sc-for list="{{r.pips}}" as="x" hint-placeholder-count="5"><span class="{{x.cls}}" style="border-style: {{x.bs}}"></span></sc-for></span><span style="font-size: 14.5px">{{r.status}}</span></span>
+<span class="s-c-price s-price" style="text-align: right; font-size: 15px">{{r.price}}</span>
+<span class="s-c-arr" aria-hidden="true" style="display: flex; justify-content: flex-end"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</a></li>
+</sc-for>
+</ul>
+</div>
+</sc-if>
+<sc-if value="{{isGal}}" hint-placeholder-val="{{ false }}">
+<ul class="s-wrap s-trio" style="list-style: none; margin-block: 0">
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="6">
+<li><a href="{{r.href}}" class="s-card" aria-label="{{r.aria}}" style="display: flex; flex-direction: column; gap: 14px; text-decoration: none">
+<span style="position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 4 / 5; border-radius: 4px; overflow: clip; background: {{r.bg}}; color: #A8A8B4; font-size: 12px"><sc-if value="{{r.hasImg}}" hint-placeholder-val="{{ true }}"><img src="{{r.img}}" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: {{r.pos}}; display: block; filter: {{r.filter}}"></sc-if><sc-if value="{{r.noImg}}" hint-placeholder-val="{{ false }}">[Photo · {{r.name}}]</sc-if><span class="s-f" style="position: absolute; left: 16px; top: 14px; font-size: 11px; letter-spacing: 0.26em; color: {{r.noFg}}">N° {{r.no}}</span></span>
+<span style="display: flex; justify-content: space-between; gap: 16px"><span class="s-name" style="font-size: 12.5px">{{r.name}}</span><span class="s-price" style="font-size: 14.5px">{{r.price}}</span></span>
+<span style="display: flex; align-items: center; gap: 12px"><span class="s-ed" aria-hidden="true"><sc-for list="{{r.pips}}" as="x" hint-placeholder-count="5"><span class="{{x.cls}}" style="border-style: {{x.bs}}"></span></sc-for></span><span style="font-size: 14px; color: #3E3B35">{{r.status}} · {{r.drop}}</span></span>
+</a></li>
+</sc-for>
+</ul>
+</sc-if>
+</section>
+</main>
+<footer class="s-dark" style="background: #000000; color: #F5F5F7">
+<div class="s-wrap s-sec" style="display: flex; flex-direction: column; gap: 56px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 48px 64px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<img src="/_blob/05a502b9f90960a3c29214056fa73f94" alt="NEVMA" style="height: 26px; width: auto; align-self: flex-start">
+<p class="s-eb" style="color: #F0E81C">Style · Limited by design</p>
+<form style="display: flex; gap: 10px; flex-wrap: wrap; max-width: 460px">
+<label for="ft-email" class="s-vh">Email address</label>
+<input id="ft-email" class="s-in" type="email" autocomplete="email" placeholder="Hear about drops first" style="flex: 1 1 220px; width: auto; height: 48px">
+<button type="submit" class="s-btn s-btn-l s-btn-sm" style="height: 48px">Join</button>
+</form>
+</div>
+<nav aria-label="Footer"><ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 32px; font-size: 15px"><li><a href="Drop.dc.html">Current drop</a></li><li><a href="Legal.dc.html">Shipping &amp; delivery</a></li><li><a href="Archive.dc.html">All pieces</a></li><li><a href="Legal.dc.html">Returns</a></li><li><a href="About.dc.html">Story</a></li><li><a href="Legal.dc.html">Client care &amp; FAQ</a></li><li><a href="Account.dc.html">Account</a></li><li><a href="Legal.dc.html">Contact</a></li><li><a href="#">NEVMA Music ↗</a></li><li><a href="#">Instagram ↗</a></li></ul></nav>
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 44ch">
+<p style="margin: 0; display: flex; align-items: baseline; gap: 12px"><span style="font-size: 28px; font-weight: 700">nevma</span><span style="color: #A8A8B4; font-style: italic">noun · Greek</span></p>
+<span class="s-rule" aria-hidden="true" style="width: 100%; opacity: 0.6"></span>
+<p style="margin: 0; font-size: 15px; color: #D2D2DA"><strong style="color: #F5F5F7">a gesture, nod or sign:</strong> a subtle signal given with the hand, head or eyes.</p>
+</div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px 32px; flex-wrap: wrap; padding-top: 28px; border-top: 1px solid #26262C; font-size: 14px; color: #A8A8B4">
+<span class="s-eb" style="letter-spacing: 0.4em; color: #F5F5F7">We don’t follow. We define.</span>
+<span style="display: flex; gap: 20px; flex-wrap: wrap"><a href="Legal.dc.html">Terms of sale</a><a href="Legal.dc.html">Privacy</a><a href="Legal.dc.html">Cookies</a><span>Payments secured by Viva</span><span>© 2026 NEVMA Style · London</span></span>
+</div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3000}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { menu: false, f: 'all', view: 'idx' }; }
+  renderVals() {
+    var self = this, s = this.state;
+    var pips = function (n, d) { var a = []; for (var i = 0; i < 5; i++) a.push({ cls: i < n ? 's-pip on' : 's-pip', bs: d ? 'dashed' : 'solid' }); return a; };
+    var ALL = [
+      { no: '06', name: 'Silk Square 70', drop: 'STYLE 002 · 4 Dec', kind: 'coming', left: 5, price: '—', bg: '#0B0B0C' },
+      { no: '05', name: 'Suede Cap · Sand', drop: 'STYLE 002 · 4 Dec', kind: 'coming', left: 5, price: '—', bg: '#0B0B0C' },
+      { no: '04', name: 'Signal Overshirt', drop: 'STYLE 002 · 4 Dec', kind: 'coming', left: 5, price: '—', bg: '#0B0B0C' },
+      { no: '03', name: 'Definition Tee · Bone', drop: 'STYLE 001', kind: 'sold', left: 0, price: '£85', img: '/_blob/48973edd68fb210efce173c75d7b5599', pos: 'center 35%', bg: '#D9D3C8' },
+      { no: '02', name: 'Wordmark Tee · Bone', drop: 'STYLE 001', kind: 'avail', left: 1, price: '£75', img: '/_blob/c6bb175d8bb5fe0cb3c0ea6480d24393', pos: 'center 55%', bg: '#D9D3C8' },
+      { no: '01', name: 'Definition Tee · White', drop: 'STYLE 001', kind: 'avail', left: 3, price: '£85', img: '/_blob/ec745d9afe5c690abaeda598c37428bf', pos: 'center 42%', bg: '#000000' }
+    ];
+    var rows = ALL.filter(function (r) { return s.f === 'all' || r.kind === s.f; }).map(function (r) {
+      var c = r.kind === 'coming', sold = r.kind === 'sold';
+      var status = c ? 'Edition of 5 · coming' : (sold ? 'Sold out' : (r.left === 1 ? 'Last piece' : r.left + ' of 5 left'));
+      return Object.assign({}, r, { pips: pips(r.left, c), hasImg: !!r.img, noImg: !r.img, filter: sold ? 'grayscale(1) contrast(0.9)' : 'none',
+        status: status, href: c || !sold ? 'Product.dc.html' : 'Product.dc.html', noFg: r.bg === '#D9D3C8' ? '#0B0B0C' : '#F5F5F7',
+        aria: r.name + ', ' + r.drop + ', ' + status + (r.price !== '—' ? ', ' + r.price : '') });
+    });
+    var count = function (k) { return k === 'all' ? ALL.length : ALL.filter(function (r) { return r.kind === k; }).length; };
+    return {
+      menuOpen: s.menu, menuStr: s.menu ? 'true' : 'false', toggleMenu: function () { self.setState({ menu: !self.state.menu }); },
+      filters: [ ['all', 'All'], ['avail', 'Available'], ['coming', 'Coming'], ['sold', 'Sold out'] ].map(function (f) {
+        return { label: f[1], n: count(f[0]), on: s.f === f[0] ? 'true' : 'false', pick: function () { self.setState({ f: f[0] }); } }; }),
+      rows: rows, live: rows.length + ' pieces shown',
+      isIdx: s.view === 'idx', isGal: s.view === 'gal', idxOn: s.view === 'idx' ? 'true' : 'false', galOn: s.view === 'gal' ? 'true' : 'false',
+      showIdx: function () { self.setState({ view: 'idx' }); }, showGal: function () { self.setState({ view: 'gal' }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

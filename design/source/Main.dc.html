@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>NEVMA Style — Home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&amp;family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#ECE7DE}
+:root{--s-ease:cubic-bezier(0.23,1,0.32,1);--s-drawer:cubic-bezier(0.32,0.72,0,1)}
+:where(.s-root) a{color:#0B0B0C}
+:where(.s-dark) a{color:#F5F5F7}
+.s-wrap{max-width:1440px;margin:0 auto;padding-inline:20px;box-sizing:border-box;width:100%}
+.s-sec{padding-block:56px}
+@media (min-width:768px){.s-wrap{padding-inline:40px}.s-sec{padding-block:80px}}
+@media (min-width:1280px){.s-wrap{padding-inline:112px}.s-sec{padding-block:104px}}
+.s-f{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif}
+.s-disp{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-weight:300;text-transform:uppercase;letter-spacing:0.16em;line-height:1.15}
+.s-h2{margin:0;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:clamp(15px,1.3vw,19px);font-weight:400;letter-spacing:0.38em;line-height:1.5;text-transform:uppercase}
+.s-h2::after{content:'';display:block;width:56px;height:1px;margin-top:18px;background:linear-gradient(90deg,#00E5F0,#E600F0 55%,#F0E81C)}
+.s-eb{margin:0;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:500;letter-spacing:0.34em;text-transform:uppercase;color:#615D55}
+.s-dark .s-eb{color:#A8A8B4}
+.s-price{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-weight:400;letter-spacing:0.08em;font-variant-numeric:tabular-nums}
+.s-name{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:0.2em;line-height:1.5}
+.s-rule{display:block;height:1px;border:0;background:linear-gradient(90deg,#00E5F0,#E600F0 55%,#F0E81C)}
+.s-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 28px;border-radius:100px;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:12.5px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;cursor:pointer;box-sizing:border-box;border:1px solid transparent;white-space:nowrap;transition:background-color 150ms ease,border-color 150ms ease,color 150ms ease,box-shadow 300ms ease,transform 160ms var(--s-ease)}
+.s-btn-sm{height:44px;padding:0 20px;font-size:11.5px}
+.s-btn-p{background:#0B0B0C;color:#F5F2EC}
+.s-btn-o{border-color:#0B0B0C;color:#0B0B0C;background:linear-gradient(#0B0B0C,#0B0B0C) no-repeat left center/0% 100%;transition:background-size 300ms var(--s-ease),color 200ms ease,transform 160ms var(--s-ease)}
+.s-btn-l{background:#F5F5F7;color:#000000}
+.s-btn-lo{border-color:#7A7A86;color:#F5F5F7;background:linear-gradient(#F5F5F7,#F5F5F7) no-repeat left center/0% 100%;transition:background-size 300ms var(--s-ease),color 200ms ease,border-color 150ms ease,transform 160ms var(--s-ease)}
+.s-btn[disabled],.s-btn[aria-disabled="true"]{background:#D9D3C8;color:#57534B;border-color:transparent;cursor:not-allowed;box-shadow:none}
+.s-btn:active:not([disabled]),.s-chip:active{transform:scale(0.97)}
+.s-chip{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:56px;height:46px;padding:0 16px;border-radius:100px;border:1px solid #8A8274;background:transparent;color:#0B0B0C;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:12.5px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;cursor:pointer;box-sizing:border-box;white-space:nowrap;text-decoration:none;transition:background-color 150ms ease,border-color 150ms ease,color 150ms ease,transform 160ms var(--s-ease)}
+.s-chip[aria-pressed="true"],.s-chip[aria-selected="true"]{background:#0B0B0C;color:#F5F2EC;border-color:#0B0B0C}
+.s-chip.out{border-style:dashed;color:#615D55;text-decoration:line-through;text-decoration-thickness:1px}
+.s-dark .s-chip{border-color:#7A7A86;color:#F5F5F7}
+.s-tag{display:inline-flex;align-items:center;gap:8px;height:28px;padding:0 12px;border-radius:100px;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;white-space:nowrap;box-sizing:border-box}
+.s-ib{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:100px;border:0;background:transparent;color:inherit;cursor:pointer;padding:0;position:relative;text-decoration:none;transition:background-color 150ms ease}
+.s-ib svg{transition:transform 220ms var(--s-ease)}
+.s-count{position:absolute;top:5px;right:3px;min-width:17px;height:17px;padding:0 4px;box-sizing:border-box;border-radius:100px;background:#0B0B0C;color:#F5F2EC;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:500;display:inline-flex;align-items:center;justify-content:center}
+.s-ed{display:inline-flex;align-items:center;gap:5px}
+.s-pip{width:9px;height:9px;border-radius:50%;border:1px solid #0B0B0C;box-sizing:border-box;display:block}
+.s-pip.on{background:#0B0B0C}
+.s-dark .s-pip,.s-onimg .s-pip{border-color:#F5F5F7}.s-dark .s-pip.on,.s-onimg .s-pip.on{background:#F5F5F7}
+.s-y .s-pip{border-color:#F0E81C}.s-y .s-pip.on{background:#F0E81C}
+.s-card img{transition:transform 800ms var(--s-ease)}
+.s-lnk{text-decoration:none;background:linear-gradient(90deg,#00E5F0,#E600F0 55%,#F0E81C) no-repeat left bottom/0% 1px;padding-bottom:5px;transition:background-size 320ms var(--s-ease),color 150ms ease}
+.s-ul{text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:5px}
+.s-in{width:100%;height:52px;padding:0 18px;box-sizing:border-box;border:1px solid #8A8274;border-radius:6px;background:#F5F2EC;color:#0B0B0C;font:inherit;font-size:16px}
+.s-dark .s-in{background:#000000;color:#F5F5F7;border-color:#7A7A86;border-radius:100px;padding:0 22px}
+.s-lbl{display:block;margin-bottom:8px;font-size:14px;font-weight:600}
+.s-nav{display:flex}.s-menu{display:none}
+@media (max-width:1023px){.s-nav{display:none}.s-menu{display:inline-flex}}
+.s-pop{transition:opacity 220ms var(--s-ease),transform 220ms var(--s-ease)}
+@starting-style{.s-pop{opacity:0;transform:translateY(-8px)}}
+.s-drawer{transition:transform 420ms var(--s-drawer),opacity 220ms ease}
+@starting-style{.s-drawer{transform:translateX(32px);opacity:0}}
+.s-root a:focus-visible,.s-root button:focus-visible,.s-root input:focus-visible,.s-root summary:focus-visible,.s-root select:focus-visible{outline:2px solid #0B0B0C;outline-offset:2px}
+.s-dark a:focus-visible,.s-dark button:focus-visible,.s-dark input:focus-visible{outline-color:#00E5F0}
+.s-skip{position:absolute;left:-9999px;top:16px}.s-skip:focus{left:16px;z-index:40;background:#0B0B0C;color:#F5F2EC;padding:12px 16px;border-radius:100px}
+.s-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:where(.s-root) [style*="aspect-ratio"]{min-height:0;min-width:0}
+details.s-acc>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;min-height:56px;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase}
+details.s-acc>summary::-webkit-details-marker{display:none}
+details.s-acc>summary svg{transition:transform 220ms var(--s-ease)}
+details.s-acc[open]>summary svg{transform:rotate(180deg)}
+@media (hover:hover) and (pointer:fine){
+.s-btn-p:hover{box-shadow:-8px 0 26px -8px rgba(0,229,240,0.6),8px 0 26px -8px rgba(230,0,240,0.5)}
+.s-btn-o:hover{background-size:100% 100%;color:#F5F2EC}
+.s-btn-l:hover{box-shadow:-8px 0 26px -6px rgba(0,229,240,0.75),8px 0 26px -6px rgba(230,0,240,0.65)}
+.s-btn-lo:hover{background-size:100% 100%;color:#000000;border-color:#F5F5F7}
+.s-btn:hover svg:last-child:not(:first-child){transform:translateX(3px)}
+.s-btn svg{transition:transform 220ms var(--s-ease)}
+.s-chip:not([aria-pressed="true"]):not([aria-selected="true"]):hover{background-color:rgba(11,11,12,0.06)}
+.s-ib:hover{background-color:rgba(11,11,12,0.07)}.s-dark .s-ib:hover{background-color:rgba(245,245,247,0.1)}
+.s-ib:hover svg{transform:scale(1.08)}
+.s-lnk:hover{background-size:100% 1px}
+.s-card:hover img{transform:scale(1.035)}
+}
+@keyframes s-rv{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes s-rvc{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes s-draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@supports (animation-timeline: view()){@media (prefers-reduced-motion: no-preference){
+.s-rv{animation:s-rv var(--s-ease) both;animation-timeline:view();animation-range:entry 0% entry 35%}
+.s-h2::after,.s-rule{transform-origin:left;animation:s-draw var(--s-ease) both;animation-timeline:view();animation-range:entry 10% entry 45%}
+.s-stg>*{animation:s-rvc var(--s-ease) both;animation-timeline:view();animation-range:entry 0% entry 30%}
+.s-stg>*:nth-child(2){animation-range:entry 3% entry 33%}.s-stg>*:nth-child(3){animation-range:entry 6% entry 36%}.s-stg>*:nth-child(4){animation-range:entry 9% entry 39%}
+}}
+@media (prefers-reduced-motion: reduce){.s-btn:active,.s-chip:active{transform:none}.s-card img,.s-drawer,.s-pop{transition:none}.s-drift{animation:none!important}}
+.s-drift{animation:s-drift 24s ease-in-out infinite alternate}
+@keyframes s-drift{from{transform:translate3d(0,0,0) rotate(0deg)}to{transform:translate3d(-2.5%,1.5%,0) rotate(-3deg)}}
+@media (max-width:767px){.s-btn{white-space:normal;height:auto;min-height:52px;padding-block:14px;text-align:center;line-height:1.35}.s-hide-sm{display:none!important}}
+.s-hero{display:grid;grid-template-columns:minmax(0,1fr);min-height:0}
+@media (min-width:1024px){.s-hero{grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);min-height:820px}}
+.s-trio{display:grid;gap:40px 28px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:700px){.s-trio{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1100px){.s-trio{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.s-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr))}
+.s-4>*{padding:28px 28px 28px 0;border-top:1px solid #CFC7B8}
+@media (min-width:1024px){.s-4>*{padding:8px 32px;border-top:0;border-left:1px solid #CFC7B8}.s-4>*:first-child{padding-left:0;border-left:0}}
+.s-cd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:520px}
+</style>
+</helmet>
+<div class="s-root" style="background: #ECE7DE; color: #0B0B0C; font-family: 'Nunito Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.6; min-height: 100vh; overflow-x: clip">
+<a class="s-skip" href="#main">Skip to content</a>
+
+<div class="s-dark" style="background: #000000; color: #F5F5F7">
+<div class="s-wrap" style="min-height: 40px; display: flex; align-items: center; justify-content: center; gap: 10px 18px; flex-wrap: wrap; padding-block: 8px; text-align: center">
+<span class="s-f" style="font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase"><span style="color: #F0E81C">STYLE 002 · Signal</span> · drops Fri 4 Dec, 18:00 GMT</span>
+<a href="Product.dc.html" class="s-f s-lnk" style="font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase">Get notified</a>
+</div>
+</div>
+
+<header style="position: sticky; top: 0; z-index: 20; background: rgba(236,231,222,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid #CFC7B8">
+<div class="s-wrap" style="height: 76px; display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center; gap: 16px">
+<div style="display: flex; align-items: center">
+<button type="button" class="s-ib s-menu" aria-label="Menu" aria-expanded="{{menuStr}}" aria-controls="menu" onClick="{{toggleMenu}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"></path></svg></button>
+<nav aria-label="Main" class="s-nav"><ul class="s-f" style="list-style: none; margin: 0; padding: 0; display: flex; gap: 26px; font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; white-space: nowrap"><li><a href="Drop.dc.html" class="s-lnk">Current drop</a></li><li><a href="Category.dc.html" class="s-lnk">Categories</a></li><li><a href="Archive.dc.html" class="s-lnk">All pieces</a></li><li><a href="About.dc.html" class="s-lnk">Story</a></li></ul></nav>
+</div>
+<a href="Main.dc.html" aria-label="NEVMA Style home" style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C"><span class="s-f" style="font-size: 15px; font-weight: 500; letter-spacing: 0.42em">NEVMA</span><span aria-hidden="true" style="width: 1px; height: 18px; background: #0B0B0C"></span><span class="s-f" style="font-size: 15px; font-weight: 300; letter-spacing: 0.42em">STYLE</span></a>
+<div style="display: flex; justify-content: flex-end; align-items: center; gap: 2px">
+<a href="Account.dc.html" class="s-ib" aria-label="Account"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.5 20c1.4-3.6 4.2-5.4 7.5-5.4s6.1 1.8 7.5 5.4"></path></svg></a>
+<a href="Wishlist.dc.html" class="s-ib" aria-label="Wishlist, 2 pieces"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"></path></svg></a>
+<a href="Bag.dc.html" class="s-ib" aria-label="Bag, 1 piece"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8" stroke-linecap="round"></path></svg><span class="s-count" aria-hidden="true">1</span></a>
+</div>
+</div>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+<nav id="menu" class="s-pop" aria-label="Menu" style="border-top: 1px solid #CFC7B8; background: #ECE7DE">
+<ul class="s-wrap s-f" style="list-style: none; margin: 0; padding-block: 8px 18px; display: flex; flex-direction: column; font-size: 14px; letter-spacing: 0.26em; text-transform: uppercase"><li><a href="Drop.dc.html" style="display: flex; align-items: center; min-height: 52px; text-decoration: none">Current drop</a></li><li><a href="Category.dc.html" style="display: flex; align-items: center; min-height: 52px; text-decoration: none">Categories</a></li><li><a href="Archive.dc.html" style="display: flex; align-items: center; min-height: 52px; text-decoration: none">All pieces</a></li><li><a href="About.dc.html" style="display: flex; align-items: center; min-height: 52px; text-decoration: none">Story</a></li><li><a href="Legal.dc.html" style="display: flex; align-items: center; min-height: 52px; text-decoration: none">Client care</a></li></ul>
+</nav>
+</sc-if>
+</header>
+
+<main id="main">
+<section aria-labelledby="hero-title" class="s-hero" style="border-bottom: 1px solid #CFC7B8">
+<div class="s-wrap" style="display: flex; flex-direction: column; justify-content: center; gap: 28px; padding-block: 72px 56px; max-width: 720px; margin-inline: 0 auto">
+<p class="s-eb">STYLE 001 · Definition · Available now</p>
+<h1 id="hero-title" class="s-disp" style="margin: 0; font-size: clamp(36px, 4.6vw, 68px); letter-spacing: 0.2em; line-height: 1.25">The word,<br>worn.</h1>
+<span class="s-rule" aria-hidden="true" style="width: 120px"></span>
+<p style="margin: 0; max-width: 42ch; font-size: 19px; color: #3E3B35">Three pieces, five of each, printed with the definition of the name. When an edition is gone, it is gone: nothing is restocked.</p>
+<div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap">
+<span aria-hidden="true" style="width: 28px; height: 1px; background: #0B0B0C"></span>
+<span style="font-size: 15px; color: #3E3B35"><strong style="color: #0B0B0C">4 of 15</strong> numbered pieces left in this drop</span>
+</div>
+<div style="display: flex; gap: 12px; flex-wrap: wrap"><a href="Drop.dc.html" class="s-btn s-btn-p">Shop the drop <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a href="About.dc.html" class="s-btn s-btn-o">The story</a></div>
+</div>
+<a href="Product.dc.html" class="s-card" aria-label="Definition Tee, White" style="display: block; position: relative; overflow: clip; background: #000000; min-height: 520px">
+<img src="/_blob/ec745d9afe5c690abaeda598c37428bf" alt="White NEVMA definition t-shirt on black" fetchpriority="high" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; display: block">
+<span class="s-onimg" style="position: absolute; left: 24px; bottom: 24px; display: inline-flex; align-items: center; gap: 12px; padding: 10px 16px; border-radius: 100px; background: rgba(0,0,0,0.66); color: #F5F5F7"><span class="s-f" style="font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase">Definition Tee · White</span><span class="s-ed" aria-hidden="true"><span class="s-pip on"></span><span class="s-pip on"></span><span class="s-pip on"></span><span class="s-pip"></span><span class="s-pip"></span></span><span class="s-f" style="font-size: 11px; letter-spacing: 0.18em">3 of 5 left</span></span>
+</a>
+</section>
+
+<section aria-labelledby="pieces-title">
+<div class="s-wrap s-sec" style="display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap">
+<div style="display: flex; flex-direction: column; gap: 14px"><p class="s-eb">STYLE 001 · Definition · Released 2 Oct 2026</p><h2 id="pieces-title" class="s-h2 s-rv">The pieces</h2></div>
+<a href="Drop.dc.html" class="s-eb s-ul" style="color: #0B0B0C">About this drop</a>
+</div>
+<ul class="s-trio s-stg" style="list-style: none; margin: 0; padding: 0">
+<sc-for list="{{pieces}}" as="p" hint-placeholder-count="3">
+<li><a href="Product.dc.html" class="s-card" aria-label="{{p.aria}}" style="display: flex; flex-direction: column; gap: 18px; text-decoration: none">
+<span style="position: relative; display: block; aspect-ratio: 4 / 5; overflow: clip; border-radius: 4px; background: {{p.bg}}"><img src="{{p.img}}" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: {{p.pos}}; display: block; filter: {{p.filter}}"><span class="s-tag" style="position: absolute; left: 14px; top: 14px; background: {{p.tagBg}}; color: {{p.tagFg}}">{{p.badge}}</span></span>
+<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px"><span class="s-name" style="font-size: 13.5px">{{p.name}}</span><span class="s-price" style="font-size: 15px">{{p.price}}</span></span>
+<span style="display: flex; align-items: center; gap: 12px"><span class="s-ed" aria-hidden="true"><sc-for list="{{p.pips}}" as="x" hint-placeholder-count="5"><span class="{{x.cls}}"></span></sc-for></span><span style="font-size: 14.5px; color: #3E3B35">{{p.stock}}</span></span>
+</a></li>
+</sc-for>
+</ul>
+</div>
+</section>
+
+<section aria-labelledby="next-title" class="s-dark" style="background: #000000; color: #F5F5F7; position: relative; overflow: clip">
+<img class="s-drift" src="/_blob/31c9e1ed8993fff2cf7e4349376f99c2" alt="" style="position: absolute; right: -10%; top: 50%; width: min(60vw, 900px); margin-top: -300px; opacity: 0.7; pointer-events: none">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 20% 50%, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0) 90%)"></div>
+<div class="s-wrap s-sec" style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); gap: 56px 72px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 26px">
+<p class="s-eb" style="color: #F0E81C">Next drop · STYLE 002</p>
+<h2 id="next-title" class="s-disp" style="margin: 0; font-size: clamp(34px, 4vw, 60px); letter-spacing: 0.24em">Signal</h2>
+<p style="margin: 0; max-width: 44ch; color: #D2D2DA">An overshirt, a suede cap and a silk square, five of each. Revealed on Friday 4 December at 18:00 GMT. People on the list hear first.</p>
+<div class="s-cd" role="timer" aria-label="{{cdLabel}}">
+<sc-for list="{{cd}}" as="c" hint-placeholder-count="4"><span style="display: flex; flex-direction: column; gap: 4px; padding: 16px 0 0; border-top: 1px solid #34343C"><span class="s-disp" style="font-size: clamp(30px, 3vw, 44px); letter-spacing: 0.06em; font-variant-numeric: tabular-nums">{{c.v}}</span><span class="s-eb" style="font-size: 10.5px">{{c.l}}</span></span></sc-for>
+</div>
+<form style="display: flex; gap: 10px; flex-wrap: wrap; max-width: 520px" onSubmit="{{notify}}">
+<label for="nd-email" class="s-vh">Email address</label>
+<input id="nd-email" class="s-in" type="email" autocomplete="email" placeholder="you@example.com" style="flex: 1 1 240px; width: auto">
+<button type="submit" class="s-btn s-btn-l">{{notifyLabel}}</button>
+</form>
+<p style="margin: 0; font-size: 13.5px; color: #A8A8B4">One email when the drop opens. No newsletter unless you ask for it.</p>
+</div>
+<ul class="s-stg" style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px">
+<sc-for list="{{veiled}}" as="v" hint-placeholder-count="3">
+<li style="display: flex; flex-direction: column; gap: 12px"><span style="position: relative; display: flex; align-items: flex-end; aspect-ratio: 3 / 4; border: 1px solid #34343C; border-radius: 4px; overflow: clip; background: radial-gradient(circle at 50% 35%, #1A1A1F 0%, #050506 70%)"><span class="s-f" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 34px; font-weight: 300; letter-spacing: 0.1em; color: #34343C">{{v.n}}</span><span style="position: relative; padding: 12px; font-size: 12px; color: #A8A8B4">[Photo · {{v.ph}}]</span></span><span class="s-name" style="font-size: 11.5px">{{v.name}}</span><span class="s-y" style="display: flex; align-items: center; gap: 10px"><span class="s-ed" aria-hidden="true"><span class="s-pip on"></span><span class="s-pip on"></span><span class="s-pip on"></span><span class="s-pip on"></span><span class="s-pip on"></span></span><span style="font-size: 13px; color: #A8A8B4">Edition of 5</span></span></li>
+</sc-for>
+</ul>
+</div>
+</section>
+
+<section aria-labelledby="ed-title" style="border-bottom: 1px solid #CFC7B8">
+<div class="s-wrap s-sec" style="display: flex; flex-direction: column; gap: 52px">
+<h2 id="ed-title" class="s-h2 s-rv">Five. <span style="color: #615D55">Then never again.</span></h2>
+<ul class="s-4 s-stg" style="list-style: none; margin: 0; padding: 0">
+<li style="display: flex; flex-direction: column; gap: 14px"><span class="s-disp" style="font-size: 38px; letter-spacing: 0.04em">05</span><span class="s-name" style="font-size: 12.5px">Made in five</span><span style="font-size: 15.5px; color: #3E3B35; max-width: 30ch">Each colourway exists five times, across all sizes. The counter on every piece is live.</span></li>
+<li style="display: flex; flex-direction: column; gap: 14px"><span class="s-disp" style="font-size: 38px; letter-spacing: 0.04em">N°</span><span class="s-name" style="font-size: 12.5px">Numbered by hand</span><span style="font-size: 15.5px; color: #3E3B35; max-width: 30ch">Your piece is numbered when it is packed, and the number is written into your order.</span></li>
+<li style="display: flex; flex-direction: column; gap: 14px"><span class="s-disp" style="font-size: 38px; letter-spacing: 0.04em">00</span><span class="s-name" style="font-size: 12.5px">Never restocked</span><span style="font-size: 15.5px; color: #3E3B35; max-width: 30ch">No second runs, no new colours of an old piece. A sold-out edition stays sold out.</span></li>
+<li style="display: flex; flex-direction: column; gap: 14px"><span class="s-disp" style="font-size: 38px; letter-spacing: 0.04em">∞</span><span class="s-name" style="font-size: 12.5px">Kept in the archive</span><span style="font-size: 15.5px; color: #3E3B35; max-width: 30ch">Every piece stays on the site after it sells out, with its drop, story and edition.</span></li>
+</ul>
+</div>
+</section>
+
+<section aria-labelledby="story-title" style="border-bottom: 1px solid #CFC7B8">
+<div class="s-wrap s-sec" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); gap: 44px 80px; align-items: center">
+<a href="About.dc.html" class="s-card" style="display: block; overflow: clip; border-radius: 4px; aspect-ratio: 5 / 4"><img src="/_blob/7cb024b181b03540faa8b26ed6fb24a9" alt="The NEVMA name carved into a stone wall" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"></a>
+<div style="display: flex; flex-direction: column; gap: 22px">
+<p class="s-eb">The story</p>
+<h2 id="story-title" class="s-disp" style="margin: 0; font-size: clamp(26px, 2.6vw, 38px); letter-spacing: 0.18em; line-height: 1.4">Not merchandise. Limited objects of identity.</h2>
+<p style="margin: 0; max-width: 46ch; color: #3E3B35">NEVMA Style is the third pillar of NEVMA, next to the label and Moments. It makes few things, slowly, in deliberate numbers, so that wearing one means something.</p>
+<a href="About.dc.html" class="s-eb s-ul" style="color: #0B0B0C; align-self: flex-start">Read the story</a>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="world-title">
+<div class="s-wrap s-sec" style="display: flex; flex-direction: column; gap: 40px">
+<h2 id="world-title" class="s-h2 s-rv">The world of <span style="color: #615D55">NEVMA</span></h2>
+<ul class="s-stg" style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 28px">
+<li><a href="#" class="s-card" aria-label="NEVMA Music, opens the music site" style="display: flex; flex-direction: column; gap: 16px; text-decoration: none"><span style="display: block; aspect-ratio: 16 / 9; overflow: clip; border-radius: 4px; background: #000000"><img src="/_blob/c239b8595f4f0317c13b1941681c158a" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"></span><span class="s-name" style="font-size: 13px">NEVMA <span style="color: #615D55">The Label</span> ↗</span><span style="font-size: 15.5px; color: #3E3B35">Original music every month across Pop, House, Techno and Chill &amp; Instrumental.</span></a></li>
+<li><a href="#" class="s-card" aria-label="NEVMA Moments, opens the music site" style="display: flex; flex-direction: column; gap: 16px; text-decoration: none"><span style="display: block; aspect-ratio: 16 / 9; overflow: clip; border-radius: 4px; background: #000000"><img src="/_blob/cb298a3159c36cd4f17c50874d670f56" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"></span><span class="s-name" style="font-size: 13px">NEVMA <span style="color: #615D55">Moments</span> ↗</span><span style="font-size: 15.5px; color: #3E3B35">More than events. Some pieces are released only at a Moment, then online.</span></a></li>
+</ul>
+</div>
+</section>
+</main>
+
+<footer class="s-dark" style="background: #000000; color: #F5F5F7">
+<div class="s-wrap s-sec" style="display: flex; flex-direction: column; gap: 56px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 48px 64px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<img src="/_blob/05a502b9f90960a3c29214056fa73f94" alt="NEVMA" style="height: 26px; width: auto; align-self: flex-start">
+<p class="s-eb" style="color: #F0E81C">Style · Limited by design</p>
+<form style="display: flex; gap: 10px; flex-wrap: wrap; max-width: 460px">
+<label for="ft-email" class="s-vh">Email address</label>
+<input id="ft-email" class="s-in" type="email" autocomplete="email" placeholder="Hear about drops first" style="flex: 1 1 220px; width: auto; height: 48px">
+<button type="submit" class="s-btn s-btn-l s-btn-sm" style="height: 48px">Join</button>
+</form>
+</div>
+<nav aria-label="Footer"><ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 32px; font-size: 15px"><li><a href="Drop.dc.html">Current drop</a></li><li><a href="Legal.dc.html">Shipping &amp; delivery</a></li><li><a href="Archive.dc.html">All pieces</a></li><li><a href="Legal.dc.html">Returns</a></li><li><a href="About.dc.html">Story</a></li><li><a href="Legal.dc.html">Client care &amp; FAQ</a></li><li><a href="Account.dc.html">Account</a></li><li><a href="Legal.dc.html">Contact</a></li><li><a href="#">NEVMA Music ↗</a></li><li><a href="#">Instagram ↗</a></li></ul></nav>
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 44ch">
+<p style="margin: 0; display: flex; align-items: baseline; gap: 12px"><span style="font-size: 28px; font-weight: 700">nevma</span><span style="color: #A8A8B4; font-style: italic">noun · Greek</span></p>
+<span class="s-rule" aria-hidden="true" style="width: 100%; opacity: 0.6"></span>
+<p style="margin: 0; font-size: 15px; color: #D2D2DA"><strong style="color: #F5F5F7">a gesture, nod or sign:</strong> a subtle signal given with the hand, head or eyes.</p>
+</div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px 32px; flex-wrap: wrap; padding-top: 28px; border-top: 1px solid #26262C; font-size: 14px; color: #A8A8B4">
+<span class="s-eb" style="letter-spacing: 0.4em; color: #F5F5F7">We don’t follow. We define.</span>
+<span style="display: flex; gap: 20px; flex-wrap: wrap"><a href="Legal.dc.html">Terms of sale</a><a href="Legal.dc.html">Privacy</a><a href="Legal.dc.html">Cookies</a><span>Payments secured by Viva</span><span>© 2026 NEVMA Style · London</span></span>
+</div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6000}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { menu: false, now: Date.parse('2026-10-23T13:00:00Z'), notified: false }; }
+  componentDidMount() { var self = this; this.t = setInterval(function () { self.setState({ now: Date.now() }); }, 30000); this.setState({ now: Date.now() }); }
+  componentWillUnmount() { clearInterval(this.t); }
+  renderVals() {
+    var self = this, s = this.state;
+    var pips = function (n) { var a = []; for (var i = 0; i < 5; i++) a.push({ cls: i < n ? 's-pip on' : 's-pip' }); return a; };
+    var piece = function (o) {
+      var sold = o.left === 0;
+      return Object.assign(o, { pips: pips(o.left), filter: sold ? 'grayscale(1) contrast(0.9)' : 'none',
+        badge: sold ? 'Sold out' : (o.left === 1 ? 'Last piece' : o.left + ' of 5 left'),
+        tagBg: sold ? '#D9D3C8' : '#0B0B0C', tagFg: sold ? '#3E3B35' : '#F5F2EC',
+        stock: sold ? 'All five have found a home' : (o.left === 1 ? 'Last piece of five' : o.left + ' of 5 left'),
+        aria: o.name + ', ' + o.price + ', ' + (sold ? 'sold out' : o.left + ' of 5 left') });
+    };
+    var target = Date.parse('2026-12-04T18:00:00Z'), diff = Math.max(0, target - s.now);
+    var d = Math.floor(diff / 86400000), h = Math.floor(diff / 3600000) % 24, m = Math.floor(diff / 60000) % 60;
+    var pad = function (x) { return (x < 10 ? '0' : '') + x; };
+    return {
+      menuOpen: s.menu, menuStr: s.menu ? 'true' : 'false', toggleMenu: function () { self.setState({ menu: !self.state.menu }); },
+      pieces: [
+        piece({ name: 'Definition Tee · White', price: '£85', left: 3, img: '/_blob/ec745d9afe5c690abaeda598c37428bf', pos: 'center 42%', bg: '#000000' }),
+        piece({ name: 'Wordmark Tee · Bone', price: '£75', left: 1, img: '/_blob/c6bb175d8bb5fe0cb3c0ea6480d24393', pos: 'center 55%', bg: '#D9D3C8' }),
+        piece({ name: 'Definition Tee · Bone', price: '£85', left: 0, img: '/_blob/48973edd68fb210efce173c75d7b5599', pos: 'center 35%', bg: '#D9D3C8' })
+      ],
+      cd: [ { v: pad(d), l: 'Days' }, { v: pad(h), l: 'Hours' }, { v: pad(m), l: 'Minutes' }, { v: '18:00', l: 'GMT' } ],
+      cdLabel: 'STYLE 002 opens in ' + d + ' days, ' + h + ' hours and ' + m + ' minutes',
+      veiled: [ { n: '01', name: 'Signal Overshirt', ph: 'overshirt' }, { n: '02', name: 'Suede Cap', ph: 'cap' }, { n: '03', name: 'Silk Square 70', ph: 'silk square' } ],
+      notify: function (e) { if (e && e.preventDefault) e.preventDefault(); self.setState({ notified: true }); },
+      notifyLabel: s.notified ? 'You’re on the list' : 'Notify me'
+    };
+  }
+}
+</script>
+</body>
+</html>

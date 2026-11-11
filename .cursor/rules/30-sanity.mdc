@@ -1,0 +1,9 @@
+---
+description: Sanity Studio, schemas, GROQ and the seed
+globs: apps/studio/**, apps/web/src/lib/sanity/**, seed/**
+---
+- Schemas live in apps/studio/schemaTypes. After any change: `pnpm --filter studio validate` (0 errors, 0 warnings), `pnpm --filter studio typecheck`, `pnpm --filter studio build`, and update docs/CONTENT-MODEL.md and the GROQ in apps/web.
+- Seed IDs use hyphens (a "." makes a document private). Keep the seed word for word with the design; run `pnpm --filter studio check-seed` before importing.
+- The production dataset is private. The site reads with a Viewer token at request/build time (SANITY_READ_TOKEN); never expose it to the browser.
+- GROQ: select only the fields a block needs; resolve references in the query; use `coalesce` for defaults from siteSettings.pieceDefaults.
+- Sanity publish webhook → /api/revalidate (secret) → on-demand ISR revalidation of the affected paths (see docs/ARCHITECTURE.md).

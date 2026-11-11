@@ -1,0 +1,8 @@
+---
+description: Tests and checks
+globs: apps/web/tests/**, apps/web/src/**/*.test.ts
+---
+- Fidelity: apps/web/tests/fidelity (Playwright). `pnpm test:fidelity` runs every designed page and state at 1440 and 390 with COMMERCE_MOCK=1 and the fixed time 2026-10-23T13:00:00Z. Self-test: `pnpm test:fidelity:self` must pass (design served as the site).
+- Unit (vitest): edition states and wording, price and date formatting, cart rules, webhook HMAC, form validation, GROQ result mappers.
+- API: form routes (good, missing Turnstile, honeypot, rate limit), webhooks (valid, bad HMAC), revalidate (bad secret).
+- E2E smoke against Shopify test store before launch: add to bag, sold-while-in-bag, checkout redirect, sign in, wishlist merge (see docs/ACCEPTANCE.md).

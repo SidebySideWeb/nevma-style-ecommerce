@@ -1,0 +1,30 @@
+/* NEVMA Style — generated from the design canvas. Do not edit by hand: change the tokens in docs/DESIGN-SYSTEM.md and regenerate, or edit together with the fidelity tests. */
+body{margin:0;background:#ECE7DE}
+:where(.c-root) a{color:#0B0B0C}
+:root{--s-ease:cubic-bezier(0.23,1,0.32,1)}
+.c-f{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif}
+.c-grid{display:flex;flex-wrap:wrap;min-height:100vh}
+.c-main{flex:999 1 560px;min-width:0;display:flex;justify-content:flex-start;background:#F5F2EC}
+.c-side{flex:1 1 420px;min-width:0;background:#E3DDD2;border-left:1px solid #CFC7B8}
+.c-h{margin:0;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.26em;text-transform:uppercase}
+.c-box{border:1px solid #CFC7B8;border-radius:6px;background:#FFFFFF;padding:22px 24px}
+.c-btn{display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 28px;border-radius:6px;border:1px solid #0B0B0C;background:#0B0B0C;color:#F5F2EC;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;font-size:13px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;cursor:pointer;text-decoration:none;box-sizing:border-box}
+.c-btn-o{background:transparent;color:#0B0B0C}
+.c-root a:focus-visible,.c-root button:focus-visible{outline:2px solid #0B0B0C;outline-offset:2px}
+.c-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.c-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:20px 32px}
+.tick{stroke-dasharray:1;stroke-dashoffset:0;animation:tick 500ms var(--s-ease) 150ms both}
+@keyframes tick{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.ring{animation:ring 600ms var(--s-ease) both}
+@keyframes ring{from{opacity:0;transform:scale(0.9)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.tick{animation:none}.ring{animation:fade 300ms ease both}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.c-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr));gap:0}
+.c-steps li{display:flex;flex-direction:column;gap:8px;padding:16px 16px 0 0;border-top:2px solid #CFC7B8}
+.c-steps li[data-done="true"]{border-top-color:#0B0B0C}
+.h-flow{display:flex;flex-wrap:wrap;gap:20px;align-items:stretch}
+.h-flow>.h-card{flex:1 1 260px;min-width:0}
+.h-arrow{display:flex;align-items:center;justify-content:center;flex:0 0 32px;color:#615D55}
+@media (max-width:899px){.h-arrow{flex-basis:100%;transform:rotate(90deg);height:32px}}
+@media (max-width:767px){.c-main>*{padding-right:24px!important}}
+@media (max-width:1019px){.c-side{border-left:0;border-top:1px solid #CFC7B8}}

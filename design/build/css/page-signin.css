@@ -1,0 +1,8 @@
+/* NEVMA Style — generated from the design canvas. Do not edit by hand: change the tokens in docs/DESIGN-SYSTEM.md and regenerate, or edit together with the fidelity tests. */
+.s-auth{display:flex;flex-wrap:wrap;min-height:760px}
+.s-auth>.s-form{flex:999 1 520px;min-width:0;display:flex;justify-content:center;align-items:center;padding:64px 20px}
+.s-auth>.s-perk{flex:1 1 420px;min-width:0}
+.s-code{letter-spacing:0.6em;text-align:center;font-family:'Montserrat',sans-serif;font-size:24px!important;height:64px!important}
+.s-tab{flex:1 1 0;height:52px;border:0;border-bottom:1px solid #CFC7B8;background:transparent;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.26em;text-transform:uppercase;color:#615D55;cursor:pointer}
+.s-tab[aria-selected="true"]{color:#0B0B0C;border-bottom:2px solid #0B0B0C}
+.s-txt{background:none;border:0;padding:0;font:inherit;font-size:14.5px;color:#0B0B0C;text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:32px}
