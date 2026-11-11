@@ -1,0 +1,38 @@
+---
+import Base from '../../layouts/Base.astro';
+import Announcement from '../../components/chrome/Announcement.astro';
+import Header from '../../components/chrome/Header.astro';
+import Footer from '../../components/chrome/Footer.astro';
+import AuthBlock from '../../components/account/AuthBlock.astro';
+import WhyAccount from '../../components/account/WhyAccount.astro';
+import { loadChrome } from '../../lib/chrome';
+import { loadSignIn, resolveCustomer } from '../../lib/account/load';
+
+const cookie = Astro.request.headers.get('cookie');
+const modeParam = Astro.url.searchParams.get('mode');
+const mode = modeParam === 'create' ? 'create' : 'sign-in';
+const next = Astro.url.searchParams.get('next') || '/account';
+
+const customer = await resolveCustomer(cookie);
+if (customer && !Astro.url.searchParams.has('stay')) {
+  return Astro.redirect(next.startsWith('/') ? next : '/account');
+}
+
+const [chrome, page] = await Promise.all([loadChrome({ onHome: false }), loadSignIn(mode)]);
+---
+
+<Base
+  title={mode === 'create' ? 'NEVMA Style — Create account' : 'NEVMA Style — Sign in'}
+  description={chrome.seo.description}
+  board="SignIn"
+  canonical="/account/sign-in"
+  noindex
+>
+  {chrome.announcement ? <Announcement announcement={chrome.announcement} /> : null}
+  <Header mainNav={chrome.mainNav} menuExtra={chrome.menuExtra} accountHref="/account/sign-in" />
+  <main id="main" class="s-auth">
+    <AuthBlock page={page} next={next.startsWith('/') ? next : '/account'} />
+    <WhyAccount page={page} />
+  </main>
+  <Footer footer={chrome.footer} />
+</Base>

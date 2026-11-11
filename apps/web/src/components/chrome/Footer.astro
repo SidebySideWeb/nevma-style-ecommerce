@@ -1,0 +1,116 @@
+---
+import type { ChromeData } from '../../lib/chrome';
+import { ui } from '../../content/ui';
+import { serverEnv } from '../../lib/server/env';
+
+interface Props {
+  footer: ChromeData['footer'];
+}
+
+const { footer: f } = Astro.props;
+const turnstileSiteKey = serverEnv('PUBLIC_TURNSTILE_SITE_KEY');
+
+function linkLabel(item: { label: string; external?: boolean }) {
+  return item.external ? `${item.label} ↗` : item.label;
+}
+---
+
+<footer class="s-dark" style="background: #000000; color: #F5F5F7" data-block="footer">
+  <div class="s-wrap s-sec" style="display: flex; flex-direction: column; gap: 56px">
+    <div
+      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 48px 64px; align-items: start"
+    >
+      <div style="display: flex; flex-direction: column; gap: 18px">
+        <img
+          src={f.wordmarkSrc}
+          alt={ui.chrome.brandNevma}
+          style="height: 26px; width: auto; align-self: flex-start"
+        />
+        <p class="s-eb" style="color: #F0E81C">{f.tagline}</p>
+        <form
+          style="display: flex; gap: 10px; flex-wrap: wrap; max-width: 460px"
+          method="post"
+          action="/api/subscribe"
+          data-newsletter
+        >
+          <label for="ft-email" class="s-vh">{ui.chrome.emailAddress}</label>
+          <input
+            id="ft-email"
+            name="email"
+            class="s-in"
+            type="email"
+            autocomplete="email"
+            required
+            placeholder={f.newsletterPlaceholder}
+            style="flex: 1 1 220px; width: auto; height: 48px"
+          />
+          <input
+            type="text"
+            name="company"
+            class="s-vh"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+            style="background: transparent; border: 0; color: transparent"
+          />
+          {
+            turnstileSiteKey ? (
+              <div
+                class="cf-turnstile"
+                data-sitekey={turnstileSiteKey}
+                data-size="invisible"
+                style="display: none"
+              />
+            ) : null
+          }
+          <button type="submit" class="s-btn s-btn-l s-btn-sm" style="height: 48px"
+            >{f.newsletterButton}</button
+          >
+        </form>
+      </div>
+      <nav aria-label={ui.chrome.footerNav}
+        ><ul
+          style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 32px; font-size: 15px"
+        >
+          {
+            f.links.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  {...(item.external
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
+                >
+                  {linkLabel(item)}
+                </a>
+              </li>
+            ))
+          }
+        </ul></nav
+      >
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 44ch">
+        <p style="margin: 0; display: flex; align-items: baseline; gap: 12px"
+          ><span style="font-size: 28px; font-weight: 700">{f.definition.word}</span><span
+            style="color: #A8A8B4; font-style: italic">{f.definition.pos}</span
+          ></p
+        >
+        <span class="s-rule" aria-hidden="true" style="width: 100%; opacity: 0.6"></span>
+        <p style="margin: 0; font-size: 15px; color: #D2D2DA"
+          ><strong style="color: #F5F5F7">{f.definition.lead}</strong>{' '}{f.definition.meaning}</p
+        >
+      </div>
+    </div>
+    <div
+      style="display: flex; justify-content: space-between; align-items: center; gap: 16px 32px; flex-wrap: wrap; padding-top: 28px; border-top: 1px solid #26262C; font-size: 14px; color: #A8A8B4"
+    >
+      <span class="s-eb" style="letter-spacing: 0.4em; color: #F5F5F7">{f.closingLine}</span>
+      <span style="display: flex; gap: 20px; flex-wrap: wrap"
+        >{
+          f.legalLinks.map((item) => (
+            <a href={item.href}>{item.label}</a>
+          ))
+        }<span>{f.paymentNote}</span><span>{f.copyright}</span></span
+      >
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,44 @@
+---
+import Base from '../../layouts/Base.astro';
+import Announcement from '../../components/chrome/Announcement.astro';
+import Header from '../../components/chrome/Header.astro';
+import Footer from '../../components/chrome/Footer.astro';
+import AllPieces from '../../components/archive/AllPieces.astro';
+import PiecesList from '../../components/archive/PiecesList.astro';
+import { loadChrome } from '../../lib/chrome';
+import { loadPieces, parsePiecesFilter, parsePiecesView } from '../../lib/pieces';
+import { shouldNoindex } from '../../lib/seo';
+
+const cookie = Astro.request.headers.get('cookie');
+const filter = parsePiecesFilter(Astro.url.searchParams.get('filter'));
+const view = parsePiecesView(Astro.url.searchParams.get('view'));
+
+const [chrome, page] = await Promise.all([
+  loadChrome({ onHome: false }),
+  loadPieces(cookie, filter, view),
+]);
+
+if (!page) {
+  return new Response(null, { status: 404, statusText: 'Not Found' });
+}
+---
+
+<Base
+  title={page.seo.title || chrome.seo.title || 'NEVMA Style — All pieces'}
+  description={page.seo.description || chrome.seo.description}
+  board="Archive"
+  canonical="/pieces"
+  noindex={shouldNoindex({ seoNoindex: page.seo.noindex })}
+>
+  {chrome.announcement ? <Announcement announcement={chrome.announcement} /> : null}
+  <Header mainNav={chrome.mainNav} menuExtra={chrome.menuExtra} />
+  <main id="main">
+    <AllPieces page={page} />
+    <PiecesList page={page} />
+  </main>
+  <Footer footer={chrome.footer} />
+</Base>
+
+<script>
+  import '../../scripts/pieces.ts';
+</script>

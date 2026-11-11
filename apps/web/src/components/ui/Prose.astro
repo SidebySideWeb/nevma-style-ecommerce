@@ -1,0 +1,13 @@
+---
+import { proseToHtml } from '../../lib/sanity/prose';
+import type { Prose } from '../../lib/sanity/types';
+
+interface Props {
+  value: Prose;
+}
+
+const { value } = Astro.props;
+const html = proseToHtml(value);
+---
+
+{html ? <Fragment set:html={html} /> : null}

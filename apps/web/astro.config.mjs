@@ -7,32 +7,40 @@ import vercel from '@astrojs/vercel';
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 
 // astro.config runs before Vite loads .env. The kit's example lives at the repo root.
-function fileEnv(name) {
-  for (const file of ['.env.local', '.env']) {
-    const path = resolve(repoRoot, file);
-    if (!existsSync(path)) continue;
-    for (const line of readFileSync(path, 'utf8').split('\n')) {
-      const trimmed = line.trim();
-      if (!trimmed || trimmed.startsWith('#')) continue;
-      const eq = trimmed.indexOf('=');
-      if (eq === -1) continue;
-      if (trimmed.slice(0, eq).trim() !== name) continue;
-      let value = trimmed.slice(eq + 1).trim();
-      const comment = value.search(/\s+#/);
-      if (comment !== -1) value = value.slice(0, comment).trim();
-      if (
-        (value.startsWith('"') && value.endsWith('"')) ||
-        (value.startsWith("'") && value.endsWith("'"))
-      ) {
-        value = value.slice(1, -1);
-      }
-      return value;
+function parseEnvFile(path) {
+  if (!existsSync(path)) return {};
+  const out = {};
+  for (const line of readFileSync(path, 'utf8').split('\n')) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+    const eq = trimmed.indexOf('=');
+    if (eq === -1) continue;
+    const key = trimmed.slice(0, eq).trim();
+    let value = trimmed.slice(eq + 1).trim();
+    const comment = value.search(/\s+#/);
+    if (comment !== -1) value = value.slice(0, comment).trim();
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      value = value.slice(1, -1);
     }
+    out[key] = value;
   }
-  return undefined;
+  return out;
 }
 
-const env = (name) => process.env[name] || fileEnv(name);
+// Mirror repo-root .env onto process.env so serverEnv() (no astro:env) sees PUBLIC_* and
+// secrets in SSR/dev. Schema still validates; this only fills gaps. Real process.env wins.
+const fromFiles = {
+  ...parseEnvFile(resolve(repoRoot, '.env')),
+  ...parseEnvFile(resolve(repoRoot, '.env.local')),
+};
+for (const [key, value] of Object.entries(fromFiles)) {
+  if (process.env[key] === undefined) process.env[key] = value;
+}
+
+const env = (name) => process.env[name];
 const site = env('PUBLIC_SITE_URL') || 'http://localhost:4321';
 const revalidateSecret = env('SANITY_REVALIDATE_SECRET');
 
@@ -51,6 +59,9 @@ const secret = (optional = true) =>
 export default defineConfig({
   site,
   output: 'server',
+  // Fidelity runs against `astro dev` (@astrojs/vercel has no preview). Keep the toolbar off so it
+  // cannot paint over footer screenshots.
+  devToolbar: { enabled: false },
   adapter: vercel({
     isr: {
       ...(revalidateSecret ? { bypassToken: revalidateSecret } : {}),

@@ -1,0 +1,68 @@
+---
+import type { DropPageData } from '../../lib/drop';
+import { ui } from '../../content/ui';
+
+interface Props {
+  drop: DropPageData;
+}
+
+const { drop: d } = Astro.props;
+---
+
+<section aria-labelledby="drop-title" data-block="drop-intro">
+  <div class="s-wrap" style="padding-block: 56px 72px; display: flex; flex-direction: column; gap: 36px">
+    <p class="s-eb">{d.eyebrow}</p>
+    <h1
+      id="drop-title"
+      style="margin: 0; display: flex; align-items: baseline; gap: 12px 40px; flex-wrap: wrap"
+      ><span
+        class="s-disp"
+        style="font-size: clamp(64px, 11vw, 176px); letter-spacing: 0.08em; line-height: 0.95"
+        >{d.code}</span
+      ><span
+        class="s-disp"
+        style="font-size: clamp(20px, 2vw, 30px); letter-spacing: 0.4em; color: #615D55"
+        >{d.name}</span
+      ></h1
+    >
+    <span class="s-rule" aria-hidden="true" style="width: 160px"></span>
+    <div
+      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 32px 80px; align-items: start"
+    >
+      {
+        d.introHtml ? (
+          <p
+            style="margin: 0; max-width: 52ch; font-size: 20px; line-height: 1.55; color: #3E3B35"
+            set:html={d.introHtml}
+          />
+        ) : null
+      }
+      <dl class="s-meta" style="margin: 0">
+        <div
+          ><dt class="s-eb" style="font-size: 10.5px">{ui.drop.pieces}</dt><dd
+            class="s-disp"
+            style="margin: 6px 0 0; font-size: 30px; letter-spacing: 0.04em"
+            >{d.piecesCountLabel}</dd
+          ></div
+        >
+        <div
+          ><dt class="s-eb" style="font-size: 10.5px">{ui.drop.editionEach}</dt><dd
+            class="s-disp"
+            style="margin: 6px 0 0; font-size: 30px; letter-spacing: 0.04em"
+            >{d.editionLabel}</dd
+          ></div
+        >
+        <div
+          ><dt class="s-eb" style="font-size: 10.5px">{ui.drop.left}</dt><dd
+            style="margin: 6px 0 0; display: flex; align-items: baseline; gap: 10px"
+            ><span class="s-disp" style="font-size: 30px; letter-spacing: 0.04em"
+              >{d.leftPad}</span
+            ><span style="font-size: 14px; color: #615D55"
+              >{ui.drop.of} {d.capacity}</span
+            ></dd
+          ></div
+        >
+      </dl>
+    </div>
+  </div>
+</section>

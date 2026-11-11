@@ -1,0 +1,162 @@
+---
+import type { ChromeData } from '../../lib/chrome';
+import { HEADER_FALLBACK_COUNTS } from '../../lib/chrome';
+import { ui } from '../../content/ui';
+import BagCount from './BagCount.astro';
+import WishlistCount from './WishlistCount.astro';
+
+interface Props {
+  mainNav: ChromeData['mainNav'];
+  menuExtra: ChromeData['menuExtra'];
+  accountHref?: string;
+}
+
+const { mainNav, menuExtra, accountHref = '/account' } = Astro.props;
+const menuLinks = [...mainNav, ...menuExtra];
+---
+
+<header
+  style="position: sticky; top: 0; z-index: 20; background: rgba(236,231,222,0.94); backdrop-filter: blur(10px); border-bottom: 1px solid #CFC7B8"
+  data-block="header"
+>
+  <div
+    class="s-wrap"
+    style="height: 76px; display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center; gap: 16px"
+  >
+    <div style="display: flex; align-items: center">
+      <button
+        type="button"
+        class="s-ib s-menu"
+        aria-label={ui.chrome.menu}
+        aria-expanded="false"
+        aria-controls="menu"
+        data-menu-toggle
+        ><svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          aria-hidden="true"><path d="M4 8h16M4 16h16"></path></svg
+        ></button
+      >
+      <nav aria-label={ui.chrome.mainNav} class="s-nav"
+        ><ul
+          class="s-f"
+          style="list-style: none; margin: 0; padding: 0; display: flex; gap: 26px; font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; white-space: nowrap"
+        >
+          {
+            mainNav.map((item) => (
+              <li>
+                <a href={item.href} class="s-lnk">
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul></nav
+      >
+    </div>
+    <a
+      href="/"
+      aria-label={ui.chrome.homeAria}
+      style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C"
+      ><span class="s-f" style="font-size: 15px; font-weight: 500; letter-spacing: 0.42em"
+        >{ui.chrome.brandNevma}</span
+      ><span aria-hidden="true" style="width: 1px; height: 18px; background: #0B0B0C"></span><span
+        class="s-f"
+        style="font-size: 15px; font-weight: 300; letter-spacing: 0.42em">{ui.chrome.brandStyle}</span
+      ></a
+    >
+    <div style="display: flex; justify-content: flex-end; align-items: center; gap: 2px">
+      <a href={accountHref} class="s-ib" aria-label={ui.chrome.account}
+        ><svg
+          width="19"
+          height="19"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+          stroke-linecap="round"
+          aria-hidden="true"
+          ><circle cx="12" cy="8.5" r="3.8"></circle><path
+            d="M4.5 20c1.4-3.6 4.2-5.4 7.5-5.4s6.1 1.8 7.5 5.4"></path></svg
+        ></a
+      >
+      <WishlistCount server:defer>
+        <a
+          slot="fallback"
+          href="/wishlist"
+          class="s-ib"
+          aria-label={ui.chrome.wishlistAria(HEADER_FALLBACK_COUNTS.wishlist)}
+          ><svg
+            width="19"
+            height="19"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            ><path
+              d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"
+            ></path></svg
+          ></a
+        >
+      </WishlistCount>
+      <BagCount server:defer>
+        <a
+          slot="fallback"
+          href="/bag"
+          class="s-ib"
+          aria-label={ui.chrome.bagAria(HEADER_FALLBACK_COUNTS.bag)}
+          ><svg
+            width="19"
+            height="19"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            ><path d="M5 8h14l-1 12H6z"></path><path
+              d="M9 8V6.5a3 3 0 0 1 6 0V8"
+              stroke-linecap="round"></path></svg
+          ><span class="s-count" aria-hidden="true">{HEADER_FALLBACK_COUNTS.bag}</span></a
+        >
+      </BagCount>
+    </div>
+  </div>
+
+  <nav
+    id="menu"
+    class="s-pop"
+    aria-label={ui.chrome.menu}
+    hidden
+    style="border-top: 1px solid #CFC7B8; background: #ECE7DE"
+  >
+    <ul
+      class="s-wrap s-f"
+      style="list-style: none; margin: 0; padding-block: 8px 18px; display: flex; flex-direction: column; font-size: 14px; letter-spacing: 0.26em; text-transform: uppercase"
+    >
+      {
+        menuLinks.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              style="display: flex; align-items: center; min-height: 52px; text-decoration: none"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<script>
+  import '../../scripts/menu.ts';
+</script>

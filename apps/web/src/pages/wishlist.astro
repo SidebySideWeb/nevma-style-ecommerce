@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import Announcement from '../components/chrome/Announcement.astro';
+import Header from '../components/chrome/Header.astro';
+import Footer from '../components/chrome/Footer.astro';
+import WishlistBlock from '../components/wishlist/WishlistBlock.astro';
+import { loadChrome } from '../lib/chrome';
+import { loadWishlist } from '../lib/wishlist';
+import { resolveCustomer } from '../lib/account/load';
+
+const cookie = Astro.request.headers.get('cookie');
+const customer = await resolveCustomer(cookie);
+const [chrome, page] = await Promise.all([loadChrome({ onHome: false }), loadWishlist(cookie)]);
+---
+
+<Base
+  title="NEVMA Style — Wishlist"
+  description={chrome.seo.description}
+  board="Wishlist"
+  canonical="/wishlist"
+  noindex
+>
+  {chrome.announcement ? <Announcement announcement={chrome.announcement} /> : null}
+  <Header
+    mainNav={chrome.mainNav}
+    menuExtra={chrome.menuExtra}
+    accountHref={customer ? '/account' : '/account/sign-in'}
+  />
+  <main id="main">
+    <WishlistBlock page={page} />
+  </main>
+  <Footer footer={chrome.footer} />
+</Base>

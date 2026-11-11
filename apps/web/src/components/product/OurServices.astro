@@ -1,0 +1,33 @@
+---
+import type { PiecePageData } from '../../lib/piece';
+import { ui } from '../../content/ui';
+
+interface Props {
+  services: PiecePageData['services'];
+}
+
+const { services } = Astro.props;
+---
+
+<section aria-label={ui.product.ourServices} data-block="our-services">
+  <ul class="s-wrap s-4" style="list-style: none; margin-block: 0; padding-block: 56px; text-align: center">
+    {
+      services.map((s) => (
+        <li style="display: flex; flex-direction: column; align-items: center; gap: 10px">
+          <span class="s-eb" style="color: #0B0B0C">
+            {s.title}
+          </span>
+          <span style="font-size: 14px; color: #3E3B35">
+            {s.text}
+            {s.link ? (
+              <>
+                {' '}
+                <a href={s.link.href}>{s.link.label}</a>
+              </>
+            ) : null}
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+</section>

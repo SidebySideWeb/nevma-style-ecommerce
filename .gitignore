@@ -9,3 +9,14 @@ apps/web/test-results
 apps/web/fidelity-report
 apps/studio/dist
 .DS_Store
+
+# one-off / secret dumps
+scripts/.vercel-env-*.json
+scripts/probe-sanity-webhook.mjs
+
+# regenerable QA blobs (keep acceptance.md, axe.json, keyboard.json, lighthouse.md)
+docs/reports/cross-browser/
+docs/reports/lighthouse-*.html
+docs/reports/lighthouse-*.json
+!docs/reports/lighthouse-summary.json
+!docs/reports/lighthouse.md

@@ -1,0 +1,28 @@
+---
+import EditionPips from '../ui/EditionPips.astro';
+import { loadPieceEdition } from '../../lib/home';
+
+interface Props {
+  handle: string;
+  title: string;
+  opensAt?: string | null;
+  fallbackFilled: number;
+  fallbackLine: string;
+}
+
+const { handle, title, opensAt, fallbackLine } = Astro.props;
+const edition = await loadPieceEdition(handle, opensAt, Astro.request.headers.get('cookie'));
+---
+
+<span
+  class="s-onimg"
+  style="position: absolute; left: 24px; bottom: 24px; display: inline-flex; align-items: center; gap: 12px; padding: 10px 16px; border-radius: 100px; background: rgba(0,0,0,0.66); color: #F5F5F7"
+>
+  <span class="s-f" style="font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase"
+    >{title}</span
+  >
+  <EditionPips filled={edition.meter.filled} total={edition.meter.total} />
+  <span class="s-f" style="font-size: 11px; letter-spacing: 0.18em"
+    >{edition.stockLine || fallbackLine}</span
+  >
+</span>

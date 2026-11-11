@@ -1,0 +1,39 @@
+---
+import Base from '../../layouts/Base.astro';
+import Announcement from '../../components/chrome/Announcement.astro';
+import Header from '../../components/chrome/Header.astro';
+import Footer from '../../components/chrome/Footer.astro';
+import CareBlock from '../../components/care/CareBlock.astro';
+import { loadChrome } from '../../lib/chrome';
+import { loadCare, parseCareSlug } from '../../lib/care';
+import { shouldNoindex } from '../../lib/seo';
+
+const slug = Astro.params.slug || '';
+if (!parseCareSlug('legal', slug)) {
+  return new Response(null, { status: 404, statusText: 'Not Found' });
+}
+
+const [chrome, page] = await Promise.all([
+  loadChrome({ onHome: false }),
+  loadCare({ section: 'legal', slug }),
+]);
+
+if (!page) {
+  return new Response(null, { status: 404, statusText: 'Not Found' });
+}
+---
+
+<Base
+  title={page.seo.title || `NEVMA Style — ${page.docTitle}`}
+  description={page.seo.description || chrome.seo.description}
+  board="Legal"
+  canonical={`/legal/${slug}`}
+  noindex={shouldNoindex({ seoNoindex: page.seo.noindex })}
+>
+  {chrome.announcement ? <Announcement announcement={chrome.announcement} /> : null}
+  <Header mainNav={chrome.mainNav} menuExtra={chrome.menuExtra} />
+  <main id="main">
+    <CareBlock page={page} />
+  </main>
+  <Footer footer={chrome.footer} />
+</Base>

@@ -1,0 +1,121 @@
+---
+import '../styles/fonts.css';
+import '../styles/style.css';
+import pageMain from '../styles/page-main.css?url';
+import pageDrop from '../styles/page-drop.css?url';
+import pageProduct from '../styles/page-product.css?url';
+import pageArchive from '../styles/page-archive.css?url';
+import pageCategory from '../styles/page-category.css?url';
+import pageBag from '../styles/page-bag.css?url';
+import pageSignIn from '../styles/page-signin.css?url';
+import pageAccount from '../styles/page-account.css?url';
+import pageWishlist from '../styles/page-wishlist.css?url';
+import pageAbout from '../styles/page-about.css?url';
+import pageLegal from '../styles/page-legal.css?url';
+import { ui } from '../content/ui';
+import CookieConsent from '../components/chrome/CookieConsent.astro';
+import { absoluteUrl } from '../lib/seo';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Board name from docs/PAGES.md → loads page-<board>.css */
+  board: string;
+  noindex?: boolean;
+  /** Path or absolute URL; defaults to the current request path (no query). */
+  canonical?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'product';
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  board,
+  noindex = false,
+  canonical,
+  ogImage,
+  ogType = 'website',
+  jsonLd,
+} = Astro.props;
+
+const boardCss: Record<string, string> = {
+  Main: pageMain,
+  Drop: pageDrop,
+  Product: pageProduct,
+  Archive: pageArchive,
+  Category: pageCategory,
+  Bag: pageBag,
+  SignIn: pageSignIn,
+  Account: pageAccount,
+  Wishlist: pageWishlist,
+  About: pageAbout,
+  Legal: pageLegal,
+};
+const pageHref = boardCss[board] ?? pageMain;
+
+const canonicalHref = absoluteUrl(canonical || Astro.url.pathname);
+const ogImageAbs = ogImage ? absoluteUrl(ogImage) : undefined;
+const robots = noindex ? 'noindex, nofollow' : 'index, follow';
+const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description ? <meta name="description" content={description} /> : null}
+    <meta name="robots" content={robots} />
+    <link rel="canonical" href={canonicalHref} />
+    <meta property="og:site_name" content="NEVMA Style" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    {description ? <meta property="og:description" content={description} /> : null}
+    <meta property="og:url" content={canonicalHref} />
+    {ogImageAbs ? <meta property="og:image" content={ogImageAbs} /> : null}
+    <meta name="twitter:card" content={ogImageAbs ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={title} />
+    {description ? <meta name="twitter:description" content={description} /> : null}
+    {ogImageAbs ? <meta name="twitter:image" content={ogImageAbs} /> : null}
+    {
+      jsonLdBlocks.map((block) => (
+        <script type="application/ld+json" set:html={JSON.stringify(block)} />
+      ))
+    }
+    <link
+      rel="preload"
+      href="/fonts/montserrat-300.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/montserrat-500.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/nunito-sans-variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href={pageHref} />
+  </head>
+  <body>
+    <div
+      class="s-root"
+      style="background: #ECE7DE; color: #0B0B0C; font-family: 'Nunito Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.6; min-height: 100vh; overflow-x: clip"
+    >
+      <a class="s-skip" href="#main">{ui.chrome.skipToContent}</a>
+      <slot />
+      <CookieConsent />
+    </div>
+  </body>
+</html>

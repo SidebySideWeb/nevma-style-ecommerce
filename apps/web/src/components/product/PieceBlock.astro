@@ -1,0 +1,303 @@
+---
+import type { PiecePageData } from '../../lib/piece';
+import { ui } from '../../content/ui';
+import EditionPips from '../ui/EditionPips.astro';
+import { TONE_BG, TONE_FG, hasPhotoImage, placeholderLabel, resolvePhoto, slots } from '../../lib/sanity/image';
+import { isCommerceMock } from '../../lib/server/env';
+
+interface Props {
+  piece: PiecePageData;
+  notified?: boolean;
+  turnstileSiteKey?: string;
+}
+
+const { piece: p, notified = false, turnstileSiteKey } = Astro.props;
+const pipSize = 'width: 11px; height: 11px';
+const soldFilter = p.soldOut ? 'grayscale(1)' : 'none';
+/** Fidelity: design uses local JPEGs; prefer them in mock when we have a handle match. */
+const localGallerySrc = isCommerceMock() ? `/images/${p.handle}.jpg` : null;
+
+function gallerySrc(photo: (typeof p.gallery)[number], i: number): string | null {
+  if (localGallerySrc && hasPhotoImage(photo) && (i === 0 || i === 1)) return localGallerySrc;
+  const resolved = resolvePhoto(photo, slots.gallery);
+  return resolved?.src || null;
+}
+---
+
+<section aria-label={p.title} style="position: relative" data-block="piece" data-piece-root data-handle={p.handle} data-piece-id={p.id} data-price={p.priceLabel} data-drop-code={p.dropCode} data-drawer-note={p.drawerNoteTemplate}>
+  <ul class="s-gal" aria-label={ui.product.photosOf(p.title)} style="list-style: none; margin: 0; padding: 0">
+    {
+      p.gallery.map((photo, i) => {
+        const bg = TONE_BG[(photo?.tone as keyof typeof TONE_BG) || 'bone'] || TONE_BG.bone;
+        const src = gallerySrc(photo, i);
+        const zoom = photo?.zoom && photo.zoom > 1 ? photo.zoom : 1;
+        const pos = photo?.position || 'center';
+        const imgSt = `position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: ${pos}; transform: scale(${zoom}); transform-origin: ${zoom > 1 ? '50% 45%' : 'center'}; display: block; filter: ${soldFilter}`;
+        const fg = TONE_FG[(photo?.tone as keyof typeof TONE_FG) || 'bone'] || TONE_FG.bone;
+        return (
+          <li id={`ph${i + 1}`} style={`position: relative; aspect-ratio: 4 / 5; overflow: clip; background: ${bg}`}>
+            {src ? (
+              <img src={src} alt={photo?.alt || ''} style={imgSt} />
+            ) : (
+              <span style={`position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; padding: 24px; color: ${fg}`}>
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+                  <rect x="3.5" y="5" width="17" height="14" rx="1.5"></rect>
+                  <circle cx="9" cy="10" r="1.6"></circle>
+                  <path d="M4 17l5-4.5 3.5 3 3-2.5 4.5 4"></path>
+                </svg>
+                <span class="s-f" style="font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase">{placeholderLabel(photo)}</span>
+              </span>
+            )}
+          </li>
+        );
+      })
+    }
+  </ul>
+  <div class="s-thumbs" role="group" aria-label={ui.product.jumpToPhoto}>
+    {
+      p.gallery.map((photo, i) => {
+        const bg = TONE_BG[(photo?.tone as keyof typeof TONE_BG) || 'bone'] || TONE_BG.bone;
+        const src = gallerySrc(photo, i);
+        const pos = photo?.position || 'center';
+        return (
+          <a
+            href={`#ph${i + 1}`}
+            aria-label={ui.product.photoN(i + 1)}
+            style={`display: block; width: 46px; height: 58px; border: 1px solid #F5F2EC; border-radius: 2px; overflow: clip; background: ${bg}`}
+          >
+            {src ? (
+              <img
+                src={src}
+                alt=""
+                style={`width: 100%; height: 100%; object-fit: cover; object-position: ${pos}; display: block; filter: ${soldFilter}`}
+              />
+            ) : null}
+          </a>
+        );
+      })
+    }
+  </div>
+
+  <div class="s-buywrap">
+    <div class="s-buy">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <p class="s-eb" style="font-size: 11px">{p.eyebrow}</p>
+          <h1 class="s-name" style="margin: 0; font-size: 19px; letter-spacing: 0.2em; line-height: 1.45">{p.title}</h1>
+          <p class="s-price" style="margin: 0; font-size: 17px">{p.priceLabel}</p>
+        </div>
+        <button
+          type="button"
+          class="s-ib"
+          data-wishlist
+          aria-pressed="false"
+          aria-label={ui.product.saveToWishlist}
+          style="border: 1px solid #8A8274; flex: 0 0 auto"
+        >
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true" data-wishlist-icon>
+            <path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 16px 0; border-block: 1px solid #CFC7B8" aria-live="polite">
+        <div style="display: flex; align-items: center; gap: 12px">
+          <EditionPips
+            filled={p.edition.meter.filled}
+            total={p.edition.meter.total}
+            dashed={p.edition.meter.dashed}
+            pipSize={pipSize}
+          />
+          <strong style="font-size: 15.5px">{p.edition.stockLine}</strong>
+        </div>
+        <p style="margin: 0; font-size: 13.5px; color: #615D55">{p.stockSubline}</p>
+      </div>
+
+      {
+        p.upcoming && p.countdown ? (
+          <div
+            class="s-cd"
+            role="timer"
+            aria-label={p.countdown.aria}
+            data-opens-at={String(p.countdown.opensAtMs)}
+            data-drop-code={p.dropCode}
+            style="gap: 8px"
+          >
+            <span style="display: flex; flex-direction: column; gap: 2px; padding-top: 10px; border-top: 1px solid #CFC7B8"
+              ><span class="s-disp" data-cd="days" style="font-size: 26px; letter-spacing: 0.04em; font-variant-numeric: tabular-nums">{p.countdown.days}</span
+              ><span class="s-eb" style="font-size: 9.5px">{ui.home.days}</span></span
+            ><span style="display: flex; flex-direction: column; gap: 2px; padding-top: 10px; border-top: 1px solid #CFC7B8"
+              ><span class="s-disp" data-cd="hours" style="font-size: 26px; letter-spacing: 0.04em; font-variant-numeric: tabular-nums">{p.countdown.hours}</span
+              ><span class="s-eb" style="font-size: 9.5px">{ui.home.hours}</span></span
+            ><span style="display: flex; flex-direction: column; gap: 2px; padding-top: 10px; border-top: 1px solid #CFC7B8"
+              ><span class="s-disp" data-cd="minutes" style="font-size: 26px; letter-spacing: 0.04em; font-variant-numeric: tabular-nums">{p.countdown.minutes}</span
+              ><span class="s-eb" style="font-size: 9.5px">{ui.product.min}</span></span
+            ><span style="display: flex; flex-direction: column; gap: 2px; padding-top: 10px; border-top: 1px solid #CFC7B8"
+              ><span class="s-disp" style="font-size: 26px; letter-spacing: 0.04em; font-variant-numeric: tabular-nums">{p.countdown.time}</span
+              ><span class="s-eb" style="font-size: 9.5px">{ui.home.gmt}</span></span
+            >
+          </div>
+        ) : null
+      }
+
+      {
+        !p.soldOut && !p.upcoming ? (
+          <>
+            <div style="display: flex; flex-direction: column; gap: 12px">
+              <p class="s-eb" style="font-size: 11px; color: #0B0B0C"
+                >{ui.product.colour} · <span style="color: #615D55">{p.colour}</span></p
+              >
+              <div style="display: flex; gap: 10px">
+                {
+                  p.colours.map((c) => (
+                    <a
+                      href={c.href}
+                      class:list={['s-sw', { out: c.soldOut }]}
+                      aria-current={c.current ? 'true' : undefined}
+                      aria-label={c.aria}
+                    >
+                      <span
+                        style={
+                          c.soldOut
+                            ? `background: ${c.swatch}`
+                            : `background: ${c.swatch}; border: 1px solid #CFC7B8`
+                        }
+                      />
+                    </a>
+                  ))
+                }
+              </div>
+            </div>
+            <form method="post" action="/api/cart" data-buy-form style="display: contents">
+              <fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px">
+                <legend
+                  class="s-eb"
+                  style="font-size: 11px; color: #0B0B0C; padding: 0; margin-bottom: 12px; width: 100%; display: flex; justify-content: space-between"
+                  >{ui.product.size}{' '}
+                  <a
+                    href="#info-title"
+                    class="s-ul"
+                    style="font-family: 'Nunito Sans', sans-serif; letter-spacing: 0; text-transform: none; font-size: 13.5px; font-weight: 400; padding-bottom: 2px"
+                    >{ui.product.sizeGuide}</a
+                  ></legend
+                >
+                <div style="display: flex; gap: 8px; flex-wrap: wrap" data-size-chips>
+                  {
+                    p.sizes.map((s) => (
+                      <button
+                        type="button"
+                        class:list={['s-chip', { out: s.soldOut }]}
+                        aria-pressed="false"
+                        aria-disabled={s.soldOut ? 'true' : 'false'}
+                        aria-label={s.aria}
+                        data-size={s.size}
+                        data-variant={s.variantId}
+                        data-qty={String(s.qty)}
+                        disabled={s.soldOut ? true : undefined}
+                      >
+                        {s.size}
+                      </button>
+                    ))
+                  }
+                </div>
+                <p style="margin: 0; font-size: 13.5px; color: #3E3B35; min-height: 22px" data-size-note>
+                  {p.sizeNoteDefault}
+                </p>
+              </fieldset>
+              <button
+                type="submit"
+                class="s-btn s-btn-p"
+                data-add
+                aria-disabled="true"
+                disabled
+                style="width: 100%"
+                >{ui.product.selectASize}</button
+              >
+            </form>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; color: #3E3B35">
+              <li>{p.buyNotes[0]}</li>
+              <li>{p.buyNotes[1]}</li>
+            </ul>
+          </>
+        ) : null
+      }
+
+      {
+        p.notify && !notified ? (
+          <form method="post" action="/api/notify" style="display: flex; flex-direction: column; gap: 12px" data-notify-form>
+            {p.notify.dropId ? <input type="hidden" name="dropId" value={p.notify.dropId} /> : null}
+            {p.notify.pieceId ? <input type="hidden" name="pieceId" value={p.notify.pieceId} /> : null}
+            <input type="hidden" name="pieceHandle" value={p.handle} />
+            <div>
+              <label for="nt-email" class="s-lbl">{p.notify.label}</label>
+              <input
+                id="nt-email"
+                name="email"
+                class="s-in"
+                type="email"
+                autocomplete="email"
+                required
+                placeholder={ui.home.emailPlaceholder}
+                aria-label={ui.home.emailAddress}
+              />
+            </div>
+            <label style="display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; color: #3E3B35">
+              <input type="checkbox" name="letterOptIn" style="width: 18px; height: 18px; margin: 2px 0 0; accent-color: #0B0B0C" />
+              {ui.product.letterOptIn}
+            </label>
+            <input type="text" name="company" class="s-vh" tabindex="-1" autocomplete="off" aria-hidden="true" style="background: transparent; border: 0; color: transparent" />
+            {
+              turnstileSiteKey ? (
+                <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-size="invisible" style="display: none" />
+              ) : null
+            }
+            <button type="submit" class="s-btn s-btn-p" style="width: 100%">{p.notify.button}</button>
+            <p style="margin: 0; font-size: 12.5px; color: #615D55">{ui.product.turnstileNote}</p>
+          </form>
+        ) : null
+      }
+
+      {
+        p.notify && notified ? (
+          <p role="status" style="margin: 0; padding: 16px; border: 1px solid #0B0B0C; border-radius: 6px; font-size: 15px">
+            {p.notify.success}
+          </p>
+        ) : null
+      }
+
+      <p class="s-f" style="margin: 0; display: flex; align-items: center; gap: 8px; font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #615D55">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"
+          ><rect x="5" y="10.5" width="14" height="9.5" rx="1.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg
+        >
+        {ui.product.securePayment}
+      </p>
+    </div>
+  </div>
+</section>
+
+{
+  !p.soldOut && !p.upcoming ? (
+    <noscript>
+      <form method="post" action="/api/cart" style="display: flex; flex-direction: column; gap: 12px; padding: 20px">
+        <fieldset style="border: 0; margin: 0; padding: 0">
+          <legend class="s-eb" style="font-size: 11px">{ui.product.size}</legend>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap">
+            {
+              p.sizes
+                .filter((s) => !s.soldOut)
+                .map((s) => (
+                  <label class="s-chip">
+                    <input type="radio" name="variantId" value={s.variantId} required />
+                    {s.size}
+                  </label>
+                ))
+            }
+          </div>
+        </fieldset>
+        <button type="submit" class="s-btn s-btn-p" style="width: 100%">
+          {ui.product.selectASize}
+        </button>
+      </form>
+    </noscript>
+  ) : null
+}

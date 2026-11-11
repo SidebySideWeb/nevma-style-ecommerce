@@ -1,0 +1,158 @@
+---
+import type { PiecesPageData, PiecesRow } from '../../lib/pieces';
+import EditionPips from '../ui/EditionPips.astro';
+import { ui } from '../../content/ui';
+import { resolvePhoto, slots } from '../../lib/sanity/image';
+
+interface Props {
+  page: PiecesPageData;
+}
+
+const { page: p } = Astro.props;
+
+function imgSrc(row: PiecesRow): string | null {
+  if (!row.hasImage || !row.photo) return null;
+  const resolved = resolvePhoto(row.photo, slots.card);
+  return resolved?.src || null;
+}
+
+function visible(row: PiecesRow): boolean {
+  return p.filter === 'all' || row.filter === p.filter;
+}
+---
+
+<section
+  aria-label={ui.pieces.piecesAria}
+  style="padding-bottom: 104px"
+  data-block="pieces"
+  data-pieces-root
+  data-filter={p.filter}
+  data-view={p.view}
+>
+  <p class="s-vh" aria-live="polite" data-pieces-live>{p.shownLabel}</p>
+
+  <div
+    class="s-wrap"
+    data-view-panel="index"
+    hidden={p.view !== 'index' ? true : undefined}
+    style={p.view !== 'index' ? 'display: none' : undefined}
+  >
+    <div class="s-ixh s-eb" aria-hidden="true" style="font-size: 10.5px"
+      ><span>{ui.pieces.colNo}</span><span></span><span>{ui.pieces.colPiece}</span><span
+        >{ui.pieces.colDrop}</span
+      ><span>{ui.pieces.colEdition}</span><span style="text-align: right">{ui.pieces.colPrice}</span
+      ><span></span></div
+    >
+    <ul style="list-style: none; margin: 0; padding: 0; border-bottom: 1px solid #CFC7B8" data-index-list>
+      {
+        p.rows.map((row) => {
+          const src = imgSrc(row);
+          const show = visible(row);
+          return (
+            <li data-filter={row.filter} hidden={show ? undefined : true} style={show ? undefined : 'display: none'}>
+              <a href={row.href} class="s-ix" aria-label={row.ariaIndex}>
+                <span class="s-c-no s-f" style="font-size: 12px; letter-spacing: 0.2em; color: #615D55"
+                  >{row.numberPad}</span
+                >
+                <span
+                  class="s-c-img"
+                  style={`display: flex; align-items: center; justify-content: center; width: 64px; height: 80px; border-radius: 2px; overflow: clip; background: ${row.toneBg}; color: #A8A8B4; font-size: 9.5px; text-align: center`}
+                >
+                  {src ? (
+                    <img
+                      src={src}
+                      alt=""
+                      loading="lazy"
+                      style={`width: 100%; height: 100%; object-fit: cover; object-position: ${row.objectPosition}; display: block; filter: ${row.imgFilter}`}
+                    />
+                  ) : (
+                    row.indexPlaceholder
+                  )}
+                </span>
+                <span class="s-name" style="font-size: 13px">
+                  {row.title}
+                </span>
+                <span class="s-c-drop" style="font-size: 14.5px; color: #3E3B35">
+                  {row.dropLabel}
+                </span>
+                <span class="s-c-ed" style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap">
+                  <EditionPips
+                    filled={row.edition.meter.filled}
+                    total={row.edition.meter.total}
+                    dashed={row.edition.meter.dashed}
+                  />
+                  <span style="font-size: 14.5px">{row.editionLine}</span>
+                </span>
+                <span class="s-c-price s-price" style="text-align: right; font-size: 15px">
+                  {row.priceLabel}
+                </span>
+                <span class="s-c-arr" aria-hidden="true" style="display: flex; justify-content: flex-end">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+
+  <ul
+    class="s-wrap s-trio"
+    style={p.view !== 'gallery' ? 'list-style: none; margin-block: 0; display: none' : 'list-style: none; margin-block: 0'}
+    data-view-panel="gallery"
+    data-gallery-list
+    hidden={p.view !== 'gallery' ? true : undefined}
+  >
+    {
+      p.rows.map((row) => {
+        const src = imgSrc(row);
+        const show = visible(row);
+        return (
+          <li data-filter={row.filter} hidden={show ? undefined : true} style={show ? undefined : 'display: none'}>
+            <a
+              href={row.href}
+              class="s-card"
+              aria-label={row.ariaGallery}
+              style="display: flex; flex-direction: column; gap: 14px; text-decoration: none"
+            >
+              <span
+                style={`position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 4 / 5; border-radius: 4px; overflow: clip; background: ${row.toneBg}; color: #A8A8B4; font-size: 12px`}
+              >
+                {src ? (
+                  <img
+                    src={src}
+                    alt=""
+                    loading="lazy"
+                    style={`width: 100%; height: 100%; object-fit: cover; object-position: ${row.objectPosition}; display: block; filter: ${row.imgFilter}`}
+                  />
+                ) : (
+                  row.galleryPlaceholder
+                )}
+                <span
+                  class="s-f"
+                  style={`position: absolute; left: 16px; top: 14px; font-size: 11px; letter-spacing: 0.26em; color: ${row.numberColor}`}
+                  >{row.numberLabel}</span
+                >
+              </span>
+              <span style="display: flex; justify-content: space-between; gap: 16px"
+                ><span class="s-name" style="font-size: 12.5px">{row.title}</span
+                ><span class="s-price" style="font-size: 14.5px">{row.priceLabel}</span></span
+              >
+              <span style="display: flex; align-items: center; gap: 12px">
+                <EditionPips
+                  filled={row.edition.meter.filled}
+                  total={row.edition.meter.total}
+                  dashed={row.edition.meter.dashed}
+                />
+                <span style="font-size: 14px; color: #3E3B35">{row.galleryEditionLine}</span>
+              </span>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>

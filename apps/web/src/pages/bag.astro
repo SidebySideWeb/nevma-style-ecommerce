@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import Announcement from '../components/chrome/Announcement.astro';
+import Header from '../components/chrome/Header.astro';
+import Footer from '../components/chrome/Footer.astro';
+import YourBag from '../components/bag/YourBag.astro';
+import { loadChrome } from '../lib/chrome';
+import { loadBag } from '../lib/bag';
+
+const cookie = Astro.request.headers.get('cookie');
+const [chrome, bag] = await Promise.all([loadChrome({ onHome: false }), loadBag(cookie)]);
+
+for (const c of bag.setCookies) {
+  Astro.response.headers.append('Set-Cookie', c);
+}
+---
+
+<Base
+  title="NEVMA Style — Bag"
+  description={chrome.seo.description}
+  board="Bag"
+  canonical="/bag"
+  noindex
+>
+  {chrome.announcement ? <Announcement announcement={chrome.announcement} /> : null}
+  <Header mainNav={chrome.mainNav} menuExtra={chrome.menuExtra} />
+  <main id="main">
+    <YourBag bag={bag} />
+  </main>
+  <Footer footer={chrome.footer} />
+</Base>

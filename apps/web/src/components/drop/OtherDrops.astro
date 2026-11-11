@@ -1,0 +1,36 @@
+---
+import type { DropPageData } from '../../lib/drop';
+import { ui } from '../../content/ui';
+
+interface Props {
+  next: DropPageData['next'];
+}
+
+const { next } = Astro.props;
+---
+
+<section aria-label={ui.drop.otherDropsAria} data-block="other-drops">
+  <div
+    class="s-wrap"
+    style="padding-block: 56px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 24px"
+  >
+    <a
+      href="/pieces"
+      style="display: flex; flex-direction: column; gap: 8px; padding: 28px 0; border-top: 1px solid #0B0B0C; text-decoration: none"
+      ><span class="s-eb">{ui.drop.allDrops}</span><span class="s-name" style="font-size: 15px"
+        >{ui.drop.theArchive}</span
+      ></a
+    >
+    {
+      next ? (
+        <a
+          href={`/drops/${next.slug}`}
+          style="display: flex; flex-direction: column; gap: 8px; padding: 28px 0; border-top: 1px solid #0B0B0C; text-decoration: none; text-align: right"
+          ><span class="s-eb">{next.eyebrow}</span><span class="s-name" style="font-size: 15px"
+            >{next.code} · {next.name}</span
+          ></a
+        >
+      ) : null
+    }
+  </div>
+</section>

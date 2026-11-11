@@ -1,0 +1,56 @@
+---
+import Base from '../layouts/Base.astro';
+import Announcement from '../components/chrome/Announcement.astro';
+import Header from '../components/chrome/Header.astro';
+import Footer from '../components/chrome/Footer.astro';
+import { loadChrome } from '../lib/chrome';
+import { sanityConfigured, sanityFetch } from '../lib/sanity/client';
+import { notFoundQuery } from '../lib/sanity/queries';
+import { ui } from '../content/ui';
+
+export const prerender = false;
+
+const chrome = await loadChrome({ onHome: false });
+
+let title = 'This page has found a home elsewhere';
+let text =
+  '[404 text: not designed yet — built from the empty-bag pattern.]';
+
+if (sanityConfigured()) {
+  try {
+    const raw = await sanityFetch<{
+      shop?: { notFound?: { title?: string; text?: string } };
+    }>(notFoundQuery);
+    title = raw.shop?.notFound?.title || title;
+    text = raw.shop?.notFound?.text || text;
+  } catch {
+    /* keep fallbacks */
+  }
+}
+
+Astro.response.status = 404;
+---
+
+<Base title={`NEVMA Style — ${title}`} description={chrome.seo.description} board="Bag" noindex>
+  {chrome.announcement ? <Announcement announcement={chrome.announcement} /> : null}
+  <Header mainNav={chrome.mainNav} menuExtra={chrome.menuExtra} />
+  <main id="main">
+    <div
+      class="s-wrap"
+      style="padding-block: 64px 104px; display: flex; flex-direction: column; gap: 40px"
+    >
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 40ch">
+        <p class="s-eb">404</p>
+        <h1 class="s-disp" style="margin: 0; font-size: clamp(30px, 3.4vw, 48px); letter-spacing: 0.22em"
+          >{title}</h1
+        >
+        <p style="margin: 0; font-size: 15px; color: #3E3B35">{text}</p>
+      </div>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap">
+        <a href="/drops/style-001" class="s-btn s-btn-p">{ui.bag.emptyCta}</a>
+        <a href="/pieces" class="s-btn s-btn-o">All pieces</a>
+      </div>
+    </div>
+  </main>
+  <Footer footer={chrome.footer} />
+</Base>

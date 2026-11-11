@@ -1,0 +1,18 @@
+---
+/**
+ * Server island: "4 of 15" from live Shopify/fixture stock for the drop's pieces.
+ */
+import { loadDropLeft } from '../../lib/home';
+
+interface Props {
+  handles: string[];
+  /** Exact-size fallback from the parent SSR pass. */
+  fallbackLabel: string;
+}
+
+const { handles, fallbackLabel } = Astro.props;
+const cookie = Astro.request.headers.get('cookie');
+const { label } = await loadDropLeft(handles, cookie);
+---
+
+<strong style="color: #0B0B0C">{label || fallbackLabel}</strong>

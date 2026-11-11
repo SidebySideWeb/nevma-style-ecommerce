@@ -1,0 +1,393 @@
+---
+import type { AccountPageData } from '../../lib/account/load';
+import { formatDateShort, formatOrderPrice, formatSitePrice } from '../../lib/commerce/format';
+import { ui } from '../../content/ui';
+
+interface Props {
+  page: AccountPageData;
+}
+
+const { page: p } = Astro.props;
+
+const LOCAL_SRC: Record<string, string> = {
+  'definition-tee-white': '/images/definition-tee-white.jpg',
+  'wordmark-tee-bone': '/images/wordmark-tee-bone.jpg',
+  'definition-tee-bone': '/images/definition-tees-bone.jpg',
+};
+const LOCAL_BG: Record<string, string> = {
+  'definition-tee-white': '#000000',
+  'wordmark-tee-bone': '#D9D3C8',
+  'definition-tee-bone': '#D9D3C8',
+};
+
+function orderDate(iso: string): string {
+  return formatDateShort(iso);
+}
+
+function ofFive(n?: number): string {
+  return n != null ? `N° ${n} of 5` : '';
+}
+---
+
+<div
+  class="s-wrap"
+  style="padding-block: 64px 104px; display: flex; flex-direction: column; gap: 44px"
+  data-block="account"
+>
+  <div style="display: flex; flex-direction: column; gap: 12px"
+    ><p class="s-eb">{ui.account.yourAccount}</p><h1
+      class="s-disp"
+      style="margin: 0; font-size: clamp(30px, 3.4vw, 48px); letter-spacing: 0.22em">{p.hello}</h1
+    ></div
+  >
+  <div class="s-acct">
+    <nav class="s-side" aria-label="Account">
+      <div class="s-snav" style="border-bottom: 1px solid #CFC7B8">
+        {
+          p.nav.map((item) =>
+            item.kind === 'sign-out' || item.href === '/wishlist' ? (
+              <a href={item.href} class="s-sl">
+                {item.label}
+              </a>
+            ) : (
+              <button
+                type="button"
+                class="s-sl"
+                aria-current={item.current ? 'page' : 'false'}
+                data-href={item.href}
+              >
+                {item.label}
+              </button>
+            ),
+          )
+        }
+      </div>
+    </nav>
+
+    <div class="s-body">
+      {
+        p.section === 'overview' && p.overview ? (
+          <div style="display: flex; flex-direction: column; gap: 24px">
+            {p.overview.latest ? (
+              <div class="s-panel" style="display: flex; flex-direction: column; gap: 20px">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap">
+                  <h2 class="s-eb" style="color: #0B0B0C">
+                    Latest order · {p.overview.latest.name}
+                  </h2>
+                  <span style="font-size: 14px; color: #3E3B35">{p.overview.latestMeta}</span>
+                </div>
+                <ol class="s-trk" aria-label="Order status">
+                  {p.overview.timeline.map((step, i) => (
+                    <li data-done={i < 2 ? 'true' : undefined}>
+                      <strong>{step[0]}</strong>
+                      <span style="color: #615D55">{step[1]}</span>
+                    </li>
+                  ))}
+                </ol>
+                <button
+                  type="button"
+                  class="s-btn s-btn-o s-btn-sm"
+                  style="align-self: flex-start"
+                  data-href="/account/orders"
+                >
+                  {ui.account.viewOrder}
+                </button>
+              </div>
+            ) : null}
+            <div class="s-g2">
+              {p.overview.nextDrop ? (
+                <div
+                  class="s-panel s-dark"
+                  style="background: #000000; border-color: #000000; color: #F5F5F7; display: flex; flex-direction: column; gap: 12px"
+                >
+                  <p class="s-eb" style="color: #F0E81C">{ui.account.nextDrop}</p>
+                  <p class="s-name" style="margin: 0; font-size: 14px">
+                    {p.overview.nextDrop.code} · {p.overview.nextDrop.name}
+                  </p>
+                  <p style="margin: 0; font-size: 15px; color: #D2D2DA">{p.overview.nextDrop.when}</p>
+                </div>
+              ) : null}
+              <div class="s-panel" style="display: flex; flex-direction: column; gap: 12px">
+                <p class="s-eb" style="color: #0B0B0C">{ui.account.yourPieces}</p>
+                <p class="s-disp" style="margin: 0; font-size: 34px; letter-spacing: 0.04em">
+                  {p.overview.piecesCount}
+                </p>
+                <p style="margin: 0; font-size: 15px; color: #3E3B35">{p.overview.piecesNote}</p>
+              </div>
+            </div>
+          </div>
+        ) : null
+      }
+
+      {
+        p.section === 'orders' ? (
+          <div style="display: flex; flex-direction: column; gap: 24px">
+            <h2 class="s-h2">{ui.account.orders}</h2>
+            {p.orders.map((order, oi) => {
+              const isPrimary = oi === 0 && order.lines?.length;
+              if (!isPrimary) {
+                return (
+                  <article
+                    class="s-panel"
+                    aria-labelledby={`o${oi + 1}`}
+                    style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap"
+                  >
+                    <div style="display: flex; gap: 18px; align-items: center">
+                      {order.lines?.[0]?.handle || order.summary?.includes('Bone') ? (
+                        <img
+                          src={LOCAL_SRC['definition-tee-bone'] || '/images/definition-tees-bone.jpg'}
+                          alt=""
+                          style="width: 56px; height: 70px; object-fit: cover; border-radius: 2px; background: #D9D3C8; display: block"
+                        />
+                      ) : null}
+                      <div>
+                        <h3 id={`o${oi + 1}`} class="s-name" style="margin: 0; font-size: 13px">
+                          Order {order.name}
+                        </h3>
+                        <p style="margin: 2px 0 0; font-size: 14px; color: #3E3B35">
+                          {order.summary
+                            ? `${orderDate(order.processedAt)} · ${order.summary}`
+                            : orderDate(order.processedAt)}
+                        </p>
+                      </div>
+                    </div>
+                    <span class="s-tag" style="border: 1px solid #8A8274; color: #3E3B35">
+                      {order.status}
+                    </span>
+                  </article>
+                );
+              }
+              return (
+                <article
+                  class="s-panel"
+                  aria-labelledby={`o${oi + 1}`}
+                  style="display: flex; flex-direction: column; gap: 22px"
+                >
+                  <div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+                    <div>
+                      <h3 id={`o${oi + 1}`} class="s-name" style="margin: 0; font-size: 14px">
+                        Order {order.name}
+                      </h3>
+                      <p style="margin: 4px 0 0; font-size: 14px; color: #3E3B35">
+                        {orderDate(order.processedAt)}
+                        {order.payment ? ` · paid with ${order.payment}` : ''}
+                      </p>
+                    </div>
+                    <span class="s-tag" style="background: #0B0B0C; color: #F5F2EC">
+                      {order.status}
+                    </span>
+                  </div>
+                  <ol class="s-trk" aria-label="Order status">
+                    {(order.timeline || []).map((step, i) => (
+                      <li data-done={i < 2 ? 'true' : undefined}>
+                        <strong>{step[0]}</strong>
+                        <span style="color: #615D55">{step[1]}</span>
+                      </li>
+                    ))}
+                  </ol>
+                  <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px">
+                    {(order.lines || []).map((line) => (
+                      <li style="display: grid; grid-template-columns: 72px minmax(0, 1fr) auto; gap: 18px; align-items: center">
+                        <img
+                          src={LOCAL_SRC[line.handle] || ''}
+                          alt=""
+                          style={`width: 72px; height: 90px; object-fit: cover; border-radius: 2px; background: ${LOCAL_BG[line.handle] || '#000000'}; display: block`}
+                        />
+                        <span style="display: flex; flex-direction: column">
+                          <span class="s-name" style="font-size: 12.5px">
+                            {line.title}
+                          </span>
+                          <span style="font-size: 14px; color: #3E3B35">
+                            Size {line.size}
+                            {line.number != null ? (
+                              <>
+                                {' '}
+                                · <strong style="color: #0B0B0C">{ofFive(line.number)}</strong>
+                              </>
+                            ) : null}
+                          </span>
+                        </span>
+                        <span class="s-price">{formatSitePrice(line.price)}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <dl
+                    class="s-g2"
+                    style="margin: 0; font-size: 14.5px; padding-top: 18px; border-top: 1px solid #CFC7B8"
+                  >
+                    <div>
+                      <dt style="font-weight: 700">Delivery</dt>
+                      <dd style="margin: 4px 0 0; color: #3E3B35">{order.delivery}</dd>
+                    </div>
+                    <div>
+                      <dt style="font-weight: 700">Total</dt>
+                      <dd style="margin: 4px 0 0; color: #3E3B35">
+                        {order.total != null ? formatOrderPrice(order.total) : ''}
+                        {order.tax != null ? ` including ${formatOrderPrice(order.tax)} VAT` : ''}
+                      </dd>
+                    </div>
+                  </dl>
+                  <div style="display: flex; gap: 12px; flex-wrap: wrap">
+                    <a href="/client-care/returns" class="s-btn s-btn-o s-btn-sm">Start a return</a>
+                    <a href="/client-care/contact" class="s-btn s-btn-o s-btn-sm">
+                      Get help with this order
+                    </a>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        ) : null
+      }
+
+      {
+        p.section === 'addresses' ? (
+          <div style="display: flex; flex-direction: column; gap: 24px">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap">
+              <h2 class="s-h2">{ui.account.addresses}</h2>
+              <button type="button" class="s-btn s-btn-o s-btn-sm">{ui.account.addAddress}</button>
+            </div>
+            <div class="s-g2">
+              {p.addresses.map((addr) => (
+                <div class="s-panel" style="display: flex; flex-direction: column; gap: 10px">
+                  {addr.default ? (
+                    <span
+                      class="s-tag"
+                      style="background: #0B0B0C; color: #F5F2EC; align-self: flex-start"
+                    >
+                      Default
+                    </span>
+                  ) : addr.label ? (
+                    <span class="s-eb" style="font-size: 10.5px">
+                      {addr.label}
+                    </span>
+                  ) : null}
+                  <p style="margin: 0; font-size: 15.5px" set:html={addr.lines.join('<br>')} />
+                  <div style="display: flex; gap: 18px; font-size: 14px">
+                    <a href="#">{ui.account.edit}</a>
+                    {!addr.default ? <a href="#">Make default</a> : null}
+                    <a href="#">Remove</a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : null
+      }
+
+      {
+        p.section === 'profile' ? (
+          <div style="display: flex; flex-direction: column; gap: 24px">
+            <h2 class="s-h2">{ui.account.profileAndEmails}</h2>
+            <form
+              class="s-panel"
+              method="post"
+              action="/api/account/profile"
+              style="display: flex; flex-direction: column; gap: 18px"
+            >
+              <div class="s-g2">
+                <div>
+                  <label for="p-fn" class="s-lbl">
+                    {ui.signIn.firstName}
+                  </label>
+                  <input
+                    id="p-fn"
+                    name="firstName"
+                    class="s-in"
+                    value={p.profile.firstName}
+                    autocomplete="given-name"
+                  />
+                </div>
+                <div>
+                  <label for="p-ln" class="s-lbl">
+                    {ui.signIn.lastName}
+                  </label>
+                  <input
+                    id="p-ln"
+                    name="lastName"
+                    class="s-in"
+                    value={p.profile.lastName}
+                    autocomplete="family-name"
+                  />
+                </div>
+              </div>
+              <div>
+                <label for="p-em" class="s-lbl">{ui.signIn.email}</label>
+                <input
+                  id="p-em"
+                  class="s-in"
+                  type="email"
+                  value={p.profile.email}
+                  autocomplete="email"
+                  readonly
+                />
+                <p style="margin: 6px 0 0; font-size: 13.5px; color: #615D55">
+                  You sign in with a code sent to this address.
+                </p>
+              </div>
+              <button type="submit" class="s-btn s-btn-p s-btn-sm" style="align-self: flex-start">
+                {ui.account.save}
+              </button>
+            </form>
+            <div class="s-panel" style="display: flex; flex-direction: column">
+              <div style="display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 16px 0; border-top: 1px solid #CFC7B8">
+                <span id="pf-drop" style="display: flex; flex-direction: column">
+                  <strong style="font-size: 15.5px">Drop alerts</strong>
+                  <span style="font-size: 14px; color: #3E3B35">One email when a drop opens.</span>
+                </span>
+                <button
+                  type="button"
+                  role="switch"
+                  class="s-switch"
+                  aria-checked={p.profile.dropAlerts ? 'true' : 'false'}
+                  aria-labelledby="pf-drop"
+                  data-pref="dropAlerts"
+                />
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 16px 0; border-top: 1px solid #CFC7B8">
+                <span id="pf-letter" style="display: flex; flex-direction: column">
+                  <strong style="font-size: 15.5px">NEVMA Style letter</strong>
+                  <span style="font-size: 14px; color: #3E3B35">
+                    Stories and early looks, about once a month.
+                  </span>
+                </span>
+                <button
+                  type="button"
+                  role="switch"
+                  class="s-switch"
+                  aria-checked={p.profile.letter ? 'true' : 'false'}
+                  aria-labelledby="pf-letter"
+                  data-pref="letter"
+                />
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 16px 0; border-top: 1px solid #CFC7B8">
+                <span id="pf-moments" style="display: flex; flex-direction: column">
+                  <strong style="font-size: 15.5px">Pieces released at Moments</strong>
+                  <span style="font-size: 14px; color: #3E3B35">
+                    When a piece is first sold at a NEVMA event.
+                  </span>
+                </span>
+                <button
+                  type="button"
+                  role="switch"
+                  class="s-switch"
+                  aria-checked={p.profile.moments ? 'true' : 'false'}
+                  aria-labelledby="pf-moments"
+                  data-pref="moments"
+                />
+              </div>
+            </div>
+            <p style="margin: 0; font-size: 14px; color: #3E3B35">
+              Want your data or your account deleted?{' '}
+              <a href="/client-care/contact">Ask client care</a>; we reply within one working day.
+            </p>
+          </div>
+        ) : null
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  import '../../scripts/account.ts';
+</script>

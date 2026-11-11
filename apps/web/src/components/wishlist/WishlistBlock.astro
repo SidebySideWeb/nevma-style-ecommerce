@@ -1,0 +1,117 @@
+---
+import type { WishlistCard, WishlistPageData } from '../../lib/wishlist';
+import EditionPips from '../ui/EditionPips.astro';
+import { resolvePhoto, slots } from '../../lib/sanity/image';
+import { ui } from '../../content/ui';
+
+interface Props {
+  page: WishlistPageData;
+}
+
+const { page: p } = Astro.props;
+
+function src(card: WishlistCard): string | null {
+  if (!card.hasImage || !card.photo) return null;
+  return resolvePhoto(card.photo, slots.card)?.src || null;
+}
+---
+
+<div
+  class="s-wrap"
+  style="padding-block: 64px 104px; display: flex; flex-direction: column; gap: 36px"
+  data-block="wishlist"
+>
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap">
+    <div style="display: flex; flex-direction: column; gap: 12px"
+      ><p class="s-eb">{p.countLabel}</p><h1
+        class="s-disp"
+        style="margin: 0; font-size: clamp(30px, 3.4vw, 48px); letter-spacing: 0.22em">Wishlist</h1
+      ></div
+    >
+    <p style="margin: 0; max-width: 46ch; font-size: 15px; color: #3E3B35">{p.note}</p>
+  </div>
+
+  {
+    !p.signedIn ? (
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 16px 32px; flex-wrap: wrap; padding: 20px 24px; background: #F5F2EC; border: 1px solid #CFC7B8">
+        <p style="margin: 0; max-width: 60ch">
+          <strong>{p.guestTitle}</strong> {p.guestText}
+        </p>
+        <a href="/account/sign-in" class="s-btn s-btn-p s-btn-sm">{p.guestCta}</a>
+      </div>
+    ) : null
+  }
+
+  <ul class="s-trio s-stg" style="list-style: none; margin: 0; padding: 0">
+    {
+      p.cards.map((card) => {
+        const image = src(card);
+        return (
+          <li style="display: flex; flex-direction: column; gap: 16px">
+            <a
+              href={card.href}
+              class="s-card"
+              aria-label={card.title}
+              style={`position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 4 / 5; border-radius: 4px; overflow: clip; background: ${card.toneBg}; color: #A8A8B4; font-size: 12px; text-decoration: none`}
+            >
+              {image ? (
+                <img
+                  src={image}
+                  alt=""
+                  loading="lazy"
+                  style={`width: 100%; height: 100%; object-fit: cover; object-position: ${card.objectPosition}; display: block; filter: ${card.imgFilter}`}
+                />
+              ) : (
+                card.placeholderLabel
+              )}
+              <span class="s-tag" style={`position: absolute; left: 14px; top: 14px; ${card.tagStyle}`}>
+                {card.tag}
+              </span>
+            </a>
+            <div style="display: flex; justify-content: space-between; gap: 16px">
+              <span class="s-name" style="font-size: 13px">
+                {card.title}
+              </span>
+              <span class="s-price" style="font-size: 14.5px">
+                {card.priceLabel}
+              </span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px">
+              <EditionPips
+                filled={card.edition.meter.filled}
+                total={card.edition.meter.total}
+                dashed={card.edition.meter.dashed}
+              />
+              <span style="font-size: 14px; color: #3E3B35">{card.stockLine}</span>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center">
+              {card.cta === 'choose' ? (
+                <a href={card.href} class="s-btn s-btn-p s-btn-sm">
+                  {ui.wishlist.chooseASize}
+                </a>
+              ) : null}
+              {card.cta === 'reminder' ? (
+                <button type="button" class="s-btn s-btn-o s-btn-sm" aria-pressed="true">
+                  {ui.wishlist.reminderOn}
+                </button>
+              ) : null}
+              {card.cta === 'archive' ? (
+                <a href="/pieces" class="s-btn s-btn-o s-btn-sm">
+                  {ui.wishlist.seeInArchive}
+                </a>
+              ) : null}
+              <form method="post" action="/api/wishlist" style="display: contents">
+                <input type="hidden" name="action" value="remove" />
+                <input type="hidden" name="handle" value={card.handle} />
+                <input type="hidden" name="next" value="/wishlist" />
+                <button type="submit" class="s-txt" style="margin-left: 8px">
+                  {ui.wishlist.remove}
+                </button>
+              </form>
+            </div>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>

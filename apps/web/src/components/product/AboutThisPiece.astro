@@ -1,0 +1,125 @@
+---
+import type { PiecePageData } from '../../lib/piece';
+import { ui } from '../../content/ui';
+
+interface Props {
+  piece: PiecePageData;
+}
+
+const { piece: p } = Astro.props;
+const contactHref = `/client-care/contact?topic=${encodeURIComponent('A piece')}&ref=${encodeURIComponent(p.reference)}`;
+---
+
+<section aria-labelledby="info-title" style="border-bottom: 1px solid #CFC7B8" data-block="about-this-piece">
+  <div
+    class="s-wrap s-sec"
+    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 40px 96px"
+  >
+    <div style="display: flex; flex-direction: column; gap: 18px; max-width: 54ch">
+      <h2 id="info-title" class="s-vh">{ui.product.aboutThisPiece}</h2>
+      {p.lead ? <p style="margin: 0; font-size: 15px; color: #3E3B35">{p.lead}</p> : null}
+      {p.body ? <p style="margin: 0; font-size: 15px; color: #3E3B35">{p.body}</p> : null}
+      {
+        p.facts.length ? (
+          <ul style="margin: 0; padding-left: 18px; font-size: 15px; color: #3E3B35; display: flex; flex-direction: column; gap: 4px">
+            {p.facts.map((f) => (
+              <li>{f}</li>
+            ))}
+          </ul>
+        ) : null
+      }
+      <p style="margin: 0; font-size: 13.5px; color: #615D55">
+        {ui.product.reference(p.reference)} · {ui.product.questions}{' '}
+        <a href={contactHref}>{ui.product.contactClientCare}</a>
+      </p>
+    </div>
+    <div>
+      <details class="s-acc" open style="border-top: 1px solid #CFC7B8">
+        <summary
+          >{ui.product.sizeAndFit}{' '}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"
+            ><path d="M6 9l6 6 6-6"></path></svg
+          ></summary
+        >
+        {
+          p.sizeGuide ? (
+            <div style="overflow-x: auto; margin-bottom: 22px">
+              <table style="width: 100%; border-collapse: collapse; font-size: 14px; min-width: 380px">
+                <thead>
+                  <tr
+                    class="s-f"
+                    style="font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: #615D55"
+                  >
+                    <th scope="col" style="text-align: left; padding: 8px 0; font-weight: 500"
+                      >{p.sizeGuide.unit}</th
+                    >
+                    {
+                      p.sizeGuide.sizes.map((s) => (
+                        <th scope="col" style="text-align: left; font-weight: 500">
+                          {s}
+                        </th>
+                      ))
+                    }
+                  </tr>
+                </thead>
+                <tbody>
+                  {
+                    p.sizeGuide.rows.map((row) => (
+                      <tr style="border-top: 1px solid #CFC7B8">
+                        <th scope="row" style="text-align: left; padding: 8px 0; font-weight: 600">
+                          {row.label}
+                        </th>
+                        {row.values.map((v) => (
+                          <td>{v}</td>
+                        ))}
+                      </tr>
+                    ))
+                  }
+                </tbody>
+              </table>
+            </div>
+          ) : null
+        }
+      </details>
+      <details class="s-acc" style="border-top: 1px solid #CFC7B8">
+        <summary
+          >{ui.product.care}{' '}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"
+            ><path d="M6 9l6 6 6-6"></path></svg
+          ></summary
+        >
+        <p style="margin: 0 0 22px; font-size: 15px; color: #3E3B35">{p.care}</p>
+      </details>
+      <details class="s-acc" style="border-top: 1px solid #CFC7B8">
+        <summary
+          >{ui.product.deliveryAndReturns}{' '}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"
+            ><path d="M6 9l6 6 6-6"></path></svg
+          ></summary
+        >
+        <p style="margin: 0 0 22px; font-size: 15px; color: #3E3B35">
+          {p.deliveryText}{' '}
+          <a href="/client-care/returns">{ui.product.fullPolicy}</a>
+        </p>
+      </details>
+      <details class="s-acc" style="border-top: 1px solid #CFC7B8">
+        <summary
+          >{ui.product.theEdition}{' '}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"
+            ><path d="M6 9l6 6 6-6"></path></svg
+          ></summary
+        >
+        <p style="margin: 0 0 22px; font-size: 15px; color: #3E3B35">{p.editionText}</p>
+      </details>
+      <details class="s-acc" style="border-block: 1px solid #CFC7B8">
+        <summary
+          >{ui.product.payment}{' '}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"
+            ><path d="M6 9l6 6 6-6"></path></svg
+          ></summary
+        >
+        <p style="margin: 0 0 22px; font-size: 15px; color: #3E3B35">{p.paymentText}</p>
+      </details>
+    </div>
+  </div>
+</section>

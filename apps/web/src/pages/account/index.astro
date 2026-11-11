@@ -1,0 +1,33 @@
+---
+import Base from '../../layouts/Base.astro';
+import Announcement from '../../components/chrome/Announcement.astro';
+import Header from '../../components/chrome/Header.astro';
+import Footer from '../../components/chrome/Footer.astro';
+import AccountBlock from '../../components/account/AccountBlock.astro';
+import { loadChrome } from '../../lib/chrome';
+import { loadAccount, requireCustomer } from '../../lib/account/load';
+
+const cookie = Astro.request.headers.get('cookie');
+const auth = await requireCustomer(cookie, '/account');
+if ('redirect' in auth) return Astro.redirect(auth.redirect);
+
+const [chrome, page] = await Promise.all([
+  loadChrome({ onHome: false }),
+  loadAccount(cookie, 'overview', auth.customer),
+]);
+---
+
+<Base
+  title="NEVMA Style — Account"
+  description={chrome.seo.description}
+  board="Account"
+  canonical="/account"
+  noindex
+>
+  {chrome.announcement ? <Announcement announcement={chrome.announcement} /> : null}
+  <Header mainNav={chrome.mainNav} menuExtra={chrome.menuExtra} accountHref="/account" />
+  <main id="main">
+    <AccountBlock page={page} />
+  </main>
+  <Footer footer={chrome.footer} />
+</Base>

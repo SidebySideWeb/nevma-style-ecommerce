@@ -1,0 +1,40 @@
+---
+import EditionPips from '../ui/EditionPips.astro';
+import { loadPieceEdition } from '../../lib/home';
+
+interface Props {
+  handle: string;
+  opensAt?: string | null;
+  fallbackFilled: number;
+  fallbackLine: string;
+  /** Line text colour / size — design defaults for cards. */
+  lineStyle?: string;
+  /** Wrap pips in .s-y (yellow on dark). */
+  yellow?: boolean;
+}
+
+const {
+  handle,
+  opensAt,
+  fallbackLine,
+  lineStyle = 'font-size: 14.5px; color: #3E3B35',
+  yellow = false,
+} = Astro.props;
+
+const edition = await loadPieceEdition(handle, opensAt, Astro.request.headers.get('cookie'));
+const filled = edition.meter.filled;
+const line = edition.meterLine;
+---
+
+<span style="display: flex; align-items: center; gap: 12px">
+  {
+    yellow ? (
+      <span class="s-y">
+        <EditionPips filled={filled} total={edition.meter.total} />
+      </span>
+    ) : (
+      <EditionPips filled={filled} total={edition.meter.total} />
+    )
+  }
+  <span style={lineStyle}>{line || fallbackLine}</span>
+</span>

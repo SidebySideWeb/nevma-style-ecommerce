@@ -1,0 +1,50 @@
+---
+import Base from '../../layouts/Base.astro';
+import Announcement from '../../components/chrome/Announcement.astro';
+import Header from '../../components/chrome/Header.astro';
+import Footer from '../../components/chrome/Footer.astro';
+import Breadcrumb from '../../components/drop/Breadcrumb.astro';
+import DropIntro from '../../components/drop/DropIntro.astro';
+import DropPieces from '../../components/drop/DropPieces.astro';
+import TheDefinition from '../../components/drop/TheDefinition.astro';
+import DropNotes from '../../components/drop/DropNotes.astro';
+import OtherDrops from '../../components/drop/OtherDrops.astro';
+import { loadChrome } from '../../lib/chrome';
+import { loadDrop } from '../../lib/drop';
+import { shouldNoindex } from '../../lib/seo';
+
+const { slug } = Astro.params;
+if (!slug) {
+  return Astro.redirect('/drops');
+}
+
+const cookie = Astro.request.headers.get('cookie');
+const [chrome, drop] = await Promise.all([
+  loadChrome({ onHome: false }),
+  loadDrop(slug, cookie),
+]);
+
+if (!drop) {
+  return new Response(null, { status: 404, statusText: 'Not Found' });
+}
+---
+
+<Base
+  title={drop.seo.title || chrome.seo.title || `NEVMA Style — ${drop.code}`}
+  description={drop.seo.description || chrome.seo.description}
+  board="Drop"
+  canonical={`/drops/${drop.slug}`}
+  noindex={shouldNoindex({ seoNoindex: drop.seo.noindex })}
+>
+  {chrome.announcement ? <Announcement announcement={chrome.announcement} /> : null}
+  <Header mainNav={chrome.mainNav} menuExtra={chrome.menuExtra} />
+  <main id="main">
+    <Breadcrumb code={drop.code} />
+    <DropIntro drop={drop} />
+    {drop.pieces.length ? <DropPieces drop={drop} /> : null}
+    {drop.definition ? <TheDefinition definition={drop.definition} /> : null}
+    {drop.notes.length ? <DropNotes notesIntro={drop.notesIntro} notes={drop.notes} /> : null}
+    <OtherDrops next={drop.next} />
+  </main>
+  <Footer footer={chrome.footer} />
+</Base>

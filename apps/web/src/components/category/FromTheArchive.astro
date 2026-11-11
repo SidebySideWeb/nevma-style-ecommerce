@@ -1,0 +1,50 @@
+---
+import type { CategoryPieceCard } from '../../lib/category';
+import { ui } from '../../content/ui';
+import { resolvePhoto, slots } from '../../lib/sanity/image';
+
+interface Props {
+  pieces: CategoryPieceCard[];
+}
+
+const { pieces } = Astro.props;
+---
+
+<section aria-labelledby="ar-title" style="border-top: 1px solid #CFC7B8" data-block="from-the-archive">
+  <div class="s-wrap s-sec" style="display: flex; flex-direction: column; gap: 28px">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap"
+      ><h2 id="ar-title" class="s-h2 s-rv">{ui.category.fromTheArchive}</h2
+      ><a href="/pieces" class="s-eb s-ul" style="color: #0B0B0C">{ui.category.allPieces}</a></div
+    >
+    <ul style="list-style: none; margin: 0; padding: 0; border-bottom: 1px solid #CFC7B8; max-width: 920px">
+      {
+        pieces.map((p) => {
+          const src = p.hasImage && p.photo ? resolvePhoto(p.photo, slots.thumb)?.src : null;
+          return (
+            <li>
+              <a href={p.href} class="s-arch" aria-label={p.archiveAria}>
+                {src ? (
+                  <img
+                    src={src}
+                    alt=""
+                    loading="lazy"
+                    style={`width: 64px; height: 80px; object-fit: cover; border-radius: 2px; filter: ${p.imgFilter}; background: ${p.toneBg}; display: block`}
+                  />
+                ) : (
+                  <span
+                    style={`width: 64px; height: 80px; border-radius: 2px; background: ${p.toneBg}; display: block`}
+                  />
+                )}
+                <span style="display: flex; flex-direction: column"
+                  ><span class="s-name" style="font-size: 12.5px">{p.title}</span
+                  ><span style="font-size: 14px; color: #3E3B35">{p.archiveLine}</span></span
+                >
+                <span class="s-eb" style="font-size: 10.5px">{ui.pieces.soldOut}</span>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</section>

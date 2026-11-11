@@ -1,0 +1,24 @@
+---
+import { formatSitePrice } from '../../lib/commerce/format';
+import { createCommerceProvider } from '../../lib/commerce/provider';
+import { fixtureFlagsFromCookie } from '../../lib/chrome';
+
+interface Props {
+  handle: string;
+  fallbackPrice: string;
+  class?: string;
+  style?: string;
+}
+
+const { handle, fallbackPrice, class: className = 's-price', style = 'font-size: 15px' } =
+  Astro.props;
+const provider = createCommerceProvider({
+  fixtureFlags: fixtureFlagsFromCookie(Astro.request.headers.get('cookie')),
+});
+const piece = await provider.getPiece(handle);
+const price = piece?.price
+  ? formatSitePrice(piece.price.amount, piece.price.currency)
+  : fallbackPrice;
+---
+
+<span class={className} style={style}>{price}</span>

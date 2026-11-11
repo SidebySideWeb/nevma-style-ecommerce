@@ -28,6 +28,8 @@ const TEST_CSS = `
   [data-block="header"] { position: relative !important; }
   *, *::before, *::after { caret-color: transparent !important; transition: none !important; animation: none !important; }
   [data-fidelity-ignore] { visibility: hidden !important; }
+  /* astro dev (used instead of preview with the Vercel adapter) paints a fixed toolbar over the page */
+  astro-dev-toolbar { display: none !important; visibility: hidden !important; }
 `;
 
 type Step = { click?: { role: string; name: string; scope?: string }; fill?: { label: string; value: string; scope?: string }; fillForm?: { scope: string } };
@@ -49,6 +51,8 @@ async function open(page: Page, url: string, fixture: string, steps: Step[]) {
     }
     await page.waitForLoadState('networkidle');
   }
+  // Clicks leave the cursor on the control; clear hover so open states match the static design.
+  await page.mouse.move(0, 0);
   await page.addStyleTag({ content: TEST_CSS });
   await page.evaluate(() => document.fonts.ready);
   await page.waitForTimeout(150);

@@ -1,0 +1,106 @@
+---
+/**
+ * Renders a Sanity `photo` as the design's <img> or placeholder slot.
+ * Parent supplies the same class/style/loading/decoding the snippet uses on <img>.
+ * Placeholders: `gallery` = product gallery SVG + label; `label` = "[Photo · …]" text
+ * (parent owns the slot background / tone colours via TONE_BG / TONE_FG).
+ */
+import {
+  hasPhotoImage,
+  imgStyle,
+  photoTone,
+  placeholderLabel,
+  resolvePhoto,
+  slots,
+  TONE_FG,
+  type ImageSlot,
+} from '../../lib/sanity/image';
+import type { Photo } from '../../lib/sanity/types';
+
+interface Props {
+  photo: Photo;
+  class?: string;
+  style?: string;
+  loading?: 'lazy' | 'eager';
+  decoding?: 'async' | 'sync' | 'auto';
+  alt?: string;
+  sizes?: string;
+  width?: number;
+  height?: number;
+  fetchpriority?: 'high' | 'low' | 'auto';
+  /** Which placeholder markup to use when there is no image. */
+  placeholder?: 'gallery' | 'label';
+  /** Responsive slot presets; overridden by width/sizes when set. */
+  slot?: keyof typeof slots | ImageSlot;
+}
+
+const {
+  photo,
+  class: className,
+  style: styleProp,
+  loading = 'lazy',
+  decoding = 'async',
+  alt: altOverride,
+  sizes: sizesOverride,
+  width: widthOverride,
+  height: heightOverride,
+  fetchpriority,
+  placeholder = 'label',
+  slot: slotProp = 'card',
+} = Astro.props;
+
+const slotDef: ImageSlot =
+  typeof slotProp === 'string' ? slots[slotProp] : slotProp;
+
+const resolved = resolvePhoto(photo, {
+  ...slotDef,
+  ...(widthOverride ? { width: widthOverride } : {}),
+  ...(heightOverride ? { height: heightOverride } : {}),
+  ...(sizesOverride ? { sizes: sizesOverride } : {}),
+});
+
+const tone = photoTone(photo);
+const label = placeholderLabel(photo);
+const showImage = hasPhotoImage(photo) && resolved;
+---
+
+{
+  showImage && resolved ? (
+    <img
+      src={resolved.src}
+      srcset={resolved.srcset}
+      sizes={resolved.sizes}
+      width={widthOverride ?? resolved.width}
+      height={heightOverride ?? resolved.height}
+      alt={altOverride ?? resolved.alt}
+      class={className}
+      style={imgStyle(styleProp, resolved)}
+      loading={loading}
+      decoding={decoding}
+      fetchpriority={fetchpriority}
+    />
+  ) : placeholder === 'gallery' ? (
+    <span
+      style={`position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; padding: 24px; color: ${TONE_FG[tone]}`}
+    >
+      <svg
+        width="44"
+        height="44"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1"
+        aria-hidden="true"
+      >
+        <rect x="3.5" y="5" width="17" height="14" rx="1.5"></rect>
+        <circle cx="9" cy="10" r="1.6"></circle>
+        <path d="M4 17l5-4.5 3.5 3 3-2.5 4.5 4"></path>
+      </svg>
+      <span class="s-f" style="font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase"
+        >{label}</span
+      >
+    </span>
+  ) : (
+    label
+  )
+}

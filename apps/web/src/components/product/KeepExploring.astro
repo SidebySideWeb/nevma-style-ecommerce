@@ -1,0 +1,64 @@
+---
+import type { PiecePageData } from '../../lib/piece';
+import { ui } from '../../content/ui';
+import Photo from '../ui/Photo.astro';
+import { hasPhotoImage, TONE_BG } from '../../lib/sanity/image';
+
+interface Props {
+  items: PiecePageData['keepExploring'];
+}
+
+const { items } = Astro.props;
+---
+
+<section
+  aria-labelledby="more-title"
+  style="border-bottom: 1px solid #CFC7B8"
+  data-block="keep-exploring"
+>
+  <div class="s-wrap s-sec" style="display: flex; flex-direction: column; gap: 40px">
+    <div
+      style="display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap"
+    >
+      <h2 id="more-title" class="s-h2 s-rv">{ui.product.keepExploring}</h2>
+      <a href="/pieces" class="s-eb s-ul" style="color: #0B0B0C">{ui.product.allPieces}</a>
+    </div>
+    <ul class="s-trio s-stg" style="list-style: none; margin: 0; padding: 0">
+      {
+        items.map((item, i) => {
+          const bg = item.photo
+            ? TONE_BG[(item.photo.tone as keyof typeof TONE_BG) || 'bone'] || TONE_BG.bone
+            : TONE_BG.bone;
+          // Design: archive card is grayscale
+          const filter = i === 1 ? 'grayscale(1)' : 'none';
+          const pos = item.photo?.position || (i === 0 ? 'center 40%' : 'center');
+          return (
+            <li>
+              <a
+                href={item.href}
+                class="s-card"
+                style="display: flex; flex-direction: column; gap: 14px; text-decoration: none"
+              >
+                <span
+                  style={`display: block; aspect-ratio: 4 / 3; overflow: clip; border-radius: 4px; background: ${bg}`}
+                >
+                  {item.photo && hasPhotoImage(item.photo) ? (
+                    <Photo
+                      photo={item.photo}
+                      loading="lazy"
+                      alt=""
+                      style={`width: 100%; height: 100%; object-fit: cover; object-position: ${pos}; filter: ${filter}; display: block`}
+                    />
+                  ) : null}
+                </span>
+                <span class="s-name" style="font-size: 12.5px">
+                  {item.label}
+                </span>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</section>

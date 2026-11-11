@@ -1,0 +1,231 @@
+---
+import type { StoryPageData } from '../../lib/story';
+
+interface Props {
+  page: StoryPageData;
+}
+
+const { page: p } = Astro.props;
+---
+
+<section
+  aria-labelledby="ab-title"
+  class="s-dark"
+  style="position: relative; min-height: 760px; background: #000000; color: #F5F5F7; overflow: clip; display: flex; align-items: flex-end"
+  data-block="limited-by-design"
+>
+  {
+    p.hero.imgSrc ? (
+      <img
+        src={p.hero.imgSrc}
+        alt={p.hero.imgAlt}
+        fetchpriority="high"
+        style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"
+      />
+    ) : null
+  }
+  <div
+    aria-hidden="true"
+    style="position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 55%, rgba(0,0,0,0.05) 100%)"
+  >
+  </div>
+  <div
+    class="s-wrap"
+    style="position: relative; padding-block: 96px 72px; display: flex; flex-direction: column; gap: 24px"
+  >
+    <p class="s-eb" style="color: #F0E81C">{p.hero.eyebrow}</p>
+    <h1
+      id="ab-title"
+      class="s-disp"
+      style="margin: 0; max-width: 18ch; font-size: clamp(36px, 5vw, 76px); letter-spacing: 0.18em; line-height: 1.2"
+      >{p.hero.title}</h1
+    >
+    <p style="margin: 0; max-width: 46ch; font-size: 20px; color: #D2D2DA">{p.hero.text}</p>
+  </div>
+</section>
+
+<section
+  aria-labelledby="mf-title"
+  style="border-bottom: 1px solid #CFC7B8"
+  data-block="what-we-believe"
+>
+  <div
+    class="s-wrap s-sec"
+    style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 26px"
+  >
+    <h2 id="mf-title" class="s-vh">{p.belief.eyebrow}</h2>
+    <p
+      class="s-disp"
+      style="margin: 0; max-width: 28ch; font-size: clamp(22px, 2.4vw, 34px); letter-spacing: 0.16em; line-height: 1.6"
+      >{p.belief.title}</p
+    >
+    <span class="s-rule" aria-hidden="true" style="width: 120px"></span>
+    <p style="margin: 0; max-width: 60ch; color: #3E3B35">{p.belief.text}</p>
+  </div>
+</section>
+
+<section
+  aria-labelledby="ch1"
+  style="border-bottom: 1px solid #CFC7B8"
+  data-block="a-word-you-can-wear"
+>
+  <div class="s-wrap s-sec" style="display: flex; flex-direction: column; gap: 104px">
+    {
+      p.chapters.map((ch, i) => (
+        <div class:list={['s-ch', { flip: ch.flip }]}>
+          <div style={`aspect-ratio: 4 / 5; border-radius: 4px; overflow: clip; background: ${ch.toneBg}`}>
+            {ch.imgSrc ? (
+              <img
+                src={ch.imgSrc}
+                alt={ch.imgAlt}
+                loading="lazy"
+                style="width: 100%; height: 100%; object-fit: cover; display: block"
+              />
+            ) : null}
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 20px; max-width: 520px">
+            <p class="s-eb">{ch.eyebrow}</p>
+            <h2
+              id={i === 0 ? 'ch1' : undefined}
+              class="s-name"
+              style="margin: 0; font-size: clamp(17px, 1.5vw, 22px); letter-spacing: 0.24em"
+            >
+              {ch.title}
+            </h2>
+            <p style="margin: 0; color: #3E3B35" set:html={ch.html} />
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<section
+  aria-labelledby="how-title"
+  style="border-bottom: 1px solid #CFC7B8"
+  data-block="how-a-piece-is-made"
+>
+  <div class="s-wrap s-sec" style="display: flex; flex-direction: column; gap: 48px">
+    <h2 id="how-title" class="s-h2 s-rv">{p.process.title}</h2>
+    <ol class="s-steps s-stg">
+      {
+        p.process.steps.map((s) => (
+          <li>
+            <span class="s-disp" style="font-size: 30px; letter-spacing: 0.04em">
+              {s.mark}
+            </span>
+            <span class="s-name" style="font-size: 12.5px">
+              {s.title}
+            </span>
+            <span style="font-size: 15px; color: #3E3B35">{s.text}</span>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<section
+  aria-labelledby="mk-title"
+  style="border-bottom: 1px solid #CFC7B8"
+  data-block="materials-and-makers"
+>
+  <div
+    class="s-wrap s-sec"
+    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 40px 80px; align-items: center"
+  >
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <h2 id="mk-title" class="s-h2 s-rv">{p.materials.title}</h2>
+      <p style="margin: 0; max-width: 48ch; color: #3E3B35">{p.materials.text}</p>
+      <ul style="list-style: none; margin: 0; padding: 0; border-bottom: 1px solid #CFC7B8">
+        {
+          p.materials.items.map((m) => (
+            <li style="display: flex; justify-content: space-between; gap: 20px; padding: 14px 0; border-top: 1px solid #CFC7B8">
+              <span class="s-name" style="font-size: 12px">
+                {m.name}
+              </span>
+              <span style="color: #3E3B35; font-size: 15px">{m.source}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    {
+      p.materials.imgSrc ? (
+        <div style="aspect-ratio: 5 / 4; border-radius: 4px; overflow: clip; background: #D9D3C8">
+          <img
+            src={p.materials.imgSrc}
+            alt={p.materials.imgAlt}
+            loading="lazy"
+            style="width: 100%; height: 100%; object-fit: cover; display: block"
+          />
+        </div>
+      ) : (
+        <div style="aspect-ratio: 5 / 4; border-radius: 4px; background: #D9D3C8; display: flex; align-items: center; justify-content: center; color: #615D55; font-size: 13px">
+          {p.materials.placeholder}
+        </div>
+      )
+    }
+  </div>
+</section>
+
+<section
+  aria-labelledby="fam-title"
+  style="border-bottom: 1px solid #CFC7B8"
+  data-block="three-pillars-one-identity"
+>
+  <div class="s-wrap s-sec" style="display: flex; flex-direction: column; gap: 40px">
+    <h2 id="fam-title" class="s-h2 s-rv">{p.pillars.title}</h2>
+    <ul class="s-4 s-stg" style="list-style: none; margin: 0; padding: 0">
+      {
+        p.pillars.items.map((item) => (
+          <li style="display: flex; flex-direction: column; gap: 12px">
+            <span class="s-name" style="font-size: 13px">
+              {item.label}
+            </span>
+            <span style="font-size: 15px; color: #3E3B35">{item.text}</span>
+            <a
+              href={item.href}
+              class="s-ul"
+              style="align-self: flex-start; font-size: 14px"
+              target={item.external ? '_blank' : undefined}
+              rel={item.external ? 'noopener noreferrer' : undefined}
+            >
+              {item.linkLabel}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<section
+  aria-labelledby="end-title"
+  class="s-dark"
+  style="background: #000000; color: #F5F5F7"
+  data-block="closing"
+>
+  <div
+    class="s-wrap s-sec"
+    style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px"
+  >
+    {
+      p.closing.eyebrow ? (
+        <p class="s-eb" style="color: #F0E81C">
+          {p.closing.eyebrow}
+        </p>
+      ) : null
+    }
+    <h2
+      id="end-title"
+      class="s-disp"
+      style="margin: 0; font-size: clamp(26px, 3vw, 44px); letter-spacing: 0.24em"
+      >{p.closing.title}</h2
+    >
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center">
+      <a href={p.closing.primaryHref} class="s-btn s-btn-l">{p.closing.primaryLabel}</a>
+      <a href={p.closing.secondaryHref} class="s-btn s-btn-lo">{p.closing.secondaryLabel}</a>
+    </div>
+  </div>
+</section>

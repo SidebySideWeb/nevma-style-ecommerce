@@ -1,0 +1,89 @@
+---
+import type { PiecePageData } from '../../lib/piece';
+import { ui } from '../../content/ui';
+import Photo from '../ui/Photo.astro';
+import { hasPhotoImage, placeholderLabel, TONE_BG } from '../../lib/sanity/image';
+
+interface Props {
+  wearWith: NonNullable<PiecePageData['wearWith']>;
+}
+
+const { wearWith: w } = Astro.props;
+---
+
+<section
+  aria-labelledby="pair-title"
+  style="border-bottom: 1px solid #CFC7B8"
+  data-block="wear-it-with"
+>
+  <div class="s-wrap s-sec" style="display: flex; flex-direction: column; gap: 40px">
+    <h2 id="pair-title" class="s-h2 s-rv" style="align-self: center; text-align: center"
+      >{ui.product.wearItWith}</h2
+    >
+    <div
+      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 28px 56px; align-items: center"
+    >
+      <div
+        style={`aspect-ratio: 4 / 5; border-radius: 4px; overflow: clip; background: ${TONE_BG.bone}`}
+      >
+        {
+          w.photo && hasPhotoImage(w.photo) ? (
+            <Photo
+              photo={w.photo}
+              loading="lazy"
+              style="width: 100%; height: 100%; object-fit: cover; display: block"
+            />
+          ) : null
+        }
+      </div>
+      <ul
+        class="s-stg"
+        style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px"
+      >
+        {
+          w.cards.map((c) => {
+            const hasImg = c.photo && hasPhotoImage(c.photo);
+            const label =
+              c.placeholderLabel ||
+              (c.photo ? placeholderLabel(c.photo) : '[Photo]');
+            return (
+              <li>
+                <a
+                  href={c.href}
+                  class="s-card"
+                  style="display: flex; flex-direction: column; gap: 12px; text-decoration: none"
+                >
+                  {hasImg ? (
+                    <span
+                      style={`display: block; aspect-ratio: 3 / 4; overflow: clip; border-radius: 4px; background: ${c.toneBg}`}
+                    >
+                      <Photo
+                        photo={c.photo!}
+                        loading="lazy"
+                        alt=""
+                        style="width: 100%; height: 100%; object-fit: cover; display: block"
+                      />
+                    </span>
+                  ) : (
+                    <span
+                      style="display: flex; align-items: center; justify-content: center; aspect-ratio: 3 / 4; border-radius: 4px; background: #000000; color: #A8A8B4; font-size: 12px"
+                    >
+                      {label}
+                    </span>
+                  )}
+                  <span class="s-name" style="font-size: 12px">
+                    {c.title}
+                  </span>
+                  <span style="display: flex; justify-content: space-between; gap: 10px; font-size: 14px">
+                    <span class={c.left.startsWith('£') ? 's-price' : undefined}>{c.left}</span>
+                    <span>{c.right}</span>
+                  </span>
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,12 +1,83 @@
 ---
+import Base from '../layouts/Base.astro';
+import Announcement from '../components/chrome/Announcement.astro';
+import Header from '../components/chrome/Header.astro';
+import Footer from '../components/chrome/Footer.astro';
+import Hero from '../components/home/Hero.astro';
+import ThePieces from '../components/home/ThePieces.astro';
+import Signal from '../components/home/Signal.astro';
+import FiveThenNeverAgain from '../components/home/FiveThenNeverAgain.astro';
+import StoryTeaser from '../components/home/StoryTeaser.astro';
+import TheWorldOfNevma from '../components/home/TheWorldOfNevma.astro';
+import { loadChrome } from '../lib/chrome';
+import { loadHome } from '../lib/home';
+import { serverEnv } from '../lib/server/env';
+import {
+  organizationJsonLd,
+  photoShareUrl,
+  seoShareImageUrl,
+  shouldNoindex,
+  websiteJsonLd,
+} from '../lib/seo';
+
+const cookie = Astro.request.headers.get('cookie');
+const [chrome, home] = await Promise.all([
+  loadChrome({ onHome: true }),
+  loadHome(cookie),
+]);
+
+const notified = Astro.url.searchParams.get('sent') === '1';
+const pieceHandles = home.pieces.cards.map((c) => c.handle);
+const turnstileSiteKey = serverEnv('PUBLIC_TURNSTILE_SITE_KEY');
+
+const title = home.seo.title || chrome.seo.title || 'NEVMA Style — Home';
+const description =
+  home.seo.description ||
+  chrome.seo.description ||
+  'Limited-edition pieces from NEVMA. Five of each colourway. Never restocked.';
+const ogImage =
+  seoShareImageUrl(home.seo) ||
+  seoShareImageUrl(chrome.seo) ||
+  photoShareUrl(home.hero.piece.photo) ||
+  photoShareUrl(home.pieces.cards[0]?.photo);
+const sameAs = [chrome.musicUrl, chrome.momentsUrl, chrome.instagramUrl].filter(
+  (u): u is string => Boolean(u),
+);
+const jsonLd = [
+  organizationJsonLd({
+    email: chrome.clientCareEmail,
+    sameAs,
+  }),
+  websiteJsonLd({ description }),
+];
 ---
 
-<!doctype html>
-<html lang="en-GB">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>NEVMA Style</title>
-  </head>
-  <body></body>
-</html>
+<Base
+  title={title}
+  description={description}
+  board="Main"
+  canonical="/"
+  ogImage={ogImage}
+  noindex={shouldNoindex({ seoNoindex: home.seo.noindex || chrome.seo.noindex })}
+  jsonLd={jsonLd}
+>
+  {chrome.announcement ? <Announcement announcement={chrome.announcement} /> : null}
+  <Header mainNav={chrome.mainNav} menuExtra={chrome.menuExtra} />
+  <main id="main">
+    <Hero hero={home.hero} pieceHandles={pieceHandles} opensAt={home.dropOpensAt} />
+    <ThePieces pieces={home.pieces} opensAt={home.dropOpensAt} />
+    {
+      home.signal ? (
+        <Signal
+          signal={home.signal}
+          notified={notified}
+          turnstileSiteKey={turnstileSiteKey}
+        />
+      ) : null
+    }
+    <FiveThenNeverAgain rules={home.rules} />
+    <StoryTeaser story={home.story} />
+    <TheWorldOfNevma world={home.world} />
+  </main>
+  <Footer footer={chrome.footer} />
+</Base>

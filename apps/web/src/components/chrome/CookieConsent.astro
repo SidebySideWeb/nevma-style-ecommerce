@@ -1,0 +1,99 @@
+---
+import { ui } from '../../content/ui';
+---
+
+<button
+  type="button"
+  class="s-shade"
+  aria-label="Close cookie settings"
+  data-consent-scrim
+  data-fidelity-ignore
+  hidden
+></button>
+<aside
+  class="s-drw s-drawer"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="consent-title"
+  data-consent-panel
+  data-fidelity-ignore
+  hidden
+  style="display: none"
+>
+  <div
+    style="display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; border-bottom: 1px solid #CFC7B8"
+  >
+    <h2 id="consent-title" class="s-eb" style="color: #0B0B0C">{ui.consent.title}</h2>
+    <button type="button" class="s-ib" aria-label="Close" data-consent-close>
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg
+      >
+    </button>
+  </div>
+  <div
+    style="flex: 1 1 auto; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 20px"
+  >
+    <p style="margin: 0; font-size: 15px; color: #3E3B35"
+      >Essential cookies keep the bag, your session and security checks working. Analytics is off
+      until you say yes.</p
+    >
+    <div
+      style="display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 16px 0; border-top: 1px solid #CFC7B8"
+    >
+      <span style="display: flex; flex-direction: column"
+        ><strong style="font-size: 15.5px">Essential</strong><span
+          style="font-size: 14px; color: #3E3B35">Always on.</span
+        ></span
+      >
+      <button
+        type="button"
+        role="switch"
+        class="s-switch"
+        aria-checked="true"
+        aria-disabled="true"
+        disabled
+      ></button>
+    </div>
+    <div
+      style="display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 16px 0; border-top: 1px solid #CFC7B8; border-bottom: 1px solid #CFC7B8"
+    >
+      <span id="consent-analytics-label" style="display: flex; flex-direction: column"
+        ><strong style="font-size: 15.5px">Analytics</strong><span
+          style="font-size: 14px; color: #3E3B35">Count visits, anonymised.</span
+        ></span
+      >
+      <button
+        type="button"
+        role="switch"
+        class="s-switch"
+        aria-checked="false"
+        aria-labelledby="consent-analytics-label"
+        data-consent-analytics
+      ></button>
+    </div>
+  </div>
+  <div
+    style="padding: 20px 24px 28px; display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #CFC7B8"
+  >
+    <button type="button" class="s-btn s-btn-p" style="width: 100%" data-consent-accept
+      >{ui.consent.accept}</button
+    >
+    <button type="button" class="s-btn s-btn-o" style="width: 100%" data-consent-reject
+      >{ui.consent.reject}</button
+    >
+    <button type="button" class="s-btn s-btn-o" style="width: 100%" data-consent-save
+      >{ui.consent.save}</button
+    >
+  </div>
+</aside>
+
+<script>
+  import '../../scripts/consent.ts';
+</script>

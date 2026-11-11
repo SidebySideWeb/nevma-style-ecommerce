@@ -1,0 +1,94 @@
+---
+import type { DropPageData } from '../../lib/drop';
+import { ui } from '../../content/ui';
+import Photo from '../ui/Photo.astro';
+import EditionPips from '../ui/EditionPips.astro';
+
+interface Props {
+  drop: DropPageData;
+}
+
+const { drop: d } = Astro.props;
+---
+
+<section
+  aria-label={ui.drop.piecesAria(d.code)}
+  style="border-top: 1px solid #CFC7B8"
+  data-block="drop-pieces"
+>
+  <ol
+    class="s-wrap"
+    style="list-style: none; margin-block: 0; padding-block: 72px; display: flex; flex-direction: column; gap: 112px"
+  >
+    {
+      d.pieces.map((piece) => (
+        <li class:list={['s-row', { flip: piece.flip }]}>
+          <a
+            href={piece.href}
+            class="s-card"
+            aria-label={piece.title}
+            style={`display: block; position: relative; aspect-ratio: 4 / 5; overflow: clip; border-radius: 4px; background: ${piece.toneBg}`}
+          >
+            {
+              piece.photo ? (
+                <Photo
+                  photo={piece.photo}
+                  loading="lazy"
+                  style={`width: 100%; height: 100%; object-fit: cover; display: block; filter: ${piece.filter}`}
+                />
+              ) : null
+            }
+            <span
+              class="s-f"
+              style={`position: absolute; left: 20px; top: 18px; font-size: 12px; letter-spacing: 0.3em; color: ${piece.numberColor}`}
+            >
+              {piece.numberLabel}
+            </span>
+          </a>
+          <div style="display: flex; flex-direction: column; gap: 22px; max-width: 520px">
+            <p class="s-eb">{piece.pieceIndexLabel}</p>
+            <h2
+              class="s-name"
+              style="margin: 0; font-size: clamp(18px, 1.6vw, 24px); letter-spacing: 0.22em"
+            >
+              {piece.title}
+            </h2>
+            {
+              piece.price ? (
+                <p class="s-price" style="margin: 0; font-size: 19px">
+                  {piece.price}
+                </p>
+              ) : piece.upcoming ? (
+                <p class="s-price" style="margin: 0; font-size: 19px">
+                  {ui.product.priceRevealed}
+                </p>
+              ) : null
+            }
+            {
+              piece.cardStory ? (
+                <p style="margin: 0; color: #3E3B35">{piece.cardStory}</p>
+              ) : null
+            }
+            <div
+              style="display: flex; flex-direction: column; gap: 12px; padding-block: 18px; border-block: 1px solid #CFC7B8"
+            >
+              <div style="display: flex; align-items: center; gap: 14px">
+                <EditionPips
+                  filled={piece.edition.meter.filled}
+                  total={piece.edition.meter.total}
+                />
+                <strong style="font-size: 15px">{piece.edition.dropStockLine}</strong>
+              </div>
+              <p style="margin: 0; font-size: 14.5px; color: #615D55">{piece.sizeSummary}</p>
+            </div>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap">
+              <a href={piece.ctaHref} class={piece.ctaClass}>
+                {piece.ctaLabel}
+              </a>
+            </div>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</section>

@@ -1,0 +1,91 @@
+---
+import Base from '../../layouts/Base.astro';
+import Announcement from '../../components/chrome/Announcement.astro';
+import Header from '../../components/chrome/Header.astro';
+import Footer from '../../components/chrome/Footer.astro';
+import PieceBlock from '../../components/product/PieceBlock.astro';
+import AboutThisPiece from '../../components/product/AboutThisPiece.astro';
+import FilmBlock from '../../components/product/FilmBlock.astro';
+import WearItWith from '../../components/product/WearItWith.astro';
+import KeepExploring from '../../components/product/KeepExploring.astro';
+import OurServices from '../../components/product/OurServices.astro';
+import BagDrawer from '../../components/product/BagDrawer.astro';
+import { loadChrome } from '../../lib/chrome';
+import { loadPiece } from '../../lib/piece';
+import { serverEnv } from '../../lib/server/env';
+import {
+  absoluteUrl,
+  photoShareUrl,
+  productJsonLd,
+  seoShareImageUrl,
+  shouldNoindex,
+} from '../../lib/seo';
+
+const { handle } = Astro.params;
+if (!handle) {
+  return new Response(null, { status: 404, statusText: 'Not Found' });
+}
+
+const cookie = Astro.request.headers.get('cookie');
+const notified = Astro.url.searchParams.get('sent') === '1';
+const [chrome, piece] = await Promise.all([
+  loadChrome({ onHome: false }),
+  loadPiece(handle, cookie),
+]);
+
+if (!piece) {
+  return new Response(null, { status: 404, statusText: 'Not Found' });
+}
+
+const turnstileSiteKey = serverEnv('PUBLIC_TURNSTILE_SITE_KEY');
+const title = piece.seo.title || chrome.seo.title || `NEVMA Style — ${piece.title}`;
+const description =
+  piece.seo.description ||
+  chrome.seo.description ||
+  piece.lead ||
+  `${piece.title} · ${piece.dropCode}. Limited edition from NEVMA Style.`;
+const ogImage =
+  seoShareImageUrl(piece.seo) ||
+  photoShareUrl(piece.gallery[0]) ||
+  seoShareImageUrl(chrome.seo);
+const canonical = `/pieces/${piece.handle}`;
+const jsonLd = productJsonLd({
+  name: piece.title,
+  description,
+  url: absoluteUrl(canonical),
+  image: ogImage,
+  sku: piece.reference || piece.handle,
+  priceAmount: piece.priceAmount,
+  priceCurrency: piece.priceCurrency,
+  state: piece.state,
+});
+---
+
+<Base
+  title={title}
+  description={description}
+  board="Product"
+  canonical={canonical}
+  ogImage={ogImage}
+  ogType="product"
+  noindex={shouldNoindex({ seoNoindex: piece.seo.noindex })}
+  jsonLd={jsonLd}
+>
+  {chrome.announcement ? <Announcement announcement={chrome.announcement} /> : null}
+  <Header mainNav={chrome.mainNav} menuExtra={chrome.menuExtra} />
+  <main id="main">
+    <PieceBlock piece={piece} notified={notified} turnstileSiteKey={turnstileSiteKey} />
+    <AboutThisPiece piece={piece} />
+    <FilmBlock film={piece.film} />
+    {piece.wearWith ? <WearItWith wearWith={piece.wearWith} /> : null}
+    {piece.keepExploring.length ? <KeepExploring items={piece.keepExploring} /> : null}
+    {piece.services.length ? <OurServices services={piece.services} /> : null}
+  </main>
+  <Footer footer={chrome.footer} />
+  <BagDrawer />
+</Base>
+
+<script>
+  import '../../scripts/piece.ts';
+  import '../../scripts/countdown.ts';
+</script>

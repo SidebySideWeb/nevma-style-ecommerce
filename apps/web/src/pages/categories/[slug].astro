@@ -1,0 +1,50 @@
+---
+import Base from '../../layouts/Base.astro';
+import Announcement from '../../components/chrome/Announcement.astro';
+import Header from '../../components/chrome/Header.astro';
+import Footer from '../../components/chrome/Footer.astro';
+import CategoryBreadcrumb from '../../components/category/CategoryBreadcrumb.astro';
+import CategoryIntro from '../../components/category/CategoryIntro.astro';
+import FeaturedPiece from '../../components/category/FeaturedPiece.astro';
+import MoreInCategory from '../../components/category/MoreInCategory.astro';
+import FromTheArchive from '../../components/category/FromTheArchive.astro';
+import ComingPiece from '../../components/category/ComingPiece.astro';
+import { loadChrome } from '../../lib/chrome';
+import { loadCategory } from '../../lib/category';
+import { shouldNoindex } from '../../lib/seo';
+
+const { slug } = Astro.params;
+if (!slug) {
+  return Astro.redirect('/categories');
+}
+
+const cookie = Astro.request.headers.get('cookie');
+const [chrome, page] = await Promise.all([
+  loadChrome({ onHome: false }),
+  loadCategory(slug, cookie),
+]);
+
+if (!page) {
+  return new Response(null, { status: 404, statusText: 'Not Found' });
+}
+---
+
+<Base
+  title={page.seo.title || chrome.seo.title || `NEVMA Style — ${page.name}`}
+  description={page.seo.description || chrome.seo.description}
+  board="Category"
+  canonical={`/categories/${page.slug}`}
+  noindex={shouldNoindex({ seoNoindex: page.seo.noindex })}
+>
+  {chrome.announcement ? <Announcement announcement={chrome.announcement} /> : null}
+  <Header mainNav={chrome.mainNav} menuExtra={chrome.menuExtra} />
+  <main id="main">
+    <CategoryBreadcrumb name={page.name} />
+    <CategoryIntro page={page} />
+    {page.featured ? <FeaturedPiece piece={page.featured} /> : null}
+    {page.more.length ? <MoreInCategory name={page.name} pieces={page.more} /> : null}
+    {page.archive.length ? <FromTheArchive pieces={page.archive} /> : null}
+    {page.coming ? <ComingPiece piece={page.coming} /> : null}
+  </main>
+  <Footer footer={chrome.footer} />
+</Base>

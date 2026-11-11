@@ -1,0 +1,6 @@
+---
+import { firstCategorySlug } from '../../lib/category';
+
+const slug = await firstCategorySlug();
+return Astro.redirect(slug ? `/categories/${slug}` : '/pieces');
+---

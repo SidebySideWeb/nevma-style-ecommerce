@@ -1,0 +1,63 @@
+---
+import type { PiecesPageData } from '../../lib/pieces';
+import { piecesHref } from '../../lib/pieces';
+import { ui } from '../../content/ui';
+
+interface Props {
+  page: PiecesPageData;
+}
+
+const { page: p } = Astro.props;
+const filters = [
+  { id: 'all' as const, label: ui.pieces.all, count: p.counts.all },
+  { id: 'available' as const, label: ui.pieces.available, count: p.counts.available },
+  { id: 'coming' as const, label: ui.pieces.coming, count: p.counts.coming },
+  { id: 'sold-out' as const, label: ui.pieces.soldOut, count: p.counts.soldOut },
+];
+---
+
+<section aria-labelledby="ap-title" data-block="all-pieces" data-pieces-controls>
+  <div class="s-wrap" style="padding-block: 72px 40px; display: flex; flex-direction: column; gap: 26px">
+    <p class="s-eb">{p.eyebrow}</p>
+    <h1 id="ap-title" class="s-disp" style="margin: 0; font-size: clamp(34px, 4vw, 58px); letter-spacing: 0.22em"
+      >{p.title}</h1
+    >
+    <p style="margin: 0; max-width: 56ch; color: #3E3B35">{p.intro}</p>
+  </div>
+  <div
+    class="s-wrap"
+    style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding-bottom: 28px"
+  >
+    <div role="group" aria-label={ui.pieces.show} style="display: flex; gap: 8px; flex-wrap: wrap">
+      {
+        filters.map((f) => (
+          <button
+            type="button"
+            class="s-chip"
+            aria-pressed={p.filter === f.id ? 'true' : 'false'}
+            data-filter-chip={f.id}
+            data-href={piecesHref(f.id, p.view)}
+          >
+            {f.label} <span style="color: inherit; opacity: 0.7">{f.count}</span>
+          </button>
+        ))
+      }
+    </div>
+    <div role="group" aria-label={ui.pieces.view} style="display: flex; gap: 8px">
+      <button
+        type="button"
+        class="s-chip"
+        aria-pressed={p.view === 'index' ? 'true' : 'false'}
+        data-view-chip="index"
+        data-href={piecesHref(p.filter, 'index')}>{ui.pieces.index}</button
+      >
+      <button
+        type="button"
+        class="s-chip"
+        aria-pressed={p.view === 'gallery' ? 'true' : 'false'}
+        data-view-chip="gallery"
+        data-href={piecesHref(p.filter, 'gallery')}>{ui.pieces.gallery}</button
+      >
+    </div>
+  </div>
+</section>

@@ -1,0 +1,57 @@
+---
+import type { CategoryPieceCard } from '../../lib/category';
+import EditionPips from '../ui/EditionPips.astro';
+import { ui } from '../../content/ui';
+import { resolvePhoto, slots } from '../../lib/sanity/image';
+
+interface Props {
+  name: string;
+  pieces: CategoryPieceCard[];
+}
+
+const { name, pieces } = Astro.props;
+---
+
+<section aria-label={ui.category.moreIn(name)} data-block="more-in-category">
+  <ul class="s-wrap s-pair" style="list-style: none; margin-block: 0; padding-block: 24px 104px">
+    {
+      pieces.map((p) => {
+        const src = p.hasImage && p.photo ? resolvePhoto(p.photo, slots.card)?.src : null;
+        return (
+          <li>
+            <a
+              href={p.href}
+              class="s-card"
+              aria-label={p.aria}
+              style="display: flex; flex-direction: column; gap: 18px; text-decoration: none"
+            >
+              <span
+                style={`position: relative; display: block; aspect-ratio: 4 / 5; overflow: clip; border-radius: 4px; background: ${p.toneBg}`}
+              >
+                {src ? (
+                  <img
+                    src={src}
+                    alt=""
+                    loading="lazy"
+                    style={`width: 100%; height: 100%; object-fit: cover; object-position: ${p.objectPosition}; display: block`}
+                  />
+                ) : null}
+                <span class="s-tag" style="position: absolute; left: 14px; top: 14px; background: #0B0B0C; color: #F5F2EC"
+                  >{p.tag}</span
+                >
+              </span>
+              <span style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px"
+                ><span class="s-name" style="font-size: 13.5px">{p.title}</span
+                ><span class="s-price" style="font-size: 15px">{p.priceLabel}</span></span
+              >
+              <span style="display: flex; align-items: center; gap: 12px">
+                <EditionPips filled={p.edition.meter.filled} total={p.edition.meter.total} />
+                <span style="font-size: 14.5px; color: #3E3B35">{p.meterWithDrop}</span>
+              </span>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>

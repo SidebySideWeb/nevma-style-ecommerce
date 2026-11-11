@@ -1,0 +1,55 @@
+---
+import type { HomePageData } from '../../lib/home';
+import Photo from '../ui/Photo.astro';
+
+interface Props {
+  world: HomePageData['world'];
+}
+
+const { world: w } = Astro.props;
+---
+
+<section aria-labelledby="world-title" data-block="the-world-of-nevma">
+  <div class="s-wrap s-sec" style="display: flex; flex-direction: column; gap: 40px">
+    <h2 id="world-title" class="s-h2 s-rv"
+      >{w.title}{' '}<span style="color: #615D55">{w.titleMuted}</span></h2
+    >
+    <ul
+      class="s-stg"
+      style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 28px"
+    >
+      {
+        w.cards.map((card) => (
+          <li>
+            <a
+              href={card.url}
+              class="s-card"
+              aria-label={card.ariaLabel}
+              target="_blank"
+              rel="noopener noreferrer"
+              style="display: flex; flex-direction: column; gap: 16px; text-decoration: none"
+            >
+              <span
+                style="display: block; aspect-ratio: 16 / 9; overflow: clip; border-radius: 4px; background: #000000"
+              >
+                <Photo
+                  photo={card.photo}
+                  slot="world"
+                  loading="lazy"
+                  alt=""
+                  style="width: 100%; height: 100%; object-fit: cover; display: block"
+                />
+              </span>
+              <span class="s-name" style="font-size: 13px">
+                {card.label}{' '}
+                <span style="color: #615D55">{card.labelMuted}</span>
+                {' '}↗
+              </span>
+              <span style="font-size: 15.5px; color: #3E3B35">{card.text}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

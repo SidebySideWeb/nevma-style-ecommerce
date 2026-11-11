@@ -17,7 +17,8 @@
   "scripts": {
     "dev": "pnpm --parallel --filter web --filter studio dev",
     "build": "pnpm --filter web build",
-    "check": "pnpm --filter web check && node scripts/check-placeholders.mjs",
+    "check": "pnpm --filter web check && node scripts/check-placeholders.mjs && node scripts/check-js-budget.mjs",
+    "lighthouse": "node scripts/lighthouse-report.mjs",
     "test": "pnpm --filter web test",
     "test:fidelity": "pnpm --filter web test:fidelity",
     "test:fidelity:self": "pnpm --filter web test:fidelity:self"

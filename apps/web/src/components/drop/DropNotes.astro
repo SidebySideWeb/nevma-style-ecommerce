@@ -1,0 +1,59 @@
+---
+import type { DropPageData } from '../../lib/drop';
+import { ui } from '../../content/ui';
+
+interface Props {
+  notesIntro: string;
+  notes: DropPageData['notes'];
+}
+
+const { notesIntro, notes } = Astro.props;
+---
+
+<section
+  aria-labelledby="notes-title"
+  style="border-bottom: 1px solid #CFC7B8"
+  data-block="drop-notes"
+>
+  <div
+    class="s-wrap s-sec"
+    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 40px 80px"
+  >
+    <div style="display: flex; flex-direction: column; gap: 18px"
+      ><h2 id="notes-title" class="s-h2 s-rv">{ui.drop.dropNotes}</h2>{
+        notesIntro ? (
+          <p style="margin: 0; max-width: 40ch; color: #3E3B35">{notesIntro}</p>
+        ) : null
+      }</div
+    >
+    <div>
+      {
+        notes.map((note, i) => {
+          const isFirst = i === 0;
+          const isLast = i === notes.length - 1;
+          const border = isLast
+            ? 'border-block: 1px solid #CFC7B8'
+            : 'border-top: 1px solid #CFC7B8';
+          return (
+            <details class="s-acc" open={isFirst} style={border}>
+              <summary>
+                {note.title}{' '}
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  aria-hidden="true"
+                  ><path d="M6 9l6 6 6-6"></path></svg
+                >
+              </summary>
+              <p style="margin: 0 0 22px; color: #3E3B35; max-width: 56ch">{note.text}</p>
+            </details>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+---
+import type { HomePageData } from '../../lib/home';
+
+interface Props {
+  rules: HomePageData['rules'];
+}
+
+const { rules: r } = Astro.props;
+---
+
+<section
+  aria-labelledby="ed-title"
+  style="border-bottom: 1px solid #CFC7B8"
+  data-block="five-then-never-again"
+>
+  <div class="s-wrap s-sec" style="display: flex; flex-direction: column; gap: 52px">
+    <h2 id="ed-title" class="s-h2 s-rv"
+      >{r.title}{' '}<span style="color: #615D55">{r.titleMuted}</span></h2
+    >
+    <ul class="s-4 s-stg" style="list-style: none; margin: 0; padding: 0">
+      {
+        r.items.map((item) => (
+          <li style="display: flex; flex-direction: column; gap: 14px">
+            <span class="s-disp" style="font-size: 38px; letter-spacing: 0.04em">
+              {item.mark}
+            </span>
+            <span class="s-name" style="font-size: 12.5px">
+              {item.title}
+            </span>
+            <span style="font-size: 15.5px; color: #3E3B35; max-width: 30ch">{item.text}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

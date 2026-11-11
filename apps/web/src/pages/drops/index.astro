@@ -1,0 +1,6 @@
+---
+import { currentDropSlug } from '../../lib/drop';
+
+const slug = await currentDropSlug();
+return Astro.redirect(slug ? `/drops/${slug}` : '/', 302);
+---

@@ -1,0 +1,83 @@
+---
+import type { PiecePageData } from '../../lib/piece';
+import { ui } from '../../content/ui';
+import { hasPhotoImage, resolvePhoto, slots } from '../../lib/sanity/image';
+import { isCommerceMock } from '../../lib/server/env';
+
+interface Props {
+  film: PiecePageData['film'];
+}
+
+const { film: f } = Astro.props;
+const playLabel = ui.product.playFilm('0:24');
+const posterSrc = isCommerceMock()
+  ? '/images/ribbon-glow.jpg'
+  : f.poster && hasPhotoImage(f.poster)
+    ? resolvePhoto(f.poster, slots.story)?.src
+    : null;
+---
+
+<section
+  aria-labelledby="art-title"
+  style="border-bottom: 1px solid #CFC7B8"
+  data-block="one-number-written-by-hand"
+>
+  <div
+    class="s-wrap s-sec"
+    style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px"
+  >
+    <p class="s-eb">{f.eyebrow}</p>
+    <h2
+      id="art-title"
+      class="s-disp"
+      style="margin: 0; max-width: 24ch; font-size: clamp(24px, 2.4vw, 36px); letter-spacing: 0.18em; line-height: 1.45"
+      >{f.title}</h2
+    >
+    <p style="margin: 0; max-width: 56ch; color: #3E3B35">{f.text}</p>
+    <div
+      style="position: relative; width: 100%; max-width: 1040px; aspect-ratio: 16 / 9; margin-top: 18px; background: #000000; border-radius: 4px; overflow: clip"
+      data-film
+    >
+      {
+        posterSrc ? (
+          <img
+            src={posterSrc}
+            alt=""
+            loading="lazy"
+            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.45; display: block"
+          />
+        ) : null
+      }
+      {
+        f.videoUrl ? (
+          <video
+            data-film-video
+            hidden
+            muted
+            playsinline
+            controls
+            style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #000"
+          >
+            <source src={f.videoUrl} />
+            {f.captionsUrl ? (
+              <track kind="captions" src={f.captionsUrl} srclang="en" label="English" default />
+            ) : null}
+          </video>
+        ) : null
+      }
+      <button
+        type="button"
+        aria-label={playLabel}
+        data-film-play
+        style="position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%; border: 1px solid #F5F5F7; background: rgba(0,0,0,0.4); color: #F5F5F7; cursor: pointer; display: inline-flex; align-items: center; justify-content: center"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
+          ><path d="M8 5.5v13l10.5-6.5z"></path></svg
+        >
+      </button>
+      <span style="position: absolute; left: 20px; bottom: 16px; font-size: 13px; color: #D2D2DA"
+        >{f.caption}</span
+      >
+    </div>
+  </div>
+</section>

@@ -11,9 +11,9 @@ definition-tee-bone,Definition Tee · Bone,,NEVMA Style,Tees,"style-001, edition
 definition-tee-bone,,,,,,,,M,NS-001-TEE-BNE-M,300,shopify,0,deny,manual,85.00,TRUE,TRUE,
 definition-tee-bone,,,,,,,,L,NS-001-TEE-BNE-L,300,shopify,0,deny,manual,85.00,TRUE,TRUE,
 definition-tee-bone,,,,,,,,XL,NS-001-TEE-BNE-XL,300,shopify,0,deny,manual,85.00,TRUE,TRUE,
-signal-overshirt,Signal Overshirt,,NEVMA Style,Outerwear,"style-002, edition-5",FALSE,Size,S,NS-002-OVS-S,300,shopify,1,deny,manual,[price],TRUE,TRUE,draft
-signal-overshirt,,,,,,,,M,NS-002-OVS-M,300,shopify,2,deny,manual,[price],TRUE,TRUE,
-signal-overshirt,,,,,,,,L,NS-002-OVS-L,300,shopify,1,deny,manual,[price],TRUE,TRUE,
-signal-overshirt,,,,,,,,XL,NS-002-OVS-XL,300,shopify,1,deny,manual,[price],TRUE,TRUE,
-suede-cap-sand,Suede Cap · Sand,,NEVMA Style,Headwear,"style-002, edition-5",FALSE,Size,One size,NS-002-CAP-SND-ONESIZE,300,shopify,5,deny,manual,[price],TRUE,TRUE,draft
-silk-square-70,Silk Square 70,,NEVMA Style,Silk,"style-002, edition-5",FALSE,Size,70 cm,NS-002-SLK-070-70CM,300,shopify,5,deny,manual,[price],TRUE,TRUE,draft
+signal-overshirt,Signal Overshirt,,NEVMA Style,Outerwear,"style-002, edition-5",FALSE,Size,S,NS-002-OVS-S,300,shopify,1,deny,manual,89,TRUE,TRUE,draft
+signal-overshirt,,,,,,,,M,NS-002-OVS-M,300,shopify,2,deny,manual,90,TRUE,TRUE,
+signal-overshirt,,,,,,,,L,NS-002-OVS-L,300,shopify,1,deny,manual,90,TRUE,TRUE,
+signal-overshirt,,,,,,,,XL,NS-002-OVS-XL,300,shopify,1,deny,manual,90,TRUE,TRUE,
+suede-cap-sand,Suede Cap · Sand,,NEVMA Style,Headwear,"style-002, edition-5",FALSE,Size,One size,NS-002-CAP-SND-ONESIZE,300,shopify,5,deny,manual,90,TRUE,TRUE,draft
+silk-square-70,Silk Square 70,,NEVMA Style,Silk,"style-002, edition-5",FALSE,Size,70 cm,NS-002-SLK-070-70CM,300,shopify,5,deny,manual,90,TRUE,TRUE,draft

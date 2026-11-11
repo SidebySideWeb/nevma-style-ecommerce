@@ -1,0 +1,45 @@
+---
+import type { ComingPieceData } from '../../lib/category';
+import EditionPips from '../ui/EditionPips.astro';
+
+interface Props {
+  piece: ComingPieceData;
+}
+
+const { piece: p } = Astro.props;
+---
+
+<section
+  aria-labelledby="cm-title"
+  class="s-dark"
+  style="background: #000000; color: #F5F5F7; position: relative; overflow: clip"
+  data-block="coming-piece"
+>
+  <img
+    class="s-drift"
+    src="/images/ribbon-cut.webp"
+    alt=""
+    style="position: absolute; right: -12%; top: 50%; width: min(56vw, 820px); margin-top: -280px; opacity: 0.55; pointer-events: none"
+  />
+  <div
+    class="s-wrap s-sec"
+    style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 40px 72px; align-items: center"
+  >
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <p class="s-eb" style="color: #F0E81C">{p.eyebrow}</p>
+      <h2 id="cm-title" class="s-disp" style="margin: 0; font-size: clamp(26px, 3vw, 44px); letter-spacing: 0.22em"
+        >{p.title}</h2
+      >
+      <p style="margin: 0; max-width: 42ch; color: #D2D2DA">{p.text}</p>
+      <div class="s-y" style="display: flex; align-items: center; gap: 12px">
+        <EditionPips filled={p.edition.meter.filled} total={p.edition.meter.total} />
+        <span style="font-size: 14.5px; color: #A8A8B4">{p.meterLine}</span>
+      </div>
+      <a href={p.href} class="s-btn s-btn-l" style="align-self: flex-start">{p.notifyLabel}</a>
+    </div>
+    <div
+      style="aspect-ratio: 4 / 5; max-width: 420px; width: 100%; justify-self: end; border: 1px solid #34343C; border-radius: 4px; background: radial-gradient(circle at 50% 35%, #1A1A1F 0%, #050506 70%); display: flex; align-items: flex-end; padding: 16px; box-sizing: border-box; font-size: 12px; color: #A8A8B4"
+      >{p.photoLabel}</div
+    >
+  </div>
+</section>

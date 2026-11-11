@@ -1,0 +1,15 @@
+---
+import { loadPieceEdition } from '../../lib/home';
+
+interface Props {
+  handle: string;
+  opensAt?: string | null;
+  fallbackTag: string;
+  style: string;
+}
+
+const { handle, opensAt, fallbackTag, style } = Astro.props;
+const edition = await loadPieceEdition(handle, opensAt, Astro.request.headers.get('cookie'));
+---
+
+<span class="s-tag" style={style}>{edition.cardTag || fallbackTag}</span>

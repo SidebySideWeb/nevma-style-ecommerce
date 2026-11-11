@@ -27,7 +27,8 @@ export default defineConfig({
   ],
   webServer: [
     { command: `node "${HERE}/serve-design.mjs"`, url: DESIGN + '/home.html', reuseExistingServer: true },
-    ...(SELF || process.env.SITE_URL ? [] : [{ command: 'pnpm --filter web preview --port 4321', url: SITE, reuseExistingServer: true, timeout: 120_000,
+    // @astrojs/vercel does not support `astro preview`; local fidelity uses the dev server.
+    ...(SELF || process.env.SITE_URL ? [] : [{ command: 'astro dev --port 4321 --host 127.0.0.1', cwd: dirname(dirname(HERE)), url: SITE, reuseExistingServer: true, timeout: 120_000,
       env: { COMMERCE_MOCK: '1', PUBLIC_FIXED_NOW: '2026-10-23T13:00:00Z' } }]),
   ],
 });

@@ -1,0 +1,104 @@
+---
+import type { HomePageData } from '../../lib/home';
+import Photo from '../ui/Photo.astro';
+import EditionPips from '../ui/EditionPips.astro';
+import DropLeftStat from '../commerce/DropLeftStat.astro';
+import HeroPieceMeter from '../commerce/HeroPieceMeter.astro';
+
+interface Props {
+  hero: HomePageData['hero'];
+  pieceHandles: string[];
+  opensAt?: string | null;
+}
+
+const { hero: h, pieceHandles, opensAt } = Astro.props;
+const imgStyle =
+  'position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block';
+---
+
+<section
+  aria-labelledby="hero-title"
+  class="s-hero"
+  style="border-bottom: 1px solid #CFC7B8"
+  data-block="hero"
+>
+  <div
+    class="s-wrap"
+    style="display: flex; flex-direction: column; justify-content: center; gap: 28px; padding-block: 72px 56px; max-width: 720px; margin-inline: 0 auto"
+  >
+    <p class="s-eb">{h.eyebrow}</p>
+    <h1
+      id="hero-title"
+      class="s-disp"
+      style="margin: 0; font-size: clamp(36px, 4.6vw, 68px); letter-spacing: 0.2em; line-height: 1.25"
+      >{
+        h.titleLines.map((line, i) => (
+          <>
+            {i > 0 ? <br /> : null}
+            {line}
+          </>
+        ))
+      }</h1
+    >
+    <span class="s-rule" aria-hidden="true" style="width: 120px"></span>
+    <p style="margin: 0; max-width: 42ch; font-size: 19px; color: #3E3B35">{h.intro}</p>
+    <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap">
+      <span aria-hidden="true" style="width: 28px; height: 1px; background: #0B0B0C"></span>
+      <span style="font-size: 15px; color: #3E3B35"
+        ><DropLeftStat server:defer handles={pieceHandles} fallbackLabel={h.leftLabel}>
+          <strong style="color: #0B0B0C" slot="fallback">{h.leftLabel}</strong>
+        </DropLeftStat>
+        {' '}{h.statSuffix}</span
+      >
+    </div>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap"
+      ><a href={h.primaryHref} class="s-btn s-btn-p"
+        >{h.primaryLabel}{' '}
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg
+        ></a
+      ><a href={h.secondaryHref} class="s-btn s-btn-o">{h.secondaryLabel}</a></div
+    >
+  </div>
+  <a
+    href={h.piece.href}
+    class="s-card"
+    aria-label={h.piece.ariaLabel}
+    style="display: block; position: relative; overflow: clip; background: #000000; min-height: 520px"
+  >
+    <Photo
+      photo={h.piece.photo}
+      slot="hero"
+      loading="eager"
+      style={`${imgStyle}; object-position: ${h.piece.objectPosition}`}
+      fetchpriority="high"
+    />
+    <HeroPieceMeter
+      server:defer
+      handle={h.piece.handle}
+      opensAt={opensAt}
+      fallbackFilled={h.piece.edition.meter.filled}
+      fallbackLine={h.piece.edition.stockLine}
+      title={h.piece.title}
+    >
+      <span
+        slot="fallback"
+        class="s-onimg"
+        style="position: absolute; left: 24px; bottom: 24px; display: inline-flex; align-items: center; gap: 12px; padding: 10px 16px; border-radius: 100px; background: rgba(0,0,0,0.66); color: #F5F5F7"
+        ><span class="s-f" style="font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase"
+          >{h.piece.title}</span
+        ><EditionPips filled={h.piece.edition.meter.filled} total={h.piece.edition.meter.total} /><span
+          class="s-f"
+          style="font-size: 11px; letter-spacing: 0.18em">{h.piece.edition.stockLine}</span
+        ></span
+      >
+    </HeroPieceMeter>
+  </a>
+</section>

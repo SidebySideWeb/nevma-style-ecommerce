@@ -1,0 +1,19 @@
+---
+import { ui } from '../../content/ui';
+
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<nav aria-label={ui.drop.breadcrumbLabel} class="s-wrap" style="padding-top: 28px" data-block="breadcrumb"
+  ><ol
+    class="s-f"
+    style="list-style: none; margin: 0; padding: 0; display: flex; gap: 10px; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: #615D55"
+    ><li><a href="/" style="color: #615D55">{ui.drop.breadcrumbHome}</a></li><li aria-hidden="true">/</li><li
+      ><a href="/pieces" style="color: #615D55">{ui.category.allPieces}</a></li
+    ><li aria-hidden="true">/</li><li aria-current="page" style="color: #0B0B0C">{name}</li></ol
+  ></nav
+>

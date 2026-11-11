@@ -1,0 +1,172 @@
+---
+import type { HomePageData } from '../../lib/home';
+import { countdownAria, countdownParts } from '../../lib/commerce/format';
+import { nowMs } from '../../lib/now';
+import { ui } from '../../content/ui';
+import EditionPips from '../ui/EditionPips.astro';
+import Photo from '../ui/Photo.astro';
+
+interface Props {
+  signal: NonNullable<HomePageData['signal']>;
+  notified?: boolean;
+  turnstileSiteKey?: string;
+}
+
+const { signal: s, notified = false, turnstileSiteKey } = Astro.props;
+const parts = countdownParts(s.opensAt, nowMs());
+const label = countdownAria(s.code, parts);
+---
+
+<section
+  aria-labelledby="next-title"
+  class="s-dark"
+  style="background: #000000; color: #F5F5F7; position: relative; overflow: clip"
+  data-block="signal"
+>
+  <img
+    class="s-drift"
+    src={s.backgroundSrc}
+    alt=""
+    style="position: absolute; right: -10%; top: 50%; width: min(60vw, 900px); margin-top: -300px; opacity: 0.7; pointer-events: none"
+  />
+  <div
+    aria-hidden="true"
+    style="position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 20% 50%, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0) 90%)"
+  >
+  </div>
+  <div
+    class="s-wrap s-sec"
+    style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); gap: 56px 72px; align-items: center"
+  >
+    <div style="display: flex; flex-direction: column; gap: 26px">
+      <p class="s-eb" style="color: #F0E81C">Next drop · {s.code}</p>
+      <h2
+        id="next-title"
+        class="s-disp"
+        style="margin: 0; font-size: clamp(34px, 4vw, 60px); letter-spacing: 0.24em"
+        >{s.name}</h2
+      >
+      <p style="margin: 0; max-width: 44ch; color: #D2D2DA">{s.summary}</p>
+      <div
+        class="s-cd"
+        role="timer"
+        aria-label={label}
+        data-opens-at={String(s.opensAtMs)}
+        data-drop-code={s.code}
+      >
+        <span
+          style="display: flex; flex-direction: column; gap: 4px; padding: 16px 0 0; border-top: 1px solid #34343C"
+          ><span
+            class="s-disp"
+            data-cd="days"
+            style="font-size: clamp(30px, 3vw, 44px); letter-spacing: 0.06em; font-variant-numeric: tabular-nums"
+            >{parts.display.days}</span
+          ><span class="s-eb" style="font-size: 10.5px">{ui.home.days}</span></span
+        ><span
+          style="display: flex; flex-direction: column; gap: 4px; padding: 16px 0 0; border-top: 1px solid #34343C"
+          ><span
+            class="s-disp"
+            data-cd="hours"
+            style="font-size: clamp(30px, 3vw, 44px); letter-spacing: 0.06em; font-variant-numeric: tabular-nums"
+            >{parts.display.hours}</span
+          ><span class="s-eb" style="font-size: 10.5px">{ui.home.hours}</span></span
+        ><span
+          style="display: flex; flex-direction: column; gap: 4px; padding: 16px 0 0; border-top: 1px solid #34343C"
+          ><span
+            class="s-disp"
+            data-cd="minutes"
+            style="font-size: clamp(30px, 3vw, 44px); letter-spacing: 0.06em; font-variant-numeric: tabular-nums"
+            >{parts.display.minutes}</span
+          ><span class="s-eb" style="font-size: 10.5px">{ui.home.minutes}</span></span
+        ><span
+          style="display: flex; flex-direction: column; gap: 4px; padding: 16px 0 0; border-top: 1px solid #34343C"
+          ><span
+            class="s-disp"
+            style="font-size: clamp(30px, 3vw, 44px); letter-spacing: 0.06em; font-variant-numeric: tabular-nums"
+            >{parts.display.time}</span
+          ><span class="s-eb" style="font-size: 10.5px">{ui.home.gmt}</span></span
+        >
+      </div>
+      <form
+        id="notify"
+        method="post"
+        action="/api/notify"
+        style="display: flex; gap: 10px; flex-wrap: wrap; max-width: 520px"
+      >
+        <input type="hidden" name="dropId" value={s.dropId} />
+        <label for="nd-email" class="s-vh">{ui.home.emailAddress}</label>
+        <input
+          id="nd-email"
+          name="email"
+          class="s-in"
+          type="email"
+          autocomplete="email"
+          required
+          placeholder={ui.home.emailPlaceholder}
+          style="flex: 1 1 240px; width: auto"
+        />
+        <!-- honeypot: clipped, no paint (fidelity fingerprints non-transparent backgrounds) -->
+        <input
+          type="text"
+          name="company"
+          class="s-vh"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+          style="background: transparent; border: 0; color: transparent"
+        />
+        {
+          turnstileSiteKey ? (
+            <div
+              class="cf-turnstile"
+              data-sitekey={turnstileSiteKey}
+              data-size="invisible"
+              style="display: none"
+            />
+          ) : null
+        }
+        <button type="submit" class="s-btn s-btn-l"
+          >{notified ? ui.home.onTheList : ui.home.notifyMe}</button
+        >
+      </form>
+      <p style="margin: 0; font-size: 13.5px; color: #A8A8B4">{s.homeNote}</p>
+    </div>
+    <ul
+      class="s-stg"
+      style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px"
+    >
+      {
+        s.teasers.map((t) => (
+          <li style="display: flex; flex-direction: column; gap: 12px">
+            <span
+              style="position: relative; display: flex; align-items: flex-end; aspect-ratio: 3 / 4; border: 1px solid #34343C; border-radius: 4px; overflow: clip; background: radial-gradient(circle at 50% 35%, #1A1A1F 0%, #050506 70%)"
+            >
+              <span
+                class="s-f"
+                style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 34px; font-weight: 300; letter-spacing: 0.1em; color: #34343C"
+              >
+                {t.index}
+              </span>
+              <span style="position: relative; padding: 12px; font-size: 12px; color: #A8A8B4">
+                <Photo photo={t.photo} placeholder="label" />
+              </span>
+            </span>
+            <span class="s-name" style="font-size: 11.5px">
+              {t.label}
+            </span>
+            <span class="s-y" style="display: flex; align-items: center; gap: 10px">
+              <EditionPips filled={t.editionSize} total={t.editionSize} />
+              <span style="font-size: 13px; color: #A8A8B4"
+                >{ui.stock.editionOf(t.editionSize)}</span
+              >
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<script>
+  import '../../scripts/countdown.ts';
+</script>

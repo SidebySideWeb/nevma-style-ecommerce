@@ -1,0 +1,56 @@
+---
+import type { CategoryPieceCard } from '../../lib/category';
+import EditionPips from '../ui/EditionPips.astro';
+import { ui } from '../../content/ui';
+import { resolvePhoto, slots } from '../../lib/sanity/image';
+
+interface Props {
+  piece: CategoryPieceCard;
+}
+
+const { piece: p } = Astro.props;
+const src = p.hasImage && p.photo ? resolvePhoto(p.photo, slots.hero)?.src : null;
+const alt = p.photo?.alt || '';
+---
+
+<section aria-label={ui.category.featuredAria} style="border-top: 1px solid #CFC7B8" data-block="featured-piece">
+  <div class="s-wrap s-feat" style="padding-block: 72px">
+    <a
+      href={p.href}
+      class="s-card"
+      aria-label={p.featuredAria}
+      style={`position: relative; display: block; aspect-ratio: 5 / 4; border-radius: 4px; overflow: clip; background: ${p.toneBg}`}
+    >
+      {
+        src ? (
+          <img
+            src={src}
+            alt={alt}
+            style={`width: 100%; height: 100%; object-fit: cover; object-position: ${p.objectPosition}; display: block`}
+          />
+        ) : null
+      }
+      <span
+        class="s-f"
+        style={`position: absolute; left: 22px; top: 20px; font-size: 12px; letter-spacing: 0.3em; color: ${p.numberColor}`}
+        >{ui.category.numberDrop(p.numberPad, p.dropCode)}</span
+      >
+    </a>
+    <div style="display: flex; flex-direction: column; gap: 20px; max-width: 460px">
+      <p class="s-eb">{p.dropCode}</p>
+      <h2 class="s-name" style="margin: 0; font-size: clamp(18px, 1.6vw, 24px); letter-spacing: 0.22em"
+        >{p.title}</h2
+      >
+      <p class="s-price" style="margin: 0; font-size: 19px">{p.priceLabel}</p>
+      <p style="margin: 0; color: #3E3B35">{p.cardStory}</p>
+      <div style="display: flex; flex-direction: column; gap: 10px; padding-block: 16px; border-block: 1px solid #CFC7B8">
+        <div style="display: flex; align-items: center; gap: 14px">
+          <EditionPips filled={p.edition.meter.filled} total={p.edition.meter.total} />
+          <strong style="font-size: 15px">{p.edition.stockLine}</strong>
+        </div>
+        <p style="margin: 0; font-size: 14.5px; color: #615D55">{p.sizeSummary}</p>
+      </div>
+      <a href={p.href} class="s-btn s-btn-p" style="align-self: flex-start">{ui.category.viewThePiece}</a>
+    </div>
+  </div>
+</section>

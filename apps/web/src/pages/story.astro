@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import Announcement from '../components/chrome/Announcement.astro';
+import Header from '../components/chrome/Header.astro';
+import Footer from '../components/chrome/Footer.astro';
+import StoryBlocks from '../components/story/StoryBlocks.astro';
+import { loadChrome } from '../lib/chrome';
+import { loadStory } from '../lib/story';
+import { shouldNoindex } from '../lib/seo';
+
+const [chrome, page] = await Promise.all([loadChrome({ onHome: false }), loadStory()]);
+if (!page) {
+  return new Response(null, { status: 404, statusText: 'Not Found' });
+}
+---
+
+<Base
+  title={page.seo.title || 'NEVMA Style — Story'}
+  description={page.seo.description || chrome.seo.description}
+  board="About"
+  canonical="/story"
+  noindex={shouldNoindex({ seoNoindex: page.seo.noindex })}
+>
+  {chrome.announcement ? <Announcement announcement={chrome.announcement} /> : null}
+  <Header mainNav={chrome.mainNav} menuExtra={chrome.menuExtra} />
+  <main id="main">
+    <StoryBlocks page={page} />
+  </main>
+  <Footer footer={chrome.footer} />
+</Base>
