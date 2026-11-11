@@ -43,6 +43,14 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
 
+      # Private Sanity dataset — piece/drop/story/care pages 404 without a Viewer token.
+      - name: Require Sanity read token
+        run: |
+          if [ -z "$SANITY_READ_TOKEN" ]; then
+            echo "::error::Add repo secret SANITY_READ_TOKEN (Sanity Viewer token for project j931aey9). Fidelity and content pages need it."
+            exit 1
+          fi
+
       - name: Write root .env for Astro/Vite
         run: |
           {
@@ -104,6 +112,13 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: pnpm
+
+      - name: Require Sanity read token
+        run: |
+          if [ -z "$SANITY_READ_TOKEN" ]; then
+            echo "::error::Add repo secret SANITY_READ_TOKEN (Sanity Viewer token for project j931aey9)."
+            exit 1
+          fi
 
       - name: Write root .env for Astro/Vite
         run: |

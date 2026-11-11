@@ -207,7 +207,7 @@ function lineView(
     href: `/pieces/${line.handle}`,
     title: line.title,
     size: line.size,
-    meta: ui.bag.lineMeta(dropCode || 'STYLE', line.size),
+    meta: ui.bag.lineMeta(dropCode || 'STYLE 001', line.size),
     priceLabel: formatSitePrice(line.price.amount, line.price.currency),
     stockLine: sold ? ui.stock.soldOutWhileInBag : edition.stockLine,
     edition: sold
