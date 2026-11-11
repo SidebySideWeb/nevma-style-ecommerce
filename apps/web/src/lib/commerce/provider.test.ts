@@ -44,9 +44,13 @@ describe('commerce provider factory', () => {
     expect(piece?.published).toBe(true);
   });
 
-  it('chooses shopify stub otherwise', () => {
+  it('degrades unfinished shopify provider to safe off reads', async () => {
     const p = createCommerceProvider({ commerceEnabled: true, commerceMock: false });
     expect(p.name).toBe('shopify');
-    expect(() => void p.getPiece('x')).toThrow(/prompt 12/i);
+    await expect(p.getCart()).resolves.toEqual({ id: 'off', checkoutUrl: null, lines: [] });
+    await expect(p.getPiece('definition-tee-white')).resolves.toMatchObject({
+      handle: 'definition-tee-white',
+      price: null,
+    });
   });
 });

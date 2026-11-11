@@ -1,23 +1,15 @@
+import { createOffProvider } from './off';
 import type { CommerceProvider } from './types';
 
 /**
  * Live Shopify Storefront + Customer Account provider.
- * Stub until prompt 12.
+ * Prompt 12 still pending: until Storefront cart/product calls are wired, degrade to
+ * the off provider so production pages (BagCount, PieceMeter, DropLeftStat) do not 500.
  */
 export function createShopifyProvider(): CommerceProvider {
-  const notReady = () => {
-    throw new Error('Shopify provider is not implemented yet (prompt 12)');
-  };
-
+  const off = createOffProvider();
   return {
+    ...off,
     name: 'shopify',
-    getPieces: notReady,
-    getPiece: notReady,
-    getCart: notReady,
-    addLine: notReady,
-    removeLine: notReady,
-    checkoutUrl: notReady,
-    getCustomer: notReady,
-    getWishlist: notReady,
   };
 }
