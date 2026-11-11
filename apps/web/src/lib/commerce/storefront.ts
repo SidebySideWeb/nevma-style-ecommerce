@@ -23,15 +23,17 @@ function shopConfig(): {
   const domain = serverEnv('SHOPIFY_STORE_DOMAIN');
   const version = serverEnv('SHOPIFY_API_VERSION') || '2026-10';
   if (!domain) throw new Error('SHOPIFY_STORE_DOMAIN is not set');
-  const privateToken = serverEnv('SHOPIFY_STOREFRONT_PRIVATE_TOKEN') || null;
-  const publicToken = serverEnv('SHOPIFY_STOREFRONT_PUBLIC_TOKEN') || null;
+  // Headless private tokens are opaque; Admin `shpat_` must never be sent as Storefront auth.
+  const rawPrivate = (serverEnv('SHOPIFY_STOREFRONT_PRIVATE_TOKEN') || '').trim();
+  const privateToken = rawPrivate && !rawPrivate.startsWith('shpat_') ? rawPrivate : null;
+  const publicToken = (serverEnv('SHOPIFY_STOREFRONT_PUBLIC_TOKEN') || '').trim() || null;
   if (!privateToken && !publicToken) {
     throw new Error('SHOPIFY_STOREFRONT_PRIVATE_TOKEN or PUBLIC_TOKEN is required');
   }
   return {
     endpoint: `https://${domain}/api/${version}/graphql.json`,
-    privateToken: privateToken?.trim() || null,
-    publicToken: publicToken?.trim() || null,
+    privateToken,
+    publicToken,
   };
 }
 
