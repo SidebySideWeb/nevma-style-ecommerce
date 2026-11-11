@@ -229,8 +229,8 @@ export function createShopifyProvider(opts: ShopifyProviderOptions = {}): Commer
 
     async addLine(variantId) {
       let cartId = await ensureCartId();
-      let cart = await fetchCart(cartId);
-      let mapped = toCart(cart);
+      const cart = await fetchCart(cartId);
+      const mapped = toCart(cart);
 
       // Resolve product handle for the new variant so we can replace same-piece lines.
       const variantData = await storefrontGraphql<{
