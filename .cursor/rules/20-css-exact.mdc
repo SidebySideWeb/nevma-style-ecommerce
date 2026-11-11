@@ -1,0 +1,9 @@
+---
+description: CSS must reproduce the design exactly
+globs: apps/web/src/**/*.css, apps/web/src/**/*.astro
+---
+- src/styles/style.css and src/styles/page-*.css are copied from design/build/css/ byte for byte. Do not reformat, reorder, merge or "clean up" them. Load style.css globally and the page file only on its page(s) (see the board column in docs/PAGES.md).
+- Inline styles from the block snippets stay with their element (style attribute) or move to a component <style is:global> rule scoped by a unique class with identical declarations and equal or higher precedence. Values are copied, never retyped from memory, never rounded.
+- No new colours, sizes, spacing or radii. If something seems missing, it is in the snippet or the CSS files; search there.
+- Fonts: self-hosted files from design/build/fonts (Montserrat 300/400/500, Nunito Sans variable incl. italic), same @font-face rules as fonts/fonts.css, font-display swap, preload the two used above the fold.
+- Hover/focus/active styles are in style.css; keep them. Motion durations and easings come from the :root custom properties.

@@ -1,0 +1,141 @@
+# PR / main checks — same shape as other NEVMA SidebySideWeb repos
+# (install → check → unit → build), plus design fidelity.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Check, test, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      ASTRO_TELEMETRY_DISABLED: '1'
+      PUBLIC_SITE_URL: http://localhost:4321
+      PUBLIC_SANITY_PROJECT_ID: ${{ secrets.PUBLIC_SANITY_PROJECT_ID || 'j931aey9' }}
+      PUBLIC_SANITY_DATASET: ${{ secrets.PUBLIC_SANITY_DATASET || 'production' }}
+      SANITY_STUDIO_PROJECT_ID: ${{ secrets.PUBLIC_SANITY_PROJECT_ID || 'j931aey9' }}
+      SANITY_STUDIO_DATASET: ${{ secrets.PUBLIC_SANITY_DATASET || 'production' }}
+      SANITY_READ_TOKEN: ${{ secrets.SANITY_READ_TOKEN }}
+      COMMERCE_ENABLED: 'true'
+      COMMERCE_MOCK: '1'
+      PUBLIC_FIXED_NOW: '2026-10-23T13:00:00Z'
+      PUBLIC_TURNSTILE_SITE_KEY: 1x00000000000000000000AA
+      TURNSTILE_SECRET_KEY: 1x0000000000000000000000000000000AA
+      SESSION_SECRET: ci-session-secret-at-least-32-chars!!
+      CRON_SECRET: ci-cron-secret
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.28.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Write root .env for Astro/Vite
+        run: |
+          {
+            echo "PUBLIC_SITE_URL=$PUBLIC_SITE_URL"
+            echo "PUBLIC_SANITY_PROJECT_ID=$PUBLIC_SANITY_PROJECT_ID"
+            echo "PUBLIC_SANITY_DATASET=$PUBLIC_SANITY_DATASET"
+            echo "SANITY_STUDIO_PROJECT_ID=$SANITY_STUDIO_PROJECT_ID"
+            echo "SANITY_STUDIO_DATASET=$SANITY_STUDIO_DATASET"
+            echo "SANITY_READ_TOKEN=$SANITY_READ_TOKEN"
+            echo "COMMERCE_ENABLED=$COMMERCE_ENABLED"
+            echo "COMMERCE_MOCK=$COMMERCE_MOCK"
+            echo "PUBLIC_FIXED_NOW=$PUBLIC_FIXED_NOW"
+            echo "PUBLIC_TURNSTILE_SITE_KEY=$PUBLIC_TURNSTILE_SITE_KEY"
+            echo "TURNSTILE_SECRET_KEY=$TURNSTILE_SECRET_KEY"
+            echo "SESSION_SECRET=$SESSION_SECRET"
+            echo "CRON_SECRET=$CRON_SECRET"
+          } > .env
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Check (astro, tsc, eslint, placeholders, JS budget)
+        run: pnpm check
+
+      - name: Unit tests
+        run: pnpm test
+
+      - name: Build
+        run: pnpm build
+
+  fidelity:
+    name: Design fidelity
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    needs: check
+    env:
+      ASTRO_TELEMETRY_DISABLED: '1'
+      CI: '1'
+      PUBLIC_SITE_URL: http://127.0.0.1:4321
+      PUBLIC_SANITY_PROJECT_ID: ${{ secrets.PUBLIC_SANITY_PROJECT_ID || 'j931aey9' }}
+      PUBLIC_SANITY_DATASET: ${{ secrets.PUBLIC_SANITY_DATASET || 'production' }}
+      SANITY_STUDIO_PROJECT_ID: ${{ secrets.PUBLIC_SANITY_PROJECT_ID || 'j931aey9' }}
+      SANITY_STUDIO_DATASET: ${{ secrets.PUBLIC_SANITY_DATASET || 'production' }}
+      SANITY_READ_TOKEN: ${{ secrets.SANITY_READ_TOKEN }}
+      COMMERCE_ENABLED: 'true'
+      COMMERCE_MOCK: '1'
+      PUBLIC_FIXED_NOW: '2026-10-23T13:00:00Z'
+      PUBLIC_TURNSTILE_SITE_KEY: 1x00000000000000000000AA
+      TURNSTILE_SECRET_KEY: 1x0000000000000000000000000000000AA
+      SESSION_SECRET: ci-session-secret-at-least-32-chars!!
+      CRON_SECRET: ci-cron-secret
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.28.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Write root .env for Astro/Vite
+        run: |
+          {
+            echo "PUBLIC_SITE_URL=$PUBLIC_SITE_URL"
+            echo "PUBLIC_SANITY_PROJECT_ID=$PUBLIC_SANITY_PROJECT_ID"
+            echo "PUBLIC_SANITY_DATASET=$PUBLIC_SANITY_DATASET"
+            echo "SANITY_STUDIO_PROJECT_ID=$SANITY_STUDIO_PROJECT_ID"
+            echo "SANITY_STUDIO_DATASET=$SANITY_STUDIO_DATASET"
+            echo "SANITY_READ_TOKEN=$SANITY_READ_TOKEN"
+            echo "COMMERCE_ENABLED=$COMMERCE_ENABLED"
+            echo "COMMERCE_MOCK=$COMMERCE_MOCK"
+            echo "PUBLIC_FIXED_NOW=$PUBLIC_FIXED_NOW"
+            echo "PUBLIC_TURNSTILE_SITE_KEY=$PUBLIC_TURNSTILE_SITE_KEY"
+            echo "TURNSTILE_SECRET_KEY=$TURNSTILE_SECRET_KEY"
+            echo "SESSION_SECRET=$SESSION_SECRET"
+            echo "CRON_SECRET=$CRON_SECRET"
+          } > .env
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Install Playwright Chromium
+        run: pnpm --filter web exec playwright install --with-deps chromium
+
+      - name: Fidelity (desktop + phone)
+        run: pnpm test:fidelity
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: fidelity-report
+          path: |
+            apps/web/fidelity-report
+            apps/web/test-results
+          retention-days: 7

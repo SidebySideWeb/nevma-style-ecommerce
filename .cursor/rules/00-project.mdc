@@ -1,0 +1,11 @@
+---
+description: NEVMA Style — always-on project rules
+alwaysApply: true
+---
+- Read AGENTS.md before any change. The designs in design/build are the spec; build them exactly.
+- Stack: Astro (apps/web) on Vercel, Sanity Studio (apps/studio), Shopify Storefront + Customer Account APIs (products synced into Sanity by Sanity Connect), Resend, Turnstile. No separate database: forms, wishlist and preferences are Sanity documents written by the server. pnpm workspace.
+- Do not add frameworks (no React/Vue/Svelte islands, no Tailwind, no UI kits). Vanilla TypeScript for behaviour, ≤ 30 KB gzipped JS per page.
+- Prices/stock from Shopify only. Copy from Sanity or src/content/ui.ts only.
+- Every top-level block has data-block="<id>" from design/build/blocks.json.
+- A task is done only when its prompt's checks pass, including `pnpm test:fidelity` for any page it touched.
+- Keep docs/DECISIONS.md updated when you make a choice the docs do not cover; ask the user when a choice changes what the client sees or pays.

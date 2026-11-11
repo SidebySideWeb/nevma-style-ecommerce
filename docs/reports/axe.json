@@ -1,0 +1,913 @@
+{
+  "base": "http://127.0.0.1:4322",
+  "scannedAt": "2026-11-11T17:34:35.599Z",
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": [
+                "a[aria-label=\"Definition Tee, White\"]"
+              ],
+              "html": "<a href=\"/pieces/definition-tee-white\" class=\"s-card\" aria-label=\"Definition Tee, White\" style=\"display: block; position: relative; overflow: clip; background: #000000; min-height: 520px\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/drops/style-001",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[aria-label=\"NEVMA Style home\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": [
+                "a[aria-label=\"Definition Tee · White\"]"
+              ],
+              "html": "<a href=\"/pieces/definition-tee-white\" class=\"s-card\" aria-label=\"Definition Tee · White\" style=\"display: block; position: relative; aspect-ratio: 4 / 5; overflow: clip; border-radius: 4px; background",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": [
+                "a[aria-label=\"Wordmark Tee · Bone\"]"
+              ],
+              "html": "<a href=\"/pieces/wordmark-tee-bone\" class=\"s-card\" aria-label=\"Wordmark Tee · Bone\" style=\"display: block; position: relative; aspect-ratio: 4 / 5; overflow: clip; border-radius: 4px; background: #D9D",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/pieces/definition-tee-white",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/pieces/suede-cap-sand",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/pieces",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": [
+                ".s-ix[href$=\"silk-square-70\"]"
+              ],
+              "html": "<a href=\"/pieces/silk-square-70\" class=\"s-ix\" aria-label=\"Silk Square 70, STYLE 002 · 4 Dec, Edition of 5 · coming\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": [
+                ".s-ix[href$=\"suede-cap-sand\"]"
+              ],
+              "html": "<a href=\"/pieces/suede-cap-sand\" class=\"s-ix\" aria-label=\"Suede Cap · Sand, STYLE 002 · 4 Dec, Edition of 5 · coming\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/pieces?view=gallery",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": [
+                ".s-card[href$=\"silk-square-70\"]"
+              ],
+              "html": "<a href=\"/pieces/silk-square-70\" class=\"s-card\" aria-label=\"Silk Square 70, STYLE 002 · 4 Dec, Edition of 5 · coming\" style=\"display: flex; flex-direction: column; gap: 14px; text-decoration: none\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": [
+                ".s-card[href$=\"suede-cap-sand\"]"
+              ],
+              "html": "<a href=\"/pieces/suede-cap-sand\" class=\"s-card\" aria-label=\"Suede Cap · Sand, STYLE 002 · 4 Dec, Edition of 5 · coming\" style=\"display: flex; flex-direction: column; gap: 14px; text-decoration: none\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/pieces?filter=available",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": [
+                ".s-ix[href$=\"wordmark-tee-bone\"]"
+              ],
+              "html": "<a href=\"/pieces/wordmark-tee-bone\" class=\"s-ix\" aria-label=\"Wordmark Tee · Bone, STYLE 001, Last piece, £75\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": [
+                ".s-ix[href$=\"definition-tee-white\"]"
+              ],
+              "html": "<a href=\"/pieces/definition-tee-white\" class=\"s-ix\" aria-label=\"Definition Tee · White, STYLE 001, 3 of 5 left, £85\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/pieces?filter=coming",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": [
+                ".s-ix[href$=\"silk-square-70\"]"
+              ],
+              "html": "<a href=\"/pieces/silk-square-70\" class=\"s-ix\" aria-label=\"Silk Square 70, STYLE 002 · 4 Dec, Edition of 5 · coming\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": [
+                ".s-ix[href$=\"suede-cap-sand\"]"
+              ],
+              "html": "<a href=\"/pieces/suede-cap-sand\" class=\"s-ix\" aria-label=\"Suede Cap · Sand, STYLE 002 · 4 Dec, Edition of 5 · coming\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/pieces?filter=sold-out",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": [
+                ".s-ix[href$=\"definition-tee-bone\"]"
+              ],
+              "html": "<a href=\"/pieces/definition-tee-bone\" class=\"s-ix\" aria-label=\"Definition Tee · Bone, STYLE 001, Sold out, £85\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/categories/tees",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[aria-label=\"NEVMA Style home\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": [
+                "a[aria-label=\"Definition Tee · White\"]"
+              ],
+              "html": "<a href=\"/pieces/definition-tee-white\" class=\"s-card\" aria-label=\"Definition Tee · White\" style=\"position: relative; display: block; aspect-ratio: 5 / 4; border-radius: 4px; overflow: clip; background",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": [
+                "a[href$=\"wordmark-tee-bone\"]"
+              ],
+              "html": "<a href=\"/pieces/wordmark-tee-bone\" class=\"s-card\" aria-label=\"Wordmark Tee · Bone, £75, Last piece of five\" style=\"display: flex; flex-direction: column; gap: 18px; text-decoration: none\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/categories/outerwear",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[aria-label=\"NEVMA Style home\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/categories/headwear",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[aria-label=\"NEVMA Style home\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/categories/silk",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[aria-label=\"NEVMA Style home\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/bag",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/account/sign-in",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/account/sign-in?mode=create",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/account",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/account/orders",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/account/addresses",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/account/profile",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/wishlist",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": [
+                "a[aria-label=\"Definition Tee · White\"]"
+              ],
+              "html": "<a href=\"/pieces/definition-t...\" class=\"s-card\" aria-label=\"Definition Tee · Whi...\" style=\"position: relative; ...\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "target": [
+                "a[href$=\"suede-cap-sand\"]"
+              ],
+              "html": "<a href=\"/pieces/suede-cap-sand\" class=\"s-card\" aria-label=\"Suede Cap · Sand\" ...>",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/story",
+      "status": 200,
+      "violations": 3,
+      "serious": 2,
+      "ids": [
+        "serious:color-contrast",
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "nodes": [
+            {
+              "target": [
+                "section[aria-labelledby=\"mk-title\"] > .s-sec.s-wrap > div:nth-child(2)"
+              ],
+              "html": "<div style=\"aspect-ratio: 5 / 4; border-radius: 4px; background: #D9D3C8; display: flex; align-items: center; justify-content: center; color: #615D55; font-size: 13px\">[Photo · workshop, hands at work",
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.39 (foreground color: #615d55, background color: #d9d3c8, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/client-care/shipping",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/client-care/returns",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/client-care/faq",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/client-care/contact",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/legal/terms",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/legal/privacy",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/legal/cookies",
+      "status": 200,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/this-page-does-not-exist-404",
+      "status": 404,
+      "violations": 2,
+      "serious": 1,
+      "ids": [
+        "serious:label-content-name-mismatch",
+        "moderate:region"
+      ],
+      "detail": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "nodes": [
+            {
+              "target": [
+                "a[href=\"/\"]"
+              ],
+              "html": "<a href=\"/\" aria-label=\"NEVMA Style home\" style=\"display: flex; align-items: center; gap: 14px; text-decoration: none; color: #0B0B0C\">",
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
