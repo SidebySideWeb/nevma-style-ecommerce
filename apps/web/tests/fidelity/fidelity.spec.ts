@@ -50,6 +50,11 @@ async function open(page: Page, url: string, fixture: string, steps: Step[]) {
       }
     }
     await page.waitForLoadState('networkidle');
+    // Add-to-bag opens the drawer via fetch; networkidle can resolve before openDrawer runs.
+    if (s.click?.name?.includes('Add to bag')) {
+      await page.locator('[data-block="bag-drawer"]').waitFor({ state: 'visible', timeout: 15_000 });
+      await page.locator('[data-block="bag-scrim"]').waitFor({ state: 'visible', timeout: 5_000 });
+    }
   }
   // Clicks leave the cursor on the control; clear hover so open states match the static design.
   await page.mouse.move(0, 0);

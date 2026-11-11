@@ -17,7 +17,8 @@ export default defineConfig({
   testMatch: /fidelity\.spec\.ts$/,
   timeout: 90_000,
   fullyParallel: true,
-  workers: process.env.CI ? 2 : undefined,
+  // One worker in CI: astro dev + parallel projects was racing product~added drawer open.
+  workers: process.env.CI ? 1 : undefined,
   reporter: [['list'], ['html', { open: 'never', outputFolder: '../../fidelity-report' }]],
   outputDir: '../../test-results/fidelity',
   use: { reducedMotion: 'reduce', timezoneId: 'Europe/London', locale: 'en-GB', deviceScaleFactor: 1 },
