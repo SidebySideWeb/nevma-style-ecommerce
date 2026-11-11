@@ -1,9 +1,0 @@
----
-description: API routes, forms, webhooks and secrets
-globs: apps/web/src/pages/api/**, apps/web/src/lib/server/**
----
-- Every form route: Turnstile verification (server-side), honeypot field, zod validation, rate limit per IP, generic error messages. Store as Sanity documents (formSubmission / customerProfile, IDs with a "." so they stay private) with the Editor robot token SANITY_WRITE_TOKEN on the server only; email via Resend.
-- Webhooks (Shopify, Sanity): verify signatures, reject replays older than 5 minutes where a timestamp exists.
-- Cookies: ns_cart, ns_session (encrypted, HttpOnly, Secure, SameSite=Lax), ns_consent, ns_wishlist (guest list, not HttpOnly). Names and lifetimes as in the Cookies page.
-- No PII in logs. Customer data is fetched per request with the customer's token; never cache account pages (Cache-Control: private, no-store).
-- Analytics only after consent.
