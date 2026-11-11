@@ -50,6 +50,7 @@ export const POST: APIRoute = async ({ request }) => {
   const action = (body.action || 'add').trim();
   const provider = createCommerceProvider({
     fixtureFlags: fixtureFlagsFromCookie(cookie),
+    cartId: readCookie(cookie, 'ns_cart'),
   });
 
   try {

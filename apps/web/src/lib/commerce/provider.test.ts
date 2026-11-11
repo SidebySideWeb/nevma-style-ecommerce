@@ -44,13 +44,9 @@ describe('commerce provider factory', () => {
     expect(piece?.published).toBe(true);
   });
 
-  it('degrades unfinished shopify provider to safe off reads', async () => {
+  it('chooses shopify when mock is off', () => {
     const p = createCommerceProvider({ commerceEnabled: true, commerceMock: false });
     expect(p.name).toBe('shopify');
-    await expect(p.getCart()).resolves.toEqual({ id: 'off', checkoutUrl: null, lines: [] });
-    await expect(p.getPiece('definition-tee-white')).resolves.toMatchObject({
-      handle: 'definition-tee-white',
-      price: null,
-    });
   });
 });
+

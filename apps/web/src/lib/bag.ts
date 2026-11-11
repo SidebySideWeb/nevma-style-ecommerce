@@ -253,6 +253,7 @@ export async function loadBag(cookieHeader: string | null): Promise<BagPageData>
   const setCookies: string[] = [];
   const provider = createCommerceProvider({
     fixtureFlags: fixtureFlagsFromCookie(cookieHeader),
+    cartId: readCookie(cookieHeader, 'ns_cart'),
   });
 
   const cart = await provider.getCart();
@@ -401,6 +402,7 @@ export async function prepareCheckout(cookieHeader: string | null): Promise<{
 }> {
   const provider = createCommerceProvider({
     fixtureFlags: fixtureFlagsFromCookie(cookieHeader),
+    cartId: readCookie(cookieHeader, 'ns_cart'),
   });
   let cart = await provider.getCart();
   const unavailable = cart.lines.filter(isUnavailable);

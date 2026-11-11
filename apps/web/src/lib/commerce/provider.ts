@@ -10,6 +10,9 @@ export type CreateProviderOptions = FixtureOptions & {
   /** Override env detection in tests. */
   commerceEnabled?: boolean;
   commerceMock?: boolean;
+  /** Override ALS / cookie cart id (tests + explicit API routes). */
+  cartId?: string | null;
+  buyerIp?: string | null;
 };
 
 function envFlag(name: string, fallback = false): boolean {
@@ -25,7 +28,7 @@ export function createCommerceProvider(opts: CreateProviderOptions = {}): Commer
   const mock = opts.commerceMock ?? envFlag('COMMERCE_MOCK', false);
   if (mock) return createFixtureProvider({ fixtureFlags: opts.fixtureFlags });
 
-  return createShopifyProvider();
+  return createShopifyProvider({ cartId: opts.cartId, buyerIp: opts.buyerIp });
 }
 
 export { createFixtureProvider, createOffProvider, createShopifyProvider };

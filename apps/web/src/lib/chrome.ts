@@ -1,6 +1,8 @@
 import { formatAnnounceDateTime } from './commerce/format';
 import { createCommerceProvider } from './commerce/provider';
 import { nowMs } from './now';
+import { CART_COOKIE, readCookie } from './server/cart-cookie';
+import { isCommerceMock } from './server/env';
 import { sanityConfigured, sanityFetch } from './sanity/client';
 import { chromeQuery } from './sanity/queries';
 import { ui } from '../content/ui';
@@ -213,14 +215,30 @@ export function fixtureFlagsFromCookie(cookieHeader: string | null): string | nu
   return m ? decodeURIComponent(m[1]!) : null;
 }
 
+function guestWishlistCount(cookieHeader: string | null): number {
+  if (!cookieHeader) return 0;
+  const m = cookieHeader.match(/(?:^|;\s*)ns_wishlist=([^;]*)/);
+  if (!m?.[1]) return 0;
+  try {
+    const parsed = JSON.parse(decodeURIComponent(m[1])) as unknown;
+    return Array.isArray(parsed) ? parsed.filter((x) => typeof x === 'string').length : 0;
+  } catch {
+    return decodeURIComponent(m[1])
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean).length;
+  }
+}
+
 export async function headerCounts(cookieHeader: string | null): Promise<{
   bag: number;
   wishlist: number;
 }> {
   const provider = createCommerceProvider({
     fixtureFlags: fixtureFlagsFromCookie(cookieHeader),
+    cartId: readCookie(cookieHeader, CART_COOKIE),
   });
-  const [cart, wishlist] = await Promise.all([provider.getCart(), provider.getWishlist()]);
+  const cart = await provider.getCart();
   let bag = cart.lines.filter(
     (l) => !l.soldWhileInBag && l.availableForSale && l.quantityAvailable > 0,
   ).length;
@@ -231,7 +249,10 @@ export async function headerCounts(cookieHeader: string | null): Promise<{
   if (/(?:^|,)\s*bag-empty\s*(?:,|$)/.test(flags) || /(?:^|,)\s*bag-normal\s*(?:,|$)/.test(flags)) {
     bag = 1;
   }
-  return { bag, wishlist: wishlist.length };
+  const wishlist = isCommerceMock()
+    ? (await provider.getWishlist()).length
+    : guestWishlistCount(cookieHeader);
+  return { bag, wishlist };
 }
 
 /** Design chrome counts used as island fallbacks (exact size). */
