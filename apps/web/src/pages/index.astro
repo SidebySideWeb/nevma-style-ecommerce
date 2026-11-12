@@ -30,7 +30,7 @@ const notified = Astro.url.searchParams.get('sent') === '1';
 const pieceHandles = home.pieces.cards.map((c) => c.handle);
 const turnstileSiteKey = serverEnv('PUBLIC_TURNSTILE_SITE_KEY');
 
-const title = home.seo.title || chrome.seo.title || 'NEVMA Style — Home';
+const title = home.seo.title || chrome.seo.title || 'NEVMA Style - Home';
 const description =
   home.seo.description ||
   chrome.seo.description ||

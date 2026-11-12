@@ -1,4 +1,4 @@
-/* NEVMA Style — generated from the design canvas. Do not edit by hand: change the tokens in docs/DESIGN-SYSTEM.md and regenerate, or edit together with the fidelity tests. */
+/* NEVMA Style - generated from the design canvas. Do not edit by hand: change the tokens in docs/DESIGN-SYSTEM.md and regenerate, or edit together with the fidelity tests. */
 .s-bag{display:flex;flex-wrap:wrap;gap:40px 72px;align-items:flex-start}
 .s-bag>.s-items{flex:999 1 560px;min-width:0}
 .s-bag>.s-sum{flex:1 1 340px;min-width:0}

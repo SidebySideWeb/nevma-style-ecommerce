@@ -86,7 +86,7 @@ function pad2(n: number): string {
   return n < 10 ? `0${n}` : String(n);
 }
 
-/** "4 Dec" — archive coming drop label (design). */
+/** "4 Dec" - archive coming drop label (design). */
 export function formatDayMon(input: string | number | Date): string {
   const d = typeof input === 'object' && !(input instanceof Date) ? new Date(String(input)) : new Date(input);
   const parts = new Intl.DateTimeFormat('en-GB', {
@@ -248,7 +248,7 @@ function mapPieces(
     shownLabel: ui.pieces.shown(shown),
     rows,
     seo: {
-      title: raw.shop?.seo?.title || 'NEVMA Style — All pieces',
+      title: raw.shop?.seo?.title || 'NEVMA Style - All pieces',
       description: raw.shop?.seo?.description,
       noindex: raw.shop?.seo?.noindex,
     },

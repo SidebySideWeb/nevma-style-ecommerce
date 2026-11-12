@@ -6,7 +6,7 @@
 export const emailCopy = {
   brand: {
     fromName: 'NEVMA Style',
-    signOff: '— NEVMA Style · London',
+    signOff: '- NEVMA Style · London',
     footerNote: 'NEVMA Style · London. Limited by design.',
   },
 
@@ -20,7 +20,7 @@ export const emailCopy = {
         `We’ll email you the moment ${dropCode} · ${dropName} opens.`,
         `No newsletter unless you asked for the letter.`,
         ``,
-        `— NEVMA Style · London`,
+        `- NEVMA Style · London`,
       ].join('\n'),
   },
 
@@ -32,7 +32,7 @@ export const emailCopy = {
       ``,
       `Stories and early looks, about once a month. Unsubscribe any time from the link in each email.`,
       ``,
-      `— NEVMA Style · London`,
+      `- NEVMA Style · London`,
     ].join('\n'),
   },
 
@@ -42,7 +42,7 @@ export const emailCopy = {
     text: [
       `Thank you. Your message reached client care; we’ll reply by tomorrow evening.`,
       ``,
-      `— NEVMA Style · London`,
+      `- NEVMA Style · London`,
     ].join('\n'),
   },
 
@@ -71,7 +71,7 @@ export const emailCopy = {
         .join('\n'),
   },
 
-  /** Drop has opened — sent once per notify request, then the request is deleted. */
+  /** Drop has opened - sent once per notify request, then the request is deleted. */
   dropOpen: {
     subject: (dropCode: string, dropName: string) => `${dropCode} · ${dropName} is open`,
     text: (dropCode: string, dropName: string, url: string) =>
@@ -83,7 +83,7 @@ export const emailCopy = {
         ``,
         `This was the one email you asked for. We won’t write again about this drop.`,
         ``,
-        `— NEVMA Style · London`,
+        `- NEVMA Style · London`,
       ].join('\n'),
   },
 
@@ -97,7 +97,7 @@ export const emailCopy = {
         `You saved it on your wishlist. If you still want it:`,
         url,
         ``,
-        `— NEVMA Style · London`,
+        `- NEVMA Style · London`,
       ].join('\n'),
   },
 } as const;

@@ -237,7 +237,7 @@ function mapDrop(raw: RawDrop, commerce: Map<string, PieceCommerce>, now: number
         ? { code: prev.code, name: prev.name, slug: prev.slug }
         : null,
     seo: {
-      title: d.seo?.title || `NEVMA Style — ${d.code}`,
+      title: d.seo?.title || `NEVMA Style - ${d.code}`,
       description: d.seo?.description,
       noindex: d.seo?.noindex,
     },

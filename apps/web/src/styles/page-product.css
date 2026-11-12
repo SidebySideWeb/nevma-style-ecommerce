@@ -1,4 +1,4 @@
-/* NEVMA Style — generated from the design canvas. Do not edit by hand: change the tokens in docs/DESIGN-SYSTEM.md and regenerate, or edit together with the fidelity tests. */
+/* NEVMA Style - generated from the design canvas. Do not edit by hand: change the tokens in docs/DESIGN-SYSTEM.md and regenerate, or edit together with the fidelity tests. */
 .s-gal{position:relative;display:grid;grid-auto-flow:column;grid-auto-columns:86%;gap:2px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;background:#D9D3C8}
 .s-gal::-webkit-scrollbar{display:none}
 .s-gal>*{scroll-snap-align:start}

@@ -1,4 +1,4 @@
-/* NEVMA Style — generated from the design canvas. Do not edit by hand: change the tokens in docs/DESIGN-SYSTEM.md and regenerate, or edit together with the fidelity tests. */
+/* NEVMA Style - generated from the design canvas. Do not edit by hand: change the tokens in docs/DESIGN-SYSTEM.md and regenerate, or edit together with the fidelity tests. */
 .s-auth{display:flex;flex-wrap:wrap;min-height:760px}
 .s-auth>.s-form{flex:999 1 520px;min-width:0;display:flex;justify-content:center;align-items:center;padding:64px 20px}
 .s-auth>.s-perk{flex:1 1 420px;min-width:0}

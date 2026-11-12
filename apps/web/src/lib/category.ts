@@ -251,7 +251,7 @@ function mapCategory(
     archive,
     coming,
     seo: {
-      title: cat.seo?.title || `NEVMA Style — ${cat.name}`,
+      title: cat.seo?.title || `NEVMA Style - ${cat.name}`,
       description: cat.seo?.description,
       noindex: cat.seo?.noindex,
     },

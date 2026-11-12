@@ -1,4 +1,4 @@
-/* NEVMA Style — generated from the design canvas. Do not edit by hand: change the tokens in docs/DESIGN-SYSTEM.md and regenerate, or edit together with the fidelity tests. */
+/* NEVMA Style - generated from the design canvas. Do not edit by hand: change the tokens in docs/DESIGN-SYSTEM.md and regenerate, or edit together with the fidelity tests. */
 .s-feat{display:grid;grid-template-columns:minmax(0,1fr);gap:32px 80px;align-items:center}
 @media (min-width:1024px){.s-feat{grid-template-columns:minmax(0,1.25fr) minmax(0,0.75fr)}}
 .s-pair{display:grid;grid-template-columns:minmax(0,1fr);gap:56px 64px}

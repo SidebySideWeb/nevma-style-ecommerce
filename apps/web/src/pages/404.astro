@@ -14,7 +14,7 @@ const chrome = await loadChrome({ onHome: false });
 
 let title = 'This page has found a home elsewhere';
 let text =
-  '[404 text: not designed yet — built from the empty-bag pattern.]';
+  '[404 text: not designed yet - built from the empty-bag pattern.]';
 
 if (sanityConfigured()) {
   try {
@@ -31,7 +31,7 @@ if (sanityConfigured()) {
 Astro.response.status = 404;
 ---
 
-<Base title={`NEVMA Style — ${title}`} description={chrome.seo.description} board="Bag" noindex>
+<Base title={`NEVMA Style - ${title}`} description={chrome.seo.description} board="Bag" noindex>
   {chrome.announcement ? <Announcement announcement={chrome.announcement} /> : null}
   <Header mainNav={chrome.mainNav} menuExtra={chrome.menuExtra} />
   <main id="main">

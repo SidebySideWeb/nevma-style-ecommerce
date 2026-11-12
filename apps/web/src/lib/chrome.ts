@@ -95,7 +95,7 @@ export const chromeFallback: ChromeData = {
     copyright: '© 2026 NEVMA Style · London',
     wordmarkSrc: '/images/nevma-wordmark-white.png',
   },
-  seo: { title: 'NEVMA Style — Home', description: undefined },
+  seo: { title: 'NEVMA Style - Home', description: undefined },
   clientCareEmail: undefined,
   musicUrl: undefined,
   momentsUrl: undefined,

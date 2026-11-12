@@ -177,7 +177,7 @@ export const ui = {
     colPrice: 'Price',
     photo: '[Photo]',
     photoTitle: (title: string) => `[Photo · ${title}]`,
-    priceHidden: '—',
+    priceHidden: '-',
     stats: (drops: number, pieces: number, numbered: number) =>
       `${drops} drops · ${pieces} pieces · ${numbered} numbered`,
   },

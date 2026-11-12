@@ -154,5 +154,5 @@ export function productJsonLd(input: {
 }
 
 export function titleFallback(page: string): string {
-  return `NEVMA Style — ${page}`;
+  return `NEVMA Style - ${page}`;
 }

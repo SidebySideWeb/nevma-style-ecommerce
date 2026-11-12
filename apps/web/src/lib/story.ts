@@ -128,7 +128,7 @@ export async function loadStory(): Promise<StoryPageData | null> {
   if (!p) return null;
 
   const drop = raw.chrome?.announcement?.drop;
-  // Prefer next upcoming drop for closing eyebrow — storyQuery chrome uses announcement drop.
+  // Prefer next upcoming drop for closing eyebrow - storyQuery chrome uses announcement drop.
   let nextCode = 'STYLE 002';
   let nextWhen = 'Fri 4 Dec';
   let currentDropHref = '/drops/style-001';

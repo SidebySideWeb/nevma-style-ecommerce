@@ -464,7 +464,7 @@ function mapPiece(
     dropSlug: p.drop.slug || '',
     opensAt,
     seo: {
-      title: p.seo?.title || `NEVMA Style — ${p.title}`,
+      title: p.seo?.title || `NEVMA Style - ${p.title}`,
       description: p.seo?.description,
       noindex: p.seo?.noindex,
       image: p.seo?.image,

@@ -36,7 +36,7 @@ export type HomeTeaser = {
 };
 
 export type HomePageData = {
-  /** Current (hero) drop opensAt — for edition state on STYLE 001 cards. */
+  /** Current (hero) drop opensAt - for edition state on STYLE 001 cards. */
   dropOpensAt: string;
   hero: {
     eyebrow: string;
@@ -202,7 +202,7 @@ function localPhoto(src: string, alt: string, position?: string, tone?: string):
     alt,
     position: position ?? null,
     tone: (tone as Photo extends { tone?: infer T } ? T : never) ?? null,
-    // Local fidelity stand-in when Sanity asset missing — Photo.astro needs asset.url-shaped data.
+    // Local fidelity stand-in when Sanity asset missing - Photo.astro needs asset.url-shaped data.
     image: {
       asset: { url: src, metadata: { dimensions: { width: 1200, height: 1500 } } },
     },
@@ -485,7 +485,7 @@ export const homeFallback: HomePageData = (() => {
         },
       ],
     },
-    seo: { title: 'NEVMA Style — Home' },
+    seo: { title: 'NEVMA Style - Home' },
   };
 })();
 
