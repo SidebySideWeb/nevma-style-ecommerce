@@ -13,6 +13,7 @@ Status: **DECIDED** (by the user or NEVMA, with date) · **PROPOSED** (in this k
 - DECIDED 12 Nov: currency **EUR** (Shopify store + Viva account). Site formats with `Intl` en-GB + Shopify `currencyCode` (default EUR). VAT wording to confirm with NEVMA's accountant. `design/screenshots` still show £ (archival); fidelity compares against `design/build` HTML which uses €.
 - DECIDED 12 Nov (user): category intro stacks title above body copy when the name is longer than 5 letters (Outerwear, Headwear). Short names (Tees, Silk) keep the two-column intro. Design `category-outerwear` / `category-headwear` boards updated to match.
 - DECIDED 12 Nov (user): replace em dash (—) with hyphen (-) in static content (design copy, UI strings, page titles, email sign-offs, seed/Sanity). Code comments left alone.
+- DECIDED 12 Nov: under `COMMERCE_MOCK`, archive/category cards only keep STYLE 001 local stand-in photos (`LOCAL_SRC`); STYLE 002 and any other handle without a stand-in render the design `[Photo]` placeholders so fidelity stays stable if Sanity gains images early.
 
 ## Proposed in this kit
 1. **Repo:** standalone `nevma-style` workspace (apps/web + apps/studio), like the TEMS kit. The Shopify/edition modules are framework-free so the Music repo can copy them for its Style block.

@@ -111,10 +111,18 @@ function toneBg(photo: Photo | null | undefined): string {
   return (t && TONE_BG[t as keyof typeof TONE_BG]) || TONE_BG.bone;
 }
 
+function pickPhoto(card: Photo | null | undefined, gallery0: Photo | null | undefined): Photo | null {
+  if (hasPhotoImage(card)) return card!;
+  if (hasPhotoImage(gallery0)) return gallery0!;
+  return card || gallery0 || null;
+}
+
+/** Mock/fidelity: STYLE 001 uses local stand-ins; STYLE 002 stays [Photo] like the boards. */
 function withLocalSrc(handle: string, photo: Photo | null): Photo | null {
-  if (!photo || !isCommerceMock()) return photo;
+  if (!isCommerceMock()) return photo;
   const src = LOCAL_SRC[handle];
-  if (!src || !hasPhotoImage(photo)) return photo;
+  if (!src) return null;
+  if (!photo || !hasPhotoImage(photo)) return photo;
   return {
     ...photo,
     image: {
@@ -145,7 +153,7 @@ function toCard(
       variants: [],
     } satisfies PieceCommerce);
   const edition = describeEdition(c, opensAt, now);
-  const photo = withLocalSrc(handle, p.cardPhoto || p.gallery0 || null);
+  const photo = withLocalSrc(handle, pickPhoto(p.cardPhoto, p.gallery0));
   const priceLabel =
     edition.state === 'upcoming' || !c.price
       ? ui.pieces.priceHidden
@@ -164,7 +172,7 @@ function toCard(
     toneBg: toneBg(photo),
     objectPosition: photo?.position || 'center',
     imgFilter: edition.state === 'sold-out' ? 'grayscale(1) contrast(0.9)' : 'none',
-    numberColor: photo?.tone === 'bone' || !photo?.tone ? '#0B0B0C' : '#F5F5F7',
+    numberColor: photo?.tone === 'bone' ? '#0B0B0C' : '#F5F5F7',
     hasImage: hasPhotoImage(photo),
     aria: `${title}, ${priceLabel}, ${edition.stockLine}`,
     featuredAria: title,
