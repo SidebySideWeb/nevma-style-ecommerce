@@ -331,7 +331,15 @@ function mapPiece(
   ];
 
   const filmSrc = p.film || defaults?.filmDefault;
-  const gallery = (p.gallery || []).slice(0, 3);
+  // Seed/design gallery for upcoming boards; used when Sanity gallery is empty.
+  const seededGallery: Record<string, Photo[]> = {
+    'suede-cap-sand': [
+      { alt: '', placeholder: 'Suede Cap · front', tone: 'ink' },
+      { alt: '', placeholder: 'Suede Cap · back embroidery', tone: 'ink2' },
+      { alt: '', placeholder: 'worn, on model', tone: 'bone' },
+    ],
+  };
+  const gallery = (p.gallery?.length ? p.gallery : seededGallery[p.handle!] || []).slice(0, 3);
   while (gallery.length < 3) {
     gallery.push({
       alt: '',
