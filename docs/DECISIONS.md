@@ -11,6 +11,7 @@ Status: **DECIDED** (by the user or NEVMA, with date) · **PROPOSED** (in this k
 - DECIDED (user, Nov 2026): exact pixel-perfect build of the approved designs; Sanity + Shopify integration.
 - DECIDED 11 Nov (tooling): Node >= 22.23.4. Astro 7.4.10 refuses older 22.x. `.nvmrc` pins 22.23.4.
 - DECIDED 12 Nov: currency **EUR** (Shopify store + Viva account). Site formats with `Intl` en-GB + Shopify `currencyCode` (default EUR). VAT wording to confirm with NEVMA's accountant. `design/screenshots` still show £ (archival); fidelity compares against `design/build` HTML which uses €.
+- DECIDED 12 Nov (user): category intro stacks title above body copy when the name is longer than 5 letters (Outerwear, Headwear). Short names (Tees, Silk) keep the two-column intro. Design `category-outerwear` / `category-headwear` boards updated to match.
 
 ## Proposed in this kit
 1. **Repo:** standalone `nevma-style` workspace (apps/web + apps/studio), like the TEMS kit. The Shopify/edition modules are framework-free so the Music repo can copy them for its Style block.

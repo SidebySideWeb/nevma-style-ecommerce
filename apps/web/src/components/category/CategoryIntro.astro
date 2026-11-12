@@ -7,13 +7,15 @@ interface Props {
 }
 
 const { page: p } = Astro.props;
+/** Long display names overflow the 2-col intro beside the body copy — stack instead. */
+const stackIntro = p.name.replace(/\s/g, '').length > 5;
+const introWrapStyle = stackIntro
+  ? 'padding-block: 48px 40px; display: flex; flex-direction: column; gap: 28px'
+  : 'padding-block: 48px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 28px 80px; align-items: end';
 ---
 
 <section aria-labelledby="cat-title" data-block="category-intro">
-  <div
-    class="s-wrap"
-    style="padding-block: 48px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 28px 80px; align-items: end"
-  >
+  <div class="s-wrap" style={introWrapStyle}>
     <div style="display: flex; flex-direction: column; gap: 22px">
       <p class="s-eb">{p.eyebrow}</p>
       <h1
