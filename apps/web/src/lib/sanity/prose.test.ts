@@ -40,11 +40,11 @@ describe('proseToHtml vs care snippets', () => {
         _type: 'simpleTable',
         head: ['Where', 'Service', 'Time', 'Cost'],
         rows: [
-          { cells: ['United Kingdom', 'Tracked', '2 to 4 working days', '£6'] },
-          { cells: ['United Kingdom', 'Next day', 'Order by 1 pm, Mon to Thu', '£12'] },
+          { cells: ['United Kingdom', 'Tracked', '2 to 4 working days', '€6'] },
+          { cells: ['United Kingdom', 'Next day', 'Order by 1 pm, Mon to Thu', '€12'] },
           { cells: ['London', 'Collect by appointment', 'From the next working day', 'Free'] },
-          { cells: ['Europe', 'DHL Express', '2 to 4 working days', '[£18]'] },
-          { cells: ['Rest of world', 'DHL Express', '3 to 6 working days', '[£25]'] },
+          { cells: ['Europe', 'DHL Express', '2 to 4 working days', '[€18]'] },
+          { cells: ['Rest of world', 'DHL Express', '3 to 6 working days', '[€25]'] },
         ],
       },
       {

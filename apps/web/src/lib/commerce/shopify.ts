@@ -72,7 +72,7 @@ type SfCart = {
 };
 
 function money(m: SfMoney | null | undefined): Money {
-  return { amount: m?.amount ?? '0', currency: m?.currencyCode ?? 'GBP' };
+  return { amount: m?.amount ?? '0', currency: m?.currencyCode ?? 'EUR' };
 }
 
 /** When Headless lacks inventory scope, quantityAvailable is null — coerce from availableForSale. */

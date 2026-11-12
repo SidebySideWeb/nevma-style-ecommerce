@@ -5,7 +5,7 @@
 Pinned API version: **2026-10** (`SHOPIFY_API_VERSION`) for the Storefront and Customer Account APIs. Check the release notes before upgrading.
 
 ## 1. Shopify store setup (client + you; development store needed before prompt 12, live store before launch)
-1. Shopify **Basic**, store currency GBP, taxes: prices include VAT (UK). Markets: United Kingdom primary; Europe and Rest of world per Shipping page.
+1. Shopify **Basic**, store currency **EUR** (Viva account in EUR), taxes: prices include VAT [confirm wording with NEVMA's accountant]. Markets: United Kingdom primary; Europe and Rest of world per Shipping page. Buyer country for cart defaults to GB.
 2. Install the **Headless** sales channel. Create a storefront "nevma-style-web": copy the public and private Storefront tokens; enable permissions: products and collections, **product inventory** (needed for `quantityAvailable`), cart/checkout, customer (for buyer identity), metafields you expose.
 3. In the same Headless storefront, open **Customer Account API**: client type public (PKCE). Callback URI `https://<domain>/account/callback` (plus the preview domain), JavaScript origin `https://<domain>`, logout URI `https://<domain>/`. Local testing needs an https tunnel (localhost is refused).
 4. Settings → Customer accounts: **new customer accounts** (passwordless 6-digit code). Brand the login page (logo, colours) to match the design (`sign-in~code.html` is the reference).
@@ -47,7 +47,7 @@ Batch for lists with `nodes(ids:)` or `products(query: "handle:a OR handle:b")`.
 Size chip aria: "S, sold out" · "M, last one" · "L, 2 left". Size note: none chosen → "Crossed-out sizes are sold out."; chosen with 1 → "L · the last one in this size"; with n → "L · 2 left in this size".
 Size summary (drop/category cards): sizes with stock → "Available in M (1) and L (2)." + sold sizes → " S and XL are gone." (drop page only); one left → "Last piece: size L."; none → "No sizes left. This piece will not be made again."
 Drop totals: "4 of 15" = Σ left over the drop's live pieces / (pieces × size). Words for numbers: "five" only in "Last piece of five" and "All five have found a home".
-Prices: whole pounds without decimals on the site ("£85"); order totals with decimals ("£166.00"). `Intl.NumberFormat('en-GB', {style:'currency', currency:'GBP'})`, strip ".00" for site prices.
+Prices: whole euros without decimals on the site ("€85"); order totals with decimals ("€166.00"). Currency code comes from Shopify (`currencyCode`, default EUR). `Intl.NumberFormat('en-GB', {style:'currency', currency})`, strip ".00" for site prices.
 
 ## 5. Cart (Storefront Cart API)
 - `cartCreate` on first add; id in `ns_cart` (HttpOnly, 14 days). `cartLinesAdd`, `cartLinesRemove`, `cartBuyerIdentityUpdate` (customer token after sign-in, country GB by default).

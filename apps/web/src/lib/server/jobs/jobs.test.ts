@@ -104,7 +104,7 @@ describe('cron jobs (mocked clock)', () => {
       title: handle,
       published: true,
       editionSize: 5,
-      price: { amount: '120.00', currency: 'GBP' },
+      price: { amount: '120.00', currency: 'EUR' },
       variants: [
         {
           id: `${handle}-m`,

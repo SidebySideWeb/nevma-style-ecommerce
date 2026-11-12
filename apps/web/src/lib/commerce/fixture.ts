@@ -30,7 +30,7 @@ function parseFlags(cookie?: string | null): Set<string> {
   );
 }
 
-function money(amount: string | null | undefined, currency = 'GBP'): Money | null {
+function money(amount: string | null | undefined, currency = 'EUR'): Money | null {
   if (amount == null) return null;
   return { amount, currency };
 }

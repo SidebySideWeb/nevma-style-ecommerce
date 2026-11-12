@@ -8,7 +8,7 @@
    "published": true,
    "price": {
     "amount": "85.00",
-    "currencyCode": "GBP"
+    "currencyCode": "EUR"
    },
    "editionSize": 5,
    "drop": "STYLE 001",
@@ -45,7 +45,7 @@
    "published": true,
    "price": {
     "amount": "75.00",
-    "currencyCode": "GBP"
+    "currencyCode": "EUR"
    },
    "editionSize": 5,
    "drop": "STYLE 001",
@@ -82,7 +82,7 @@
    "published": true,
    "price": {
     "amount": "85.00",
-    "currencyCode": "GBP"
+    "currencyCode": "EUR"
    },
    "editionSize": 5,
    "drop": "STYLE 001",
@@ -335,7 +335,7 @@
     {
      "name": "#NS1017",
      "processedAt": "2026-10-02",
-     "summary": "Definition Tee · Bone, M · N° 2 of 5 · £91.00",
+     "summary": "Definition Tee · Bone, M · N° 2 of 5 · €91.00",
      "status": "Delivered 6 Oct"
     }
    ],

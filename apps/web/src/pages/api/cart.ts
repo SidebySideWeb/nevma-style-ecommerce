@@ -31,7 +31,7 @@ function parseGuestWishlist(cookieHeader: string | null): string[] {
 type SessionData = { customerId?: string; email?: string };
 
 async function cartPayload(cart: Awaited<ReturnType<ReturnType<typeof createCommerceProvider>['getCart']>>) {
-  const currency = cart.lines[0]?.price.currency || 'GBP';
+  const currency = cart.lines[0]?.price.currency || 'EUR';
   const subtotal = formatSitePrice(
     String(cart.lines.reduce((s, l) => s + Number.parseFloat(l.price.amount) * l.quantity, 0)),
     currency,

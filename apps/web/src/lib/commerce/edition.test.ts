@@ -33,7 +33,7 @@ function has(page: string, block: string, phrase: string) {
 const white: PieceCommerce = {
   handle: 'definition-tee-white',
   published: true,
-  price: { amount: '85.00', currency: 'GBP' },
+  price: { amount: '85.00', currency: 'EUR' },
   editionSize: 5,
   variants: [
     { id: 'S', size: 'S', quantityAvailable: 0, availableForSale: false },

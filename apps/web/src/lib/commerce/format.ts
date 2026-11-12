@@ -18,8 +18,8 @@ function asDate(input: string | number | Date): Date {
   return new Date(input);
 }
 
-/** Site price: whole pounds, no decimals — "£85". */
-export function formatSitePrice(amount: string | number, currency = 'GBP'): string {
+/** Site price: whole euros, no decimals — "€85". */
+export function formatSitePrice(amount: string | number, currency = 'EUR'): string {
   const n = typeof amount === 'number' ? amount : Number.parseFloat(amount);
   if (Number.isNaN(n)) return '';
   const formatted = new Intl.NumberFormat('en-GB', {
@@ -31,8 +31,8 @@ export function formatSitePrice(amount: string | number, currency = 'GBP'): stri
   return formatted.replace(/\.00$/, '');
 }
 
-/** Order total: keep decimals — "£166.00". */
-export function formatOrderPrice(amount: string | number, currency = 'GBP'): string {
+/** Order total: keep decimals — "€166.00". */
+export function formatOrderPrice(amount: string | number, currency = 'EUR'): string {
   const n = typeof amount === 'number' ? amount : Number.parseFloat(amount);
   if (Number.isNaN(n)) return '';
   return new Intl.NumberFormat('en-GB', {

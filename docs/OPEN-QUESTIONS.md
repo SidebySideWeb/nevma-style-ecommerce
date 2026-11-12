@@ -16,3 +16,4 @@
 | Q12 | Returned pieces "back in the edition" label on the piece page — needs a flag per product (Shopify tag `returned`)? Not designed yet. | User | Not built |
 | Q13 | Launch day in December and the dates NEVMA must deliver: live Shopify store + products + stock, Viva live account, real photos, legal texts. The old plan had the store by 18 Dec and Viva live by 15 Jan; both now have to move before launch. | NEVMA | To agree |
 | Q14 | Sanity Connect is installed by the store owner (NEVMA) and authorised against the Style Sanity project; who does it and when (needs the live store). | NEVMA + you | With the live store |
+| Q15 | VAT and duties wording for a UK company selling in EUR (Shipping page, Bag note, Terms). | NEVMA + accountant | Placeholder: “Prices are in euros and include VAT [confirm VAT wording with NEVMA's accountant].” |

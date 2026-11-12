@@ -30,11 +30,11 @@ const STYLE001_OPENED = Date.parse('2026-10-02T00:00:00Z');
 
 describe('format vs design/build/text.json', () => {
   it('formats site and order prices', () => {
-    expect(formatSitePrice('85.00')).toBe('£85');
-    expect(formatSitePrice(75)).toBe('£75');
-    expect(text.home['the-pieces']).toContain('£85');
-    expect(text.home['the-pieces']).toContain('£75');
-    expect(formatOrderPrice('166.00')).toBe('£166.00');
+    expect(formatSitePrice('85.00')).toBe('€85');
+    expect(formatSitePrice(75)).toBe('€75');
+    expect(text.home['the-pieces']).toContain('€85');
+    expect(text.home['the-pieces']).toContain('€75');
+    expect(formatOrderPrice('166.00')).toBe('€166.00');
   });
 
   it('formats London dates from the design', () => {

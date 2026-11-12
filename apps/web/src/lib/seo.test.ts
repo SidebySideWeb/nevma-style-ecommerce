@@ -43,7 +43,7 @@ describe('seo helpers', () => {
       name: 'Suede Cap',
       url: 'https://style.nevma.test/pieces/cap',
       priceAmount: '120.00',
-      priceCurrency: 'GBP',
+      priceCurrency: 'EUR',
       state: 'available',
       sku: 'NS-CAP',
     });

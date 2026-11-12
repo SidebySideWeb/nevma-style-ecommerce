@@ -55,7 +55,7 @@ Fidelity already locks pixel match to design screenshots at 1440 and 390 for Chr
 
 - Contacts / legal: `[style@nevma…]`, `[privacy@nevma…]`, `[NEVMA company name]`, `[legal entity]`, `[registered address]`, `[number]`, `[com]`, `[NEVMA Style studio address, London]`, `[date]`
 - Domain / sister sites: `[nevma-music]`, `[nevma-moments]`, `[nevma-music-domain]`
-- Commerce / shipping: `[confirm DDP or DAP]`, `[we pay duties…]`, `[£18]`, `[£25]`, `[confirm the methods enabled on the Viva account]`
+- Commerce / shipping: `[confirm DDP or DAP]`, `[we pay duties…]`, `[€18]`, `[€25]`, `[confirm the methods enabled on the Viva account]`
 - Product copy / facts: `[Fabric…]`, `[Colour]`, `[country]`, `[Print method]`, `[Country and workshop]`, size numbers `[54]`…`[76]`, second paragraphs for bone/wordmark tees
 - Photos / film slots without assets: `[Photo · …]`, `[Film · 0:24…]`, workshop/mill/printer/tannery labels
 - Misc: `[Analytics]`, `[13 months]`, `[404 text: not designed yet — built from the empty-bag pattern.]`

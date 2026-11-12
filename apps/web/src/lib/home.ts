@@ -290,7 +290,7 @@ export const homeFallback: HomePageData = (() => {
     'definition-tee-white': {
       handle: 'definition-tee-white',
       published: true,
-      price: { amount: '85.00', currency: 'GBP' },
+      price: { amount: '85.00', currency: 'EUR' },
       editionSize: 5,
       variants: [
         { id: 'a', size: 'S', quantityAvailable: 0, availableForSale: false },
@@ -302,7 +302,7 @@ export const homeFallback: HomePageData = (() => {
     'wordmark-tee-bone': {
       handle: 'wordmark-tee-bone',
       published: true,
-      price: { amount: '75.00', currency: 'GBP' },
+      price: { amount: '75.00', currency: 'EUR' },
       editionSize: 5,
       variants: [
         { id: 'a', size: 'S', quantityAvailable: 0, availableForSale: false },
@@ -314,7 +314,7 @@ export const homeFallback: HomePageData = (() => {
     'definition-tee-bone': {
       handle: 'definition-tee-bone',
       published: true,
-      price: { amount: '85.00', currency: 'GBP' },
+      price: { amount: '85.00', currency: 'EUR' },
       editionSize: 5,
       variants: [
         { id: 'a', size: 'S', quantityAvailable: 0, availableForSale: false },

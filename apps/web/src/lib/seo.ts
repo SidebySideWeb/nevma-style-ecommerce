@@ -134,11 +134,11 @@ export function productJsonLd(input: {
   };
   if (input.priceAmount && input.state !== 'upcoming') {
     offer.price = input.priceAmount;
-    offer.priceCurrency = input.priceCurrency || 'GBP';
+    offer.priceCurrency = input.priceCurrency || 'EUR';
   } else if (input.priceAmount && input.state === 'upcoming') {
     // Price known but not yet buyable.
     offer.price = input.priceAmount;
-    offer.priceCurrency = input.priceCurrency || 'GBP';
+    offer.priceCurrency = input.priceCurrency || 'EUR';
   }
 
   return {

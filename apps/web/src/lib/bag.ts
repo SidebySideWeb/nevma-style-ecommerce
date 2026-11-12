@@ -316,7 +316,7 @@ export async function loadBag(cookieHeader: string | null): Promise<BagPageData>
 
   const lines = [...activeViews, ...soldViews];
   const subtotal = active.reduce((s, l) => s + Number.parseFloat(l.price.amount) * l.quantity, 0);
-  const currency = active[0]?.price.currency || soldForView[0]?.priceCurrency || 'GBP';
+  const currency = active[0]?.price.currency || soldForView[0]?.priceCurrency || 'EUR';
   const subtotalLabel = formatSitePrice(String(subtotal), currency);
 
   let notice: BagPageData['notice'] = null;

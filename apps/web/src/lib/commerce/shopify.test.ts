@@ -25,7 +25,7 @@ describe('createShopifyProvider', () => {
               title: 'Definition Tee · White',
               availableForSale: true,
               publishedAt: '2026-01-01T00:00:00Z',
-              priceRange: { minVariantPrice: { amount: '85.0', currencyCode: 'GBP' } },
+              priceRange: { minVariantPrice: { amount: '85.0', currencyCode: 'EUR' } },
               edition: { value: '5' },
               variants: {
                 nodes: [
@@ -34,14 +34,14 @@ describe('createShopifyProvider', () => {
                     availableForSale: true,
                     quantityAvailable: 2,
                     selectedOptions: [{ name: 'Size', value: 'L' }],
-                    price: { amount: '85.0', currencyCode: 'GBP' },
+                    price: { amount: '85.0', currencyCode: 'EUR' },
                   },
                   {
                     id: 'gid://shopify/ProductVariant/2',
                     availableForSale: false,
                     quantityAvailable: 0,
                     selectedOptions: [{ name: 'Size', value: 'S' }],
-                    price: { amount: '85.0', currencyCode: 'GBP' },
+                    price: { amount: '85.0', currencyCode: 'EUR' },
                   },
                 ],
               },
@@ -56,7 +56,7 @@ describe('createShopifyProvider', () => {
     expect(piece).toMatchObject({
       handle: 'definition-tee-white',
       editionSize: 5,
-      price: { amount: '85.0', currency: 'GBP' },
+      price: { amount: '85.0', currency: 'EUR' },
     });
     expect(piece?.variants.find((v) => v.size === 'L')?.quantityAvailable).toBe(2);
     expect(piece?.variants.find((v) => v.size === 'S')?.availableForSale).toBe(false);
