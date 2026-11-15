@@ -34,7 +34,7 @@ Project root `apps/web`, framework Astro, Node 22, region `lhr1` (London). Produ
 Crons (`vercel.json`): `/api/cron/drops` every 5 minutes (sends "it's open" emails once per drop, deletes the requests, revalidates) · `/api/cron/retention` daily 03:10 UTC · `/api/cron/wishlist-alerts` hourly fallback.
 
 ## Sanity
-`pnpm --filter studio deploy` → `nevma-style.sanity.studio`. Webhook: on create/update/delete of all types except none → `https://<domain>/api/revalidate`, secret header, projection as in CONTENT-MODEL.md. CORS: site origin (no credentials). Weekly export job to the backup Drive folder (same job as the other NEVMA projects).
+`pnpm --filter studio deploy` → `nevma-style.sanity.studio`. Webhook: on create/update/delete of all types except none → `https://<domain>/api/revalidate`, secret header, projection as in CONTENT-MODEL.md. CORS: site origin (no credentials). Weekly encrypted dataset export → Cloudflare R2 (see [BACKUPS](./BACKUPS.md)).
 
 ## Shopify webhooks
 Product and collection changes reach the site through Sanity Connect → Sanity webhook. Register only `inventory_levels/update` (stock) → `https://<domain>/api/shopify/webhook` (JSON, API 2026-10). Include `product` and `collection` in the Sanity webhook filter. Register via the Admin API script `scripts/shopify-webhooks.mjs` (prompt 13) or a custom app.
@@ -42,3 +42,4 @@ Product and collection changes reach the site through Sanity Connect → Sanity 
 ## Launch checklist (one launch in December, shop live)
 Content and site: fidelity green, `check-placeholders --strict` with agreed exceptions only, legal texts from NEVMA's lawyer, Turnstile live, Resend domain verified, analytics consent, noindex off on production only, redirects, 404, sitemap, robots.
 Shop: Shopify live store with products, prices and stock checked against Sanity (`scripts/shopify-smoke.mjs` clean), Viva test order passed, checkout and order status page branded, Customer Account callbacks on the production domain, webhooks registered, drop schedule (STYLE 002 at its opensAt) set in both Shopify and Sanity, one real low-value order placed and refunded end to end.
+Backups: repository secrets `SANITY_AUTH_TOKEN`, `SANITY_PROJECT_ID`, `SANITY_DATASET`, `AGE_RECIPIENT`, `BACKUP_S3_BUCKET`, `BACKUP_S3_ENDPOINT`, `BACKUP_AWS_ACCESS_KEY_ID`, `BACKUP_AWS_SECRET_ACCESS_KEY`, `HEALTHCHECK_URL`; variable `BACKUP_PREFIX`=`style`; R2 lifecycle rules for `style/weekly/` (60 days) and `style/monthly/` (365 days); one manual **Backups** run green (see [BACKUPS](./BACKUPS.md)).
