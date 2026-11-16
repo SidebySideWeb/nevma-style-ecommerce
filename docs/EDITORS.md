@@ -197,20 +197,55 @@ For upcoming STYLE pieces it is normal to leave placeholders until shoot day.
 
 ---
 
-## 7. Orders, packing, requests
+## 7. Orders (Shopify) — how they work
+
+Orders are **only in Shopify**. Sanity never stores or edits orders. The Style site sends the shopper to Shopify Checkout; **Viva** takes payment inside that checkout. After payment they land on Shopify’s **order status** page (“Continue shopping” returns to the Style site). Signed-in customers also see order history under `/account/orders` (read from Shopify’s Customer Account API).
+
+### What the customer does
+
+1. Adds a piece on the site (one of each colourway; quantity is always 1).
+2. Opens the bag → **Checkout** → Shopify-hosted checkout (branded).
+3. Pays with **Viva** (Smart Checkout app).
+4. Sees Shopify’s thank-you / order status page.
+
+### What staff do in Shopify Admin
+
+Open **[Orders](https://admin.shopify.com/store/nevma-style-shop-qvt07fuj/orders)**.
+
+| Step | Action |
+| --- | --- |
+| New order | Appears when payment succeeds. Check line items (piece, size), address, payment status. |
+| Stock | Shopify already deducted inventory when the order was placed (tracked inventory). |
+| Packing | Pick the physical piece. Write the **edition number** for that line (hand-numbered 1–5 for that colourway). |
+| Edition numbers | Store on the order metafield **`nevma.numbers`** as JSON, e.g. `{ "<line_item_id>": 3 }` (one number per line). This is what the account “orders” view can show when enabled. If the metafield is not set up yet, keep the number on a packing note until it is. |
+| Fulfil | Mark fulfilled in Shopify; add tracking if you ship with a carrier that Shopify supports. |
+| Refund / cancel | Use Shopify’s refund/cancel on that order. Extra same-piece checkouts (Basic cannot hard-block in checkout) may be cancelled per the Terms. |
+| Customer questions | Prefer Shopify order thread / email; site **Contact** messages land in Studio → Requests (include order number if they typed one). |
+
+### What you do *not* do in Sanity for orders
+
+- Do not create order documents.
+- Do not change stock in Sanity after a sale — change **Inventory** in Shopify if you need a correction.
+- Refunds and fulfilment status are Shopify-only; the site only displays what Shopify returns for signed-in customers.
+
+### Related admin links
+
+- Orders: [admin…/orders](https://admin.shopify.com/store/nevma-style-shop-qvt07fuj/orders)
+- Inventory: [admin…/products/inventory](https://admin.shopify.com/store/nevma-style-shop-qvt07fuj/products/inventory)
+- Customers (Shopify): [admin…/customers](https://admin.shopify.com/store/nevma-style-shop-qvt07fuj/customers)
+
+## 8. Requests (Sanity) — not orders
 
 | Task | Where |
 | --- | --- |
-| Orders, refunds, fulfilment | [Shopify Orders](https://admin.shopify.com/store/nevma-style-shop-qvt07fuj/orders) |
-| Edition number on a line (packing) | Shopify order metafield `nevma.numbers` (when enabled) |
 | Contact / notify / newsletter | Studio → **Requests and customers** |
-| Wishlist / drop-alert prefs | Studio → Customers (site-written; do not invent rows) |
+| Wishlist / drop-alert prefs | Studio → Customers (written by the site when someone signs in / saves) |
 
-Contact messages: set status (e.g. new → replied) and internal notes in Studio.
+Contact messages: set status (e.g. new → replied) and internal notes in Studio. These are **not** Shopify orders.
 
 ---
 
-## 8. What not to do
+## 9. What not to do
 
 - Do not create or edit documents under **Shopify (synced, read-only)** in Studio.
 - Do not put EUR prices or “3 of 5 left” into Sanity fields — the site computes those.
@@ -220,7 +255,7 @@ Contact messages: set status (e.g. new → replied) and internal notes in Studio
 
 ---
 
-## 9. Quick “is it broken?” checks
+## 10. Quick “is it broken?” checks
 
 | Symptom | Likely cause |
 | --- | --- |
@@ -234,7 +269,7 @@ Contact messages: set status (e.g. new → replied) and internal notes in Studio
 
 ---
 
-## 10. Related technical docs (optional)
+## 11. Related technical docs (optional)
 
 - [CONTENT-MODEL.md](./CONTENT-MODEL.md) — field-level Sanity model  
 - [COMMERCE.md](./COMMERCE.md) — Shopify + Viva setup  
