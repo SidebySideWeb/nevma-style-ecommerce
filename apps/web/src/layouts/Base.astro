@@ -1,5 +1,5 @@
 ---
-import '../styles/fonts.css';
+import fontsHref from '../styles/fonts.css?url';
 import '../styles/style.css';
 import pageMain from '../styles/page-main.css?url';
 import pageDrop from '../styles/page-drop.css?url';
@@ -15,6 +15,7 @@ import pageLegal from '../styles/page-legal.css?url';
 import { ui } from '../content/ui';
 import CookieConsent from '../components/chrome/CookieConsent.astro';
 import { absoluteUrl } from '../lib/seo';
+
 
 interface Props {
   title: string;
@@ -108,6 +109,8 @@ const jsonLdBlocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
       type="font/woff2"
       crossorigin
     />
+    {/* @font-face early (not buried in a late component CSS chunk) so preloads can apply. */}
+    <link rel="stylesheet" href={fontsHref} />
     <link rel="stylesheet" href={pageHref} />
   </head>
   <body>
