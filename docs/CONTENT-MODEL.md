@@ -1,5 +1,7 @@
 # Content model (Sanity)
 
+**Editors:** see [EDITORS.md](./EDITORS.md) for the day-to-day Shopify + Sanity order of work (categories, drops, products).
+
 Studio: `apps/studio` (Sanity 6.23.0). Validated: `sanity schema validate` 0 errors / 0 warnings, `tsc` clean, `sanity build` passes. Seed: `seed/nevma-style-seed.tar.gz` (22 documents, 10 photos; the design copy word for word) — check with `pnpm --filter studio check-seed`, import with `pnpm --filter studio seed`.
 
 **Rule:** Sanity holds words, photos, film and links. Prices, sizes and stock always come from Shopify (docs/COMMERCE.md). Fixed interface wording (button labels, aria text, stock sentences, form labels) lives in `apps/web/src/content/ui.ts`, taken from `design/build/text.json`.

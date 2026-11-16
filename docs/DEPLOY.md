@@ -1,5 +1,7 @@
 # Deploy, environments and jobs
 
+**Editors:** day-to-day content and commerce steps live in [EDITORS.md](./EDITORS.md).
+
 ## Accounts (client pays running costs; see the NEVMA cost document)
 Vercel (NEVMA team, Pro) · Sanity project "NEVMA Style" in the NEVMA organization (Free plan) · Shopify Basic · Viva (Smart Checkout app) · Resend (domain verified, sender e.g. style@<domain>) · Cloudflare Turnstile (site key for the domain) · GitHub repo `nevma-style`.
 

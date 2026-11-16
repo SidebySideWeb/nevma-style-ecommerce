@@ -9,6 +9,7 @@ The job is an **exact, pixel-perfect build of the approved designs** in `design/
 2. `docs/PAGES.md` — every route, block, data source and behaviour.
 3. `docs/ARCHITECTURE.md` and `docs/COMMERCE.md` — how Sanity, Shopify (with Sanity Connect) and the site fit together.
 4. `docs/CONTENT-MODEL.md` — Sanity documents and what comes from where.
+4b. `docs/EDITORS.md` — editor manual (Shopify + Sanity order for categories, drops, products).
 5. `docs/DESIGN-SYSTEM.md` — tokens, the shared `.s-*` classes, type, motion.
 6. `docs/DECISIONS.md`, `docs/OPEN-QUESTIONS.md`, `docs/ACCEPTANCE.md`.
 
