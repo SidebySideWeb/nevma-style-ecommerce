@@ -1,5 +1,3 @@
-/* Display (Montserrat): block so huge titles don’t paint in a fallback then snap.
-   Body (Nunito): swap is fine for longer reading text. */
 @font-face{font-family:'Montserrat';font-weight:300;font-display:block;src:url(/fonts/montserrat-300.woff2) format('woff2')}
 @font-face{font-family:'Montserrat';font-weight:400;font-display:block;src:url(/fonts/montserrat-400.woff2) format('woff2')}
 @font-face{font-family:'Montserrat';font-weight:500;font-display:block;src:url(/fonts/montserrat-500.woff2) format('woff2')}
